@@ -1,0 +1,19 @@
+<settings>
+    <setting propertyKey="@Properties.ClockColor" title="@Strings.ClockColorTitle" prompt="@Strings.ClockColorPrompt">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.White</listEntry>
+            <listEntry value="1">@Strings.Purple</listEntry>
+            <listEntry value="2">@Strings.Green</listEntry>
+            <listEntry value="3">@Strings.Blue</listEntry>
+            <listEntry value="4">@Strings.Red</listEntry>
+            <listEntry value="5">@Strings.Yellow</listEntry>
+            <listEntry value="6">@Strings.Black</listEntry>                        
+        </settingConfig>
+    </setting> 
+    <setting propertyKey="@Properties.TimeStep" title="@Strings.TimeStepTitle" prompt="Strings.TimeStepPrompt" >
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.ZTime</listEntry>
+            <listEntry value="1">@Strings.ZSteps</listEntry>
+        </settingConfig>
+    </setting>
+</settings>

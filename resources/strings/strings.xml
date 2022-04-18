@@ -1,0 +1,16 @@
+<strings>
+    <string id="AppName">Aviation Time</string>
+    <string id="Purple">Purple</string>
+    <string id="White">White</string>
+    <string id="Blue">Blue</string>
+    <string id="Green">Green</string>
+    <string id="Red">Red</string>
+    <string id="Yellow">Yellow</string>
+    <string id="Black">Black</string>
+    <string id="ClockColorTitle">Clock color</string>
+    <string id="ClockColorPrompt">Select clock color</string>
+    <string id="TimeStepTitle">Zulu Time or Steps</string>
+    <string id="TimeStepPrompt">Zulu Time or Steps</string>
+    <string id="ZTime">Zulu Time</string>
+    <string id="ZSteps">Steps</string>
+</strings>
