@@ -1,0 +1,231 @@
+import Toybox.Graphics;
+import Toybox.Lang;
+import Toybox.System;
+import Toybox.WatchUi;
+import Toybox.Time.Gregorian;
+import Toybox.Time;
+import Toybox.ActivityMonitor;
+
+var mySettings = System.getDeviceSettings();
+
+class AviationTimeView extends WatchUi.WatchFace {
+
+
+    function initialize() {
+        WatchFace.initialize();
+    }
+
+
+    // Load your resources here
+    function onLayout(dc) as Void {
+        setLayout(Rez.Layouts.WatchFace(dc));
+
+    }
+
+
+    // Called when this View is brought to the foreground. Restore
+    // the state of this View and prepare it to be shown. This includes
+    // loading resources into memory.
+    function onShow() as Void {
+
+    }
+
+
+    // Update the view
+    function onUpdate(dc) as Void {
+
+        dc.clear();
+
+        //Draw Time
+        drawTime();
+
+        //Draw ZuluTime or Steps
+        drawZTime();
+
+        //Draw Date
+        drawDate();
+
+        //Draw Battery
+        drawBatt();
+
+        //Draw Alarm
+        drawAlarm();
+
+        //Draw Notifications
+        drawNote();      
+        
+
+        // Call the parent onUpdate function to redraw the layout
+        View.onUpdate(dc);
+    }
+ 
+    // Called when this View is removed from the screen. Save the
+    // state of this View here. This includes freeing resources from
+    // memory.
+    function onHide() as Void {
+    }
+
+    // The user has just looked at their watch. Timers and animations may be started here.
+    function onExitSleep() as Void {
+    }
+
+    // Terminate any active timers and prepare for slow updates.
+    function onEnterSleep() as Void {
+    }
+
+    //Force update when settings change
+    function onSettingsChanged() {
+        View.onUpdate(dc);
+    }
+
+
+        //Dispaly time
+        function drawTime() {
+
+            //Get color settings
+            var clockColorSet = Graphics.COLOR_BLACK;
+            var clockColorNum = Application.getApp().getProperty("ClockColor");
+                //System.println("Clock Color Loaded: " + clockColorNum);
+		
+		    switch (clockColorNum){
+			    case 0:
+				    clockColorSet = Graphics.COLOR_WHITE;
+				    break;
+			    case 1:
+				    clockColorSet = Graphics.COLOR_PURPLE;
+				    break;
+			    case 2:
+				    clockColorSet = Graphics.COLOR_GREEN;
+				    break;
+			    case 3:
+				    clockColorSet = Graphics.COLOR_BLUE;
+				    break;
+			    case 4:
+				    clockColorSet = Graphics.COLOR_RED;
+				    break;
+			    case 5:
+				    clockColorSet = Graphics.COLOR_YELLOW;
+				    break;
+                case 6:
+				    clockColorSet = Graphics.COLOR_BLACK;
+				    break;
+		    }
+
+            //Get and show the current time & Zulu time
+            var timeString;
+            var clockTime = System.getClockTime();
+
+            var hours = clockTime.hour;
+
+            //Format local time for 12 or 24 hour clock
+            if (mySettings.is24Hour == true){      
+                timeString = Lang.format("$1$:$2$", [clockTime.hour.format("%02d"), clockTime.min.format("%02d")]);
+            } else {
+                if (hours > 12) {
+                    hours = hours - 12;
+                }
+            timeString = Lang.format("$1$:$2$", [hours, clockTime.min.format("%02d")]);
+            }
+            var view = View.findDrawableById("TimeLabel") as Text;
+        
+            //Draw the time to the screen
+            view.setColor(clockColorSet);
+            view.setText(timeString);
+        }
+
+        
+        //Draw Zulu time or steps
+        function drawZTime() {
+
+            //Format zulu time
+            var zTime = Gregorian.utcInfo(Time.now(), Time.FORMAT_MEDIUM);
+            var zuluTime = Lang.format("$1$:$2$", [zTime.hour.format("%02d"), zTime.min.format("%02d")])+"Z";
+            var zView = View.findDrawableById("zTimeLabel") as Text;
+
+            //Format Steps
+            var stepLoad = ActivityMonitor.getInfo();
+            var steps = stepLoad.steps;
+            var stepString = Lang.format("$1$", [steps]);
+            var stepDisplay = View.findDrawableById("stepLabel") as text;
+         
+            //Zulu time or steps option
+            var timeOrStep = 0; 
+            timeOrStep = Application.getApp().getProperty("TimeStep");
+                //System.println("timeOrStep: " + timeOrStep);
+
+            if (timeOrStep == 1){
+                //clear Zulu time text and dipslay Steps
+                zView.setColor(Graphics.COLOR_TRANSPARENT);
+                stepDisplay.setColor(Graphics.COLOR_DK_GRAY);
+                stepDisplay.setText(stepString);
+            } else {
+                //Clear step line and display Zulu
+                stepDisplay.setColor(Graphics.COLOR_TRANSPARENT);
+                zView.setColor(Graphics.COLOR_DK_GRAY);
+                zView.setText(zuluTime);
+                    //System.println("Z Time");
+            }
+        }
+
+        //Display Date
+        function drawDate() {
+
+            var dateLoad = Gregorian.info(Time.now(), Time.FORMAT_MEDIUM);
+            var dateString = Lang.format("$1$, $2$ $3$", 
+                [dateLoad.day_of_week,
+                dateLoad.day,
+                dateLoad.month]);
+            var dateCalc = View.findDrawableById("dateLabel") as Text;
+            dateCalc.setText(dateString);
+
+        }
+
+        //Display Battery info
+        function drawBatt(){
+            //Get battery info
+            var batLoad = ((System.getSystemStats().battery) + 0.5).toNumber();
+                //System.println("Battery: " + batLoad);
+            var batString = Lang.format("$1$", [batLoad])+"%";
+            var batteryDisplay = View.findDrawableById("batLabel") as Text;
+
+            if (batLoad < 5.0) {
+                batteryDisplay.setColor(Graphics.COLOR_RED);
+            } else if (batLoad < 25.0) {
+                batteryDisplay.setColor(Graphics.COLOR_YELLOW);
+            } else {
+                batteryDisplay.setColor(Graphics.COLOR_DK_GRAY);
+            }
+
+            batteryDisplay.setText(batString);
+        }
+
+        //Display Alarm Info
+        function drawAlarm(){
+
+            //See if an alarm is set
+            var alarmLoad = mySettings.alarmCount;
+            var alarmString = "A";
+                //System.println("Alarm: " + alarmLoad);
+            var alarmStr = Lang.format("$1$", [alarmString]);
+            var alarmDisplay = View.findDrawableById("alarmLabel") as Text;
+
+            if (alarmLoad != 0) {
+                alarmDisplay.setText(alarmString);
+            }
+        }
+
+        //Display notification information
+        function drawNote(){
+
+            //See if there are any system notices
+            var noteLoad = mySettings.notificationCount;
+            var noteString="N";
+                //System.println("Notes: " + noteLoad);
+            var noteStr = Lang.format("$1$", [noteString]);
+            var noteDisplay = View.findDrawableById("noteLabel") as Text;
+        
+            if (noteLoad !=0) {
+                noteDisplay.setText(noteString);
+            }
+        }
+}
