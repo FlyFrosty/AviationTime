@@ -5,36 +5,39 @@ import Toybox.WatchUi;
 import Toybox.Time.Gregorian;
 import Toybox.Time;
 import Toybox.ActivityMonitor;
-
-var mySettings = System.getDeviceSettings();
+ 
 
 class AviationTimeView extends WatchUi.WatchFace {
+
+    var clockColorNum = Application.getApp().getProperty("ClockColor");
+    var clockColorSet = Graphics.COLOR_BLACK;
+    var timeOrStep = Application.getApp().getProperty("TimeStep");
+    var alarmLoad = System.getDeviceSettings().alarmCount;
+    var noteLoad = System.getDeviceSettings().notificationCount;
 
 
     function initialize() {
         WatchFace.initialize();
     }
 
-
     // Load your resources here
     function onLayout(dc) as Void {
         setLayout(Rez.Layouts.WatchFace(dc));
-
     }
-
 
     // Called when this View is brought to the foreground. Restore
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
     function onShow() as Void {
-
     }
 
 
     // Update the view
     function onUpdate(dc) as Void {
-
+        
         dc.clear();
+
+        colorUpdate();
 
         //Draw Time
         drawTime();
@@ -54,7 +57,6 @@ class AviationTimeView extends WatchUi.WatchFace {
         //Draw Notifications
         drawNote();      
         
-
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
     }
@@ -75,42 +77,45 @@ class AviationTimeView extends WatchUi.WatchFace {
 
     //Force update when settings change
     function onSettingsChanged() {
-        View.onUpdate(dc);
+        System.println("On Settings Changed");
+        onUpdate(dc);
     }
 
+        function colorUpdate(){
+            //Get color settings
+            clockColorNum = Application.getApp().getProperty("ClockColor");
+
+		        switch (clockColorNum){
+			        case 0:
+				        clockColorSet = Graphics.COLOR_WHITE;
+				        break;
+			        case 1:
+				        clockColorSet = Graphics.COLOR_PURPLE;
+				        break;
+			        case 2:
+				        clockColorSet = Graphics.COLOR_GREEN;
+				        break;
+			        case 3:
+				        clockColorSet = Graphics.COLOR_BLUE;
+				        break;
+			        case 4:
+				        clockColorSet = Graphics.COLOR_RED;
+				        break;
+			        case 5:
+				        clockColorSet = Graphics.COLOR_YELLOW;
+				        break;
+                    case 6:
+				        clockColorSet = Graphics.COLOR_BLACK;
+				        break;
+		        }
+
+            timeOrStep = Application.getApp().getProperty("TimeStep");
+
+        }
 
         //Dispaly time
         function drawTime() {
-
-            //Get color settings
-            var clockColorSet = Graphics.COLOR_BLACK;
-            var clockColorNum = Application.getApp().getProperty("ClockColor");
-                //System.println("Clock Color Loaded: " + clockColorNum);
-		
-		    switch (clockColorNum){
-			    case 0:
-				    clockColorSet = Graphics.COLOR_WHITE;
-				    break;
-			    case 1:
-				    clockColorSet = Graphics.COLOR_PURPLE;
-				    break;
-			    case 2:
-				    clockColorSet = Graphics.COLOR_GREEN;
-				    break;
-			    case 3:
-				    clockColorSet = Graphics.COLOR_BLUE;
-				    break;
-			    case 4:
-				    clockColorSet = Graphics.COLOR_RED;
-				    break;
-			    case 5:
-				    clockColorSet = Graphics.COLOR_YELLOW;
-				    break;
-                case 6:
-				    clockColorSet = Graphics.COLOR_BLACK;
-				    break;
-		    }
-
+ 
             //Get and show the current time & Zulu time
             var timeString;
             var clockTime = System.getClockTime();
@@ -118,7 +123,7 @@ class AviationTimeView extends WatchUi.WatchFace {
             var hours = clockTime.hour;
 
             //Format local time for 12 or 24 hour clock
-            if (mySettings.is24Hour == true){      
+            if (System.getDeviceSettings().is24Hour == true){      
                 timeString = Lang.format("$1$:$2$", [clockTime.hour.format("%02d"), clockTime.min.format("%02d")]);
             } else {
                 if (hours > 12) {
@@ -149,10 +154,7 @@ class AviationTimeView extends WatchUi.WatchFace {
             var stepDisplay = View.findDrawableById("stepLabel") as text;
          
             //Zulu time or steps option
-            var timeOrStep = 0; 
-            timeOrStep = Application.getApp().getProperty("TimeStep");
-                //System.println("timeOrStep: " + timeOrStep);
-
+ 
             if (timeOrStep == 1){
                 //clear Zulu time text and dipslay Steps
                 zView.setColor(Graphics.COLOR_TRANSPARENT);
@@ -163,7 +165,6 @@ class AviationTimeView extends WatchUi.WatchFace {
                 stepDisplay.setColor(Graphics.COLOR_TRANSPARENT);
                 zView.setColor(Graphics.COLOR_DK_GRAY);
                 zView.setText(zuluTime);
-                    //System.println("Z Time");
             }
         }
 
@@ -184,7 +185,6 @@ class AviationTimeView extends WatchUi.WatchFace {
         function drawBatt(){
             //Get battery info
             var batLoad = ((System.getSystemStats().battery) + 0.5).toNumber();
-                //System.println("Battery: " + batLoad);
             var batString = Lang.format("$1$", [batLoad])+"%";
             var batteryDisplay = View.findDrawableById("batLabel") as Text;
 
@@ -203,29 +203,38 @@ class AviationTimeView extends WatchUi.WatchFace {
         function drawAlarm(){
 
             //See if an alarm is set
-            var alarmLoad = mySettings.alarmCount;
+
             var alarmString = "A";
-                //System.println("Alarm: " + alarmLoad);
             var alarmStr = Lang.format("$1$", [alarmString]);
             var alarmDisplay = View.findDrawableById("alarmLabel") as Text;
 
+            alarmLoad = System.getDeviceSettings().alarmCount;
+
             if (alarmLoad != 0) {
-                alarmDisplay.setText(alarmString);
+                alarmString = "A";
+            } else {
+                alarmString = " ";
             }
+
+            alarmDisplay.setText(alarmString);
         }
 
         //Display notification information
         function drawNote(){
 
             //See if there are any system notices
-            var noteLoad = mySettings.notificationCount;
-            var noteString="N";
-                //System.println("Notes: " + noteLoad);
+
+            var noteString=" ";
             var noteStr = Lang.format("$1$", [noteString]);
             var noteDisplay = View.findDrawableById("noteLabel") as Text;
-        
+            
+            noteLoad = System.getDeviceSettings().notificationCount;
+
             if (noteLoad !=0) {
-                noteDisplay.setText(noteString);
+                noteString = "N";
+            } else {
+                noteString = " ";
             }
+            noteDisplay.setText(noteString);
         }
 }

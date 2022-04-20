@@ -1,5 +1,4 @@
 import Toybox.Application;
-import Toybox.Lang;
 import Toybox.WatchUi;
 
 
@@ -26,8 +25,6 @@ class AviationTimeApp extends Application.AppBase {
     // New app settings have been received so trigger a UI update
     function onSettingsChanged() {
         WatchUi.requestUpdate();
-        System.println("onSettingsChnaged in App.mc");
-        View.onUpdate(dc);
     }
 
 }
