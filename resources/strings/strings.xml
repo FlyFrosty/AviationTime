@@ -7,6 +7,10 @@
     <string id="Red">Red</string>
     <string id="Yellow">Yellow</string>
     <string id="Black">Black</string>
+    <string id="DKGray">Dark Gray</string>
+    <string id="DKRed">Dark Red</string>
+    <string id="DKGreen">Dark Green</string>
+    <string id="DKBlue">Dark Blue</string>
     <string id="ClockColorTitle">Clock color</string>
     <string id="ClockColorPrompt">Select clock color</string>
     <string id="TimeStepTitle">Zulu Time or Steps</string>

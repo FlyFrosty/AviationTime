@@ -16,13 +16,16 @@ class AviationTimeView extends WatchUi.WatchFace {
     var noteLoad = System.getDeviceSettings().notificationCount;
     var showBat = Application.getApp().getProperty("DispBatt");
 
+
     function initialize() {
         WatchFace.initialize();
     }
 
     // Load your resources here
     function onLayout(dc) as Void {
+
         setLayout(Rez.Layouts.WatchFace(dc));
+
     }
 
     // Called when this View is brought to the foreground. Restore
@@ -87,25 +90,37 @@ class AviationTimeView extends WatchUi.WatchFace {
 
 		        switch (clockColorNum){
 			        case 0:
-				        clockColorSet = Graphics.COLOR_WHITE;
+				        clockColorSet = Graphics.COLOR_BLACK;
 				        break;
 			        case 1:
-				        clockColorSet = Graphics.COLOR_PURPLE;
+				        clockColorSet = Graphics.COLOR_DK_GRAY;
 				        break;
 			        case 2:
-				        clockColorSet = Graphics.COLOR_GREEN;
-				        break;
-			        case 3:
 				        clockColorSet = Graphics.COLOR_BLUE;
 				        break;
-			        case 4:
+			        case 3:
+				        clockColorSet = Graphics.COLOR_DK_BLUE;
+				        break;
+                    case 4:
+				        clockColorSet = Graphics.COLOR_GREEN;
+				        break;
+                    case 5:
+				        clockColorSet = Graphics.COLOR_DK_GREEN;
+				        break;
+		            case 6:
 				        clockColorSet = Graphics.COLOR_RED;
 				        break;
-			        case 5:
+                    case 7:
+				        clockColorSet = Graphics.COLOR_DK_RED;
+				        break;
+			        case 8:
+				        clockColorSet = Graphics.COLOR_PURPLE;
+				        break;
+			        case 9:
 				        clockColorSet = Graphics.COLOR_YELLOW;
 				        break;
-                    case 6:
-				        clockColorSet = Graphics.COLOR_BLACK;
+                    case 10:
+				        clockColorSet = Graphics.COLOR_WHITE;
 				        break;
 		        }
 
