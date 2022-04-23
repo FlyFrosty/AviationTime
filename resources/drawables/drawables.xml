@@ -1,3 +1,8 @@
 <drawables>
-    <bitmap id="LauncherIcon" filename="Landing60x60.png" />
+    <bitmap id="LauncherIcon" filename="Landing60x60.png" dithering="none">
+        <palette disableTransparency="true">
+            <color>000000</color>
+            <color>555555</color>
+        </palette>
+    </bitmap>
 </drawables>

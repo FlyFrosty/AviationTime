@@ -14,7 +14,7 @@ class AviationTimeView extends WatchUi.WatchFace {
     var timeOrStep = Application.getApp().getProperty("TimeStep");
     var alarmLoad = System.getDeviceSettings().alarmCount;
     var noteLoad = System.getDeviceSettings().notificationCount;
-
+    var showBat = Application.getApp().getProperty("DispBatt");
 
     function initialize() {
         WatchFace.initialize();
@@ -35,6 +35,7 @@ class AviationTimeView extends WatchUi.WatchFace {
     // Update the view
     function onUpdate(dc) as Void {
         
+        dc.setColor(Graphics.COLOR_BLACK,Graphics.COLOR_TRANSPARENT);
         dc.clear();
 
         colorUpdate();
@@ -77,7 +78,6 @@ class AviationTimeView extends WatchUi.WatchFace {
 
     //Force update when settings change
     function onSettingsChanged() {
-        System.println("On Settings Changed");
         onUpdate(dc);
     }
 
@@ -111,6 +111,8 @@ class AviationTimeView extends WatchUi.WatchFace {
 
             timeOrStep = Application.getApp().getProperty("TimeStep");
 
+            showBat = Application.getApp().getProperty("DispBatt");
+
         }
 
         //Dispaly time
@@ -132,10 +134,20 @@ class AviationTimeView extends WatchUi.WatchFace {
             timeString = Lang.format("$1$:$2$", [hours, clockTime.min.format("%02d")]);
             }
             var view = View.findDrawableById("TimeLabel") as Text;
+            var viewS = View.findDrawableById("TimeLabelShad") as Text;
+            var viewLS = View.findDrawableById("TimeLabelLShad") as Text;
+            var viewRS = View.findDrawableById("TimeLabelRShad") as Text;
+            var viewHS = View.findDrawableById("TimeLabelHShad") as Text;
         
-            //Draw the time to the screen
+            //Draw the shadow
+            viewS.setText(timeString);
+            viewLS.setText(timeString);
+            viewRS.setText(timeString);
+            viewHS.setText(timeString);
+
             view.setColor(clockColorSet);
             view.setText(timeString);
+
         }
 
         
@@ -184,19 +196,27 @@ class AviationTimeView extends WatchUi.WatchFace {
         //Display Battery info
         function drawBatt(){
             //Get battery info
-            var batLoad = ((System.getSystemStats().battery) + 0.5).toNumber();
-            var batString = Lang.format("$1$", [batLoad])+"%";
+
+            System.println("showBat: " + showBat);
             var batteryDisplay = View.findDrawableById("batLabel") as Text;
+            var batString;
+            if (showBat == 0) {
+                var batLoad = ((System.getSystemStats().battery) + 0.5).toNumber();
+                batString = Lang.format("$1$", [batLoad])+"%";
 
-            if (batLoad < 5.0) {
-                batteryDisplay.setColor(Graphics.COLOR_RED);
-            } else if (batLoad < 25.0) {
+                if (batLoad < 5.0) {
+                    batteryDisplay.setColor(Graphics.COLOR_RED);
+                } else if (batLoad < 25.0) {
                 batteryDisplay.setColor(Graphics.COLOR_YELLOW);
+                } else {
+                    batteryDisplay.setColor(Graphics.COLOR_DK_GRAY);
+                }
             } else {
-                batteryDisplay.setColor(Graphics.COLOR_DK_GRAY);
+                batString = " ";
+                batteryDisplay.setColor(Graphics.COLOR_TRANSPARENT);
             }
-
             batteryDisplay.setText(batString);
+            
         }
 
         //Display Alarm Info

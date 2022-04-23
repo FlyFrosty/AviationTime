@@ -1,4 +1,5 @@
 <properties>
     <property id="ClockColor" type="number">2</property> 
     <property id="TimeStep" type="number">1</property>
+    <property id="DispBatt" type="number">0</property>
 </properties>

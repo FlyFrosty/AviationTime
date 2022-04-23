@@ -13,4 +13,9 @@
     <string id="TimeStepPrompt">Zulu Time or Steps</string>
     <string id="ZTime">Zulu Time</string>
     <string id="ZSteps">Steps</string>
+    <string id="DispBattTitle">Battery</string>
+    <string id="DispBattPrompt">Show Battery</string>
+    <string id="batString">batString</string>
+    <string id="YesBat">Show Battery</string>
+    <string id="NoBat">Hide Battery</string>
 </strings>
