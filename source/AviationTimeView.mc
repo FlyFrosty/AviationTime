@@ -10,7 +10,7 @@ import Toybox.ActivityMonitor;
 class AviationTimeView extends WatchUi.WatchFace {
 
     var clockColorNum = Application.getApp().getProperty("ClockColor");
-    var clockColorSet = Graphics.COLOR_BLACK;
+    var clockColorSet = Graphics.COLOR_DK_BLUE;
     var timeOrStep = Application.getApp().getProperty("TimeStep");
     var alarmLoad = System.getDeviceSettings().alarmCount;
     var noteLoad = System.getDeviceSettings().notificationCount;
@@ -38,13 +38,14 @@ class AviationTimeView extends WatchUi.WatchFace {
     // Update the view
     function onUpdate(dc) as Void {
         
-        dc.setColor(Graphics.COLOR_BLACK,Graphics.COLOR_TRANSPARENT);
+        //Check For Clock Color Changes and account for black font
+
+        colorUpdate(dc);
+
         dc.clear();
 
-        colorUpdate();
-
         //Draw Time
-        drawTime();
+        drawTime(dc);
 
         //Draw ZuluTime or Steps
         drawZTime();
@@ -84,7 +85,7 @@ class AviationTimeView extends WatchUi.WatchFace {
         onUpdate(dc);
     }
 
-        function colorUpdate(){
+        function colorUpdate(dc){
             //Get color settings
             clockColorNum = Application.getApp().getProperty("ClockColor");
 
@@ -131,7 +132,7 @@ class AviationTimeView extends WatchUi.WatchFace {
         }
 
         //Dispaly time
-        function drawTime() {
+        function drawTime(dc) {
  
             //Get and show the current time & Zulu time
             var timeString;
@@ -149,22 +150,36 @@ class AviationTimeView extends WatchUi.WatchFace {
             timeString = Lang.format("$1$:$2$", [hours, clockTime.min.format("%02d")]);
             }
             var view = View.findDrawableById("TimeLabel") as Text;
-            var viewS = View.findDrawableById("TimeLabelShad") as Text;
-            var viewLS = View.findDrawableById("TimeLabelLShad") as Text;
-            var viewRS = View.findDrawableById("TimeLabelRShad") as Text;
-            var viewHS = View.findDrawableById("TimeLabelHShad") as Text;
+            
+                var viewS = View.findDrawableById("TimeLabelShad") as Text;
+                var viewLS = View.findDrawableById("TimeLabelLShad") as Text;
+                var viewRS = View.findDrawableById("TimeLabelRShad") as Text;
+                var viewHS = View.findDrawableById("TimeLabelHShad") as Text;
         
-            //Draw the shadow
-            viewS.setText(timeString);
-            viewLS.setText(timeString);
-            viewRS.setText(timeString);
-            viewHS.setText(timeString);
+            if (clockColorSet == 0) {
+                //Draw the shadow
+                var blanked = Graphics.COLOR_WHITE;
+                viewS.setColor(blanked);
+                viewLS.setColor(blanked);
+                viewRS.setColor(blanked);
+                viewHS.setColor(blanked);
+ 
+                viewS.setText(timeString);
+                viewLS.setText(timeString);
+                viewRS.setText(timeString);
+                viewHS.setText(timeString);
+            } else {
+                var blanked = Graphics.COLOR_BLACK;
+                viewS.setColor(blanked);
+                viewLS.setColor(blanked);
+                viewRS.setColor(blanked);
+                viewHS.setColor(blanked);
+            }
 
             view.setColor(clockColorSet);
             view.setText(timeString);
 
         }
-
         
         //Draw Zulu time or steps
         function drawZTime() {
@@ -212,7 +227,6 @@ class AviationTimeView extends WatchUi.WatchFace {
         function drawBatt(){
             //Get battery info
 
-            System.println("showBat: " + showBat);
             var batteryDisplay = View.findDrawableById("batLabel") as Text;
             var batString;
             if (showBat == 0) {
