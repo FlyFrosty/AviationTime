@@ -11,6 +11,8 @@ class AviationTimeView extends WatchUi.WatchFace {
 
     var clockColorNum = Application.getApp().getProperty("ClockColor");
     var clockColorSet = Graphics.COLOR_DK_BLUE;
+    var clockShadNum = Application.getApp().getProperty("ShadOpt");
+    var clockShadSet = Graphics.COLOR_TRANSPARENT;
     var timeOrStep = Application.getApp().getProperty("TimeStep");
     var alarmLoad = System.getDeviceSettings().alarmCount;
     var noteLoad = System.getDeviceSettings().notificationCount;
@@ -23,9 +25,7 @@ class AviationTimeView extends WatchUi.WatchFace {
 
     // Load your resources here
     function onLayout(dc) as Void {
-
         setLayout(Rez.Layouts.WatchFace(dc));
-
     }
 
     // Called when this View is brought to the foreground. Restore
@@ -37,12 +37,11 @@ class AviationTimeView extends WatchUi.WatchFace {
 
     // Update the view
     function onUpdate(dc) as Void {
-        
-        //Check For Clock Color Changes and account for black font
+
+        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
+        dc.clear();
 
         colorUpdate(dc);
-
-        dc.clear();
 
         //Draw Time
         drawTime(dc);
@@ -82,6 +81,7 @@ class AviationTimeView extends WatchUi.WatchFace {
 
     //Force update when settings change
     function onSettingsChanged() {
+
         onUpdate(dc);
     }
 
@@ -94,7 +94,7 @@ class AviationTimeView extends WatchUi.WatchFace {
 				        clockColorSet = Graphics.COLOR_BLACK;
 				        break;
 			        case 1:
-				        clockColorSet = Graphics.COLOR_DK_GRAY;
+				        clockColorSet = Graphics.COLOR_LT_GRAY;
 				        break;
 			        case 2:
 				        clockColorSet = Graphics.COLOR_BLUE;
@@ -125,8 +125,28 @@ class AviationTimeView extends WatchUi.WatchFace {
 				        break;
 		        }
 
+            //Select shadowing
+            clockShadNum = Application.getApp().getProperty("ShadOpt");
+
+                switch(clockShadNum) {
+                    case 0:
+                        clockShadSet = Graphics.COLOR_TRANSPARENT;
+                        break;
+                    case 1:
+                        clockShadSet = Graphics.COLOR_BLACK;
+                        break;
+                    case 2:
+                        clockShadSet = Graphics.COLOR_WHITE;
+                        break;
+                    case 3:
+                        clockShadSet = Graphics.COLOR_LT_GRAY;
+                        break;
+                }
+
+            //Show either zulu time or steps
             timeOrStep = Application.getApp().getProperty("TimeStep");
 
+            //Show the battery or not
             showBat = Application.getApp().getProperty("DispBatt");
 
         }
@@ -149,33 +169,18 @@ class AviationTimeView extends WatchUi.WatchFace {
                 }
             timeString = Lang.format("$1$:$2$", [hours, clockTime.min.format("%02d")]);
             }
+
+            //For the text
             var view = View.findDrawableById("TimeLabel") as Text;
             
-                var viewS = View.findDrawableById("TimeLabelShad") as Text;
-                var viewLS = View.findDrawableById("TimeLabelLShad") as Text;
-                var viewRS = View.findDrawableById("TimeLabelRShad") as Text;
-                var viewHS = View.findDrawableById("TimeLabelHShad") as Text;
-        
-            if (clockColorSet == 0) {
-                //Draw the shadow
-                var blanked = Graphics.COLOR_WHITE;
-                viewS.setColor(blanked);
-                viewLS.setColor(blanked);
-                viewRS.setColor(blanked);
-                viewHS.setColor(blanked);
- 
-                viewS.setText(timeString);
-                viewLS.setText(timeString);
-                viewRS.setText(timeString);
-                viewHS.setText(timeString);
-            } else {
-                var blanked = Graphics.COLOR_BLACK;
-                viewS.setColor(blanked);
-                viewLS.setColor(blanked);
-                viewRS.setColor(blanked);
-                viewHS.setColor(blanked);
-            }
+            //For the shadow
+            var viewLS = View.findDrawableById("TimeLabelRShad") as Text;
 
+            if (clockShadSet == null) {clockShadSet = Graphics.COLOR_TRANSPARENT;} 
+            viewLS.setColor(clockShadSet);   
+            viewLS.setText(timeString);
+
+            if (clockColorSet == null) {clockColorSet = Graphics.COLOR_TRANSPARENT;}
             view.setColor(clockColorSet);
             view.setText(timeString);
 
@@ -200,12 +205,12 @@ class AviationTimeView extends WatchUi.WatchFace {
             if (timeOrStep == 1){
                 //clear Zulu time text and dipslay Steps
                 zView.setColor(Graphics.COLOR_TRANSPARENT);
-                stepDisplay.setColor(Graphics.COLOR_DK_GRAY);
+                stepDisplay.setColor(Graphics.COLOR_LT_GRAY);
                 stepDisplay.setText(stepString);
             } else {
                 //Clear step line and display Zulu
                 stepDisplay.setColor(Graphics.COLOR_TRANSPARENT);
-                zView.setColor(Graphics.COLOR_DK_GRAY);
+                zView.setColor(Graphics.COLOR_LT_GRAY);
                 zView.setText(zuluTime);
             }
         }
@@ -238,7 +243,7 @@ class AviationTimeView extends WatchUi.WatchFace {
                 } else if (batLoad < 25.0) {
                 batteryDisplay.setColor(Graphics.COLOR_YELLOW);
                 } else {
-                    batteryDisplay.setColor(Graphics.COLOR_DK_GRAY);
+                    batteryDisplay.setColor(Graphics.COLOR_LT_GRAY);
                 }
             } else {
                 batString = " ";

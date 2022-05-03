@@ -14,6 +14,14 @@
             <listEntry value="10">@Strings.White</listEntry>                        
         </settingConfig>
     </setting> 
+    <setting propertyKey="@Properties.ShadOpt" title="@Strings.ShadOptTitle" prompt="@Strings.ShadOptPrompt">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.NoShad</listEntry>
+            <listEntry value="1">@Strings.BlackShad</listEntry>
+            <listEntry value="2">@Strings.WhiteShad</listEntry>
+            <listEntry value="3">@Strings.GrayShad</listEntry>
+        </settingConfig>
+    </setting>
     <setting propertyKey="@Properties.TimeStep" title="@Strings.TimeStepTitle" prompt="Strings.TimeStepPrompt" >
         <settingConfig type="list">
             <listEntry value="0">@Strings.ZTime</listEntry>

@@ -1,5 +1,6 @@
 <strings>
     <string id="AppName">Aviation Time</string>
+
     <string id="Purple">Purple</string>
     <string id="White">White</string>
     <string id="Blue">Blue</string>
@@ -11,15 +12,27 @@
     <string id="DKRed">Dark Red</string>
     <string id="DKGreen">Dark Green</string>
     <string id="DKBlue">Dark Blue</string>
+
     <string id="ClockColorTitle">Clock color</string>
     <string id="ClockColorPrompt">Select clock color</string>
+
     <string id="TimeStepTitle">Zulu Time or Steps</string>
     <string id="TimeStepPrompt">Zulu Time or Steps</string>
+
     <string id="ZTime">Zulu Time</string>
     <string id="ZSteps">Steps</string>
+
     <string id="DispBattTitle">Battery</string>
     <string id="DispBattPrompt">Show Battery</string>
     <string id="batString">batString</string>
     <string id="YesBat">Show Battery</string>
     <string id="NoBat">Hide Battery</string>
+
+    <string id="ShadOptTitle">Choose Shadow Option</string>
+    <string id="ShadOptPrompt">Choose Shadow Options</string>
+    <string id="NoShad">No Shadow</string>
+    <string id="WhiteShad">White Shaddow</string>
+    <string id="BlackShad">Black Shadow</string>
+    <string id="GrayShad">Gray Shadow</string>
+    <string id="ShadOpt">Choose Shadow</string>
 </strings>
