@@ -34,4 +34,11 @@
             <listEntry value="1">@Strings.NoBat</listEntry>
         </settingConfig>
     </setting>
+    <setting propertyKey="@Properties.BackgroundColor" title="@Strings.BackgroundColorTitle">
+        <settingConfig type="list">
+            <listEntry value="0x000000">@Strings.Black</listEntry>
+            <listEntry value="0x555555">@Strings.DKGray</listEntry>
+            <listEntry value="0xFFFFFF">@Strings.White</listEntry>
+        </settingConfig>
+    </setting>
 </settings>

@@ -1,6 +1,8 @@
 <strings>
     <string id="AppName">Aviation Time</string>
 
+    <string id="BackgroundColorTitle">Background Color</string>
+    
     <string id="Purple">Purple</string>
     <string id="White">White</string>
     <string id="Blue">Blue</string>
@@ -9,6 +11,7 @@
     <string id="Yellow">Yellow</string>
     <string id="Black">Black</string>
     <string id="DKGray">Dark Gray</string>
+    <string id="LTGray">Light Gray</string>
     <string id="DKRed">Dark Red</string>
     <string id="DKGreen">Dark Green</string>
     <string id="DKBlue">Dark Blue</string>

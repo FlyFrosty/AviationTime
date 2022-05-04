@@ -1,4 +1,5 @@
 <layout id="WatchFace">
+    <drawable class="Background" />
     <label id="TimeLabelShad" x="51%" y="21%" font="Graphics.FONT_NUMBER_THAI_HOT" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE"/>
     <label id="TimeLabelLShad" x="49%" y="23%" font="Graphics.FONT_NUMBER_THAI_HOT" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE"/>
     <label id="TimeLabelRShad" x="51%" y="23%" font="Graphics.FONT_NUMBER_THAI_HOT" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE"/>
@@ -10,7 +11,6 @@
     <label id="alarmLabel" x="30%" y="10%" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_DK_GREEN" />
     <label id="noteLabel" x="70%" y="10%" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_DK_GREEN" />
     <label id="stepLabel" x="center" y="75%" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_LT_GRAY" />
-    
 </layout>
 
 

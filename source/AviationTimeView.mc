@@ -38,7 +38,7 @@ class AviationTimeView extends WatchUi.WatchFace {
     // Update the view
     function onUpdate(dc) as Void {
 
-        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
+        //dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
         dc.clear();
 
         colorUpdate(dc);
