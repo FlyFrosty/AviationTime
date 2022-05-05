@@ -4,4 +4,5 @@
     <property id="DispBatt" type="number">0</property>
     <property id="ShadOpt" type="number">0</property>
     <property id="BackgroundColor" type="number">0x000000</property>
+    <property id="SubColor" type="number">0</property>
 </properties>

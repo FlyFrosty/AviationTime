@@ -2,6 +2,9 @@
     <string id="AppName">Aviation Time</string>
 
     <string id="BackgroundColorTitle">Background Color</string>
+
+    <string id="SubColorTitle">Sub items font color</string>
+    <string id="SubColorPrompt">Sub items font color</string>
     
     <string id="Purple">Purple</string>
     <string id="White">White</string>
@@ -31,8 +34,8 @@
     <string id="YesBat">Show Battery</string>
     <string id="NoBat">Hide Battery</string>
 
-    <string id="ShadOptTitle">Choose Shadow Option</string>
-    <string id="ShadOptPrompt">Choose Shadow Options</string>
+    <string id="ShadOptTitle">Clock Shadow Option</string>
+    <string id="ShadOptPrompt">Clock Shadow Options</string>
     <string id="NoShad">No Shadow</string>
     <string id="WhiteShad">White Shaddow</string>
     <string id="BlackShad">Black Shadow</string>
