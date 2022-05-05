@@ -9,14 +9,13 @@ import Toybox.ActivityMonitor;
 
 class AviationTimeView extends WatchUi.WatchFace {
 
-    var clockColorNum = Application.getApp().getProperty("ClockColor");
     var clockColorSet = Graphics.COLOR_DK_BLUE;
-    var clockShadNum = Application.getApp().getProperty("ShadOpt");
     var clockShadSet = Graphics.COLOR_TRANSPARENT;
     var timeOrStep = Application.getApp().getProperty("TimeStep");
     var alarmLoad = System.getDeviceSettings().alarmCount;
     var noteLoad = System.getDeviceSettings().notificationCount;
     var showBat = Application.getApp().getProperty("DispBatt");
+    var subColorSet = Graphics.COLOR_LT_GRAY;
 
 
     function initialize() {
@@ -87,7 +86,7 @@ class AviationTimeView extends WatchUi.WatchFace {
 
         function colorUpdate(dc){
             //Get color settings
-            clockColorNum = Application.getApp().getProperty("ClockColor");
+            var clockColorNum = Application.getApp().getProperty("ClockColor");
 
 		        switch (clockColorNum){
 			        case 0:
@@ -126,7 +125,7 @@ class AviationTimeView extends WatchUi.WatchFace {
 		        }
 
             //Select shadowing
-            clockShadNum = Application.getApp().getProperty("ShadOpt");
+            var clockShadNum = Application.getApp().getProperty("ShadOpt");
 
                 switch(clockShadNum) {
                     case 0:
@@ -140,6 +139,24 @@ class AviationTimeView extends WatchUi.WatchFace {
                         break;
                     case 3:
                         clockShadSet = Graphics.COLOR_LT_GRAY;
+                        break;
+                }
+
+            //Select Sub items color
+            var subColorNum = Application.getApp().getProperty("SubColor");
+
+                switch(subColorNum) {
+                    case 0:
+                        subColorSet = Graphics.COLOR_LT_GRAY;
+                        break;
+                    case 1:
+                        subColorSet = Graphics.COLOR_DK_GRAY;
+                        break;
+                    case 2:
+                        subColorSet = Graphics.COLOR_BLACK;
+                        break;
+                    case 3:
+                        subColorSet = Graphics.COLOR_WHITE;
                         break;
                 }
 
@@ -205,12 +222,12 @@ class AviationTimeView extends WatchUi.WatchFace {
             if (timeOrStep == 1){
                 //clear Zulu time text and dipslay Steps
                 zView.setColor(Graphics.COLOR_TRANSPARENT);
-                stepDisplay.setColor(Graphics.COLOR_LT_GRAY);
+                stepDisplay.setColor(subColorSet);
                 stepDisplay.setText(stepString);
             } else {
                 //Clear step line and display Zulu
                 stepDisplay.setColor(Graphics.COLOR_TRANSPARENT);
-                zView.setColor(Graphics.COLOR_LT_GRAY);
+                zView.setColor(subColorSet);
                 zView.setText(zuluTime);
             }
         }
@@ -224,6 +241,7 @@ class AviationTimeView extends WatchUi.WatchFace {
                 dateLoad.day,
                 dateLoad.month]);
             var dateCalc = View.findDrawableById("dateLabel") as Text;
+            dateCalc.setColor(subColorSet);
             dateCalc.setText(dateString);
 
         }
@@ -243,7 +261,7 @@ class AviationTimeView extends WatchUi.WatchFace {
                 } else if (batLoad < 25.0) {
                 batteryDisplay.setColor(Graphics.COLOR_YELLOW);
                 } else {
-                    batteryDisplay.setColor(Graphics.COLOR_LT_GRAY);
+                    batteryDisplay.setColor(subColorSet);
                 }
             } else {
                 batString = " ";
