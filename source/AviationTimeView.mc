@@ -8,15 +8,7 @@ import Toybox.ActivityMonitor;
  
 
 class AviationTimeView extends WatchUi.WatchFace {
-
-    var clockColorSet = Graphics.COLOR_DK_BLUE;
-    var clockShadSet = Graphics.COLOR_TRANSPARENT;
-    var timeOrStep = Application.getApp().getProperty("TimeStep");
-    var alarmLoad = System.getDeviceSettings().alarmCount;
-    var noteLoad = System.getDeviceSettings().notificationCount;
-    var showBat = Application.getApp().getProperty("DispBatt");
-    var subColorSet = Graphics.COLOR_LT_GRAY;
-
+   
 
     function initialize() {
         WatchFace.initialize();
@@ -39,8 +31,6 @@ class AviationTimeView extends WatchUi.WatchFace {
 
         //dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
         dc.clear();
-
-        colorUpdate(dc);
 
         //Draw Time
         drawTime(dc);
@@ -78,95 +68,8 @@ class AviationTimeView extends WatchUi.WatchFace {
     function onEnterSleep() as Void {
     }
 
-    //Force update when settings change
-    function onSettingsChanged() {
 
-        onUpdate(dc);
-    }
-
-        function colorUpdate(dc){
-            //Get color settings
-            var clockColorNum = Application.getApp().getProperty("ClockColor");
-
-		        switch (clockColorNum){
-			        case 0:
-				        clockColorSet = Graphics.COLOR_BLACK;
-				        break;
-			        case 1:
-				        clockColorSet = Graphics.COLOR_LT_GRAY;
-				        break;
-			        case 2:
-				        clockColorSet = Graphics.COLOR_BLUE;
-				        break;
-			        case 3:
-				        clockColorSet = Graphics.COLOR_DK_BLUE;
-				        break;
-                    case 4:
-				        clockColorSet = Graphics.COLOR_GREEN;
-				        break;
-                    case 5:
-				        clockColorSet = Graphics.COLOR_DK_GREEN;
-				        break;
-		            case 6:
-				        clockColorSet = Graphics.COLOR_RED;
-				        break;
-                    case 7:
-				        clockColorSet = Graphics.COLOR_DK_RED;
-				        break;
-			        case 8:
-				        clockColorSet = Graphics.COLOR_PURPLE;
-				        break;
-			        case 9:
-				        clockColorSet = Graphics.COLOR_YELLOW;
-				        break;
-                    case 10:
-				        clockColorSet = Graphics.COLOR_WHITE;
-				        break;
-		        }
-
-            //Select shadowing
-            var clockShadNum = Application.getApp().getProperty("ShadOpt");
-
-                switch(clockShadNum) {
-                    case 0:
-                        clockShadSet = Graphics.COLOR_TRANSPARENT;
-                        break;
-                    case 1:
-                        clockShadSet = Graphics.COLOR_BLACK;
-                        break;
-                    case 2:
-                        clockShadSet = Graphics.COLOR_WHITE;
-                        break;
-                    case 3:
-                        clockShadSet = Graphics.COLOR_LT_GRAY;
-                        break;
-                }
-
-            //Select Sub items color
-            var subColorNum = Application.getApp().getProperty("SubColor");
-
-                switch(subColorNum) {
-                    case 0:
-                        subColorSet = Graphics.COLOR_LT_GRAY;
-                        break;
-                    case 1:
-                        subColorSet = Graphics.COLOR_DK_GRAY;
-                        break;
-                    case 2:
-                        subColorSet = Graphics.COLOR_BLACK;
-                        break;
-                    case 3:
-                        subColorSet = Graphics.COLOR_WHITE;
-                        break;
-                }
-
-            //Show either zulu time or steps
-            timeOrStep = Application.getApp().getProperty("TimeStep");
-
-            //Show the battery or not
-            showBat = Application.getApp().getProperty("DispBatt");
-
-        }
+//Draw the face
 
         //Dispaly time
         function drawTime(dc) {
