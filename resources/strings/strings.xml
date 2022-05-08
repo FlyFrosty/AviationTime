@@ -2,9 +2,6 @@
     <string id="AppName">Aviation Time</string>
 
     <string id="BackgroundColorTitle">Background Color</string>
-
-    <string id="SubColorTitle">Sub items font color</string>
-    <string id="SubColorPrompt">Sub items font color</string>
     
     <string id="Purple">Purple</string>
     <string id="White">White</string>
@@ -41,4 +38,8 @@
     <string id="BlackShad">Black Shadow</string>
     <string id="GrayShad">Gray Shadow</string>
     <string id="ShadOpt">Choose Shadow</string>
+
+    <string id="SubColorTitle">Sub items font color</string>
+    <string id="SubColorPrompt">Sub items font color</string>
+    
 </strings>
