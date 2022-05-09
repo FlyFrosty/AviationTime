@@ -12,7 +12,7 @@ import Toybox.Graphics;
     var clockColorSet = Graphics.COLOR_DK_BLUE;
     var clockShadSet = Graphics.COLOR_TRANSPARENT;
     var subColorSet = Graphics.COLOR_LT_GRAY;
-
+    var myBackgroundColor = 0x000000;
 
 
 class AviationTimeApp extends Application.AppBase {
@@ -48,7 +48,7 @@ class AviationTimeApp extends Application.AppBase {
         alarmLoad = System.getDeviceSettings().alarmCount;
         noteLoad = System.getDeviceSettings().notificationCount;
         showBat = Application.getApp().getProperty("DispBatt");
-        System.println("App onSettingsChanged called");
+        myBackgroundColor = Application.getApp().getProperty("BackgroundColor") as Number;
 
         colorUpdate();  //Apply the changes
         WatchUi.requestUpdate();

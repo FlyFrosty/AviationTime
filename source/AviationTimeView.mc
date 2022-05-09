@@ -9,6 +9,16 @@ import Toybox.ActivityMonitor;
 
 class AviationTimeView extends WatchUi.WatchFace {
    
+    //Load the text formats
+    var view;       
+    var viewLS;
+    var zView;
+    var stepDisplay;
+    var dateCalc;
+    var noteDisplay;
+    var alarmDisplay;
+    var batteryDisplay;
+
 
     function initialize() {
         WatchFace.initialize();
@@ -16,21 +26,23 @@ class AviationTimeView extends WatchUi.WatchFace {
 
     // Load your resources here
     function onLayout(dc) as Void {
-        setLayout(Rez.Layouts.WatchFace(dc));
-    }
 
-    // Called when this View is brought to the foreground. Restore
-    // the state of this View and prepare it to be shown. This includes
-    // loading resources into memory.
-    function onShow() as Void {
+        setLayout(Rez.Layouts.WatchFace(dc));
+
+        //Assign al the texts
+        view = View.findDrawableById("TimeLabel") as Text;
+        viewLS = View.findDrawableById("TimeLabelRShad") as Text;
+        zView = View.findDrawableById("zTimeLabel") as Text;
+        stepDisplay = View.findDrawableById("stepLabel") as text;
+        dateCalc = View.findDrawableById("dateLabel") as Text;
+        noteDisplay = View.findDrawableById("noteLabel") as Text;
+        alarmDisplay = View.findDrawableById("alarmLabel") as Text;
+        batteryDisplay = View.findDrawableById("batLabel") as Text;
     }
 
 
     // Update the view
     function onUpdate(dc) as Void {
-
-        //dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
-        dc.clear();
 
         //Draw Time
         drawTime(dc);
@@ -60,14 +72,6 @@ class AviationTimeView extends WatchUi.WatchFace {
     function onHide() as Void {
     }
 
-    // The user has just looked at their watch. Timers and animations may be started here.
-    function onExitSleep() as Void {
-    }
-
-    // Terminate any active timers and prepare for slow updates.
-    function onEnterSleep() as Void {
-    }
-
 
 //Draw the face
 
@@ -77,7 +81,6 @@ class AviationTimeView extends WatchUi.WatchFace {
             //Get and show the current time & Zulu time
             var timeString;
             var clockTime = System.getClockTime();
-
             var hours = clockTime.hour;
 
             //Format local time for 12 or 24 hour clock
@@ -87,16 +90,12 @@ class AviationTimeView extends WatchUi.WatchFace {
                 if (hours > 12) {
                     hours = hours - 12;
                 }
-            timeString = Lang.format("$1$:$2$", [hours, clockTime.min.format("%02d")]);
+                timeString = Lang.format("$1$:$2$", [hours, clockTime.min.format("%02d")]);
             }
 
-            //For the text
-            var view = View.findDrawableById("TimeLabel") as Text;
-            
-            //For the shadow
-            var viewLS = View.findDrawableById("TimeLabelRShad") as Text;
-
-            if (clockShadSet == null) {clockShadSet = Graphics.COLOR_TRANSPARENT;} 
+            if (clockShadSet == null) {
+                clockShadSet = Graphics.COLOR_TRANSPARENT;
+            } 
             viewLS.setColor(clockShadSet);   
             viewLS.setText(timeString);
 
@@ -112,13 +111,11 @@ class AviationTimeView extends WatchUi.WatchFace {
             //Format zulu time
             var zTime = Gregorian.utcInfo(Time.now(), Time.FORMAT_MEDIUM);
             var zuluTime = Lang.format("$1$:$2$", [zTime.hour.format("%02d"), zTime.min.format("%02d")])+"Z";
-            var zView = View.findDrawableById("zTimeLabel") as Text;
 
             //Format Steps
             var stepLoad = ActivityMonitor.getInfo();
             var steps = stepLoad.steps;
             var stepString = Lang.format("$1$", [steps]);
-            var stepDisplay = View.findDrawableById("stepLabel") as text;
          
             //Zulu time or steps option
  
@@ -143,7 +140,7 @@ class AviationTimeView extends WatchUi.WatchFace {
                 [dateLoad.day_of_week,
                 dateLoad.day,
                 dateLoad.month]);
-            var dateCalc = View.findDrawableById("dateLabel") as Text;
+
             dateCalc.setColor(subColorSet);
             dateCalc.setText(dateString);
 
@@ -153,7 +150,6 @@ class AviationTimeView extends WatchUi.WatchFace {
         function drawBatt(){
             //Get battery info
 
-            var batteryDisplay = View.findDrawableById("batLabel") as Text;
             var batString;
             if (showBat == 0) {
                 var batLoad = ((System.getSystemStats().battery) + 0.5).toNumber();
@@ -181,7 +177,7 @@ class AviationTimeView extends WatchUi.WatchFace {
 
             var alarmString = "A";
             var alarmStr = Lang.format("$1$", [alarmString]);
-            var alarmDisplay = View.findDrawableById("alarmLabel") as Text;
+
 
             alarmLoad = System.getDeviceSettings().alarmCount;
 
@@ -201,7 +197,6 @@ class AviationTimeView extends WatchUi.WatchFace {
 
             var noteString=" ";
             var noteStr = Lang.format("$1$", [noteString]);
-            var noteDisplay = View.findDrawableById("noteLabel") as Text;
             
             noteLoad = System.getDeviceSettings().notificationCount;
 
