@@ -2,12 +2,7 @@ import Toybox.Application;
 import Toybox.WatchUi;
 import Toybox.Graphics;
 
-    var clockColorNum;
-    var clockShadNum;
-    var subColorNum;
     var timeOrStep;
-    var alarmLoad;
-    var noteLoad;
     var showBat;
     var clockColorSet = Graphics.COLOR_DK_BLUE;
     var clockShadSet = Graphics.COLOR_TRANSPARENT;
@@ -17,6 +12,9 @@ import Toybox.Graphics;
 
 class AviationTimeApp extends Application.AppBase {
 
+    var clockColorNum;
+    var clockShadNum;
+    var subColorNum;
 
     function initialize() {
         AppBase.initialize();
@@ -28,37 +26,32 @@ class AviationTimeApp extends Application.AppBase {
         onSettingsChanged();
     }
 
-    // onStop() is called when your application is exiting
-    function onStop(state as Dictionary?) as Void {
-    }
-
     // Return the initial view of your application here
     function getInitialView() as Array<Views or InputDelegates>? {
-        return [ new AviationTimeView() ] as Array<Views or InputDelegates>;
+        return [ new AviationTimeView()];
     }
 
     // New app settings have been received so trigger a UI update
     function onSettingsChanged() {
         //Set Global Settings variables
 
-        clockColorNum = Application.getApp().getProperty("ClockColor");
-        clockShadNum = Application.getApp().getProperty("ShadOpt");
-        subColorNum = Application.getApp().getProperty("SubColor");
-        timeOrStep = Application.getApp().getProperty("TimeStep");
-        alarmLoad = System.getDeviceSettings().alarmCount;
-        noteLoad = System.getDeviceSettings().notificationCount;
-        showBat = Application.getApp().getProperty("DispBatt");
-        myBackgroundColor = Application.getApp().getProperty("BackgroundColor") as Number;
+        clockColorNum = Properties.getValue("ClockColor");
+        clockShadNum = Properties.getValue("ShadOpt");
+        subColorNum = Properties.getValue("SubColor");
+        timeOrStep = Properties.getValue("TimeStep");
+        showBat = Properties.getValue("DispBatt");
+        myBackgroundColor = Properties.getValue("BackgroundColor");
 
         colorUpdate();  //Apply the changes
         WatchUi.requestUpdate();
     }
+    
 
         function colorUpdate(){
         //Get color settings
 
-		        switch (clockColorNum){
-			        case 0:
+		        switch (clockColorNum) {
+                    case 0:
 				        clockColorSet = Graphics.COLOR_BLACK;
 				        break;
 			        case 1:
@@ -91,9 +84,9 @@ class AviationTimeApp extends Application.AppBase {
                     case 10:
 				        clockColorSet = Graphics.COLOR_WHITE;
 				        break;
-		        }
+                }
 
-            //Select shadowing
+                //Select shadowing
                 switch(clockShadNum) {
                     case 0:
                         clockShadSet = Graphics.COLOR_TRANSPARENT;
@@ -126,11 +119,11 @@ class AviationTimeApp extends Application.AppBase {
                 }
 
             //Show either zulu time or steps
-            timeOrStep = Application.getApp().getProperty("TimeStep");
+            timeOrStep = Properties.getValue("TimeStep");
 
             //Show the battery or not
-            showBat = Application.getApp().getProperty("DispBatt");
-
+            showBat = Properties.getValue("DispBatt");
+        
         }
 
 }

@@ -29,15 +29,15 @@ class AviationTimeView extends WatchUi.WatchFace {
 
         setLayout(Rez.Layouts.WatchFace(dc));
 
-        //Assign al the texts
-        view = View.findDrawableById("TimeLabel") as Text;
-        viewLS = View.findDrawableById("TimeLabelRShad") as Text;
-        zView = View.findDrawableById("zTimeLabel") as Text;
-        stepDisplay = View.findDrawableById("stepLabel") as text;
-        dateCalc = View.findDrawableById("dateLabel") as Text;
-        noteDisplay = View.findDrawableById("noteLabel") as Text;
-        alarmDisplay = View.findDrawableById("alarmLabel") as Text;
-        batteryDisplay = View.findDrawableById("batLabel") as Text;
+        //Assign all the texts
+        view = View.findDrawableById("TimeLabel");
+        viewLS = View.findDrawableById("TimeLabelRShad");
+        zView = View.findDrawableById("zTimeLabel");
+        stepDisplay = View.findDrawableById("stepLabel");
+        dateCalc = View.findDrawableById("dateLabel");
+        noteDisplay = View.findDrawableById("noteLabel");
+        alarmDisplay = View.findDrawableById("alarmLabel");
+        batteryDisplay = View.findDrawableById("batLabel");
     }
 
 
@@ -45,7 +45,7 @@ class AviationTimeView extends WatchUi.WatchFace {
     function onUpdate(dc) as Void {
 
         //Draw Time
-        drawTime(dc);
+        drawTime();
 
         //Draw ZuluTime or Steps
         drawZTime();
@@ -56,27 +56,18 @@ class AviationTimeView extends WatchUi.WatchFace {
         //Draw Battery
         drawBatt();
 
-        //Draw Alarm
-        drawAlarm();
+        //Display Alarms and Notifications
+        notesAndAlarms();      
 
-        //Draw Notifications
-        drawNote();      
-        
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
-    }
- 
-    // Called when this View is removed from the screen. Save the
-    // state of this View here. This includes freeing resources from
-    // memory.
-    function onHide() as Void {
     }
 
 
 //Draw the face
 
         //Dispaly time
-        function drawTime(dc) {
+        function drawTime() {
  
             //Get and show the current time & Zulu time
             var timeString;
@@ -96,6 +87,7 @@ class AviationTimeView extends WatchUi.WatchFace {
             if (clockShadSet == null) {
                 clockShadSet = Graphics.COLOR_TRANSPARENT;
             } 
+            
             viewLS.setColor(clockShadSet);   
             viewLS.setText(timeString);
 
@@ -170,41 +162,24 @@ class AviationTimeView extends WatchUi.WatchFace {
             
         }
 
-        //Display Alarm Info
-        function drawAlarm(){
-
-            //See if an alarm is set
-
-            var alarmString = "A";
-            var alarmStr = Lang.format("$1$", [alarmString]);
-
-
-            alarmLoad = System.getDeviceSettings().alarmCount;
-
-            if (alarmLoad != 0) {
-                alarmString = "A";
-            } else {
-                alarmString = " ";
-            }
-
-            alarmDisplay.setText(alarmString);
-        }
-
-        //Display notification information
-        function drawNote(){
-
-            //See if there are any system notices
-
+        function notesAndAlarms(){
             var noteString=" ";
-            var noteStr = Lang.format("$1$", [noteString]);
-            
-            noteLoad = System.getDeviceSettings().notificationCount;
+            var alarmString=" ";
+            var avSets = System.getDeviceSettings();
 
-            if (noteLoad !=0) {
+            if (avSets.notificationCount !=0) {
                 noteString = "N";
             } else {
                 noteString = " ";
             }
             noteDisplay.setText(noteString);
+
+            if (avSets.alarmCount != 0) {
+                alarmString = "A";
+            } else {
+                alarmString = " ";
+            }
+            alarmDisplay.setText(alarmString);
+
         }
 }
