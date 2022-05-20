@@ -14,11 +14,8 @@ class AviationTimeView extends WatchUi.WatchFace {
     var viewLS;
     var zView;
     var stepDisplay;
-    var dateCalc;
     var noteDisplay;
     var alarmDisplay;
-    var batteryDisplay;
-
 
     function initialize() {
         WatchFace.initialize();
@@ -34,10 +31,9 @@ class AviationTimeView extends WatchUi.WatchFace {
         viewLS = View.findDrawableById("TimeLabelRShad");
         zView = View.findDrawableById("zTimeLabel");
         stepDisplay = View.findDrawableById("stepLabel");
-        dateCalc = View.findDrawableById("dateLabel");
         noteDisplay = View.findDrawableById("noteLabel");
         alarmDisplay = View.findDrawableById("alarmLabel");
-        batteryDisplay = View.findDrawableById("batLabel");
+
     }
 
 
@@ -84,10 +80,7 @@ class AviationTimeView extends WatchUi.WatchFace {
                 timeString = Lang.format("$1$:$2$", [hours, clockTime.min.format("%02d")]);
             }
 
-            if (clockShadSet == null) {
-                clockShadSet = Graphics.COLOR_TRANSPARENT;
-            } 
-            
+            if (clockShadSet == null) {clockShadSet = Graphics.COLOR_TRANSPARENT;} 
             viewLS.setColor(clockShadSet);   
             viewLS.setText(timeString);
 
@@ -99,24 +92,23 @@ class AviationTimeView extends WatchUi.WatchFace {
         
         //Draw Zulu time or steps
         function drawZTime() {
-
-            //Format zulu time
-            var zTime = Gregorian.utcInfo(Time.now(), Time.FORMAT_MEDIUM);
-            var zuluTime = Lang.format("$1$:$2$", [zTime.hour.format("%02d"), zTime.min.format("%02d")])+"Z";
-
-            //Format Steps
-            var stepLoad = ActivityMonitor.getInfo();
-            var steps = stepLoad.steps;
-            var stepString = Lang.format("$1$", [steps]);
          
-            //Zulu time or steps option
- 
+            //Zulu time or steps option 
             if (timeOrStep == 1){
+                //Format Steps
+                var stepLoad = ActivityMonitor.getInfo();
+                var steps = stepLoad.steps;
+                var stepString = Lang.format("$1$", [steps]);
+
                 //clear Zulu time text and dipslay Steps
                 zView.setColor(Graphics.COLOR_TRANSPARENT);
                 stepDisplay.setColor(subColorSet);
                 stepDisplay.setText(stepString);
             } else {
+                //Format zulu time
+                var zTime = Gregorian.utcInfo(Time.now(), Time.FORMAT_MEDIUM);
+                var zuluTime = Lang.format("$1$:$2$", [zTime.hour.format("%02d"), zTime.min.format("%02d")])+"Z";
+                
                 //Clear step line and display Zulu
                 stepDisplay.setColor(Graphics.COLOR_TRANSPARENT);
                 zView.setColor(subColorSet);
@@ -127,6 +119,7 @@ class AviationTimeView extends WatchUi.WatchFace {
         //Display Date
         function drawDate() {
 
+            var dateCalc = View.findDrawableById("dateLabel");
             var dateLoad = Gregorian.info(Time.now(), Time.FORMAT_MEDIUM);
             var dateString = Lang.format("$1$, $2$ $3$", 
                 [dateLoad.day_of_week,
@@ -143,6 +136,8 @@ class AviationTimeView extends WatchUi.WatchFace {
             //Get battery info
 
             var batString;
+            var batteryDisplay = View.findDrawableById("batLabel");
+
             if (showBat == 0) {
                 var batLoad = ((System.getSystemStats().battery) + 0.5).toNumber();
                 batString = Lang.format("$1$", [batLoad])+"%";
