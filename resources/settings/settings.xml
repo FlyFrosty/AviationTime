@@ -2,17 +2,20 @@
 
     <setting propertyKey="@Properties.ClockColor" title="@Strings.ClockColorTitle" prompt="@Strings.ClockColorPrompt">
         <settingConfig type="list">
-            <listEntry value="0">@Strings.Black</listEntry>
-            <listEntry value="1">@Strings.DKGray</listEntry>
-            <listEntry value="2">@Strings.Blue</listEntry>
-            <listEntry value="3">@Strings.DKBlue</listEntry>
-            <listEntry value="4">@Strings.Green</listEntry>
-            <listEntry value="5">@Strings.DKGreen</listEntry>
-            <listEntry value="6">@Strings.Red</listEntry>
-            <listEntry value="7">@Strings.DKRed</listEntry>
-            <listEntry value="8">@Strings.Purple</listEntry>
-            <listEntry value="9">@Strings.Yellow</listEntry>
-            <listEntry value="10">@Strings.White</listEntry>                        
+            <listEntry value="0">@Strings.White</listEntry>
+            <listEntry value="1">@Strings.LTGray</listEntry>
+            <listEntry value="2">@Strings.DKGray</listEntry> 
+            <listEntry value="3">@Strings.Black</listEntry>
+            <listEntry value="4">@Strings.Red</listEntry>
+            <listEntry value="5">@Strings.DKRed</listEntry>
+            <listEntry value="6">@Strings.Orange</listEntry>
+            <listEntry value="7">@Strings.Yellow</listEntry>
+            <listEntry value="8">@Strings.Green</listEntry>
+            <listEntry value="9">@Strings.DKGreen</listEntry>
+            <listEntry value="10">@Strings.Blue</listEntry>
+            <listEntry value="11">@Strings.DKBlue</listEntry>                        
+            <listEntry value="12">@Strings.Purple</listEntry>  
+            <listEntry value="13">@Strings.Pink</listEntry>  
         </settingConfig>
     </setting> 
 
@@ -29,7 +32,11 @@
         <settingConfig type="list">
             <listEntry value="0x000000">@Strings.Black</listEntry>
             <listEntry value="0x555555">@Strings.DKGray</listEntry>
-            <listEntry value="0xFFFFFF">@Strings.White</listEntry>
+            <listEntry value="0xFFFFFF">@Strings.White</listEntry>           
+            <listEntry value="0xAA0000">@Strings.DKRed</listEntry>
+            <listEntry value="0x00AA00">@Strings.DKGreen</listEntry>
+            <listEntry value="0x0000FF">@Strings.DKBlue</listEntry>
+            <listEntry value="0xAA00FF">@Strings.Purple</listEntry>
         </settingConfig>
     </setting>
 

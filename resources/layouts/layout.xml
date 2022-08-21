@@ -8,6 +8,7 @@
     <label id="alarmLabel" x="30%" y="10%" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_DK_GREEN" />
     <label id="noteLabel" x="70%" y="10%" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_DK_GREEN" />
     <label id="stepLabel" x="center" y="75%" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_LT_GRAY" />
+    
 </layout>
 
 

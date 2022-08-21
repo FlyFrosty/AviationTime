@@ -1,4 +1,4 @@
 <drawables>
     <bitmap id="LauncherIcon" filename="Landing60x60.png"></bitmap>
-    <bitmap id="FeetIcon" filename="feet.jpg"></bitmap>
+    <bitmap id="FeetIcon" filename="footsteps.png"></bitmap>
 </drawables>

@@ -17,6 +17,8 @@ class AviationTimeView extends WatchUi.WatchFace {
     var noteDisplay;
     var alarmDisplay;
 
+    var _feet;
+
     function initialize() {
         WatchFace.initialize();
     }
@@ -24,6 +26,8 @@ class AviationTimeView extends WatchUi.WatchFace {
     // Load your resources here
     function onLayout(dc) as Void {
 
+
+ //       _feet = WatchUi.loadResource(Rez.Drawables.FeetIcon) as BitmapResource;
         setLayout(Rez.Layouts.WatchFace(dc));
 
         //Assign all the texts
@@ -40,6 +44,7 @@ class AviationTimeView extends WatchUi.WatchFace {
     // Update the view
     function onUpdate(dc) as Void {
 
+
         //Draw Time
         drawTime();
 
@@ -53,12 +58,11 @@ class AviationTimeView extends WatchUi.WatchFace {
         drawBatt();
 
         //Display Alarms and Notifications
-        notesAndAlarms();      
+        notesAndAlarms();     
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
     }
-
 
 //Draw the face
 

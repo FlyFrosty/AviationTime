@@ -50,72 +50,56 @@ class AviationTimeApp extends Application.AppBase {
         function colorUpdate(){
         //Get color settings
 
-		        switch (clockColorNum) {
-                    case 0:
-				        clockColorSet = Graphics.COLOR_BLACK;
-				        break;
-			        case 1:
-				        clockColorSet = Graphics.COLOR_LT_GRAY;
-				        break;
-			        case 2:
-				        clockColorSet = Graphics.COLOR_BLUE;
-				        break;
-			        case 3:
-				        clockColorSet = Graphics.COLOR_DK_BLUE;
-				        break;
-                    case 4:
-				        clockColorSet = Graphics.COLOR_GREEN;
-				        break;
-                    case 5:
-				        clockColorSet = Graphics.COLOR_DK_GREEN;
-				        break;
-		            case 6:
-				        clockColorSet = Graphics.COLOR_RED;
-				        break;
-                    case 7:
-				        clockColorSet = Graphics.COLOR_DK_RED;
-				        break;
-			        case 8:
-				        clockColorSet = Graphics.COLOR_PURPLE;
-				        break;
-			        case 9:
-				        clockColorSet = Graphics.COLOR_YELLOW;
-				        break;
-                    case 10:
-				        clockColorSet = Graphics.COLOR_WHITE;
-				        break;
+		        if (clockColorNum == 0) {
+				    clockColorSet = Graphics.COLOR_WHITE;
+                } else if (clockColorNum == 1) {
+				    clockColorSet = Graphics.COLOR_LT_GRAY;
+                } else if (clockColorNum == 2) {
+				    clockColorSet = Graphics.COLOR_DK_GRAY;
+                } else if (clockColorNum == 3) {
+				    clockColorSet = Graphics.COLOR_BLACK;
+                } else if (clockColorNum == 4) {
+				    clockColorSet = Graphics.COLOR_RED;
+                } else if (clockColorNum == 5) {
+				    clockColorSet = Graphics.COLOR_DK_RED;
+                } else if (clockColorNum == 6) {
+				    clockColorSet = Graphics.COLOR_ORANGE;
+                } else if (clockColorNum == 7) {
+				    clockColorSet = Graphics.COLOR_YELLOW;
+                } else if (clockColorNum == 8) {
+				    clockColorSet = Graphics.COLOR_GREEN;
+                } else if (clockColorNum == 9) {
+				    clockColorSet = Graphics.COLOR_DK_GREEN;
+                } else if (clockColorNum == 10) {
+				    clockColorSet = Graphics.COLOR_BLUE;
+                } else if (clockColorNum == 11) {
+				    clockColorSet = Graphics.COLOR_DK_BLUE;
+                } else if (clockColorNum == 12) {
+				    clockColorSet = Graphics.COLOR_PURPLE;
+                } else {
+				    clockColorSet = Graphics.COLOR_PINK;
                 }
 
                 //Select shadowing
-                switch(clockShadNum) {
-                    case 0:
-                        clockShadSet = Graphics.COLOR_TRANSPARENT;
-                        break;
-                    case 1:
-                        clockShadSet = Graphics.COLOR_BLACK;
-                        break;
-                    case 2:
-                        clockShadSet = Graphics.COLOR_WHITE;
-                        break;
-                    case 3:
-                        clockShadSet = Graphics.COLOR_LT_GRAY;
-                        break;
+                if (clockShadNum == 0) {
+                    clockShadSet = Graphics.COLOR_TRANSPARENT;
+                } else if (clockShadNum == 1) {
+                    clockShadSet = Graphics.COLOR_BLACK;
+                } else if (clockShadNum == 2) {
+                    clockShadSet = Graphics.COLOR_WHITE;
+                 } else if (clockShadNum == 3) {
+                    clockShadSet = Graphics.COLOR_LT_GRAY;
                 }
 
             //Select Sub items color
-                switch(subColorNum) {
-                    case 0:
-                        subColorSet = Graphics.COLOR_LT_GRAY;
-                        break;
-                    case 1:
-                        subColorSet = Graphics.COLOR_DK_GRAY;
-                        break;
-                    case 2:
-                        subColorSet = Graphics.COLOR_BLACK;
-                        break;
-                    case 3:
-                        subColorSet = Graphics.COLOR_WHITE;
-                        break;
+                if (subColorNum == 0) {
+                    subColorSet = Graphics.COLOR_LT_GRAY;
+                } else if (subColorNum == 1) {
+                    subColorSet = Graphics.COLOR_DK_GRAY;
+                } else if (subColorNum == 2) {
+                    subColorSet = Graphics.COLOR_BLACK;
+                } else if (subColorNum == 3) {
+                    subColorSet = Graphics.COLOR_WHITE;
                 }
 
             //Show either zulu time or steps
