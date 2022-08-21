@@ -1,0 +1,66 @@
+<settings>
+
+    <setting propertyKey="@Properties.ClockColor" title="@Strings.ClockColorTitle" prompt="@Strings.ClockColorPrompt">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.White</listEntry>
+            <listEntry value="1">@Strings.LTGray</listEntry>
+            <listEntry value="2">@Strings.DKGray</listEntry> 
+            <listEntry value="3">@Strings.Black</listEntry>
+            <listEntry value="4">@Strings.Red</listEntry>
+            <listEntry value="5">@Strings.DKRed</listEntry>
+            <listEntry value="6">@Strings.Orange</listEntry>
+            <listEntry value="7">@Strings.Yellow</listEntry>
+            <listEntry value="8">@Strings.Green</listEntry>
+            <listEntry value="9">@Strings.DKGreen</listEntry>
+            <listEntry value="10">@Strings.Blue</listEntry>
+            <listEntry value="11">@Strings.DKBlue</listEntry>                        
+            <listEntry value="12">@Strings.Purple</listEntry>  
+            <listEntry value="13">@Strings.Pink</listEntry>  
+        </settingConfig>
+    </setting> 
+
+    <setting propertyKey="@Properties.ShadOpt" title="@Strings.ShadOptTitle" prompt="@Strings.ShadOptPrompt">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.NoShad</listEntry>
+            <listEntry value="1">@Strings.BlackShad</listEntry>
+            <listEntry value="2">@Strings.WhiteShad</listEntry>
+            <listEntry value="3">@Strings.GrayShad</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.BackgroundColor" title="@Strings.BackgroundColorTitle">
+        <settingConfig type="list">
+            <listEntry value="0x000000">@Strings.Black</listEntry>
+            <listEntry value="0x555555">@Strings.DKGray</listEntry>
+            <listEntry value="0xFFFFFF">@Strings.White</listEntry>           
+            <listEntry value="0xAA0000">@Strings.DKRed</listEntry>
+            <listEntry value="0x00AA00">@Strings.DKGreen</listEntry>
+            <listEntry value="0x0000FF">@Strings.DKBlue</listEntry>
+            <listEntry value="0xAA00FF">@Strings.Purple</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.TimeStep" title="@Strings.TimeStepTitle" prompt="Strings.TimeStepPrompt" >
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.ZTime</listEntry>
+            <listEntry value="1">@Strings.ZSteps</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.DispBatt" title="@Strings.DispBattTitle" prompt="Strings.DispBattPrompt">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.YesBat</listEntry>
+            <listEntry value="1">@Strings.NoBat</listEntry>
+        </settingConfig>
+    </setting>
+    
+    <setting propertyKey="@Properties.SubColor" title="@Strings.SubColorTitle" prompt="@Strings.SubColorPrompt">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.LTGray</listEntry>
+            <listEntry value="1">@Strings.DKGray</listEntry>
+            <listEntry value="2">@Strings.Black</listEntry>
+            <listEntry value="3">@Strings.White</listEntry>
+        </settingConfig>
+    </setting>
+
+</settings>

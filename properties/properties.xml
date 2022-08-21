@@ -1,0 +1,8 @@
+<properties>
+    <property id="ClockColor" type="number">2</property> 
+    <property id="TimeStep" type="number">1</property>
+    <property id="DispBatt" type="number">0</property>
+    <property id="ShadOpt" type="number">0</property>
+    <property id="BackgroundColor" type="number">0x000000</property>
+    <property id="SubColor" type="number">0</property>
+</properties>
