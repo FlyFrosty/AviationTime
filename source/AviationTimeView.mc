@@ -1,49 +1,43 @@
-import Toybox.Graphics;
+using Toybox.Graphics as Gfx;
 import Toybox.Lang;
-import Toybox.System;
-import Toybox.WatchUi;
-import Toybox.Time.Gregorian;
+using Toybox.System as Sys;
+using Toybox.WatchUi as Ui;
+using Toybox.Time.Gregorian as Greg;
 import Toybox.Time;
-import Toybox.ActivityMonitor;
- 
+using Toybox.ActivityMonitor as ActMon;
 
-class AviationTimeView extends WatchUi.WatchFace {
-   
+class AviationTimeView extends Ui.WatchFace {
+
     //Load the text formats
     var view;       
     var viewLS;
     var zView;
+    var zLabel;
     var stepDisplay;
     var noteDisplay;
     var alarmDisplay;
-
-    var _feet;
 
     function initialize() {
         WatchFace.initialize();
     }
 
     // Load your resources here
-    function onLayout(dc) as Void {
-
-
- //       _feet = WatchUi.loadResource(Rez.Drawables.FeetIcon) as BitmapResource;
+    function onLayout(dc as Dc) as Void {
         setLayout(Rez.Layouts.WatchFace(dc));
 
         //Assign all the texts
         view = View.findDrawableById("TimeLabel");
         viewLS = View.findDrawableById("TimeLabelRShad");
         zView = View.findDrawableById("zTimeLabel");
+        zLabel = View.findDrawableById("zuluLabel");
         stepDisplay = View.findDrawableById("stepLabel");
         noteDisplay = View.findDrawableById("noteLabel");
         alarmDisplay = View.findDrawableById("alarmLabel");
 
     }
 
-
     // Update the view
-    function onUpdate(dc) as Void {
-
+    function onUpdate(dc as Dc) as Void {
 
         //Draw Time
         drawTime();
@@ -64,18 +58,17 @@ class AviationTimeView extends WatchUi.WatchFace {
         View.onUpdate(dc);
     }
 
-//Draw the face
 
         //Dispaly time
         function drawTime() {
  
             //Get and show the current time & Zulu time
             var timeString;
-            var clockTime = System.getClockTime();
+            var clockTime = Sys.getClockTime();
             var hours = clockTime.hour;
 
             //Format local time for 12 or 24 hour clock
-            if (System.getDeviceSettings().is24Hour == true){      
+            if (Sys.getDeviceSettings().is24Hour == true){      
                 timeString = Lang.format("$1$:$2$", [clockTime.hour.format("%02d"), clockTime.min.format("%02d")]);
             } else {
                 if (hours > 12) {
@@ -84,21 +77,98 @@ class AviationTimeView extends WatchUi.WatchFace {
                 timeString = Lang.format("$1$:$2$", [hours, clockTime.min.format("%02d")]);
             }
 
-            if (clockShadSet == null) {clockShadSet = Graphics.COLOR_TRANSPARENT;} 
+            if (clockShadSet == null) {clockShadSet = Gfx.COLOR_TRANSPARENT;} 
             viewLS.setColor(clockShadSet);   
             viewLS.setText(timeString);
 
-            if (clockColorSet == null) {clockColorSet = Graphics.COLOR_TRANSPARENT;}
+            if (clockColorSet == null) {clockColorSet = Gfx.COLOR_TRANSPARENT;}
             view.setColor(clockColorSet);
             view.setText(timeString);
 
         }
-        
-        //Draw Zulu time or steps
+
+
+        //Draw Zulu Time Offset
         function drawZTime() {
-         
-            //Zulu time or steps option 
-            if (timeOrStep == 1){
+
+            //If ZUlu Offset is selected instead of Steps
+            if (timeOrStep){
+                var zTime = Greg.utcInfo(Time.now(), Time.FORMAT_MEDIUM);
+                var myOffset = zTime.hour;
+                var minOffset = zTime.min;
+                var zuluTime;
+                var myZuluLabel;
+            
+                //Clear any leftover steps
+                stepDisplay.setColor(Graphics.COLOR_TRANSPARENT);                
+
+                //Big if statement for formatting.  If Zulu time, do the else part
+                if (offSetAmmt != 130) {
+                   //Prep the label
+                        var myParams;
+                        var myFormat = "Set $1$+$2$";
+
+                        if (offSetAmmt % 10 != 0) {
+                            if ((offSetAmmt - 130) < 0) {
+                                myParams = [((offSetAmmt / 10) - 12), (offSetAmmt % 10 * 6)];
+                            } else {
+                                myParams = [((offSetAmmt / 10) - 13), (offSetAmmt % 10 * 6)];
+                            }
+                        } else {
+                            myParams = [((offSetAmmt / 10) - 13), "00"];
+                        }
+                        myZuluLabel = Lang.format(myFormat,myParams);
+
+                    //Offset to add or subtract
+                    var convLeftoverOffset = (offSetAmmt % 10) * 360;     //Convert any partial hour part to seconds
+                    var convToOffset = ((offSetAmmt / 10) - 13) * 3600;    //Convert the hours part to seconds
+
+                    convToOffset = convToOffset + convLeftoverOffset; //Total Offset in seconds
+            
+                    //Convert Zulu time to seconds
+                    var zuluToSecs =  (minOffset * 60) + (myOffset * 3600);
+
+                    //Combine the offset with the current zulu
+                    var convToSecs = convToOffset + zuluToSecs;
+
+                    //Keep the new offset time positive (no negative time)
+                    if (convToSecs <= 86400) {
+                        myOffset = ((86400 + convToSecs) - ((86400 + convToSecs)%3600)) / 3600;
+                    } else {
+                        myOffset = ((convToSecs) - ((86400 + convToSecs)%3600)) / 3600;
+                    }
+
+                    //Adjust mins and hours for clock rollovers due to add or sub 30 min
+                    minOffset = (convToSecs % 3600) / 60;
+
+                    if (minOffset < 0) {
+                        minOffset = minOffset + 60;
+                   }   
+
+                    //correct for hours within the 24 hour clock
+                    if (myOffset == 24) {
+                        myOffset = 0;
+                    } else if (myOffset < 0) {
+                        myOffset = myOffset + 24;
+                    } else if (myOffset >= 24) {
+                        myOffset = myOffset - 24;
+                    }
+
+                    zuluTime = Lang.format("$1$:$2$", [myOffset.format("%02d"), minOffset.format("%02d")]);    
+                } else {
+                    zuluTime = Lang.format("$1$:$2$", [zTime.hour.format("%02d"), zTime.min.format("%02d")])+"Z";
+                    myZuluLabel = " ";
+                }
+
+                //Display Zulu
+                zView.setColor(subColorSet);
+                zView.setText(zuluTime);
+
+                //Display Zulu Label
+                zLabel.setColor(subColorSet);
+                zLabel.setText(myZuluLabel);
+
+            } else {
                 //Format Steps
                 var stepLoad = ActivityMonitor.getInfo();
                 var steps = stepLoad.steps;
@@ -106,25 +176,23 @@ class AviationTimeView extends WatchUi.WatchFace {
 
                 //clear Zulu time text and dipslay Steps
                 zView.setColor(Graphics.COLOR_TRANSPARENT);
+
                 stepDisplay.setColor(subColorSet);
                 stepDisplay.setText(stepString);
-            } else {
-                //Format zulu time
-                var zTime = Gregorian.utcInfo(Time.now(), Time.FORMAT_MEDIUM);
-                var zuluTime = Lang.format("$1$:$2$", [zTime.hour.format("%02d"), zTime.min.format("%02d")])+"Z";
                 
-                //Clear step line and display Zulu
-                stepDisplay.setColor(Graphics.COLOR_TRANSPARENT);
-                zView.setColor(subColorSet);
-                zView.setText(zuluTime);
+                //Display Zulu Label
+                zLabel.setColor(subColorSet);
+                zLabel.setText("Steps");
             }
+
         }
+
 
         //Display Date
         function drawDate() {
 
             var dateCalc = View.findDrawableById("dateLabel");
-            var dateLoad = Gregorian.info(Time.now(), Time.FORMAT_MEDIUM);
+            var dateLoad = Greg.info(Time.now(), Time.FORMAT_MEDIUM);
             var dateString = Lang.format("$1$, $2$ $3$", 
                 [dateLoad.day_of_week,
                 dateLoad.day,
@@ -143,19 +211,19 @@ class AviationTimeView extends WatchUi.WatchFace {
             var batteryDisplay = View.findDrawableById("batLabel");
 
             if (showBat == 0) {
-                var batLoad = ((System.getSystemStats().battery) + 0.5).toNumber();
+                var batLoad = ((Sys.getSystemStats().battery) + 0.5).toNumber();
                 batString = Lang.format("$1$", [batLoad])+"%";
 
                 if (batLoad < 5.0) {
-                    batteryDisplay.setColor(Graphics.COLOR_RED);
+                    batteryDisplay.setColor(Gfx.COLOR_RED);
                 } else if (batLoad < 25.0) {
-                batteryDisplay.setColor(Graphics.COLOR_YELLOW);
+                batteryDisplay.setColor(Gfx.COLOR_YELLOW);
                 } else {
                     batteryDisplay.setColor(subColorSet);
                 }
             } else {
                 batString = " ";
-                batteryDisplay.setColor(Graphics.COLOR_TRANSPARENT);
+                batteryDisplay.setColor(Gfx.COLOR_TRANSPARENT);
             }
             batteryDisplay.setText(batString);
             
@@ -164,7 +232,7 @@ class AviationTimeView extends WatchUi.WatchFace {
         function notesAndAlarms(){
             var noteString=" ";
             var alarmString=" ";
-            var avSets = System.getDeviceSettings();
+            var avSets = Sys.getDeviceSettings();
 
             if (avSets.notificationCount !=0) {
                 noteString = "N";
@@ -181,4 +249,5 @@ class AviationTimeView extends WatchUi.WatchFace {
             alarmDisplay.setText(alarmString);
 
         }
+
 }

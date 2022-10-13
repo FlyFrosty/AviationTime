@@ -1,4 +1,5 @@
 <strings>
+
     <string id="AppName">Aviation Time</string>
 
     <string id="BackgroundColorTitle">Background Color</string>
@@ -22,11 +23,6 @@
     <string id="ClockColorTitle">Main Time color</string>
     <string id="ClockColorPrompt">Select clock color</string>
 
-    <string id="TimeStepTitle">Zulu Time or Steps</string>
-    <string id="TimeStepPrompt">Zulu Time or Steps</string>
-
-    <string id="ZTime">Zulu Time</string>
-    <string id="ZSteps">Steps</string>
 
     <string id="DispBattTitle">Battery</string>
     <string id="DispBattPrompt">Show Battery</string>
@@ -34,7 +30,7 @@
     <string id="YesBat">Show Battery</string>
     <string id="NoBat">Hide Battery</string>
 
-    <string id="ShadOptTitle">Clock Shadow Option</string>
+    <string id="ShadOptTitle">Clock Shadow Options</string>
     <string id="ShadOptPrompt">Clock Shadow Options</string>
     <string id="NoShad">No Shadow</string>
     <string id="WhiteShad">White Shaddow</string>
@@ -42,7 +38,51 @@
     <string id="GrayShad">Gray Shadow</string>
     <string id="ShadOpt">Choose Shadow</string>
 
-    <string id="SubColorTitle">Sub items font color</string>
-    <string id="SubColorPrompt">Sub items font color</string>
-    
+    <string id="SubColorTitle">Other items font color</string>
+    <string id="SubColorPrompt">Other items font color</string>
+
+    <string id="ZuluOffsetTitle">Tap Again to Adjust Zulu Hours</string>
+    <string id="ZuluOffsetPrompt">Zulu Hours Offset</string>
+    <string id="ZuluOffset">Zulu Hours Offset</string>
+    <string id="ZuluTitle">Zulu Adjustment</string>
+    <string id="zuluLabel">zuluLabel</string>
+
+    <string id="stepGroupTitle">Tap to Select Zulu Time</string>
+    <string id="ZTime">Zulu Time</string>
+    <string id="ZSteps">Steps</string>
+
+    <string id="TimeStepTitle">Zulu Time or Steps</string>
+    <string id="TimeStepPrompt">Zulu Time or Steps</string>
+
+    <string id="Z1">-12+00 </string>
+    <string id="Z2">-11+00 </string>
+    <string id="Z3">-10+30 </string>
+    <string id="Z4">-10+00 </string>
+    <string id="Z5">-9+00 </string>
+    <string id="Z6">-8+00 </string>
+    <string id="Z7">-7+00 </string>
+    <string id="Z8">-6+00 </string>
+    <string id="Z9">-5+00 </string>
+    <string id="Z10">-4+00 </string>
+    <string id="Z11">-3+00 </string>
+    <string id="Z12">-2+00 </string>
+    <string id="Z13">-1+00 </string>
+    <string id="Z14">Zulu </string>
+    <string id="Z15">+1+00 </string>
+    <string id="Z16">+2+00 </string>
+    <string id="Z17">+3+00 </string>
+    <string id="Z18">+3+30 </string>
+    <string id="Z19">+4+00 </string>
+    <string id="Z20">+4+30 </string>
+    <string id="Z21">+5+00 </string>
+    <string id="Z22">+5+30 </string>    
+    <string id="Z23">+6+00 </string>    
+    <string id="Z24">+7+00 </string>    
+    <string id="Z25">+8+00 </string>    
+    <string id="Z26">+9+00 </string>    
+    <string id="Z27">+9+30 </string>    
+    <string id="Z28">+10+00 </string>    
+    <string id="Z29">+11+00 </string>    
+    <string id="Z30">+12+00 </string>    
+    <string id="Z31">+13+00 </string>
 </strings>

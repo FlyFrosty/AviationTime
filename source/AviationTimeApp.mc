@@ -1,14 +1,16 @@
 import Toybox.Application;
+import Toybox.Lang;
 import Toybox.WatchUi;
 import Toybox.Graphics;
 
-    var timeOrStep;
+
     var showBat;
     var clockColorSet = Graphics.COLOR_DK_BLUE;
     var clockShadSet = Graphics.COLOR_TRANSPARENT;
     var subColorSet = Graphics.COLOR_LT_GRAY;
     var myBackgroundColor = 0x000000;
-
+    var offSetAmmt = 130;
+    var timeOrStep;
 
 class AviationTimeApp extends Application.AppBase {
 
@@ -28,7 +30,7 @@ class AviationTimeApp extends Application.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() as Array<Views or InputDelegates>? {
-        return [ new AviationTimeView()];
+        return [ new AviationTimeView() ] as Array<Views or InputDelegates>;
     }
 
     // New app settings have been received so trigger a UI update
@@ -38,9 +40,9 @@ class AviationTimeApp extends Application.AppBase {
         clockColorNum = Properties.getValue("ClockColor");
         clockShadNum = Properties.getValue("ShadOpt");
         subColorNum = Properties.getValue("SubColor");
-        timeOrStep = Properties.getValue("TimeStep");
         showBat = Properties.getValue("DispBatt");
         myBackgroundColor = Properties.getValue("BackgroundColor");
+        timeOrStep = Properties.getValue("TimeStep");
 
         colorUpdate();  //Apply the changes
         WatchUi.requestUpdate();
@@ -91,7 +93,7 @@ class AviationTimeApp extends Application.AppBase {
                     clockShadSet = Graphics.COLOR_LT_GRAY;
                 }
 
-            //Select Sub items color
+                //Select Sub items color
                 if (subColorNum == 0) {
                     subColorSet = Graphics.COLOR_LT_GRAY;
                 } else if (subColorNum == 1) {
@@ -102,15 +104,14 @@ class AviationTimeApp extends Application.AppBase {
                     subColorSet = Graphics.COLOR_WHITE;
                 }
 
-            //Show either zulu time or steps
-            timeOrStep = Properties.getValue("TimeStep");
-
-            //Show the battery or not
-            showBat = Properties.getValue("DispBatt");
-        
+            if (timeOrStep) {
+                //Get the Zulu Hours offset ammount
+                offSetAmmt = Properties.getValue("ZuluOffset");
+            }
         }
 
 }
+
 
 function getApp() as AviationTimeApp {
     return Application.getApp() as AviationTimeApp;
