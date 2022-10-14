@@ -61,7 +61,6 @@
         <settingConfig type="boolean" />
     </setting>
 
-   <group id="stepGroup" title="@Strings.stepGroupTitle" enableIfTrue="@Properties.TimeStep">
     <setting propertyKey="@Properties.ZuluOffset" title="@Strings.ZuluOffsetTitle" prompt="@Strings.ZuluOffsetPrompt" >
         <settingConfig type="list">
             <listEntry value="10">@Strings.Z1</listEntry>
@@ -97,7 +96,5 @@
             <listEntry value="260">@Strings.Z31</listEntry>
         </settingConfig>
     </setting>
-    
-    </group>
 
 </settings>

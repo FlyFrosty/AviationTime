@@ -219,36 +219,36 @@
         <entry filename="Rez" id="30" lineNum="1" parent="globals/Rez" pc="268440718" symbol="&lt;init&gt;"/>
     </pcToLineNum>
     <symbolTable>
-        <entry field="true" id="80" symbol="DKRed"/>
+        <entry field="true" id="79" symbol="DKRed"/>
         <entry id="8388639" module="true" symbol="Graphics"/>
         <entry field="true" id="33" symbol="Orange"/>
         <entry field="true" id="59" symbol="Pink"/>
         <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
-        <entry field="true" id="89" symbol="zuluLabel"/>
-        <entry id="107" method="true" symbol="drawDate"/>
+        <entry field="true" id="88" symbol="zuluLabel"/>
+        <entry id="106" method="true" symbol="drawDate"/>
         <entry id="4" module="true" symbol="globals/Rez/Menus"/>
         <entry id="8389683" method="true" symbol="onSettingsChanged"/>
-        <entry field="true" id="104" symbol="alarmDisplay"/>
+        <entry field="true" id="103" symbol="alarmDisplay"/>
         <entry field="true" id="47" symbol="DispBattPrompt"/>
         <entry field="true" id="13" symbol="myBackgroundColor"/>
         <entry field="true" id="28" symbol="ZuluTitle"/>
         <entry field="true" id="8388611" module="true" symbol="Toybox"/>
-        <entry field="true" id="73" symbol="ShadOptTitle"/>
-        <entry id="105" method="true" symbol="drawTime"/>
-        <entry field="true" id="71" symbol="AppName"/>
+        <entry field="true" id="72" symbol="ShadOptTitle"/>
+        <entry id="104" method="true" symbol="drawTime"/>
+        <entry field="true" id="70" symbol="AppName"/>
         <entry id="8" module="true" symbol="globals/Rez/Strings"/>
-        <entry field="true" id="76" symbol="DispBattTitle"/>
+        <entry field="true" id="75" symbol="DispBattTitle"/>
         <entry id="8388772" module="true" object="true" symbol="Fonts"/>
-        <entry field="true" id="85" symbol="White"/>
+        <entry field="true" id="84" symbol="White"/>
         <entry field="true" id="18" symbol="clockColorNum"/>
-        <entry field="true" id="70" symbol="TimeStepTitle"/>
-        <entry field="true" id="74" symbol="ZTime"/>
+        <entry field="true" id="69" symbol="TimeStepTitle"/>
+        <entry field="true" id="73" symbol="ZTime"/>
         <entry field="true" id="31" symbol="Black"/>
         <entry id="8388648" module="true" symbol="WatchUi"/>
-        <entry field="true" id="101" symbol="zLabel"/>
+        <entry field="true" id="100" symbol="zLabel"/>
         <entry id="2" module="true" symbol="globals/Rez"/>
-        <entry field="true" id="78" symbol="NoShad"/>
-        <entry field="true" id="77" symbol="SubColorPrompt"/>
+        <entry field="true" id="77" symbol="NoShad"/>
+        <entry field="true" id="76" symbol="SubColorPrompt"/>
         <entry id="8389124" method="true" symbol="onUpdate"/>
         <entry id="8389375" method="true" object="true" symbol="WatchFace"/>
         <entry field="true" id="8389065" symbol="locY"/>
@@ -259,17 +259,17 @@
         <entry id="23" module="true" symbol="Menus"/>
         <entry id="8389275" method="true" symbol="getApp"/>
         <entry id="6" module="true" symbol="globals/Rez/Layouts"/>
-        <entry field="true" id="79" symbol="Blue"/>
-        <entry field="true" id="103" symbol="noteDisplay"/>
+        <entry field="true" id="78" symbol="Blue"/>
+        <entry field="true" id="102" symbol="noteDisplay"/>
         <entry id="8389122" method="true" symbol="onLayout"/>
         <entry field="true" id="8389063" symbol="identifier"/>
         <entry id="8389349" symbol="justification"/>
         <entry field="true" id="68" symbol="DKBlue"/>
         <entry field="true" id="19" symbol="clockShadNum"/>
-        <entry field="true" id="82" symbol="YesBat"/>
+        <entry field="true" id="81" symbol="YesBat"/>
         <entry id="7" module="true" symbol="globals/Rez/JsonData"/>
         <entry field="true" id="20" symbol="subColorNum"/>
-        <entry field="true" id="102" symbol="stepDisplay"/>
+        <entry field="true" id="101" symbol="stepDisplay"/>
         <entry field="true" id="54" symbol="Z9"/>
         <entry field="true" id="52" symbol="Z8"/>
         <entry field="true" id="50" symbol="Z7"/>
@@ -280,13 +280,13 @@
         <entry field="true" id="38" symbol="Z2"/>
         <entry field="true" id="37" symbol="Z1"/>
         <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
-        <entry field="true" id="72" symbol="ClockColorPrompt"/>
+        <entry field="true" id="71" symbol="ClockColorPrompt"/>
         <entry field="true" id="30" symbol="NoBat"/>
         <entry field="true" id="10" symbol="clockColorSet"/>
-        <entry id="106" method="true" symbol="drawZTime"/>
+        <entry id="105" method="true" symbol="drawZTime"/>
         <entry id="8388645" module="true" symbol="Time"/>
         <entry id="8388769" module="true" object="true" symbol="Rez"/>
-        <entry field="true" id="84" symbol="Red"/>
+        <entry field="true" id="83" symbol="Red"/>
         <entry id="21" method="true" symbol="colorUpdate"/>
         <entry field="true" id="63" symbol="Z31"/>
         <entry field="true" id="62" symbol="Z30"/>
@@ -303,13 +303,13 @@
         <entry field="true" id="27" symbol="Z19"/>
         <entry field="true" id="25" symbol="Z18"/>
         <entry field="true" id="26" symbol="Z17"/>
-        <entry field="true" id="96" symbol="Z16"/>
-        <entry field="true" id="97" symbol="Z15"/>
-        <entry field="true" id="92" symbol="Z14"/>
-        <entry field="true" id="94" symbol="Z13"/>
-        <entry field="true" id="90" symbol="Z12"/>
-        <entry field="true" id="91" symbol="Z11"/>
-        <entry field="true" id="87" symbol="Z10"/>
+        <entry field="true" id="95" symbol="Z16"/>
+        <entry field="true" id="96" symbol="Z15"/>
+        <entry field="true" id="91" symbol="Z14"/>
+        <entry field="true" id="93" symbol="Z13"/>
+        <entry field="true" id="89" symbol="Z12"/>
+        <entry field="true" id="90" symbol="Z11"/>
+        <entry field="true" id="86" symbol="Z10"/>
         <entry id="8388640" module="true" symbol="Lang"/>
         <entry id="8390088" module="true" object="true" symbol="JsonData"/>
         <entry id="8389068" method="true" symbol="draw"/>
@@ -323,36 +323,35 @@
         <entry field="true" id="65" symbol="SubColorTitle"/>
         <entry id="8388770" module="true" object="true" symbol="Strings"/>
         <entry id="8390146" module="true" object="true" symbol="Background"/>
-        <entry id="108" method="true" symbol="drawBatt"/>
-        <entry field="true" id="86" symbol="Purple"/>
+        <entry id="107" method="true" symbol="drawBatt"/>
+        <entry field="true" id="85" symbol="Purple"/>
         <entry field="true" id="11" symbol="clockShadSet"/>
         <entry id="8388702" method="true" symbol="initialize"/>
         <entry id="8389279" method="true" symbol="onStart"/>
-        <entry field="true" id="99" symbol="viewLS"/>
-        <entry field="true" id="98" symbol="view"/>
-        <entry field="true" id="75" symbol="TimeStepPrompt"/>
+        <entry field="true" id="98" symbol="viewLS"/>
+        <entry field="true" id="97" symbol="view"/>
+        <entry field="true" id="74" symbol="TimeStepPrompt"/>
         <entry field="true" id="61" symbol="Yellow"/>
         <entry field="true" id="12" symbol="subColorSet"/>
         <entry id="8389280" method="true" symbol="getInitialView"/>
-        <entry field="true" id="81" symbol="ClockColorTitle"/>
+        <entry field="true" id="80" symbol="ClockColorTitle"/>
         <entry id="8389347" symbol="color"/>
-        <entry field="true" id="100" symbol="zView"/>
+        <entry field="true" id="99" symbol="zView"/>
         <entry id="17" object="true" symbol="AviationTimeView"/>
         <entry field="true" id="60" symbol="WhiteShad"/>
         <entry field="true" id="35" symbol="ZuluOffsetTitle"/>
-        <entry field="true" id="93" symbol="DKGreen"/>
-        <entry field="true" id="95" symbol="Green"/>
+        <entry field="true" id="92" symbol="DKGreen"/>
+        <entry field="true" id="94" symbol="Green"/>
         <entry field="true" id="29" symbol="ZuluOffsetPrompt"/>
-        <entry id="109" method="true" symbol="notesAndAlarms"/>
+        <entry id="108" method="true" symbol="notesAndAlarms"/>
         <entry id="22" module="true" symbol="Layouts"/>
         <entry id="16" object="true" symbol="AviationTimeApp"/>
-        <entry field="true" id="69" symbol="stepGroupTitle"/>
-        <entry field="true" id="83" symbol="BlackShad"/>
+        <entry field="true" id="82" symbol="BlackShad"/>
         <entry field="true" id="34" symbol="ShadOptPrompt"/>
         <entry field="true" id="14" symbol="offSetAmmt"/>
         <entry id="5" module="true" symbol="globals/Rez/Fonts"/>
         <entry field="true" id="40" symbol="ShadOpt"/>
-        <entry field="true" id="88" symbol="LTGray"/>
+        <entry field="true" id="87" symbol="LTGray"/>
         <entry id="8388635" module="true" symbol="Application"/>
         <entry field="true" id="64" symbol="ZuluOffset"/>
         <entry field="true" id="32" symbol="GrayShad"/>
@@ -395,9 +394,9 @@
         <entry endPc="268440617" name="rez_cmp_local_text_alarmLabel" stackId="9" startPc="268439290"/>
         <entry endPc="268440617" name="rez_cmp_local_text_dateLabel" stackId="7" startPc="268439290"/>
         <entry endPc="268440617" name="rez_cmp_local_text_batLabel" stackId="8" startPc="268439290"/>
-        <entry endPc="268440617" name="rez_cmp_local_custom_drawable_67473728758118284612" stackId="2" startPc="268439290"/>
         <entry endPc="268440617" name="rez_cmp_local_text_zTimeLabel" stackId="5" startPc="268439290"/>
         <entry endPc="268440617" name="rez_cmp_local_text_stepLabel" stackId="11" startPc="268439290"/>
+        <entry endPc="268440617" name="rez_cmp_local_custom_drawable_14339598018330293148" stackId="2" startPc="268439290"/>
         <entry endPc="268440617" name="rez_cmp_local_text_TimeLabelRShad" stackId="3" startPc="268439290"/>
         <entry endPc="268440617" name="rez_cmp_local_text_zuluLabel" stackId="6" startPc="268439290"/>
         <entry arg="true" endPc="268440618" name="dc" stackId="1" startPc="268439278"/>
@@ -448,7 +447,6 @@
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="BackgroundColorTitle"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DKGray"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DKBlue"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="stepGroupTitle"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="TimeStepTitle"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ClockColorPrompt"/>
@@ -489,7 +487,7 @@
         <dataEntry label="globals/Rez/Layouts" offset="560" parentId="Rez" symbolId="Layouts" type="module"/>
         <dataEntry label="globals/Rez/JsonData" offset="599" parentId="Rez" symbolId="JsonData" type="module"/>
         <dataEntry label="globals/Rez/Strings" offset="630" parentId="Rez" symbolId="Strings" type="module"/>
-        <dataEntry label="globals/AviationTimeView" offset="1245" parentId="globals" symbolId="AviationTimeView" type="class"/>
+        <dataEntry label="globals/AviationTimeView" offset="1237" parentId="globals" symbolId="AviationTimeView" type="class"/>
     </dataEntryOffsetMappings>
     <functions>
         <functionEntry accessMode="public" endPc="268435501" name="initialize" parent="Background" startPc="268435456">

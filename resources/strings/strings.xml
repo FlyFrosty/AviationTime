@@ -20,7 +20,7 @@
     <string id="Pink">Pink</string>
                         
 
-    <string id="ClockColorTitle">Main Time color</string>
+    <string id="ClockColorTitle">Main Time Color</string>
     <string id="ClockColorPrompt">Select clock color</string>
 
 
@@ -30,7 +30,7 @@
     <string id="YesBat">Show Battery</string>
     <string id="NoBat">Hide Battery</string>
 
-    <string id="ShadOptTitle">Clock Shadow Options</string>
+    <string id="ShadOptTitle">Shadow Options</string>
     <string id="ShadOptPrompt">Clock Shadow Options</string>
     <string id="NoShad">No Shadow</string>
     <string id="WhiteShad">White Shaddow</string>
@@ -38,16 +38,15 @@
     <string id="GrayShad">Gray Shadow</string>
     <string id="ShadOpt">Choose Shadow</string>
 
-    <string id="SubColorTitle">Other items font color</string>
-    <string id="SubColorPrompt">Other items font color</string>
+    <string id="SubColorTitle">Sub-Items Color</string>
+    <string id="SubColorPrompt">Sub-Items Color</string>
 
-    <string id="ZuluOffsetTitle">Tap Again to Adjust Zulu Hours</string>
+    <string id="ZuluOffsetTitle">Adjust Zulu Hours</string>
     <string id="ZuluOffsetPrompt">Zulu Hours Offset</string>
     <string id="ZuluOffset">Zulu Hours Offset</string>
     <string id="ZuluTitle">Zulu Adjustment</string>
     <string id="zuluLabel">zuluLabel</string>
 
-    <string id="stepGroupTitle">Tap to Select Zulu Time</string>
     <string id="ZTime">Zulu Time</string>
     <string id="ZSteps">Steps</string>
 
