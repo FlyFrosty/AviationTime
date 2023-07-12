@@ -46,6 +46,10 @@
             <listEntry value="1">@Strings.DKGray</listEntry>
             <listEntry value="2">@Strings.Black</listEntry>
             <listEntry value="3">@Strings.White</listEntry>
+            <listEntry value="4">@Strings.Red</listEntry>
+            <listEntry value="5">@Strings.Green</listEntry>
+            <listEntry value="6">@Strings.Blue</listEntry>
+            <listEntry value="7">@Strings.Pink</listEntry>
         </settingConfig>
     </setting>
 
