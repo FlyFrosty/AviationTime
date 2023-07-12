@@ -1,12 +1,12 @@
-using Toybox.Graphics as Gfx;
+import Toybox.Graphics;
 import Toybox.Lang;
-using Toybox.System as Sys;
-using Toybox.WatchUi as Ui;
-using Toybox.Time.Gregorian as Greg;
+import Toybox.System;
+import Toybox.WatchUi;
+import Toybox.Time.Gregorian;
 import Toybox.Time;
-using Toybox.ActivityMonitor as ActMon;
+import Toybox.ActivityMonitor;
 
-class AviationTimeView extends Ui.WatchFace {
+class AviationTimeView extends WatchUi.WatchFace {
 
     //Load the text formats
     var view;       
@@ -26,13 +26,13 @@ class AviationTimeView extends Ui.WatchFace {
         setLayout(Rez.Layouts.WatchFace(dc));
 
         //Assign all the texts
-        view = View.findDrawableById("TimeLabel");
-        viewLS = View.findDrawableById("TimeLabelRShad");
-        zView = View.findDrawableById("zTimeLabel");
-        zLabel = View.findDrawableById("zuluLabel");
-        stepDisplay = View.findDrawableById("stepLabel");
-        noteDisplay = View.findDrawableById("noteLabel");
-        alarmDisplay = View.findDrawableById("alarmLabel");
+        view = View.findDrawableById("TimeLabel") as Text;
+        viewLS = View.findDrawableById("TimeLabelRShad") as Text;
+        zView = View.findDrawableById("zTimeLabel") as Text;
+        zLabel = View.findDrawableById("zuluLabel") as Text;
+        stepDisplay = View.findDrawableById("stepLabel") as Text;
+        noteDisplay = View.findDrawableById("noteLabel") as Text;
+        alarmDisplay = View.findDrawableById("alarmLabel") as Text;
 
     }
 
@@ -64,11 +64,11 @@ class AviationTimeView extends Ui.WatchFace {
  
             //Get and show the current time & Zulu time
             var timeString;
-            var clockTime = Sys.getClockTime();
+            var clockTime = System.getClockTime();
             var hours = clockTime.hour;
 
             //Format local time for 12 or 24 hour clock
-            if (Sys.getDeviceSettings().is24Hour == true){      
+            if (System.getDeviceSettings().is24Hour == true){      
                 timeString = Lang.format("$1$:$2$", [clockTime.hour.format("%02d"), clockTime.min.format("%02d")]);
             } else {
                 if (hours > 12) {
@@ -77,11 +77,11 @@ class AviationTimeView extends Ui.WatchFace {
                 timeString = Lang.format("$1$:$2$", [hours, clockTime.min.format("%02d")]);
             }
 
-            if (clockShadSet == null) {clockShadSet = Gfx.COLOR_TRANSPARENT;} 
+            if (clockShadSet == null) {clockShadSet = Graphics.COLOR_TRANSPARENT;} 
             viewLS.setColor(clockShadSet);   
             viewLS.setText(timeString);
 
-            if (clockColorSet == null) {clockColorSet = Gfx.COLOR_TRANSPARENT;}
+            if (clockColorSet == null) {clockColorSet = Graphics.COLOR_TRANSPARENT;}
             view.setColor(clockColorSet);
             view.setText(timeString);
 
@@ -93,7 +93,7 @@ class AviationTimeView extends Ui.WatchFace {
 
             //If ZUlu Offset is selected instead of Steps
             if (timeOrStep){
-                var zTime = Greg.utcInfo(Time.now(), Time.FORMAT_MEDIUM);
+                var zTime = Time.Gregorian.utcInfo(Time.now(), Time.FORMAT_MEDIUM);
                 var myOffset = zTime.hour;
                 var minOffset = zTime.min;
                 var zuluTime;
@@ -182,7 +182,7 @@ class AviationTimeView extends Ui.WatchFace {
                 
                 //Display Zulu Label
                 zLabel.setColor(subColorSet);
-                zLabel.setText("Steps");
+                zLabel.setText("steps");
             }
 
         }
@@ -191,8 +191,8 @@ class AviationTimeView extends Ui.WatchFace {
         //Display Date
         function drawDate() {
 
-            var dateCalc = View.findDrawableById("dateLabel");
-            var dateLoad = Greg.info(Time.now(), Time.FORMAT_MEDIUM);
+            var dateCalc = View.findDrawableById("dateLabel") as Text;
+            var dateLoad = Time.Gregorian.info(Time.now(), Time.FORMAT_MEDIUM);
             var dateString = Lang.format("$1$, $2$ $3$", 
                 [dateLoad.day_of_week,
                 dateLoad.day,
@@ -208,22 +208,22 @@ class AviationTimeView extends Ui.WatchFace {
             //Get battery info
 
             var batString;
-            var batteryDisplay = View.findDrawableById("batLabel");
+            var batteryDisplay = View.findDrawableById("batLabel") as Text;
 
             if (showBat == 0) {
-                var batLoad = ((Sys.getSystemStats().battery) + 0.5).toNumber();
+                var batLoad = ((System.getSystemStats().battery) + 0.5).toNumber();
                 batString = Lang.format("$1$", [batLoad])+"%";
 
                 if (batLoad < 5.0) {
-                    batteryDisplay.setColor(Gfx.COLOR_RED);
+                    batteryDisplay.setColor(Graphics.COLOR_RED);
                 } else if (batLoad < 25.0) {
-                batteryDisplay.setColor(Gfx.COLOR_YELLOW);
+                batteryDisplay.setColor(Graphics.COLOR_YELLOW);
                 } else {
                     batteryDisplay.setColor(subColorSet);
                 }
             } else {
                 batString = " ";
-                batteryDisplay.setColor(Gfx.COLOR_TRANSPARENT);
+                batteryDisplay.setColor(Graphics.COLOR_TRANSPARENT);
             }
             batteryDisplay.setText(batString);
             
@@ -232,7 +232,7 @@ class AviationTimeView extends Ui.WatchFace {
         function notesAndAlarms(){
             var noteString=" ";
             var alarmString=" ";
-            var avSets = Sys.getDeviceSettings();
+            var avSets = System.getDeviceSettings();
 
             if (avSets.notificationCount !=0) {
                 noteString = "N";
