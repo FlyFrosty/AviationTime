@@ -1,0 +1,1857 @@
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 1; ]
+import Toybox.Lang;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 2; ]
+using Toybox.WatchUi;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 3; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 4; ]
+using Toybox.Graphics;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 5; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 7; ]
+module Rez {
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 8; ]
+    module Drawables {
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 8; ]
+        <init> {
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 9; @position = 27; initialized = true; ]
+        var LauncherIcon as Symbol;
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 12; ]
+    module Fonts {
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 12; ]
+        <init> {
+        }
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 15; ]
+    module JsonData {
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 15; ]
+        <init> {
+        }
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 18; ]
+    module Layouts {
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 18; ]
+        <init> {
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 19; ]
+        function WatchFace(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 20 12 ]
+            [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_stop" ]
+            %rez_cmp_local_custom_drawable_10984723069320328739.1 = local;
+            %tmp.4 = getv ? :Background;
+            %tmp.1 = newc %tmp.4 ();
+            lputv %rez_cmp_local_custom_drawable_10984723069320328739.1 %tmp.1;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 22 12 ]
+            [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_stop" ]
+            %rez_cmp_local_text_TimeLabelRShad.2 = local;
+            %tmp.7 = getm $.Toybox.WatchUi;
+            %tmp.8 = getv function ? %tmp.7 :Text;
+            %tmp.9 = newd 6;
+            %tmp.11 = const :identifier;
+            %tmp.12 = "TimeLabelRShad";
+            %tmp.13 = dup %tmp.9;
+            %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
+            %tmp.16 = const :color;
+            %tmp.17 = getm $.Toybox.Graphics;
+            %tmp.18 = getv %tmp.17 :COLOR_WHITE;
+            %tmp.19 = dup %tmp.14;
+            %tmp.20 = aputv %tmp.19 %tmp.16 %tmp.18;
+            %tmp.22 = const :locX;
+            %tmp.23 = 176;
+            %tmp.24 = 51;
+            %tmp.25 = 100.0;
+            %tmp.26 = div %tmp.24 %tmp.25;
+            %tmp.27 = mul %tmp.23 %tmp.26;
+            %tmp.28 = dup %tmp.20;
+            %tmp.29 = aputv %tmp.28 %tmp.22 %tmp.27;
+            %tmp.31 = const :locY;
+            %tmp.32 = 176;
+            %tmp.33 = 36;
+            %tmp.34 = 100.0;
+            %tmp.35 = div %tmp.33 %tmp.34;
+            %tmp.36 = mul %tmp.32 %tmp.35;
+            %tmp.37 = dup %tmp.29;
+            %tmp.38 = aputv %tmp.37 %tmp.31 %tmp.36;
+            %tmp.40 = const :justification;
+            %tmp.41 = getm $.Toybox.Graphics;
+            %tmp.42 = getv %tmp.41 :TEXT_JUSTIFY_CENTER;
+            %tmp.43 = dup %tmp.38;
+            %tmp.44 = aputv %tmp.43 %tmp.40 %tmp.42;
+            %tmp.46 = const :font;
+            %tmp.47 = getm $.Toybox.Graphics;
+            %tmp.48 = getv %tmp.47 :FONT_NUMBER_HOT;
+            %tmp.49 = dup %tmp.44;
+            %tmp.50 = aputv %tmp.49 %tmp.46 %tmp.48;
+            %tmp.5 = newc %tmp.8 (%tmp.50);
+            lputv %rez_cmp_local_text_TimeLabelRShad.2 %tmp.5;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 24 12 ]
+            [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_stop" ]
+            %rez_cmp_local_text_TimeLabel.3 = local;
+            %tmp.53 = getm $.Toybox.WatchUi;
+            %tmp.54 = getv function ? %tmp.53 :Text;
+            %tmp.55 = newd 6;
+            %tmp.57 = const :identifier;
+            %tmp.58 = "TimeLabel";
+            %tmp.59 = dup %tmp.55;
+            %tmp.60 = aputv %tmp.59 %tmp.57 %tmp.58;
+            %tmp.62 = const :color;
+            %tmp.63 = getm $.Toybox.Graphics;
+            %tmp.64 = getv %tmp.63 :COLOR_BLACK;
+            %tmp.65 = dup %tmp.60;
+            %tmp.66 = aputv %tmp.65 %tmp.62 %tmp.64;
+            %tmp.68 = const :locX;
+            %tmp.69 = 176;
+            %tmp.70 = 0.5;
+            %tmp.71 = mul %tmp.69 %tmp.70;
+            %tmp.72 = dup %tmp.66;
+            %tmp.73 = aputv %tmp.72 %tmp.68 %tmp.71;
+            %tmp.75 = const :locY;
+            %tmp.76 = 176;
+            %tmp.77 = 35;
+            %tmp.78 = 100.0;
+            %tmp.79 = div %tmp.77 %tmp.78;
+            %tmp.80 = mul %tmp.76 %tmp.79;
+            %tmp.81 = dup %tmp.73;
+            %tmp.82 = aputv %tmp.81 %tmp.75 %tmp.80;
+            %tmp.84 = const :justification;
+            %tmp.85 = getm $.Toybox.Graphics;
+            %tmp.86 = getv %tmp.85 :TEXT_JUSTIFY_CENTER;
+            %tmp.87 = dup %tmp.82;
+            %tmp.88 = aputv %tmp.87 %tmp.84 %tmp.86;
+            %tmp.90 = const :font;
+            %tmp.91 = getm $.Toybox.Graphics;
+            %tmp.92 = getv %tmp.91 :FONT_NUMBER_HOT;
+            %tmp.93 = dup %tmp.88;
+            %tmp.94 = aputv %tmp.93 %tmp.90 %tmp.92;
+            %tmp.51 = newc %tmp.54 (%tmp.94);
+            lputv %rez_cmp_local_text_TimeLabel.3 %tmp.51;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 26 12 ]
+            [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_stop" ]
+            %rez_cmp_local_text_zTimeLabel.4 = local;
+            %tmp.97 = getm $.Toybox.WatchUi;
+            %tmp.98 = getv function ? %tmp.97 :Text;
+            %tmp.99 = newd 6;
+            %tmp.101 = const :identifier;
+            %tmp.102 = "zTimeLabel";
+            %tmp.103 = dup %tmp.99;
+            %tmp.104 = aputv %tmp.103 %tmp.101 %tmp.102;
+            %tmp.106 = const :color;
+            %tmp.107 = getm $.Toybox.Graphics;
+            %tmp.108 = getv %tmp.107 :COLOR_LT_GRAY;
+            %tmp.109 = dup %tmp.104;
+            %tmp.110 = aputv %tmp.109 %tmp.106 %tmp.108;
+            %tmp.112 = const :locX;
+            %tmp.113 = 176;
+            %tmp.114 = 0.5;
+            %tmp.115 = mul %tmp.113 %tmp.114;
+            %tmp.116 = dup %tmp.110;
+            %tmp.117 = aputv %tmp.116 %tmp.112 %tmp.115;
+            %tmp.119 = const :locY;
+            %tmp.120 = 176;
+            %tmp.121 = 72;
+            %tmp.122 = 100.0;
+            %tmp.123 = div %tmp.121 %tmp.122;
+            %tmp.124 = mul %tmp.120 %tmp.123;
+            %tmp.125 = dup %tmp.117;
+            %tmp.126 = aputv %tmp.125 %tmp.119 %tmp.124;
+            %tmp.128 = const :justification;
+            %tmp.129 = getm $.Toybox.Graphics;
+            %tmp.130 = getv %tmp.129 :TEXT_JUSTIFY_CENTER;
+            %tmp.131 = dup %tmp.126;
+            %tmp.132 = aputv %tmp.131 %tmp.128 %tmp.130;
+            %tmp.134 = const :font;
+            %tmp.135 = getm $.Toybox.Graphics;
+            %tmp.136 = getv %tmp.135 :FONT_LARGE;
+            %tmp.137 = dup %tmp.132;
+            %tmp.138 = aputv %tmp.137 %tmp.134 %tmp.136;
+            %tmp.95 = newc %tmp.98 (%tmp.138);
+            lputv %rez_cmp_local_text_zTimeLabel.4 %tmp.95;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 28 12 ]
+            [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_stop" ]
+            %rez_cmp_local_text_zuluLabel.5 = local;
+            %tmp.141 = getm $.Toybox.WatchUi;
+            %tmp.142 = getv function ? %tmp.141 :Text;
+            %tmp.143 = newd 6;
+            %tmp.145 = const :identifier;
+            %tmp.146 = "zuluLabel";
+            %tmp.147 = dup %tmp.143;
+            %tmp.148 = aputv %tmp.147 %tmp.145 %tmp.146;
+            %tmp.150 = const :color;
+            %tmp.151 = getm $.Toybox.Graphics;
+            %tmp.152 = getv %tmp.151 :COLOR_LT_GRAY;
+            %tmp.153 = dup %tmp.148;
+            %tmp.154 = aputv %tmp.153 %tmp.150 %tmp.152;
+            %tmp.156 = const :locX;
+            %tmp.157 = 176;
+            %tmp.158 = 0.5;
+            %tmp.159 = mul %tmp.157 %tmp.158;
+            %tmp.160 = dup %tmp.154;
+            %tmp.161 = aputv %tmp.160 %tmp.156 %tmp.159;
+            %tmp.163 = const :locY;
+            %tmp.164 = 176;
+            %tmp.165 = 85;
+            %tmp.166 = 100.0;
+            %tmp.167 = div %tmp.165 %tmp.166;
+            %tmp.168 = mul %tmp.164 %tmp.167;
+            %tmp.169 = dup %tmp.161;
+            %tmp.170 = aputv %tmp.169 %tmp.163 %tmp.168;
+            %tmp.172 = const :justification;
+            %tmp.173 = getm $.Toybox.Graphics;
+            %tmp.174 = getv %tmp.173 :TEXT_JUSTIFY_CENTER;
+            %tmp.175 = dup %tmp.170;
+            %tmp.176 = aputv %tmp.175 %tmp.172 %tmp.174;
+            %tmp.178 = const :font;
+            %tmp.179 = getm $.Toybox.Graphics;
+            %tmp.180 = getv %tmp.179 :FONT_TINY;
+            %tmp.181 = dup %tmp.176;
+            %tmp.182 = aputv %tmp.181 %tmp.178 %tmp.180;
+            %tmp.139 = newc %tmp.142 (%tmp.182);
+            lputv %rez_cmp_local_text_zuluLabel.5 %tmp.139;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 30 12 ]
+            [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_stop" ]
+            %rez_cmp_local_text_dateLabel.6 = local;
+            %tmp.185 = getm $.Toybox.WatchUi;
+            %tmp.186 = getv function ? %tmp.185 :Text;
+            %tmp.187 = newd 6;
+            %tmp.189 = const :identifier;
+            %tmp.190 = "dateLabel";
+            %tmp.191 = dup %tmp.187;
+            %tmp.192 = aputv %tmp.191 %tmp.189 %tmp.190;
+            %tmp.194 = const :color;
+            %tmp.195 = getm $.Toybox.Graphics;
+            %tmp.196 = getv %tmp.195 :COLOR_LT_GRAY;
+            %tmp.197 = dup %tmp.192;
+            %tmp.198 = aputv %tmp.197 %tmp.194 %tmp.196;
+            %tmp.200 = const :locX;
+            %tmp.201 = 176;
+            %tmp.202 = 0.5;
+            %tmp.203 = mul %tmp.201 %tmp.202;
+            %tmp.204 = dup %tmp.198;
+            %tmp.205 = aputv %tmp.204 %tmp.200 %tmp.203;
+            %tmp.207 = const :locY;
+            %tmp.208 = 176;
+            %tmp.209 = 57;
+            %tmp.210 = 100.0;
+            %tmp.211 = div %tmp.209 %tmp.210;
+            %tmp.212 = mul %tmp.208 %tmp.211;
+            %tmp.213 = dup %tmp.205;
+            %tmp.214 = aputv %tmp.213 %tmp.207 %tmp.212;
+            %tmp.216 = const :justification;
+            %tmp.217 = getm $.Toybox.Graphics;
+            %tmp.218 = getv %tmp.217 :TEXT_JUSTIFY_CENTER;
+            %tmp.219 = dup %tmp.214;
+            %tmp.220 = aputv %tmp.219 %tmp.216 %tmp.218;
+            %tmp.222 = const :font;
+            %tmp.223 = getm $.Toybox.Graphics;
+            %tmp.224 = getv %tmp.223 :FONT_MEDIUM;
+            %tmp.225 = dup %tmp.220;
+            %tmp.226 = aputv %tmp.225 %tmp.222 %tmp.224;
+            %tmp.183 = newc %tmp.186 (%tmp.226);
+            lputv %rez_cmp_local_text_dateLabel.6 %tmp.183;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 32 12 ]
+            [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_stop" ]
+            %rez_cmp_local_text_batLabel.7 = local;
+            %tmp.229 = getm $.Toybox.WatchUi;
+            %tmp.230 = getv function ? %tmp.229 :Text;
+            %tmp.231 = newd 6;
+            %tmp.233 = const :identifier;
+            %tmp.234 = "batLabel";
+            %tmp.235 = dup %tmp.231;
+            %tmp.236 = aputv %tmp.235 %tmp.233 %tmp.234;
+            %tmp.238 = const :color;
+            %tmp.239 = getm $.Toybox.Graphics;
+            %tmp.240 = getv %tmp.239 :COLOR_LT_GRAY;
+            %tmp.241 = dup %tmp.236;
+            %tmp.242 = aputv %tmp.241 %tmp.238 %tmp.240;
+            %tmp.244 = const :locX;
+            %tmp.245 = 176;
+            %tmp.246 = 83;
+            %tmp.247 = 100.0;
+            %tmp.248 = div %tmp.246 %tmp.247;
+            %tmp.249 = mul %tmp.245 %tmp.248;
+            %tmp.250 = dup %tmp.242;
+            %tmp.251 = aputv %tmp.250 %tmp.244 %tmp.249;
+            %tmp.253 = const :locY;
+            %tmp.254 = 176;
+            %tmp.255 = 10;
+            %tmp.256 = 100.0;
+            %tmp.257 = div %tmp.255 %tmp.256;
+            %tmp.258 = mul %tmp.254 %tmp.257;
+            %tmp.259 = dup %tmp.251;
+            %tmp.260 = aputv %tmp.259 %tmp.253 %tmp.258;
+            %tmp.262 = const :justification;
+            %tmp.263 = getm $.Toybox.Graphics;
+            %tmp.264 = getv %tmp.263 :TEXT_JUSTIFY_CENTER;
+            %tmp.265 = dup %tmp.260;
+            %tmp.266 = aputv %tmp.265 %tmp.262 %tmp.264;
+            %tmp.268 = const :font;
+            %tmp.269 = getm $.Toybox.Graphics;
+            %tmp.270 = getv %tmp.269 :FONT_TINY;
+            %tmp.271 = dup %tmp.266;
+            %tmp.272 = aputv %tmp.271 %tmp.268 %tmp.270;
+            %tmp.227 = newc %tmp.230 (%tmp.272);
+            lputv %rez_cmp_local_text_batLabel.7 %tmp.227;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 34 12 ]
+            [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_stop" ]
+            %rez_cmp_local_text_alarmLabel.8 = local;
+            %tmp.275 = getm $.Toybox.WatchUi;
+            %tmp.276 = getv function ? %tmp.275 :Text;
+            %tmp.277 = newd 6;
+            %tmp.279 = const :identifier;
+            %tmp.280 = "alarmLabel";
+            %tmp.281 = dup %tmp.277;
+            %tmp.282 = aputv %tmp.281 %tmp.279 %tmp.280;
+            %tmp.284 = const :color;
+            %tmp.285 = getm $.Toybox.Graphics;
+            %tmp.286 = getv %tmp.285 :COLOR_DK_GREEN;
+            %tmp.287 = dup %tmp.282;
+            %tmp.288 = aputv %tmp.287 %tmp.284 %tmp.286;
+            %tmp.290 = const :locX;
+            %tmp.291 = 176;
+            %tmp.292 = 30;
+            %tmp.293 = 100.0;
+            %tmp.294 = div %tmp.292 %tmp.293;
+            %tmp.295 = mul %tmp.291 %tmp.294;
+            %tmp.296 = dup %tmp.288;
+            %tmp.297 = aputv %tmp.296 %tmp.290 %tmp.295;
+            %tmp.299 = const :locY;
+            %tmp.300 = 176;
+            %tmp.301 = 10;
+            %tmp.302 = 100.0;
+            %tmp.303 = div %tmp.301 %tmp.302;
+            %tmp.304 = mul %tmp.300 %tmp.303;
+            %tmp.305 = dup %tmp.297;
+            %tmp.306 = aputv %tmp.305 %tmp.299 %tmp.304;
+            %tmp.308 = const :justification;
+            %tmp.309 = getm $.Toybox.Graphics;
+            %tmp.310 = getv %tmp.309 :TEXT_JUSTIFY_CENTER;
+            %tmp.311 = dup %tmp.306;
+            %tmp.312 = aputv %tmp.311 %tmp.308 %tmp.310;
+            %tmp.314 = const :font;
+            %tmp.315 = getm $.Toybox.Graphics;
+            %tmp.316 = getv %tmp.315 :FONT_TINY;
+            %tmp.317 = dup %tmp.312;
+            %tmp.318 = aputv %tmp.317 %tmp.314 %tmp.316;
+            %tmp.273 = newc %tmp.276 (%tmp.318);
+            lputv %rez_cmp_local_text_alarmLabel.8 %tmp.273;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 36 12 ]
+            [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_stop" ]
+            %rez_cmp_local_text_noteLabel.9 = local;
+            %tmp.321 = getm $.Toybox.WatchUi;
+            %tmp.322 = getv function ? %tmp.321 :Text;
+            %tmp.323 = newd 6;
+            %tmp.325 = const :identifier;
+            %tmp.326 = "noteLabel";
+            %tmp.327 = dup %tmp.323;
+            %tmp.328 = aputv %tmp.327 %tmp.325 %tmp.326;
+            %tmp.330 = const :color;
+            %tmp.331 = getm $.Toybox.Graphics;
+            %tmp.332 = getv %tmp.331 :COLOR_DK_GREEN;
+            %tmp.333 = dup %tmp.328;
+            %tmp.334 = aputv %tmp.333 %tmp.330 %tmp.332;
+            %tmp.336 = const :locX;
+            %tmp.337 = 176;
+            %tmp.338 = 50;
+            %tmp.339 = 100.0;
+            %tmp.340 = div %tmp.338 %tmp.339;
+            %tmp.341 = mul %tmp.337 %tmp.340;
+            %tmp.342 = dup %tmp.334;
+            %tmp.343 = aputv %tmp.342 %tmp.336 %tmp.341;
+            %tmp.345 = const :locY;
+            %tmp.346 = 176;
+            %tmp.347 = 10;
+            %tmp.348 = 100.0;
+            %tmp.349 = div %tmp.347 %tmp.348;
+            %tmp.350 = mul %tmp.346 %tmp.349;
+            %tmp.351 = dup %tmp.343;
+            %tmp.352 = aputv %tmp.351 %tmp.345 %tmp.350;
+            %tmp.354 = const :justification;
+            %tmp.355 = getm $.Toybox.Graphics;
+            %tmp.356 = getv %tmp.355 :TEXT_JUSTIFY_CENTER;
+            %tmp.357 = dup %tmp.352;
+            %tmp.358 = aputv %tmp.357 %tmp.354 %tmp.356;
+            %tmp.360 = const :font;
+            %tmp.361 = getm $.Toybox.Graphics;
+            %tmp.362 = getv %tmp.361 :FONT_TINY;
+            %tmp.363 = dup %tmp.358;
+            %tmp.364 = aputv %tmp.363 %tmp.360 %tmp.362;
+            %tmp.319 = newc %tmp.322 (%tmp.364);
+            lputv %rez_cmp_local_text_noteLabel.9 %tmp.319;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 38 12 ]
+            [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_stop" ]
+            %rez_cmp_local_text_stepLabel.10 = local;
+            %tmp.367 = getm $.Toybox.WatchUi;
+            %tmp.368 = getv function ? %tmp.367 :Text;
+            %tmp.369 = newd 6;
+            %tmp.371 = const :identifier;
+            %tmp.372 = "stepLabel";
+            %tmp.373 = dup %tmp.369;
+            %tmp.374 = aputv %tmp.373 %tmp.371 %tmp.372;
+            %tmp.376 = const :color;
+            %tmp.377 = getm $.Toybox.Graphics;
+            %tmp.378 = getv %tmp.377 :COLOR_LT_GRAY;
+            %tmp.379 = dup %tmp.374;
+            %tmp.380 = aputv %tmp.379 %tmp.376 %tmp.378;
+            %tmp.382 = const :locX;
+            %tmp.383 = 176;
+            %tmp.384 = 0.5;
+            %tmp.385 = mul %tmp.383 %tmp.384;
+            %tmp.386 = dup %tmp.380;
+            %tmp.387 = aputv %tmp.386 %tmp.382 %tmp.385;
+            %tmp.389 = const :locY;
+            %tmp.390 = 176;
+            %tmp.391 = 72;
+            %tmp.392 = 100.0;
+            %tmp.393 = div %tmp.391 %tmp.392;
+            %tmp.394 = mul %tmp.390 %tmp.393;
+            %tmp.395 = dup %tmp.387;
+            %tmp.396 = aputv %tmp.395 %tmp.389 %tmp.394;
+            %tmp.398 = const :justification;
+            %tmp.399 = getm $.Toybox.Graphics;
+            %tmp.400 = getv %tmp.399 :TEXT_JUSTIFY_CENTER;
+            %tmp.401 = dup %tmp.396;
+            %tmp.402 = aputv %tmp.401 %tmp.398 %tmp.400;
+            %tmp.404 = const :font;
+            %tmp.405 = getm $.Toybox.Graphics;
+            %tmp.406 = getv %tmp.405 :FONT_MEDIUM;
+            %tmp.407 = dup %tmp.402;
+            %tmp.408 = aputv %tmp.407 %tmp.404 %tmp.406;
+            %tmp.365 = newc %tmp.368 (%tmp.408);
+            lputv %rez_cmp_local_text_stepLabel.10 %tmp.365;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 40 12 ]
+            %tmp.409 = newa Array<WatchUi.Drawable> 10;
+            %tmp.411 = lgetv %rez_cmp_local_custom_drawable_10984723069320328739.1;
+            %tmp.412 = dup %tmp.409;
+            %tmp.413 = aputv %tmp.412 0 %tmp.411;
+            %tmp.415 = lgetv %rez_cmp_local_text_TimeLabelRShad.2;
+            %tmp.416 = dup %tmp.413;
+            %tmp.417 = aputv %tmp.416 1 %tmp.415;
+            %tmp.419 = lgetv %rez_cmp_local_text_TimeLabel.3;
+            %tmp.420 = dup %tmp.417;
+            %tmp.421 = aputv %tmp.420 2 %tmp.419;
+            %tmp.423 = lgetv %rez_cmp_local_text_zTimeLabel.4;
+            %tmp.424 = dup %tmp.421;
+            %tmp.425 = aputv %tmp.424 3 %tmp.423;
+            %tmp.427 = lgetv %rez_cmp_local_text_zuluLabel.5;
+            %tmp.428 = dup %tmp.425;
+            %tmp.429 = aputv %tmp.428 4 %tmp.427;
+            %tmp.431 = lgetv %rez_cmp_local_text_dateLabel.6;
+            %tmp.432 = dup %tmp.429;
+            %tmp.433 = aputv %tmp.432 5 %tmp.431;
+            %tmp.435 = lgetv %rez_cmp_local_text_batLabel.7;
+            %tmp.436 = dup %tmp.433;
+            %tmp.437 = aputv %tmp.436 6 %tmp.435;
+            %tmp.439 = lgetv %rez_cmp_local_text_alarmLabel.8;
+            %tmp.440 = dup %tmp.437;
+            %tmp.441 = aputv %tmp.440 7 %tmp.439;
+            %tmp.443 = lgetv %rez_cmp_local_text_noteLabel.9;
+            %tmp.444 = dup %tmp.441;
+            %tmp.445 = aputv %tmp.444 8 %tmp.443;
+            %tmp.447 = lgetv %rez_cmp_local_text_stepLabel.10;
+            %tmp.448 = dup %tmp.445;
+            %tmp.449 = aputv %tmp.448 9 %tmp.447;
+            ret %tmp.449;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_bin_gen_006_B3888_00_source_Rez_mcgen_19_73_stop:
+        }
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 44; ]
+    module Menus {
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 44; ]
+        <init> {
+        }
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 47; ]
+    module Strings {
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 47; ]
+        <init> {
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 48; @position = 27; initialized = true; ]
+        var Z18 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 49; @position = 27; initialized = true; ]
+        var Z17 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 50; @position = 27; initialized = true; ]
+        var Z19 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 51; @position = 27; initialized = true; ]
+        var ZuluTitle as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 52; @position = 27; initialized = true; ]
+        var ZuluOffsetPrompt as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 53; @position = 27; initialized = true; ]
+        var NoBat as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 54; @position = 27; initialized = true; ]
+        var Black as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 55; @position = 27; initialized = true; ]
+        var GrayShad as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 56; @position = 27; initialized = true; ]
+        var Orange as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 57; @position = 27; initialized = true; ]
+        var ShadOptPrompt as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 58; @position = 27; initialized = true; ]
+        var ZuluOffsetTitle as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 59; @position = 27; initialized = true; ]
+        var batString as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 60; @position = 27; initialized = true; ]
+        var Z1 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 61; @position = 27; initialized = true; ]
+        var Z2 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 62; @position = 27; initialized = true; ]
+        var Z21 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 63; @position = 27; initialized = true; ]
+        var ShadOpt as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 64; @position = 27; initialized = true; ]
+        var Z3 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 65; @position = 27; initialized = true; ]
+        var Z20 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 66; @position = 27; initialized = true; ]
+        var Z4 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 67; @position = 27; initialized = true; ]
+        var Z23 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 68; @position = 27; initialized = true; ]
+        var Z5 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 69; @position = 27; initialized = true; ]
+        var Z22 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 70; @position = 27; initialized = true; ]
+        var DispBattPrompt as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 71; @position = 27; initialized = true; ]
+        var Z6 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 72; @position = 27; initialized = true; ]
+        var Z25 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 73; @position = 27; initialized = true; ]
+        var Z7 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 74; @position = 27; initialized = true; ]
+        var Z24 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 75; @position = 27; initialized = true; ]
+        var Z8 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 76; @position = 27; initialized = true; ]
+        var Z27 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 77; @position = 27; initialized = true; ]
+        var Z9 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 78; @position = 27; initialized = true; ]
+        var Z26 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 79; @position = 27; initialized = true; ]
+        var Z29 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 80; @position = 27; initialized = true; ]
+        var Z28 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 81; @position = 27; initialized = true; ]
+        var ZSteps as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 82; @position = 27; initialized = true; ]
+        var Pink as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 83; @position = 27; initialized = true; ]
+        var WhiteShad as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 84; @position = 27; initialized = true; ]
+        var Yellow as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 85; @position = 27; initialized = true; ]
+        var Z30 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 86; @position = 27; initialized = true; ]
+        var Z31 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 87; @position = 27; initialized = true; ]
+        var ZuluOffset as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 88; @position = 27; initialized = true; ]
+        var SubColorTitle as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 89; @position = 27; initialized = true; ]
+        var BackgroundColorTitle as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 90; @position = 27; initialized = true; ]
+        var DKGray as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 91; @position = 27; initialized = true; ]
+        var DKBlue as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 92; @position = 27; initialized = true; ]
+        var TimeStepTitle as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 93; @position = 27; initialized = true; ]
+        var AppName as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 94; @position = 27; initialized = true; ]
+        var ClockColorPrompt as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 95; @position = 27; initialized = true; ]
+        var ShadOptTitle as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 96; @position = 27; initialized = true; ]
+        var ZTime as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 97; @position = 27; initialized = true; ]
+        var TimeStepPrompt as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 98; @position = 27; initialized = true; ]
+        var DispBattTitle as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 99; @position = 27; initialized = true; ]
+        var SubColorPrompt as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 100; @position = 27; initialized = true; ]
+        var NoShad as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 101; @position = 27; initialized = true; ]
+        var Blue as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 102; @position = 27; initialized = true; ]
+        var DKRed as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 103; @position = 27; initialized = true; ]
+        var ClockColorTitle as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 104; @position = 27; initialized = true; ]
+        var YesBat as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 105; @position = 27; initialized = true; ]
+        var BlackShad as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 106; @position = 27; initialized = true; ]
+        var Red as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 107; @position = 27; initialized = true; ]
+        var White as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 108; @position = 27; initialized = true; ]
+        var Purple as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 109; @position = 27; initialized = true; ]
+        var Z10 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 110; @position = 27; initialized = true; ]
+        var LTGray as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 111; @position = 27; initialized = true; ]
+        var zuluLabel as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 112; @position = 27; initialized = true; ]
+        var Z12 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 113; @position = 27; initialized = true; ]
+        var Z11 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 114; @position = 27; initialized = true; ]
+        var Z14 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 115; @position = 27; initialized = true; ]
+        var DKGreen as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 116; @position = 27; initialized = true; ]
+        var Z13 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 117; @position = 27; initialized = true; ]
+        var Green as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 118; @position = 27; initialized = true; ]
+        var Z16 as Symbol;
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 119; @position = 27; initialized = true; ]
+        var Z15 as Symbol;
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 122; ]
+    module Styles {
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 122; ]
+        <init> {
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 123; ]
+        module system_size__menu_header {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 123; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 124; @position = 18; ]
+            const width as Number = 175;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 125; @position = 18; ]
+            const height as Number = 62;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 128; ]
+        module system_loc__hint_button_left_bottom {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 128; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 129; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 132; ]
+        module prompt_loc__body_no_title {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 132; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 133; @position = 18; ]
+            const x as Number = 5;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 134; @position = 18; ]
+            const y as Number = 77;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 137; ]
+        module system_icon_dark__about {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 137; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 138; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__about.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 139; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 140; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 141; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 144; ]
+        module system_icon_light__question {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 144; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 145; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__question.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 146; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 147; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 148; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 151; ]
+        module system_loc__hint_button_left_top {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 151; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 152; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 155; ]
+        module prompt_font__title {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 155; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 156 18 ]
+                %tmp.450 = getm $.Toybox.Graphics;
+                %tmp.451 = getv %tmp.450 :TEXT_JUSTIFY_RIGHT;
+                %tmp.452 = getm $.Toybox.Graphics;
+                %tmp.453 = getv %tmp.452 :TEXT_JUSTIFY_VCENTER;
+                %tmp.454 = bitor %tmp.451 %tmp.453;
+                putv self :justification %tmp.454;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 157 18 ]
+                %tmp.455 = getm $.Toybox.Graphics;
+                %tmp.456 = getv %tmp.455 :FONT_TINY;
+                putv self :font %tmp.456;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 156; @position = 18; ]
+            const justification;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 157; @position = 18; ]
+            const font;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 160; ]
+        module system_icon_dark__discard {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 160; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 161; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__discard.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 162; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 163; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 164; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 167; ]
+        module system_size__menu_item {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 167; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 168; @position = 18; ]
+            const width as Number = 175;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 169; @position = 18; ]
+            const height as Number = 58;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 172; ]
+        module system_color_dark__text {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 172; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 174 18 ]
+                %tmp.457 = getm $.Toybox.Graphics;
+                %tmp.458 = getv %tmp.457 :COLOR_TRANSPARENT;
+                putv self :background %tmp.458;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 173; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 174; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 177; ]
+        module system_icon_destructive__discard {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 177; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 178; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__discard.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 179; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 180; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 181; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 184; ]
+        module system_icon_dark__hint_action_menu {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 184; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 185; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__hint_button_right_top.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 186; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 187; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 188; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 191; ]
+        module prompt_size__title {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 191; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 192; @position = 18; ]
+            const width as Number = 67;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 193; @position = 18; ]
+            const height as Number = 60;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 196; ]
+        module confirmation_font__body {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 196; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 197 18 ]
+                %tmp.459 = getm $.Toybox.Graphics;
+                %tmp.460 = getv %tmp.459 :TEXT_JUSTIFY_CENTER;
+                putv self :justification %tmp.460;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 198 18 ]
+                %tmp.461 = getm $.Toybox.Graphics;
+                %tmp.462 = getv %tmp.461 :FONT_XTINY;
+                putv self :font %tmp.462;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 197; @position = 18; ]
+            const justification;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 198; @position = 18; ]
+            const font;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 201; ]
+        module system_color_dark__background {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 201; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 202; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 203; @position = 18; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 206; ]
+        module system_icon_destructive__hint_button_left_top {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 206; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 207; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 210; ]
+        module system_size__launch_icon {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 210; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 211; @position = 18; ]
+            const scaleX as Number = 62;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 212; @position = 18; ]
+            const scaleY as Number = 62;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 213; @position = 18; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 216; ]
+        module confirmation_input__confirm {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 216; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 217 18 ]
+                %tmp.463 = getm $.Toybox.WatchUi;
+                %tmp.464 = getv %tmp.463 :KEY_ENTER;
+                putv self :button %tmp.464;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 217; @position = 18; ]
+            const button;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 220; ]
+        module prompt_font__body_with_title {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 220; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 221 18 ]
+                %tmp.465 = getm $.Toybox.Graphics;
+                %tmp.466 = getv %tmp.465 :TEXT_JUSTIFY_CENTER;
+                putv self :justification %tmp.466;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 222 18 ]
+                %tmp.467 = getm $.Toybox.Graphics;
+                %tmp.468 = getv %tmp.467 :FONT_TINY;
+                putv self :font %tmp.468;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 221; @position = 18; ]
+            const justification;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 222; @position = 18; ]
+            const font;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 225; ]
+        module confirmation_loc__body {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 225; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 226; @position = 18; ]
+            const x as Number = 2;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 227; @position = 18; ]
+            const y as Number = 81;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 230; ]
+        module system_icon_destructive__hint_button_left_bottom {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 230; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 231; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 234; ]
+        module prompt_color_dark__background {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 234; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 235; @position = 18; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 238; ]
+        module system_loc__hint_action_menu {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 238; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 239; @position = 18; ]
+            const x as Number = 166;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 240; @position = 18; ]
+            const y as Number = 31;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 241; @position = 18; ]
+            const horizontalJustification as String = "center";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 242; @position = 18; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 245; ]
+        module confirmation_icon__hint_confirm {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 245; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 246; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/confirmation_icon__hint_completion.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 247; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 248; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 249; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 252; ]
+        module system_loc__hint_button_left_middle {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 252; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 253; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 256; ]
+        module prompt_size__body_no_title {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 256; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 257; @position = 18; ]
+            const width as Number = 166;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 258; @position = 18; ]
+            const height as Number = 99;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 261; ]
+        module system_icon_light__hint_button_left_top {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 261; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 262; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 265; ]
+        module prompt_color_light__background {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 265; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 266; @position = 18; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 269; ]
+        module confirmation_input__delete {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 269; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 270 18 ]
+                %tmp.469 = getm $.Toybox.WatchUi;
+                %tmp.470 = getv %tmp.469 :KEY_ENTER;
+                putv self :button %tmp.470;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 270; @position = 18; ]
+            const button;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 273; ]
+        module system_icon_dark__hint_button_left_top {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 273; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 274; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 277; ]
+        module system_input__action_menu {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 277; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 278 18 ]
+                %tmp.471 = getm $.Toybox.WatchUi;
+                %tmp.472 = getv %tmp.471 :KEY_ENTER;
+                putv self :button %tmp.472;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 278; @position = 18; ]
+            const button;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 281; ]
+        module system_icon_light__save {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 281; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 282; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__save.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 283; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 284; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 285; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 288; ]
+        module prompt_color_light__body {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 288; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 290 18 ]
+                %tmp.473 = getm $.Toybox.Graphics;
+                %tmp.474 = getv %tmp.473 :COLOR_TRANSPARENT;
+                putv self :background %tmp.474;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 289; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 290; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 293; ]
+        module system_loc__subwindow {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 293; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 294; @position = 18; ]
+            const x as Number = 116;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 295; @position = 18; ]
+            const y as Number = 0;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 298; ]
+        module system_icon_light__warning {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 298; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 299; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__warning.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 300; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 301; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 302; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 305; ]
+        module confirmation_color_light__body {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 305; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 307 18 ]
+                %tmp.475 = getm $.Toybox.Graphics;
+                %tmp.476 = getv %tmp.475 :COLOR_TRANSPARENT;
+                putv self :background %tmp.476;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 306; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 307; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 310; ]
+        module activity_color_light__background {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 310; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 311; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 312; @position = 18; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 315; ]
+        module system_icon_positive__hint_button_right_top {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 315; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 316; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__hint_button_right_top.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 317; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 318; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 319; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 322; ]
+        module system_size__screen {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 322; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 323; @position = 18; ]
+            const width as Number = 176;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 324; @position = 18; ]
+            const height as Number = 176;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 327; ]
+        module system_icon_destructive__hint_button_right_bottom {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 327; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 328; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 331; ]
+        module system_color_light__background {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 331; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 332; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 333; @position = 18; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 336; ]
+        module system_icon_destructive__hint_button_right_top {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 336; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 337; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__hint_button_right_top.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 338; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 339; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 340; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 343; ]
+        module confirmation_loc__hint_confirm {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 343; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 344; @position = 18; ]
+            const x as Number = 113;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 345; @position = 18; ]
+            const y as Number = 1;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 348; ]
+        module activity_color_dark__text {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 348; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 350 18 ]
+                %tmp.477 = getm $.Toybox.Graphics;
+                %tmp.478 = getv %tmp.477 :COLOR_TRANSPARENT;
+                putv self :background %tmp.478;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 349; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 350; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 353; ]
+        module confirmation_input__keep {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 353; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 354 18 ]
+                %tmp.479 = getm $.Toybox.WatchUi;
+                %tmp.480 = getv %tmp.479 :KEY_DOWN;
+                putv self :button %tmp.480;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 354; @position = 18; ]
+            const button;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 357; ]
+        module prompt_loc__body_with_title {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 357; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 358; @position = 18; ]
+            const x as Number = 5;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 359; @position = 18; ]
+            const y as Number = 77;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 362; ]
+        module system_icon_dark__search {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 362; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 363; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__search.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 364; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 365; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 366; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 369; ]
+        module activity_color_light__text {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 369; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 371 18 ]
+                %tmp.481 = getm $.Toybox.Graphics;
+                %tmp.482 = getv %tmp.481 :COLOR_TRANSPARENT;
+                putv self :background %tmp.482;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 370; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 371; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 374; ]
+        module confirmation_icon__hint_keep {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 374; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 375; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/confirmation_icon__hint_keep.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 376; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 377; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 378; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 381; ]
+        module system_icon_dark__save {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 381; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 382; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__save.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 383; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 384; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 385; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 388; ]
+        module system_icon_destructive__hint_button_left_middle {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 388; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 389; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 392; ]
+        module system_icon_light__search {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 392; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 393; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__search.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 394; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 395; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 396; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 399; ]
+        module system_icon_dark__hint_button_left_bottom {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 399; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 400; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 403; ]
+        module system_icon_positive__hint_button_left_top {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 403; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 404; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 407; ]
+        module system_loc__hint_button_right_bottom {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 407; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 408; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 411; ]
+        module confirmation_color_dark__body {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 411; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 413 18 ]
+                %tmp.483 = getm $.Toybox.Graphics;
+                %tmp.484 = getv %tmp.483 :COLOR_TRANSPARENT;
+                putv self :background %tmp.484;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 412; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 413; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 416; ]
+        module prompt_color_dark__title {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 416; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 418 18 ]
+                %tmp.485 = getm $.Toybox.Graphics;
+                %tmp.486 = getv %tmp.485 :COLOR_TRANSPARENT;
+                putv self :background %tmp.486;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 417; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 418; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 421; ]
+        module system_icon_destructive__cancel {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 421; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 422; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__cancel.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 423; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 424; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 425; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 428; ]
+        module system_icon_light__hint_button_right_bottom {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 428; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 429; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 432; ]
+        module prompt_loc__title {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 432; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 433; @position = 18; ]
+            const x as Number = 25;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 434; @position = 18; ]
+            const y as Number = 9;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 437; ]
+        module prompt_color_light__title {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 437; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 439 18 ]
+                %tmp.487 = getm $.Toybox.Graphics;
+                %tmp.488 = getv %tmp.487 :COLOR_TRANSPARENT;
+                putv self :background %tmp.488;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 438; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 439; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 442; ]
+        module system_icon_dark__hint_button_right_top {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 442; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 443; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__hint_button_right_top.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 444; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 445; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 446; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 449; ]
+        module system_icon_dark__hint_button_left_middle {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 449; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 450; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 453; ]
+        module system_icon_light__cancel {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 453; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 454; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__cancel.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 455; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 456; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 457; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 460; ]
+        module system_icon_light__about {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 460; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 461; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__about.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 462; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 463; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 464; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 467; ]
+        module system_size__toast_icon {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 467; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 468; @position = 18; ]
+            const width as Number = 40;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 469; @position = 18; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 472; ]
+        module confirmation_icon__hint_reject {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 472; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 473; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/confirmation_icon__hint_reject.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 474; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 475; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 476; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 479; ]
+        module system_icon_light__hint_action_menu {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 479; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 480; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__hint_button_right_top.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 481; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 482; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 483; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 486; ]
+        module confirmation_loc__hint_reject {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 486; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 487; @position = 18; ]
+            const x as Number = 0;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 488; @position = 18; ]
+            const y as Number = 138;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 491; ]
+        module activity_color_dark__background {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 491; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 492; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 493; @position = 18; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 496; ]
+        module system_icon_light__hint_button_left_bottom {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 496; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 497; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 500; ]
+        module system_icon_positive__hint_button_left_middle {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 500; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 501; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 504; ]
+        module system_size__menu_icon {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 504; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 505; @position = 18; ]
+            const scaleX as Number = 38;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 506; @position = 18; ]
+            const scaleY as Number = 38;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 507; @position = 18; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 510; ]
+        module system_icon_destructive__warning {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 510; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 511; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__warning.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 512; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 513; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 514; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 517; ]
+        module system_loc__hint_button_right_middle {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 517; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 518; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 521; ]
+        module system_icon_dark__cancel {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 521; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 522; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__cancel.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 523; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 524; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 525; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 528; ]
+        module prompt_size__body_with_title {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 528; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 529; @position = 18; ]
+            const width as Number = 166;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 530; @position = 18; ]
+            const height as Number = 99;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 533; ]
+        module system_loc__hint_button_right_top {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 533; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 534; @position = 18; ]
+            const x as Number = 166;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 535; @position = 18; ]
+            const y as Number = 31;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 536; @position = 18; ]
+            const horizontalJustification as String = "center";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 537; @position = 18; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 540; ]
+        module system_color_light__text {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 540; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 542 18 ]
+                %tmp.489 = getm $.Toybox.Graphics;
+                %tmp.490 = getv %tmp.489 :COLOR_TRANSPARENT;
+                putv self :background %tmp.490;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 541; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 542; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 545; ]
+        module system_icon_light__check {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 545; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 546; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__check.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 547; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 548; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 549; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 552; ]
+        module confirmation_input__reject {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 552; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 553 18 ]
+                %tmp.491 = getm $.Toybox.WatchUi;
+                %tmp.492 = getv %tmp.491 :KEY_DOWN;
+                putv self :button %tmp.492;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 553; @position = 18; ]
+            const button;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 556; ]
+        module system_icon_light__revert {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 556; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 557; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__revert.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 558; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 559; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 560; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 563; ]
+        module system_size__subwindow {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 563; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 564; @position = 18; ]
+            const width as Number = 62;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 565; @position = 18; ]
+            const height as Number = 62;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 568; ]
+        module system_icon_positive__hint_button_left_bottom {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 568; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 569; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 572; ]
+        module system_icon_dark__check {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 572; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 573; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__check.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 574; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 575; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 576; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 579; ]
+        module confirmation_loc__hint_keep {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 579; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 580; @position = 18; ]
+            const x as Number = 0;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 581; @position = 18; ]
+            const y as Number = 138;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 584; ]
+        module confirmation_loc__hint_delete {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 584; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 585; @position = 18; ]
+            const verticallJustification as String = "center";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 586; @position = 18; ]
+            const x as Number = 146;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 587; @position = 18; ]
+            const y as Number = 15;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 588; @position = 18; ]
+            const horizontalJustification as String = "center";
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 591; ]
+        module system_icon_light__hint_button_left_middle {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 591; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 592; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 595; ]
+        module system_icon_dark__hint_button_right_bottom {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 595; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 596; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 599; ]
+        module system_icon_positive__hint_button_right_bottom {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 599; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 600; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 603; ]
+        module system_icon_dark__revert {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 603; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 604; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__revert.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 605; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 606; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 607; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 610; ]
+        module system_icon_dark__question {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 610; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 611; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__question.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 612; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 613; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 614; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 617; ]
+        module system_icon_light__discard {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 617; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 618; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__discard.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 619; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 620; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 621; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 624; ]
+        module device_info {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 624; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 626 18 ]
+                %tmp.493 = getm $.Toybox.System;
+                %tmp.494 = getv %tmp.493 :SCREEN_SHAPE_SEMI_OCTAGON;
+                putv self :screenShape %tmp.494;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 625; @position = 18; ]
+            const screenWidth as Number = 176;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 626; @position = 18; ]
+            const screenShape;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 627; @position = 18; ]
+            const hasNightMode as Boolean = false;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 628; @position = 18; ]
+            const screenHeight as Number = 176;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 629; @position = 18; ]
+            const hasTouchScreen as Boolean = false;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 632; ]
+        module prompt_font__body_no_title {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 632; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 633 18 ]
+                %tmp.495 = getm $.Toybox.Graphics;
+                %tmp.496 = getv %tmp.495 :TEXT_JUSTIFY_CENTER;
+                putv self :justification %tmp.496;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 634 18 ]
+                %tmp.497 = getm $.Toybox.Graphics;
+                %tmp.498 = getv %tmp.497 :FONT_TINY;
+                putv self :font %tmp.498;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 633; @position = 18; ]
+            const justification;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 634; @position = 18; ]
+            const font;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 637; ]
+        module prompt_size__title_icon {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 637; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 638; @position = 18; ]
+            const scaleX as Number = 38;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 639; @position = 18; ]
+            const scaleY as Number = 38;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 640; @position = 18; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 643; ]
+        module system_icon_dark__warning {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 643; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 644; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__warning.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 645; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 646; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 647; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 650; ]
+        module prompt_loc__title_icon {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 650; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 651; @position = 18; ]
+            const x as Number = 145;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 652; @position = 18; ]
+            const y as Number = 31;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 653; @position = 18; ]
+            const horizontalJustification as String = "center";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 654; @position = 18; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 657; ]
+        module prompt_color_dark__body {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 657; ]
+            <init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" 659 18 ]
+                %tmp.499 = getm $.Toybox.Graphics;
+                %tmp.500 = getv %tmp.499 :COLOR_TRANSPARENT;
+                putv self :background %tmp.500;
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 658; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 659; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 662; ]
+        module confirmation_icon__hint_delete {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 662; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 663; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/confirmation_icon__hint_delete.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 664; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 665; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 666; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 669; ]
+        module system_icon_light__hint_button_right_top {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 669; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 670; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__hint_button_right_top.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 671; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 672; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 673; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 676; ]
+        module confirmation_size__body {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 676; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 677; @position = 18; ]
+            const width as Number = 173;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 678; @position = 18; ]
+            const height as Number = 63;
+        }
+        [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 681; ]
+        module system_icon_positive__check {
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 681; ]
+            <init> {
+            }
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 682; @position = 18; ]
+            const filename as String = "/Users/jeffreyforste/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__check.svg";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 683; @position = 18; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 684; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 685; @position = 18; ]
+            const automaticPalette as Boolean = true;
+        }
+    }
+}
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen"; @line = 1; ]
+<init> {
+}

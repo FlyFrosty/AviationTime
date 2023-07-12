@@ -1,0 +1,121 @@
+import Toybox.Lang;
+using Toybox.WatchUi;
+using Toybox.WatchUi as Ui;
+using Toybox.Graphics;
+using Toybox.Graphics as Gfx;
+
+module Rez {
+    module Drawables {
+        (:initialized) var LauncherIcon as Symbol;
+    } // Drawables
+
+    module Fonts {
+    } // Fonts
+
+    module JsonData {
+    } // JsonData
+
+    module Layouts {
+        function WatchFace(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
+            var rez_cmp_local_custom_drawable_17305006191108876275 = new Background();
+
+            var rez_cmp_local_text_TimeLabelRShad = new WatchUi.Text({:identifier=>"TimeLabelRShad", :color=>Graphics.COLOR_WHITE, :locX=>(240 * (51 / 100.0)), :locY=>(240 * (15 / 100.0)), :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_NUMBER_THAI_HOT});
+
+            var rez_cmp_local_text_TimeLabel = new WatchUi.Text({:identifier=>"TimeLabel", :color=>Graphics.COLOR_BLACK, :locX=>(240 * 0.5), :locY=>(240 * (15 / 100.0)), :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_NUMBER_THAI_HOT});
+
+            var rez_cmp_local_text_zTimeLabel = new WatchUi.Text({:identifier=>"zTimeLabel", :color=>Graphics.COLOR_LT_GRAY, :locX=>(240 * 0.5), :locY=>(240 * (72 / 100.0)), :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_LARGE});
+
+            var rez_cmp_local_text_zuluLabel = new WatchUi.Text({:identifier=>"zuluLabel", :color=>Graphics.COLOR_LT_GRAY, :locX=>(240 * 0.5), :locY=>(240 * (88 / 100.0)), :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_TINY});
+
+            var rez_cmp_local_text_dateLabel = new WatchUi.Text({:identifier=>"dateLabel", :color=>Graphics.COLOR_LT_GRAY, :locX=>(240 * 0.5), :locY=>(240 * (57 / 100.0)), :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text_batLabel = new WatchUi.Text({:identifier=>"batLabel", :color=>Graphics.COLOR_LT_GRAY, :locX=>(240 * 0.5), :locY=>(240 * (10 / 100.0)), :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_TINY});
+
+            var rez_cmp_local_text_alarmLabel = new WatchUi.Text({:identifier=>"alarmLabel", :color=>Graphics.COLOR_DK_GREEN, :locX=>(240 * (30 / 100.0)), :locY=>(240 * (10 / 100.0)), :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_TINY});
+
+            var rez_cmp_local_text_noteLabel = new WatchUi.Text({:identifier=>"noteLabel", :color=>Graphics.COLOR_DK_GREEN, :locX=>(240 * (70 / 100.0)), :locY=>(240 * (10 / 100.0)), :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_TINY});
+
+            var rez_cmp_local_text_stepLabel = new WatchUi.Text({:identifier=>"stepLabel", :color=>Graphics.COLOR_LT_GRAY, :locX=>(240 * 0.5), :locY=>(240 * (69 / 100.0)), :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_NUMBER_MEDIUM});
+
+            return [rez_cmp_local_custom_drawable_17305006191108876275, rez_cmp_local_text_TimeLabelRShad, rez_cmp_local_text_TimeLabel, rez_cmp_local_text_zTimeLabel, rez_cmp_local_text_zuluLabel, rez_cmp_local_text_dateLabel, rez_cmp_local_text_batLabel, rez_cmp_local_text_alarmLabel, rez_cmp_local_text_noteLabel, rez_cmp_local_text_stepLabel] as Array<WatchUi.Drawable>;
+        }
+    } // Layouts
+
+    module Menus {
+    } // Menus
+
+    module Strings {
+        (:initialized) var Z18 as Symbol;
+        (:initialized) var Z17 as Symbol;
+        (:initialized) var Z19 as Symbol;
+        (:initialized) var ZuluTitle as Symbol;
+        (:initialized) var ZuluOffsetPrompt as Symbol;
+        (:initialized) var NoBat as Symbol;
+        (:initialized) var Black as Symbol;
+        (:initialized) var GrayShad as Symbol;
+        (:initialized) var Orange as Symbol;
+        (:initialized) var ShadOptPrompt as Symbol;
+        (:initialized) var ZuluOffsetTitle as Symbol;
+        (:initialized) var batString as Symbol;
+        (:initialized) var Z1 as Symbol;
+        (:initialized) var Z2 as Symbol;
+        (:initialized) var Z21 as Symbol;
+        (:initialized) var ShadOpt as Symbol;
+        (:initialized) var Z3 as Symbol;
+        (:initialized) var Z20 as Symbol;
+        (:initialized) var Z4 as Symbol;
+        (:initialized) var Z23 as Symbol;
+        (:initialized) var Z5 as Symbol;
+        (:initialized) var Z22 as Symbol;
+        (:initialized) var DispBattPrompt as Symbol;
+        (:initialized) var Z6 as Symbol;
+        (:initialized) var Z25 as Symbol;
+        (:initialized) var Z7 as Symbol;
+        (:initialized) var Z24 as Symbol;
+        (:initialized) var Z8 as Symbol;
+        (:initialized) var Z27 as Symbol;
+        (:initialized) var Z9 as Symbol;
+        (:initialized) var Z26 as Symbol;
+        (:initialized) var Z29 as Symbol;
+        (:initialized) var Z28 as Symbol;
+        (:initialized) var ZSteps as Symbol;
+        (:initialized) var Pink as Symbol;
+        (:initialized) var WhiteShad as Symbol;
+        (:initialized) var Yellow as Symbol;
+        (:initialized) var Z30 as Symbol;
+        (:initialized) var Z31 as Symbol;
+        (:initialized) var ZuluOffset as Symbol;
+        (:initialized) var SubColorTitle as Symbol;
+        (:initialized) var BackgroundColorTitle as Symbol;
+        (:initialized) var DKGray as Symbol;
+        (:initialized) var DKBlue as Symbol;
+        (:initialized) var TimeStepTitle as Symbol;
+        (:initialized) var AppName as Symbol;
+        (:initialized) var ClockColorPrompt as Symbol;
+        (:initialized) var ShadOptTitle as Symbol;
+        (:initialized) var ZTime as Symbol;
+        (:initialized) var TimeStepPrompt as Symbol;
+        (:initialized) var DispBattTitle as Symbol;
+        (:initialized) var SubColorPrompt as Symbol;
+        (:initialized) var NoShad as Symbol;
+        (:initialized) var Blue as Symbol;
+        (:initialized) var DKRed as Symbol;
+        (:initialized) var ClockColorTitle as Symbol;
+        (:initialized) var YesBat as Symbol;
+        (:initialized) var BlackShad as Symbol;
+        (:initialized) var Red as Symbol;
+        (:initialized) var White as Symbol;
+        (:initialized) var Purple as Symbol;
+        (:initialized) var Z10 as Symbol;
+        (:initialized) var LTGray as Symbol;
+        (:initialized) var zuluLabel as Symbol;
+        (:initialized) var Z12 as Symbol;
+        (:initialized) var Z11 as Symbol;
+        (:initialized) var Z14 as Symbol;
+        (:initialized) var DKGreen as Symbol;
+        (:initialized) var Z13 as Symbol;
+        (:initialized) var Green as Symbol;
+        (:initialized) var Z16 as Symbol;
+        (:initialized) var Z15 as Symbol;
+    } // Strings
+} // Rez

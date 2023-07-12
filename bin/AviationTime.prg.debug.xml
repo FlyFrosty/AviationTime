@@ -1,580 +1,578 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <debugInfo>
-    <manifest filename="/Users/jeffforste/Garmin Projects/AviationTime/manifest.xml"/>
-    <pcToLineNum>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationBackground.mc" id="1" lineNum="8" parent="globals/Background" pc="268435456" symbol="initialize"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationBackground.mc" id="1" lineNum="9" parent="globals/Background" pc="268435460" symbol="initialize"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationBackground.mc" id="1" lineNum="13" parent="globals/Background" pc="268435481" symbol="initialize"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationBackground.mc" id="2" lineNum="16" parent="globals/Background" pc="268435502" symbol="draw"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationBackground.mc" id="2" lineNum="18" parent="globals/Background" pc="268435506" symbol="draw"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationBackground.mc" id="2" lineNum="19" parent="globals/Background" pc="268435538" symbol="draw"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationBackground.mc" id="3" lineNum="6" parent="globals/Background" pc="268440699" symbol="&lt;init&gt;"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationBackground.mc" id="3" lineNum="6" parent="globals/Background" pc="268440699" symbol="&lt;init&gt;"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="21" parent="globals/AviationTimeApp" pc="268435551" symbol="initialize"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="22" parent="globals/AviationTimeApp" pc="268435555" symbol="initialize"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="23" parent="globals/AviationTimeApp" pc="268435573" symbol="initialize"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="6" lineNum="27" parent="globals/AviationTimeApp" pc="268435586" symbol="onStart"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="6" lineNum="28" parent="globals/AviationTimeApp" pc="268435590" symbol="onStart"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="7" lineNum="32" parent="globals/AviationTimeApp" pc="268435603" symbol="getInitialView"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="7" lineNum="33" parent="globals/AviationTimeApp" pc="268435607" symbol="getInitialView"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="8" lineNum="37" parent="globals/AviationTimeApp" pc="268435645" symbol="onSettingsChanged"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="8" lineNum="40" parent="globals/AviationTimeApp" pc="268435649" symbol="onSettingsChanged"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="8" lineNum="41" parent="globals/AviationTimeApp" pc="268435679" symbol="onSettingsChanged"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="8" lineNum="42" parent="globals/AviationTimeApp" pc="268435709" symbol="onSettingsChanged"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="8" lineNum="43" parent="globals/AviationTimeApp" pc="268435739" symbol="onSettingsChanged"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="8" lineNum="44" parent="globals/AviationTimeApp" pc="268435769" symbol="onSettingsChanged"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="8" lineNum="45" parent="globals/AviationTimeApp" pc="268435799" symbol="onSettingsChanged"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="8" lineNum="47" parent="globals/AviationTimeApp" pc="268435829" symbol="onSettingsChanged"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="8" lineNum="48" parent="globals/AviationTimeApp" pc="268435841" symbol="onSettingsChanged"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="52" parent="globals/AviationTimeApp" pc="268435858" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="55" parent="globals/AviationTimeApp" pc="268435862" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="56" parent="globals/AviationTimeApp" pc="268435879" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="57" parent="globals/AviationTimeApp" pc="268435902" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="58" parent="globals/AviationTimeApp" pc="268435919" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="59" parent="globals/AviationTimeApp" pc="268435942" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="60" parent="globals/AviationTimeApp" pc="268435959" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="61" parent="globals/AviationTimeApp" pc="268435982" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="62" parent="globals/AviationTimeApp" pc="268435999" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="63" parent="globals/AviationTimeApp" pc="268436022" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="64" parent="globals/AviationTimeApp" pc="268436039" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="65" parent="globals/AviationTimeApp" pc="268436062" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="66" parent="globals/AviationTimeApp" pc="268436079" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="67" parent="globals/AviationTimeApp" pc="268436102" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="68" parent="globals/AviationTimeApp" pc="268436119" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="69" parent="globals/AviationTimeApp" pc="268436142" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="70" parent="globals/AviationTimeApp" pc="268436159" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="71" parent="globals/AviationTimeApp" pc="268436182" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="72" parent="globals/AviationTimeApp" pc="268436199" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="73" parent="globals/AviationTimeApp" pc="268436222" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="74" parent="globals/AviationTimeApp" pc="268436239" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="75" parent="globals/AviationTimeApp" pc="268436262" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="76" parent="globals/AviationTimeApp" pc="268436279" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="77" parent="globals/AviationTimeApp" pc="268436302" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="78" parent="globals/AviationTimeApp" pc="268436319" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="79" parent="globals/AviationTimeApp" pc="268436342" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="80" parent="globals/AviationTimeApp" pc="268436359" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="82" parent="globals/AviationTimeApp" pc="268436382" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="86" parent="globals/AviationTimeApp" pc="268436402" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="87" parent="globals/AviationTimeApp" pc="268436419" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="88" parent="globals/AviationTimeApp" pc="268436442" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="89" parent="globals/AviationTimeApp" pc="268436459" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="90" parent="globals/AviationTimeApp" pc="268436482" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="91" parent="globals/AviationTimeApp" pc="268436499" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="92" parent="globals/AviationTimeApp" pc="268436522" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="93" parent="globals/AviationTimeApp" pc="268436539" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="97" parent="globals/AviationTimeApp" pc="268436562" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="98" parent="globals/AviationTimeApp" pc="268436579" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="99" parent="globals/AviationTimeApp" pc="268436602" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="100" parent="globals/AviationTimeApp" pc="268436619" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="101" parent="globals/AviationTimeApp" pc="268436642" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="102" parent="globals/AviationTimeApp" pc="268436659" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="103" parent="globals/AviationTimeApp" pc="268436682" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="104" parent="globals/AviationTimeApp" pc="268436699" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="107" parent="globals/AviationTimeApp" pc="268436722" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="9" lineNum="109" parent="globals/AviationTimeApp" pc="268436733" symbol="colorUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="10" lineNum="15" parent="globals/AviationTimeApp" pc="268440680" symbol="&lt;init&gt;"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="10" lineNum="15" parent="globals/AviationTimeApp" pc="268440680" symbol="&lt;init&gt;"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="11" lineNum="116" parent="globals" pc="268436767" symbol="getApp"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="11" lineNum="117" parent="globals" pc="268436779" symbol="getApp"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="12" lineNum="8" parent="globals" pc="268440619" symbol="&lt;init&gt;"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="12" lineNum="9" parent="globals" pc="268440639" symbol="&lt;init&gt;"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="12" lineNum="10" parent="globals" pc="268440659" symbol="&lt;init&gt;"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="13" lineNum="20" parent="globals/AviationTimeView" pc="268436796" symbol="initialize"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="13" lineNum="21" parent="globals/AviationTimeView" pc="268436800" symbol="initialize"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="25" parent="globals/AviationTimeView" pc="268436819" symbol="onLayout"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="26" parent="globals/AviationTimeView" pc="268436823" symbol="onLayout"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="29" parent="globals/AviationTimeView" pc="268436860" symbol="onLayout"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="30" parent="globals/AviationTimeView" pc="268436890" symbol="onLayout"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="31" parent="globals/AviationTimeView" pc="268436920" symbol="onLayout"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="32" parent="globals/AviationTimeView" pc="268436950" symbol="onLayout"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="33" parent="globals/AviationTimeView" pc="268436980" symbol="onLayout"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="34" parent="globals/AviationTimeView" pc="268437010" symbol="onLayout"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="35" parent="globals/AviationTimeView" pc="268437040" symbol="onLayout"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="40" parent="globals/AviationTimeView" pc="268437071" symbol="onUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="43" parent="globals/AviationTimeView" pc="268437075" symbol="onUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="46" parent="globals/AviationTimeView" pc="268437087" symbol="onUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="49" parent="globals/AviationTimeView" pc="268437099" symbol="onUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="52" parent="globals/AviationTimeView" pc="268437111" symbol="onUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="55" parent="globals/AviationTimeView" pc="268437123" symbol="onUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="58" parent="globals/AviationTimeView" pc="268437135" symbol="onUpdate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="63" parent="globals/AviationTimeView" pc="268437156" symbol="drawTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="66" parent="globals/AviationTimeView" pc="268437160" symbol="drawTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="67" parent="globals/AviationTimeView" pc="268437160" symbol="drawTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="68" parent="globals/AviationTimeView" pc="268437177" symbol="drawTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="71" parent="globals/AviationTimeView" pc="268437187" symbol="drawTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="72" parent="globals/AviationTimeView" pc="268437214" symbol="drawTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="74" parent="globals/AviationTimeView" pc="268437305" symbol="drawTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="75" parent="globals/AviationTimeView" pc="268437316" symbol="drawTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="77" parent="globals/AviationTimeView" pc="268437329" symbol="drawTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="80" parent="globals/AviationTimeView" pc="268437397" symbol="drawTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="80" parent="globals/AviationTimeView" pc="268437410" symbol="drawTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="81" parent="globals/AviationTimeView" pc="268437433" symbol="drawTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="82" parent="globals/AviationTimeView" pc="268437459" symbol="drawTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="84" parent="globals/AviationTimeView" pc="268437479" symbol="drawTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="84" parent="globals/AviationTimeView" pc="268437492" symbol="drawTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="85" parent="globals/AviationTimeView" pc="268437515" symbol="drawTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="86" parent="globals/AviationTimeView" pc="268437541" symbol="drawTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="92" parent="globals/AviationTimeView" pc="268437562" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="95" parent="globals/AviationTimeView" pc="268437566" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="96" parent="globals/AviationTimeView" pc="268437577" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="97" parent="globals/AviationTimeView" pc="268437621" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="98" parent="globals/AviationTimeView" pc="268437631" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="99" parent="globals/AviationTimeView" pc="268437641" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="100" parent="globals/AviationTimeView" pc="268437641" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="103" parent="globals/AviationTimeView" pc="268437641" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="106" parent="globals/AviationTimeView" pc="268437673" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="108" parent="globals/AviationTimeView" pc="268437690" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="109" parent="globals/AviationTimeView" pc="268437690" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="111" parent="globals/AviationTimeView" pc="268437697" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="112" parent="globals/AviationTimeView" pc="268437720" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="113" parent="globals/AviationTimeView" pc="268437743" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="115" parent="globals/AviationTimeView" pc="268437810" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="118" parent="globals/AviationTimeView" pc="268437877" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="120" parent="globals/AviationTimeView" pc="268437926" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="123" parent="globals/AviationTimeView" pc="268437947" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="124" parent="globals/AviationTimeView" pc="268437969" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="126" parent="globals/AviationTimeView" pc="268437997" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="129" parent="globals/AviationTimeView" pc="268438004" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="132" parent="globals/AviationTimeView" pc="268438023" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="135" parent="globals/AviationTimeView" pc="268438030" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="136" parent="globals/AviationTimeView" pc="268438041" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="138" parent="globals/AviationTimeView" pc="268438075" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="142" parent="globals/AviationTimeView" pc="268438100" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="144" parent="globals/AviationTimeView" pc="268438116" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="145" parent="globals/AviationTimeView" pc="268438127" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="149" parent="globals/AviationTimeView" pc="268438140" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="150" parent="globals/AviationTimeView" pc="268438151" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="151" parent="globals/AviationTimeView" pc="268438161" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="152" parent="globals/AviationTimeView" pc="268438172" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="153" parent="globals/AviationTimeView" pc="268438185" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="154" parent="globals/AviationTimeView" pc="268438196" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="157" parent="globals/AviationTimeView" pc="268438209" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="159" parent="globals/AviationTimeView" pc="268438288" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="160" parent="globals/AviationTimeView" pc="268438382" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="164" parent="globals/AviationTimeView" pc="268438389" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="165" parent="globals/AviationTimeView" pc="268438415" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="168" parent="globals/AviationTimeView" pc="268438435" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="169" parent="globals/AviationTimeView" pc="268438461" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="173" parent="globals/AviationTimeView" pc="268438484" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="174" parent="globals/AviationTimeView" pc="268438503" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="175" parent="globals/AviationTimeView" pc="268438513" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="178" parent="globals/AviationTimeView" pc="268438551" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="180" parent="globals/AviationTimeView" pc="268438583" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="181" parent="globals/AviationTimeView" pc="268438609" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="184" parent="globals/AviationTimeView" pc="268438629" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="185" parent="globals/AviationTimeView" pc="268438655" symbol="drawZTime"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="18" lineNum="192" parent="globals/AviationTimeView" pc="268438679" symbol="drawDate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="18" lineNum="194" parent="globals/AviationTimeView" pc="268438683" symbol="drawDate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="18" lineNum="195" parent="globals/AviationTimeView" pc="268438707" symbol="drawDate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="18" lineNum="196" parent="globals/AviationTimeView" pc="268438751" symbol="drawDate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="18" lineNum="201" parent="globals/AviationTimeView" pc="268438827" symbol="drawDate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="18" lineNum="202" parent="globals/AviationTimeView" pc="268438847" symbol="drawDate"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="207" parent="globals/AviationTimeView" pc="268438862" symbol="drawBatt"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="210" parent="globals/AviationTimeView" pc="268438866" symbol="drawBatt"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="211" parent="globals/AviationTimeView" pc="268438866" symbol="drawBatt"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="213" parent="globals/AviationTimeView" pc="268438890" symbol="drawBatt"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="214" parent="globals/AviationTimeView" pc="268438907" symbol="drawBatt"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="215" parent="globals/AviationTimeView" pc="268438945" symbol="drawBatt"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="217" parent="globals/AviationTimeView" pc="268438989" symbol="drawBatt"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="218" parent="globals/AviationTimeView" pc="268439000" symbol="drawBatt"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="219" parent="globals/AviationTimeView" pc="268439027" symbol="drawBatt"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="220" parent="globals/AviationTimeView" pc="268439038" symbol="drawBatt"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="222" parent="globals/AviationTimeView" pc="268439065" symbol="drawBatt"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="225" parent="globals/AviationTimeView" pc="268439088" symbol="drawBatt"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="226" parent="globals/AviationTimeView" pc="268439095" symbol="drawBatt"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="228" parent="globals/AviationTimeView" pc="268439119" symbol="drawBatt"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="20" lineNum="232" parent="globals/AviationTimeView" pc="268439134" symbol="notesAndAlarms"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="20" lineNum="233" parent="globals/AviationTimeView" pc="268439138" symbol="notesAndAlarms"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="20" lineNum="234" parent="globals/AviationTimeView" pc="268439145" symbol="notesAndAlarms"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="20" lineNum="235" parent="globals/AviationTimeView" pc="268439152" symbol="notesAndAlarms"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="20" lineNum="237" parent="globals/AviationTimeView" pc="268439169" symbol="notesAndAlarms"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="20" lineNum="238" parent="globals/AviationTimeView" pc="268439186" symbol="notesAndAlarms"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="20" lineNum="240" parent="globals/AviationTimeView" pc="268439196" symbol="notesAndAlarms"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="20" lineNum="242" parent="globals/AviationTimeView" pc="268439203" symbol="notesAndAlarms"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="20" lineNum="244" parent="globals/AviationTimeView" pc="268439223" symbol="notesAndAlarms"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="20" lineNum="245" parent="globals/AviationTimeView" pc="268439240" symbol="notesAndAlarms"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="20" lineNum="247" parent="globals/AviationTimeView" pc="268439250" symbol="notesAndAlarms"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="20" lineNum="249" parent="globals/AviationTimeView" pc="268439257" symbol="notesAndAlarms"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="21" lineNum="9" parent="globals/AviationTimeView" pc="268440748" symbol="&lt;init&gt;"/>
-        <entry filename="/Users/jeffforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="21" lineNum="9" parent="globals/AviationTimeView" pc="268440748" symbol="&lt;init&gt;"/>
-        <entry filename="Rez" id="23" lineNum="2" parent="globals/Rez/Drawables" pc="268440742" symbol="&lt;init&gt;"/>
-        <entry filename="Rez" id="24" lineNum="6" parent="globals/Rez/Fonts" pc="268440744" symbol="&lt;init&gt;"/>
-        <entry filename="Rez" id="25" lineNum="8" parent="globals/Rez/JsonData" pc="268440746" symbol="&lt;init&gt;"/>
-        <entry filename="Rez" id="26" lineNum="17" parent="globals/Rez/Layouts" pc="268439278" symbol="WatchFace"/>
-        <entry filename="Rez" id="26" lineNum="19" parent="globals/Rez/Layouts" pc="268439290" symbol="WatchFace"/>
-        <entry filename="Rez" id="26" lineNum="20" parent="globals/Rez/Layouts" pc="268439314" symbol="WatchFace"/>
-        <entry filename="Rez" id="26" lineNum="21" parent="globals/Rez/Layouts" pc="268439447" symbol="WatchFace"/>
-        <entry filename="Rez" id="26" lineNum="22" parent="globals/Rez/Layouts" pc="268439580" symbol="WatchFace"/>
-        <entry filename="Rez" id="26" lineNum="23" parent="globals/Rez/Layouts" pc="268439713" symbol="WatchFace"/>
-        <entry filename="Rez" id="26" lineNum="24" parent="globals/Rez/Layouts" pc="268439846" symbol="WatchFace"/>
-        <entry filename="Rez" id="26" lineNum="25" parent="globals/Rez/Layouts" pc="268439979" symbol="WatchFace"/>
-        <entry filename="Rez" id="26" lineNum="26" parent="globals/Rez/Layouts" pc="268440112" symbol="WatchFace"/>
-        <entry filename="Rez" id="26" lineNum="27" parent="globals/Rez/Layouts" pc="268440245" symbol="WatchFace"/>
-        <entry filename="Rez" id="26" lineNum="28" parent="globals/Rez/Layouts" pc="268440378" symbol="WatchFace"/>
-        <entry filename="Rez" id="26" lineNum="30" parent="globals/Rez/Layouts" pc="268440511" symbol="WatchFace"/>
-        <entry filename="Rez" id="27" lineNum="10" parent="globals/Rez/Layouts" pc="268440745" symbol="&lt;init&gt;"/>
-        <entry filename="Rez" id="28" lineNum="35" parent="globals/Rez/Menus" pc="268440743" symbol="&lt;init&gt;"/>
-        <entry filename="Rez" id="29" lineNum="37" parent="globals/Rez/Strings" pc="268440747" symbol="&lt;init&gt;"/>
-        <entry filename="Rez" id="30" lineNum="1" parent="globals/Rez" pc="268440718" symbol="&lt;init&gt;"/>
-        <entry filename="Rez" id="30" lineNum="1" parent="globals/Rez" pc="268440718" symbol="&lt;init&gt;"/>
-    </pcToLineNum>
-    <symbolTable>
-        <entry field="true" id="79" symbol="DKRed"/>
-        <entry id="8388639" module="true" symbol="Graphics"/>
-        <entry field="true" id="33" symbol="Orange"/>
-        <entry field="true" id="59" symbol="Pink"/>
-        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
-        <entry field="true" id="88" symbol="zuluLabel"/>
-        <entry id="106" method="true" symbol="drawDate"/>
-        <entry id="4" module="true" symbol="globals/Rez/Menus"/>
-        <entry id="8389683" method="true" symbol="onSettingsChanged"/>
-        <entry field="true" id="103" symbol="alarmDisplay"/>
-        <entry field="true" id="47" symbol="DispBattPrompt"/>
-        <entry field="true" id="13" symbol="myBackgroundColor"/>
-        <entry field="true" id="28" symbol="ZuluTitle"/>
-        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
-        <entry field="true" id="72" symbol="ShadOptTitle"/>
-        <entry id="104" method="true" symbol="drawTime"/>
-        <entry field="true" id="70" symbol="AppName"/>
-        <entry id="8" module="true" symbol="globals/Rez/Strings"/>
-        <entry field="true" id="75" symbol="DispBattTitle"/>
-        <entry id="8388772" module="true" object="true" symbol="Fonts"/>
-        <entry field="true" id="84" symbol="White"/>
-        <entry field="true" id="18" symbol="clockColorNum"/>
-        <entry field="true" id="69" symbol="TimeStepTitle"/>
-        <entry field="true" id="73" symbol="ZTime"/>
-        <entry field="true" id="31" symbol="Black"/>
-        <entry id="8388648" module="true" symbol="WatchUi"/>
-        <entry field="true" id="100" symbol="zLabel"/>
-        <entry id="2" module="true" symbol="globals/Rez"/>
-        <entry field="true" id="77" symbol="NoShad"/>
-        <entry field="true" id="76" symbol="SubColorPrompt"/>
-        <entry id="8389124" method="true" symbol="onUpdate"/>
-        <entry id="8389375" method="true" object="true" symbol="WatchFace"/>
-        <entry field="true" id="8389065" symbol="locY"/>
-        <entry field="true" id="8389064" symbol="locX"/>
-        <entry field="true" id="67" symbol="DKGray"/>
-        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
-        <entry id="8389348" symbol="font"/>
-        <entry id="23" module="true" symbol="Menus"/>
-        <entry id="8389275" method="true" symbol="getApp"/>
-        <entry id="6" module="true" symbol="globals/Rez/Layouts"/>
-        <entry field="true" id="78" symbol="Blue"/>
-        <entry field="true" id="102" symbol="noteDisplay"/>
-        <entry id="8389122" method="true" symbol="onLayout"/>
-        <entry field="true" id="8389063" symbol="identifier"/>
-        <entry id="8389349" symbol="justification"/>
-        <entry field="true" id="68" symbol="DKBlue"/>
-        <entry field="true" id="19" symbol="clockShadNum"/>
-        <entry field="true" id="81" symbol="YesBat"/>
-        <entry id="7" module="true" symbol="globals/Rez/JsonData"/>
-        <entry field="true" id="20" symbol="subColorNum"/>
-        <entry field="true" id="101" symbol="stepDisplay"/>
-        <entry field="true" id="54" symbol="Z9"/>
-        <entry field="true" id="52" symbol="Z8"/>
-        <entry field="true" id="50" symbol="Z7"/>
-        <entry field="true" id="48" symbol="Z6"/>
-        <entry field="true" id="45" symbol="Z5"/>
-        <entry field="true" id="43" symbol="Z4"/>
-        <entry field="true" id="41" symbol="Z3"/>
-        <entry field="true" id="38" symbol="Z2"/>
-        <entry field="true" id="37" symbol="Z1"/>
-        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
-        <entry field="true" id="71" symbol="ClockColorPrompt"/>
-        <entry field="true" id="30" symbol="NoBat"/>
-        <entry field="true" id="10" symbol="clockColorSet"/>
-        <entry id="105" method="true" symbol="drawZTime"/>
-        <entry id="8388645" module="true" symbol="Time"/>
-        <entry id="8388769" module="true" object="true" symbol="Rez"/>
-        <entry field="true" id="83" symbol="Red"/>
-        <entry id="21" method="true" symbol="colorUpdate"/>
-        <entry field="true" id="63" symbol="Z31"/>
-        <entry field="true" id="62" symbol="Z30"/>
-        <entry field="true" id="56" symbol="Z29"/>
-        <entry field="true" id="57" symbol="Z28"/>
-        <entry field="true" id="53" symbol="Z27"/>
-        <entry field="true" id="55" symbol="Z26"/>
-        <entry field="true" id="49" symbol="Z25"/>
-        <entry field="true" id="51" symbol="Z24"/>
-        <entry field="true" id="44" symbol="Z23"/>
-        <entry field="true" id="46" symbol="Z22"/>
-        <entry field="true" id="39" symbol="Z21"/>
-        <entry field="true" id="42" symbol="Z20"/>
-        <entry field="true" id="27" symbol="Z19"/>
-        <entry field="true" id="25" symbol="Z18"/>
-        <entry field="true" id="26" symbol="Z17"/>
-        <entry field="true" id="95" symbol="Z16"/>
-        <entry field="true" id="96" symbol="Z15"/>
-        <entry field="true" id="91" symbol="Z14"/>
-        <entry field="true" id="93" symbol="Z13"/>
-        <entry field="true" id="89" symbol="Z12"/>
-        <entry field="true" id="90" symbol="Z11"/>
-        <entry field="true" id="86" symbol="Z10"/>
-        <entry id="8388640" module="true" symbol="Lang"/>
-        <entry id="8390088" module="true" object="true" symbol="JsonData"/>
-        <entry id="8389068" method="true" symbol="draw"/>
-        <entry field="true" id="24" symbol="LauncherIcon"/>
-        <entry id="8388610" symbol="statics"/>
-        <entry field="true" id="58" symbol="ZSteps"/>
-        <entry field="true" id="9" symbol="showBat"/>
-        <entry field="true" id="15" symbol="timeOrStep"/>
-        <entry id="8389350" module="true" symbol="globals"/>
-        <entry field="true" id="66" symbol="BackgroundColorTitle"/>
-        <entry field="true" id="65" symbol="SubColorTitle"/>
-        <entry id="8388770" module="true" object="true" symbol="Strings"/>
-        <entry id="8390146" module="true" object="true" symbol="Background"/>
-        <entry id="107" method="true" symbol="drawBatt"/>
-        <entry field="true" id="85" symbol="Purple"/>
-        <entry field="true" id="11" symbol="clockShadSet"/>
-        <entry id="8388702" method="true" symbol="initialize"/>
-        <entry id="8389279" method="true" symbol="onStart"/>
-        <entry field="true" id="98" symbol="viewLS"/>
-        <entry field="true" id="97" symbol="view"/>
-        <entry field="true" id="74" symbol="TimeStepPrompt"/>
-        <entry field="true" id="61" symbol="Yellow"/>
-        <entry field="true" id="12" symbol="subColorSet"/>
-        <entry id="8389280" method="true" symbol="getInitialView"/>
-        <entry field="true" id="80" symbol="ClockColorTitle"/>
-        <entry id="8389347" symbol="color"/>
-        <entry field="true" id="99" symbol="zView"/>
-        <entry id="17" object="true" symbol="AviationTimeView"/>
-        <entry field="true" id="60" symbol="WhiteShad"/>
-        <entry field="true" id="35" symbol="ZuluOffsetTitle"/>
-        <entry field="true" id="92" symbol="DKGreen"/>
-        <entry field="true" id="94" symbol="Green"/>
-        <entry field="true" id="29" symbol="ZuluOffsetPrompt"/>
-        <entry id="108" method="true" symbol="notesAndAlarms"/>
-        <entry id="22" module="true" symbol="Layouts"/>
-        <entry id="16" object="true" symbol="AviationTimeApp"/>
-        <entry field="true" id="82" symbol="BlackShad"/>
-        <entry field="true" id="34" symbol="ShadOptPrompt"/>
-        <entry field="true" id="14" symbol="offSetAmmt"/>
-        <entry id="5" module="true" symbol="globals/Rez/Fonts"/>
-        <entry field="true" id="40" symbol="ShadOpt"/>
-        <entry field="true" id="87" symbol="LTGray"/>
-        <entry id="8388635" module="true" symbol="Application"/>
-        <entry field="true" id="64" symbol="ZuluOffset"/>
-        <entry field="true" id="32" symbol="GrayShad"/>
-        <entry field="true" id="36" symbol="batString"/>
-    </symbolTable>
-    <localVars>
-        <entry endPc="268435500" name="dictionary" stackId="1" startPc="268435460"/>
-        <entry arg="true" endPc="268435550" name="dc" stackId="1" startPc="268435502"/>
-        <entry arg="true" endPc="268435602" name="state" stackId="1" startPc="268435586"/>
-        <entry arg="true" endPc="268437070" name="dc" stackId="1" startPc="268436819"/>
-        <entry arg="true" endPc="268437155" name="dc" stackId="1" startPc="268437071"/>
-        <entry endPc="268437560" name="hours" stackId="3" startPc="268437160"/>
-        <entry endPc="268437560" name="timeString" stackId="1" startPc="268437160"/>
-        <entry endPc="268437560" name="clockTime" stackId="2" startPc="268437160"/>
-        <entry endPc="268438284" name="myParams" stackId="6" startPc="268437690"/>
-        <entry endPc="268438284" name="convToSecs" stackId="11" startPc="268437690"/>
-        <entry endPc="268438284" name="zuluToSecs" stackId="10" startPc="268437690"/>
-        <entry endPc="268438284" name="convToOffset" stackId="9" startPc="268437690"/>
-        <entry endPc="268438284" name="convLeftoverOffset" stackId="8" startPc="268437690"/>
-        <entry endPc="268438284" name="myFormat" stackId="7" startPc="268437690"/>
-        <entry endPc="268438480" name="myOffset" stackId="2" startPc="268437577"/>
-        <entry endPc="268438480" name="zTime" stackId="1" startPc="268437577"/>
-        <entry endPc="268438480" name="zuluTime" stackId="4" startPc="268437577"/>
-        <entry endPc="268438480" name="myZuluLabel" stackId="5" startPc="268437577"/>
-        <entry endPc="268438480" name="minOffset" stackId="3" startPc="268437577"/>
-        <entry endPc="268438677" name="steps" stackId="13" startPc="268438484"/>
-        <entry endPc="268438677" name="stepLoad" stackId="12" startPc="268438484"/>
-        <entry endPc="268438677" name="stepString" stackId="14" startPc="268438484"/>
-        <entry endPc="268438860" name="dateCalc" stackId="1" startPc="268438683"/>
-        <entry endPc="268438860" name="dateString" stackId="3" startPc="268438683"/>
-        <entry endPc="268438860" name="dateLoad" stackId="2" startPc="268438683"/>
-        <entry endPc="268439084" name="batLoad" stackId="3" startPc="268438907"/>
-        <entry endPc="268439132" name="batteryDisplay" stackId="2" startPc="268438866"/>
-        <entry endPc="268439132" name="batString" stackId="1" startPc="268438866"/>
-        <entry endPc="268439276" name="noteString" stackId="1" startPc="268439138"/>
-        <entry endPc="268439276" name="alarmString" stackId="2" startPc="268439138"/>
-        <entry endPc="268439276" name="avSets" stackId="3" startPc="268439138"/>
-        <entry endPc="268440617" name="rez_cmp_local_text_noteLabel" stackId="10" startPc="268439290"/>
-        <entry endPc="268440617" name="rez_cmp_local_text_TimeLabel" stackId="4" startPc="268439290"/>
-        <entry endPc="268440617" name="rez_cmp_local_text_alarmLabel" stackId="9" startPc="268439290"/>
-        <entry endPc="268440617" name="rez_cmp_local_text_dateLabel" stackId="7" startPc="268439290"/>
-        <entry endPc="268440617" name="rez_cmp_local_text_batLabel" stackId="8" startPc="268439290"/>
-        <entry endPc="268440617" name="rez_cmp_local_text_zTimeLabel" stackId="5" startPc="268439290"/>
-        <entry endPc="268440617" name="rez_cmp_local_text_stepLabel" stackId="11" startPc="268439290"/>
-        <entry endPc="268440617" name="rez_cmp_local_custom_drawable_14339598018330293148" stackId="2" startPc="268439290"/>
-        <entry endPc="268440617" name="rez_cmp_local_text_TimeLabelRShad" stackId="3" startPc="268439290"/>
-        <entry endPc="268440617" name="rez_cmp_local_text_zuluLabel" stackId="6" startPc="268439290"/>
-        <entry arg="true" endPc="268440618" name="dc" stackId="1" startPc="268439278"/>
-    </localVars>
-    <annotations>
-        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z18"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z17"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z19"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZuluTitle"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZuluOffsetPrompt"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="NoBat"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Black"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="GrayShad"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Orange"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ShadOptPrompt"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZuluOffsetTitle"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="batString"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z1"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z2"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z21"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ShadOpt"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z3"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z20"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z4"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z23"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z5"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z22"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DispBattPrompt"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z6"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z25"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z7"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z24"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z8"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z27"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z9"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z26"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z29"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z28"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZSteps"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Pink"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="WhiteShad"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Yellow"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z30"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z31"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZuluOffset"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="SubColorTitle"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="BackgroundColorTitle"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DKGray"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DKBlue"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="TimeStepTitle"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ClockColorPrompt"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ShadOptTitle"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZTime"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="TimeStepPrompt"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DispBattTitle"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="SubColorPrompt"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="NoShad"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Blue"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DKRed"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ClockColorTitle"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="YesBat"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="BlackShad"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Red"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="White"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Purple"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z10"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="LTGray"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="zuluLabel"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z12"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z11"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z14"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DKGreen"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z13"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Green"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z16"/>
-        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z15"/>
-    </annotations>
-    <dataEntryOffsetMappings>
-        <dataEntry label="globals" offset="87" parentId="" symbolId="globals" type="module"/>
-        <dataEntry label="globals/AviationTimeApp" offset="222" parentId="globals" symbolId="AviationTimeApp" type="class"/>
-        <dataEntry label="globals/Background" offset="325" parentId="globals" symbolId="Background" type="class"/>
-        <dataEntry label="globals/Rez" offset="380" parentId="globals" symbolId="Rez" type="module"/>
-        <dataEntry label="globals/Rez/Drawables" offset="459" parentId="Rez" symbolId="Drawables" type="module"/>
-        <dataEntry label="globals/Rez/Menus" offset="498" parentId="Rez" symbolId="Menus" type="module"/>
-        <dataEntry label="globals/Rez/Fonts" offset="529" parentId="Rez" symbolId="Fonts" type="module"/>
-        <dataEntry label="globals/Rez/Layouts" offset="560" parentId="Rez" symbolId="Layouts" type="module"/>
-        <dataEntry label="globals/Rez/JsonData" offset="599" parentId="Rez" symbolId="JsonData" type="module"/>
-        <dataEntry label="globals/Rez/Strings" offset="630" parentId="Rez" symbolId="Strings" type="module"/>
-        <dataEntry label="globals/AviationTimeView" offset="1237" parentId="globals" symbolId="AviationTimeView" type="class"/>
-    </dataEntryOffsetMappings>
-    <functions>
-        <functionEntry accessMode="public" endPc="268435501" name="initialize" parent="Background" startPc="268435456">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268435550" name="draw" parent="Background" startPc="268435502">
-            <param id="dc"/>
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="protected" endPc="268440717" name="&lt;init&gt;" parent="Background" startPc="268440699">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268435585" name="initialize" parent="AviationTimeApp" startPc="268435551">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268435602" name="onStart" parent="AviationTimeApp" startPc="268435586">
-            <param id="state"/>
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268435644" name="getInitialView" parent="AviationTimeApp" startPc="268435603">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268435857" name="onSettingsChanged" parent="AviationTimeApp" startPc="268435645">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268436766" name="colorUpdate" parent="AviationTimeApp" startPc="268435858">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="protected" endPc="268440698" name="&lt;init&gt;" parent="AviationTimeApp" startPc="268440680">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268436795" name="getApp" startPc="268436767">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268436818" name="initialize" parent="AviationTimeView" startPc="268436796">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268437070" name="onLayout" parent="AviationTimeView" startPc="268436819">
-            <param id="dc"/>
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268437155" name="onUpdate" parent="AviationTimeView" startPc="268437071">
-            <param id="dc"/>
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268437561" name="drawTime" parent="AviationTimeView" startPc="268437156">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268438678" name="drawZTime" parent="AviationTimeView" startPc="268437562">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268438861" name="drawDate" parent="AviationTimeView" startPc="268438679">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268439133" name="drawBatt" parent="AviationTimeView" startPc="268438862">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268439277" name="notesAndAlarms" parent="AviationTimeView" startPc="268439134">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="protected" endPc="268440766" name="&lt;init&gt;" parent="AviationTimeView" startPc="268440748">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="protected" endPc="268440742" name="&lt;init&gt;" parent="Drawables" startPc="268440742">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="protected" endPc="268440744" name="&lt;init&gt;" parent="Fonts" startPc="268440744">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="protected" endPc="268440746" name="&lt;init&gt;" parent="JsonData" startPc="268440746">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="public" endPc="268440618" name="WatchFace" parent="Layouts" startPc="268439278">
-            <param id="dc"/>
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="protected" endPc="268440745" name="&lt;init&gt;" parent="Layouts" startPc="268440745">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="protected" endPc="268440743" name="&lt;init&gt;" parent="Menus" startPc="268440743">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="protected" endPc="268440747" name="&lt;init&gt;" parent="Strings" startPc="268440747">
-            <documentation/>
-        </functionEntry>
-        <functionEntry accessMode="protected" endPc="268440741" name="&lt;init&gt;" parent="Rez" startPc="268440718">
-            <documentation/>
-        </functionEntry>
-    </functions>
+<manifest filename="/Users/jeffreyforste/Garmin Projects/AviationTime/manifest.xml"/>
+<pcToLineNum>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="1" lineNum="15" parent="globals/AviationTimeApp" pc="268435460" symbol="&lt;init&gt;"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="2" lineNum="27" parent="globals/AviationTimeApp" pc="268435479" symbol="onStart"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="2" lineNum="28" parent="globals/AviationTimeApp" pc="268435481" symbol="onStart"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="3" lineNum="37" parent="globals/AviationTimeApp" pc="268435494" symbol="onSettingsChanged"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="3" lineNum="40" parent="globals/AviationTimeApp" pc="268435496" symbol="onSettingsChanged"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="3" lineNum="41" parent="globals/AviationTimeApp" pc="268435530" symbol="onSettingsChanged"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="3" lineNum="42" parent="globals/AviationTimeApp" pc="268435564" symbol="onSettingsChanged"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="3" lineNum="43" parent="globals/AviationTimeApp" pc="268435598" symbol="onSettingsChanged"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="3" lineNum="44" parent="globals/AviationTimeApp" pc="268435632" symbol="onSettingsChanged"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="3" lineNum="45" parent="globals/AviationTimeApp" pc="268435666" symbol="onSettingsChanged"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="3" lineNum="47" parent="globals/AviationTimeApp" pc="268435700" symbol="onSettingsChanged"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="3" lineNum="48" parent="globals/AviationTimeApp" pc="268435712" symbol="onSettingsChanged"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="4" lineNum="32" parent="globals/AviationTimeApp" pc="268435729" symbol="getInitialView"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="4" lineNum="33" parent="globals/AviationTimeApp" pc="268435731" symbol="getInitialView"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="52" parent="globals/AviationTimeApp" pc="268435772" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="55" parent="globals/AviationTimeApp" pc="268435774" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="56" parent="globals/AviationTimeApp" pc="268435791" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="57" parent="globals/AviationTimeApp" pc="268435807" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="58" parent="globals/AviationTimeApp" pc="268435824" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="59" parent="globals/AviationTimeApp" pc="268435840" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="60" parent="globals/AviationTimeApp" pc="268435857" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="61" parent="globals/AviationTimeApp" pc="268435873" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="62" parent="globals/AviationTimeApp" pc="268435890" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="63" parent="globals/AviationTimeApp" pc="268435906" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="64" parent="globals/AviationTimeApp" pc="268435923" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="65" parent="globals/AviationTimeApp" pc="268435939" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="66" parent="globals/AviationTimeApp" pc="268435956" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="67" parent="globals/AviationTimeApp" pc="268435972" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="68" parent="globals/AviationTimeApp" pc="268435989" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="69" parent="globals/AviationTimeApp" pc="268436005" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="70" parent="globals/AviationTimeApp" pc="268436022" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="71" parent="globals/AviationTimeApp" pc="268436038" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="72" parent="globals/AviationTimeApp" pc="268436055" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="73" parent="globals/AviationTimeApp" pc="268436071" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="74" parent="globals/AviationTimeApp" pc="268436088" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="75" parent="globals/AviationTimeApp" pc="268436104" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="76" parent="globals/AviationTimeApp" pc="268436121" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="77" parent="globals/AviationTimeApp" pc="268436137" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="78" parent="globals/AviationTimeApp" pc="268436154" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="79" parent="globals/AviationTimeApp" pc="268436170" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="80" parent="globals/AviationTimeApp" pc="268436187" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="82" parent="globals/AviationTimeApp" pc="268436203" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="86" parent="globals/AviationTimeApp" pc="268436216" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="87" parent="globals/AviationTimeApp" pc="268436233" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="88" parent="globals/AviationTimeApp" pc="268436249" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="89" parent="globals/AviationTimeApp" pc="268436266" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="90" parent="globals/AviationTimeApp" pc="268436282" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="91" parent="globals/AviationTimeApp" pc="268436299" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="92" parent="globals/AviationTimeApp" pc="268436315" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="93" parent="globals/AviationTimeApp" pc="268436332" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="97" parent="globals/AviationTimeApp" pc="268436348" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="98" parent="globals/AviationTimeApp" pc="268436365" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="99" parent="globals/AviationTimeApp" pc="268436381" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="100" parent="globals/AviationTimeApp" pc="268436398" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="101" parent="globals/AviationTimeApp" pc="268436414" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="102" parent="globals/AviationTimeApp" pc="268436431" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="103" parent="globals/AviationTimeApp" pc="268436447" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="104" parent="globals/AviationTimeApp" pc="268436464" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="105" parent="globals/AviationTimeApp" pc="268436480" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="106" parent="globals/AviationTimeApp" pc="268436497" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="107" parent="globals/AviationTimeApp" pc="268436513" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="108" parent="globals/AviationTimeApp" pc="268436530" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="109" parent="globals/AviationTimeApp" pc="268436546" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="110" parent="globals/AviationTimeApp" pc="268436563" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="111" parent="globals/AviationTimeApp" pc="268436579" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="112" parent="globals/AviationTimeApp" pc="268436596" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="115" parent="globals/AviationTimeApp" pc="268436612" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="5" lineNum="117" parent="globals/AviationTimeApp" pc="268436623" symbol="colorUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="6" lineNum="21" parent="globals/AviationTimeApp" pc="268436661" symbol="initialize"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="6" lineNum="22" parent="globals/AviationTimeApp" pc="268436663" symbol="initialize"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="6" lineNum="23" parent="globals/AviationTimeApp" pc="268436681" symbol="initialize"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="7" lineNum="124" parent="globals" pc="268436694" symbol="getApp"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" id="7" lineNum="125" parent="globals" pc="268436704" symbol="getApp"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationBackground.mc" id="8" lineNum="6" parent="globals/Background" pc="268436720" symbol="&lt;init&gt;"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationBackground.mc" id="9" lineNum="8" parent="globals/Background" pc="268436739" symbol="initialize"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationBackground.mc" id="9" lineNum="9" parent="globals/Background" pc="268436743" symbol="initialize"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationBackground.mc" id="9" lineNum="13" parent="globals/Background" pc="268436764" symbol="initialize"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationBackground.mc" id="10" lineNum="16" parent="globals/Background" pc="268436785" symbol="draw"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationBackground.mc" id="10" lineNum="18" parent="globals/Background" pc="268436787" symbol="draw"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationBackground.mc" id="10" lineNum="19" parent="globals/Background" pc="268436812" symbol="draw"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" id="11" lineNum="7" parent="globals/Rez" pc="268436825" symbol="&lt;init&gt;"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="12" lineNum="9" parent="globals/AviationTimeView" pc="268436849" symbol="&lt;init&gt;"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="13" lineNum="25" parent="globals/AviationTimeView" pc="268436868" symbol="onLayout"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="13" lineNum="26" parent="globals/AviationTimeView" pc="268436870" symbol="onLayout"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="13" lineNum="29" parent="globals/AviationTimeView" pc="268436911" symbol="onLayout"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="13" lineNum="30" parent="globals/AviationTimeView" pc="268436945" symbol="onLayout"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="13" lineNum="31" parent="globals/AviationTimeView" pc="268436979" symbol="onLayout"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="13" lineNum="32" parent="globals/AviationTimeView" pc="268437013" symbol="onLayout"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="13" lineNum="33" parent="globals/AviationTimeView" pc="268437047" symbol="onLayout"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="13" lineNum="34" parent="globals/AviationTimeView" pc="268437081" symbol="onLayout"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="13" lineNum="35" parent="globals/AviationTimeView" pc="268437115" symbol="onLayout"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="63" parent="globals/AviationTimeView" pc="268437150" symbol="drawTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="67" parent="globals/AviationTimeView" pc="268437154" symbol="drawTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="66" parent="globals/AviationTimeView" pc="268437154" symbol="drawTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="68" parent="globals/AviationTimeView" pc="268437171" symbol="drawTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="71" parent="globals/AviationTimeView" pc="268437181" symbol="drawTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="72" parent="globals/AviationTimeView" pc="268437208" symbol="drawTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="74" parent="globals/AviationTimeView" pc="268437299" symbol="drawTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="75" parent="globals/AviationTimeView" pc="268437310" symbol="drawTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="77" parent="globals/AviationTimeView" pc="268437323" symbol="drawTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="80" parent="globals/AviationTimeView" pc="268437391" symbol="drawTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="80" parent="globals/AviationTimeView" pc="268437404" symbol="drawTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="81" parent="globals/AviationTimeView" pc="268437420" symbol="drawTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="82" parent="globals/AviationTimeView" pc="268437446" symbol="drawTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="84" parent="globals/AviationTimeView" pc="268437466" symbol="drawTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="84" parent="globals/AviationTimeView" pc="268437479" symbol="drawTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="85" parent="globals/AviationTimeView" pc="268437495" symbol="drawTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="14" lineNum="86" parent="globals/AviationTimeView" pc="268437521" symbol="drawTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="92" parent="globals/AviationTimeView" pc="268437542" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="95" parent="globals/AviationTimeView" pc="268437546" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="96" parent="globals/AviationTimeView" pc="268437557" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="97" parent="globals/AviationTimeView" pc="268437600" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="98" parent="globals/AviationTimeView" pc="268437610" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="103" parent="globals/AviationTimeView" pc="268437620" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="99" parent="globals/AviationTimeView" pc="268437620" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="100" parent="globals/AviationTimeView" pc="268437620" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="106" parent="globals/AviationTimeView" pc="268437643" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="108" parent="globals/AviationTimeView" pc="268437660" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="109" parent="globals/AviationTimeView" pc="268437660" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="111" parent="globals/AviationTimeView" pc="268437667" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="112" parent="globals/AviationTimeView" pc="268437690" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="113" parent="globals/AviationTimeView" pc="268437713" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="115" parent="globals/AviationTimeView" pc="268437780" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="118" parent="globals/AviationTimeView" pc="268437847" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="120" parent="globals/AviationTimeView" pc="268437896" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="123" parent="globals/AviationTimeView" pc="268437917" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="124" parent="globals/AviationTimeView" pc="268437939" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="126" parent="globals/AviationTimeView" pc="268437967" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="129" parent="globals/AviationTimeView" pc="268437974" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="132" parent="globals/AviationTimeView" pc="268437993" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="135" parent="globals/AviationTimeView" pc="268438000" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="136" parent="globals/AviationTimeView" pc="268438011" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="138" parent="globals/AviationTimeView" pc="268438045" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="142" parent="globals/AviationTimeView" pc="268438070" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="144" parent="globals/AviationTimeView" pc="268438086" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="145" parent="globals/AviationTimeView" pc="268438097" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="149" parent="globals/AviationTimeView" pc="268438110" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="150" parent="globals/AviationTimeView" pc="268438121" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="151" parent="globals/AviationTimeView" pc="268438131" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="152" parent="globals/AviationTimeView" pc="268438142" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="153" parent="globals/AviationTimeView" pc="268438155" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="154" parent="globals/AviationTimeView" pc="268438166" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="157" parent="globals/AviationTimeView" pc="268438179" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="159" parent="globals/AviationTimeView" pc="268438258" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="160" parent="globals/AviationTimeView" pc="268438352" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="164" parent="globals/AviationTimeView" pc="268438359" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="165" parent="globals/AviationTimeView" pc="268438385" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="168" parent="globals/AviationTimeView" pc="268438405" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="169" parent="globals/AviationTimeView" pc="268438431" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="173" parent="globals/AviationTimeView" pc="268438454" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="174" parent="globals/AviationTimeView" pc="268438471" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="175" parent="globals/AviationTimeView" pc="268438481" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="178" parent="globals/AviationTimeView" pc="268438519" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="180" parent="globals/AviationTimeView" pc="268438542" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="181" parent="globals/AviationTimeView" pc="268438568" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="184" parent="globals/AviationTimeView" pc="268438588" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="15" lineNum="185" parent="globals/AviationTimeView" pc="268438614" symbol="drawZTime"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="207" parent="globals/AviationTimeView" pc="268438638" symbol="drawBatt"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="210" parent="globals/AviationTimeView" pc="268438642" symbol="drawBatt"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="211" parent="globals/AviationTimeView" pc="268438642" symbol="drawBatt"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="213" parent="globals/AviationTimeView" pc="268438670" symbol="drawBatt"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="214" parent="globals/AviationTimeView" pc="268438687" symbol="drawBatt"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="215" parent="globals/AviationTimeView" pc="268438725" symbol="drawBatt"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="217" parent="globals/AviationTimeView" pc="268438769" symbol="drawBatt"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="218" parent="globals/AviationTimeView" pc="268438780" symbol="drawBatt"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="219" parent="globals/AviationTimeView" pc="268438800" symbol="drawBatt"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="220" parent="globals/AviationTimeView" pc="268438811" symbol="drawBatt"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="222" parent="globals/AviationTimeView" pc="268438831" symbol="drawBatt"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="225" parent="globals/AviationTimeView" pc="268438854" symbol="drawBatt"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="226" parent="globals/AviationTimeView" pc="268438861" symbol="drawBatt"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="16" lineNum="228" parent="globals/AviationTimeView" pc="268438878" symbol="drawBatt"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="232" parent="globals/AviationTimeView" pc="268438893" symbol="notesAndAlarms"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="233" parent="globals/AviationTimeView" pc="268438897" symbol="notesAndAlarms"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="234" parent="globals/AviationTimeView" pc="268438904" symbol="notesAndAlarms"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="235" parent="globals/AviationTimeView" pc="268438911" symbol="notesAndAlarms"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="237" parent="globals/AviationTimeView" pc="268438928" symbol="notesAndAlarms"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="238" parent="globals/AviationTimeView" pc="268438945" symbol="notesAndAlarms"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="240" parent="globals/AviationTimeView" pc="268438955" symbol="notesAndAlarms"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="242" parent="globals/AviationTimeView" pc="268438962" symbol="notesAndAlarms"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="244" parent="globals/AviationTimeView" pc="268438982" symbol="notesAndAlarms"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="245" parent="globals/AviationTimeView" pc="268438999" symbol="notesAndAlarms"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="247" parent="globals/AviationTimeView" pc="268439009" symbol="notesAndAlarms"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="17" lineNum="249" parent="globals/AviationTimeView" pc="268439016" symbol="notesAndAlarms"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="18" lineNum="20" parent="globals/AviationTimeView" pc="268439037" symbol="initialize"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="18" lineNum="21" parent="globals/AviationTimeView" pc="268439039" symbol="initialize"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="40" parent="globals/AviationTimeView" pc="268439058" symbol="onUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="43" parent="globals/AviationTimeView" pc="268439060" symbol="onUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="46" parent="globals/AviationTimeView" pc="268439072" symbol="onUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="49" parent="globals/AviationTimeView" pc="268439084" symbol="onUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="52" parent="globals/AviationTimeView" pc="268439096" symbol="onUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="55" parent="globals/AviationTimeView" pc="268439108" symbol="onUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="19" lineNum="58" parent="globals/AviationTimeView" pc="268439120" symbol="onUpdate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="20" lineNum="192" parent="globals/AviationTimeView" pc="268439145" symbol="drawDate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="20" lineNum="194" parent="globals/AviationTimeView" pc="268439149" symbol="drawDate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="20" lineNum="195" parent="globals/AviationTimeView" pc="268439177" symbol="drawDate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="20" lineNum="196" parent="globals/AviationTimeView" pc="268439220" symbol="drawDate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="20" lineNum="201" parent="globals/AviationTimeView" pc="268439296" symbol="drawDate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" id="20" lineNum="202" parent="globals/AviationTimeView" pc="268439316" symbol="drawDate"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" id="21" lineNum="19" parent="globals/Rez/Layouts" pc="268439331" symbol="WatchFace"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" id="21" lineNum="20" parent="globals/Rez/Layouts" pc="268439343" symbol="WatchFace"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" id="21" lineNum="22" parent="globals/Rez/Layouts" pc="268439371" symbol="WatchFace"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" id="21" lineNum="24" parent="globals/Rez/Layouts" pc="268439483" symbol="WatchFace"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" id="21" lineNum="26" parent="globals/Rez/Layouts" pc="268439595" symbol="WatchFace"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" id="21" lineNum="28" parent="globals/Rez/Layouts" pc="268439707" symbol="WatchFace"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" id="21" lineNum="30" parent="globals/Rez/Layouts" pc="268439819" symbol="WatchFace"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" id="21" lineNum="32" parent="globals/Rez/Layouts" pc="268439931" symbol="WatchFace"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" id="21" lineNum="34" parent="globals/Rez/Layouts" pc="268440043" symbol="WatchFace"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" id="21" lineNum="36" parent="globals/Rez/Layouts" pc="268440155" symbol="WatchFace"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" id="21" lineNum="38" parent="globals/Rez/Layouts" pc="268440267" symbol="WatchFace"/>
+<entry filename="/Users/jeffreyforste/Garmin Projects/AviationTime/bin/gen/006-B3888-00/source/Rez.mcgen" id="21" lineNum="40" parent="globals/Rez/Layouts" pc="268440379" symbol="WatchFace"/>
+</pcToLineNum>
+<symbolTable>
+<entry field="true" id="47" symbol="DKRed"/>
+<entry id="8388639" module="true" symbol="Graphics"/>
+<entry field="true" id="55" symbol="Orange"/>
+<entry field="true" id="56" symbol="Pink"/>
+<entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+<entry field="true" id="108" symbol="zuluLabel"/>
+<entry id="26" method="true" symbol="drawDate"/>
+<entry id="7" module="true" symbol="globals/Rez/Menus"/>
+<entry id="8389683" method="true" symbol="onSettingsChanged"/>
+<entry field="true" id="24" symbol="alarmDisplay"/>
+<entry field="true" id="48" symbol="DispBattPrompt"/>
+<entry field="true" id="13" symbol="myBackgroundColor"/>
+<entry id="8388924" module="true" symbol="Gregorian"/>
+<entry field="true" id="106" symbol="ZuluTitle"/>
+<entry field="true" id="8388611" module="true" symbol="Toybox"/>
+<entry field="true" id="61" symbol="ShadOptTitle"/>
+<entry id="27" method="true" symbol="drawTime"/>
+<entry field="true" id="37" symbol="AppName"/>
+<entry id="8388633" module="true" symbol="ActivityMonitor"/>
+<entry id="8" module="true" symbol="globals/Rez/Strings"/>
+<entry field="true" id="49" symbol="DispBattTitle"/>
+<entry id="8388772" module="true" object="true" symbol="Fonts"/>
+<entry field="true" id="66" symbol="White"/>
+<entry field="true" id="18" symbol="clockColorNum"/>
+<entry field="true" id="65" symbol="TimeStepTitle"/>
+<entry field="true" id="102" symbol="ZTime"/>
+<entry field="true" id="39" symbol="Black"/>
+<entry id="8388648" module="true" symbol="WatchUi"/>
+<entry field="true" id="34" symbol="zLabel"/>
+<entry id="2" module="true" symbol="globals/Rez"/>
+<entry field="true" id="54" symbol="NoShad"/>
+<entry field="true" id="62" symbol="SubColorPrompt"/>
+<entry id="8389124" method="true" symbol="onUpdate"/>
+<entry id="8389375" method="true" object="true" symbol="WatchFace"/>
+<entry field="true" id="8389065" symbol="locY"/>
+<entry field="true" id="8389064" symbol="locX"/>
+<entry field="true" id="45" symbol="DKGray"/>
+<entry id="8388771" module="true" object="true" symbol="Drawables"/>
+<entry id="8389348" symbol="font"/>
+<entry id="23" module="true" symbol="Menus"/>
+<entry id="8389275" method="true" symbol="getApp"/>
+<entry id="6" module="true" symbol="globals/Rez/Layouts"/>
+<entry field="true" id="41" symbol="Blue"/>
+<entry field="true" id="29" symbol="noteDisplay"/>
+<entry id="8389122" method="true" symbol="onLayout"/>
+<entry field="true" id="8389063" symbol="identifier"/>
+<entry id="8389349" symbol="justification"/>
+<entry field="true" id="44" symbol="DKBlue"/>
+<entry field="true" id="19" symbol="clockShadNum"/>
+<entry field="true" id="69" symbol="YesBat"/>
+<entry id="5" module="true" symbol="globals/Rez/JsonData"/>
+<entry field="true" id="21" symbol="subColorNum"/>
+<entry field="true" id="31" symbol="stepDisplay"/>
+<entry field="true" id="100" symbol="Z9"/>
+<entry field="true" id="99" symbol="Z8"/>
+<entry field="true" id="98" symbol="Z7"/>
+<entry field="true" id="97" symbol="Z6"/>
+<entry field="true" id="96" symbol="Z5"/>
+<entry field="true" id="95" symbol="Z4"/>
+<entry field="true" id="92" symbol="Z3"/>
+<entry field="true" id="81" symbol="Z2"/>
+<entry field="true" id="70" symbol="Z1"/>
+<entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+<entry field="true" id="42" symbol="ClockColorPrompt"/>
+<entry field="true" id="53" symbol="NoBat"/>
+<entry field="true" id="11" symbol="clockColorSet"/>
+<entry id="28" method="true" symbol="drawZTime"/>
+<entry id="8388644" module="true" symbol="System"/>
+<entry id="8388645" module="true" symbol="Time"/>
+<entry id="8388769" module="true" object="true" symbol="Rez"/>
+<entry field="true" id="58" symbol="Red"/>
+<entry id="20" method="true" symbol="colorUpdate"/>
+<entry field="true" id="94" symbol="Z31"/>
+<entry field="true" id="93" symbol="Z30"/>
+<entry field="true" id="91" symbol="Z29"/>
+<entry field="true" id="90" symbol="Z28"/>
+<entry field="true" id="89" symbol="Z27"/>
+<entry field="true" id="88" symbol="Z26"/>
+<entry field="true" id="87" symbol="Z25"/>
+<entry field="true" id="86" symbol="Z24"/>
+<entry field="true" id="85" symbol="Z23"/>
+<entry field="true" id="84" symbol="Z22"/>
+<entry field="true" id="83" symbol="Z21"/>
+<entry field="true" id="82" symbol="Z20"/>
+<entry field="true" id="80" symbol="Z19"/>
+<entry field="true" id="79" symbol="Z18"/>
+<entry field="true" id="78" symbol="Z17"/>
+<entry field="true" id="77" symbol="Z16"/>
+<entry field="true" id="76" symbol="Z15"/>
+<entry field="true" id="75" symbol="Z14"/>
+<entry field="true" id="74" symbol="Z13"/>
+<entry field="true" id="73" symbol="Z12"/>
+<entry field="true" id="72" symbol="Z11"/>
+<entry field="true" id="71" symbol="Z10"/>
+<entry id="8388640" module="true" symbol="Lang"/>
+<entry id="8390088" module="true" object="true" symbol="JsonData"/>
+<entry id="8389068" method="true" symbol="draw"/>
+<entry field="true" id="36" symbol="LauncherIcon"/>
+<entry id="8388610" symbol="statics"/>
+<entry field="true" id="101" symbol="ZSteps"/>
+<entry field="true" id="15" symbol="showBat"/>
+<entry field="true" id="17" symbol="timeOrStep"/>
+<entry id="8389350" module="true" symbol="globals"/>
+<entry field="true" id="38" symbol="BackgroundColorTitle"/>
+<entry field="true" id="63" symbol="SubColorTitle"/>
+<entry id="8388770" module="true" object="true" symbol="Strings"/>
+<entry id="8390146" module="true" object="true" symbol="Background"/>
+<entry id="25" method="true" symbol="drawBatt"/>
+<entry field="true" id="57" symbol="Purple"/>
+<entry field="true" id="12" symbol="clockShadSet"/>
+<entry id="8388702" method="true" symbol="initialize"/>
+<entry id="8389279" method="true" symbol="onStart"/>
+<entry field="true" id="33" symbol="viewLS"/>
+<entry field="true" id="32" symbol="view"/>
+<entry field="true" id="64" symbol="TimeStepPrompt"/>
+<entry field="true" id="68" symbol="Yellow"/>
+<entry field="true" id="16" symbol="subColorSet"/>
+<entry id="8389280" method="true" symbol="getInitialView"/>
+<entry field="true" id="43" symbol="ClockColorTitle"/>
+<entry id="8389347" symbol="color"/>
+<entry field="true" id="35" symbol="zView"/>
+<entry id="10" object="true" symbol="AviationTimeView"/>
+<entry field="true" id="67" symbol="WhiteShad"/>
+<entry field="true" id="105" symbol="ZuluOffsetTitle"/>
+<entry field="true" id="46" symbol="DKGreen"/>
+<entry field="true" id="51" symbol="Green"/>
+<entry field="true" id="104" symbol="ZuluOffsetPrompt"/>
+<entry id="30" method="true" symbol="notesAndAlarms"/>
+<entry id="22" module="true" symbol="Layouts"/>
+<entry id="9" object="true" symbol="AviationTimeApp"/>
+<entry field="true" id="40" symbol="BlackShad"/>
+<entry field="true" id="60" symbol="ShadOptPrompt"/>
+<entry field="true" id="14" symbol="offSetAmmt"/>
+<entry id="4" module="true" symbol="globals/Rez/Fonts"/>
+<entry field="true" id="59" symbol="ShadOpt"/>
+<entry field="true" id="52" symbol="LTGray"/>
+<entry id="8388635" module="true" symbol="Application"/>
+<entry field="true" id="103" symbol="ZuluOffset"/>
+<entry field="true" id="50" symbol="GrayShad"/>
+<entry field="true" id="107" symbol="batString"/>
+</symbolTable>
+<localVars>
+<entry arg="true" endPc="268435493" name="state" stackId="1" startPc="268435479"/>
+<entry endPc="268436783" name="dictionary" stackId="1" startPc="268436743"/>
+<entry arg="true" endPc="268436824" name="dc" stackId="1" startPc="268436785"/>
+<entry arg="true" endPc="268437149" name="dc" stackId="1" startPc="268436868"/>
+<entry endPc="268437540" name="timeString" stackId="1" startPc="268437154"/>
+<entry endPc="268437540" name="clockTime" stackId="2" startPc="268437154"/>
+<entry endPc="268437540" name="hours" stackId="3" startPc="268437154"/>
+<entry endPc="268438450" name="zTime" stackId="1" startPc="268437557"/>
+<entry endPc="268438450" name="myOffset" stackId="2" startPc="268437557"/>
+<entry endPc="268438450" name="minOffset" stackId="3" startPc="268437557"/>
+<entry endPc="268438450" name="zuluTime" stackId="4" startPc="268437557"/>
+<entry endPc="268438450" name="myZuluLabel" stackId="5" startPc="268437557"/>
+<entry endPc="268438254" name="myParams" stackId="6" startPc="268437660"/>
+<entry endPc="268438254" name="myFormat" stackId="7" startPc="268437660"/>
+<entry endPc="268438254" name="convLeftoverOffset" stackId="8" startPc="268437660"/>
+<entry endPc="268438254" name="convToOffset" stackId="9" startPc="268437660"/>
+<entry endPc="268438254" name="zuluToSecs" stackId="10" startPc="268437660"/>
+<entry endPc="268438254" name="convToSecs" stackId="11" startPc="268437660"/>
+<entry endPc="268438636" name="stepLoad" stackId="12" startPc="268438454"/>
+<entry endPc="268438636" name="steps" stackId="13" startPc="268438454"/>
+<entry endPc="268438636" name="stepString" stackId="14" startPc="268438454"/>
+<entry endPc="268438891" name="batString" stackId="1" startPc="268438642"/>
+<entry endPc="268438891" name="batteryDisplay" stackId="2" startPc="268438642"/>
+<entry endPc="268438850" name="batLoad" stackId="3" startPc="268438687"/>
+<entry endPc="268439035" name="noteString" stackId="1" startPc="268438897"/>
+<entry endPc="268439035" name="alarmString" stackId="2" startPc="268438897"/>
+<entry endPc="268439035" name="avSets" stackId="3" startPc="268438897"/>
+<entry arg="true" endPc="268439144" name="dc" stackId="1" startPc="268439058"/>
+<entry endPc="268439329" name="dateCalc" stackId="1" startPc="268439149"/>
+<entry endPc="268439329" name="dateLoad" stackId="2" startPc="268439149"/>
+<entry endPc="268439329" name="dateString" stackId="3" startPc="268439149"/>
+<entry arg="true" endPc="268440485" name="dc" stackId="1" startPc="268439331"/>
+<entry endPc="268440485" name="rez_cmp_local_custom_drawable_10984723069320328739" stackId="2" startPc="268439343"/>
+<entry endPc="268440485" name="rez_cmp_local_text_TimeLabelRShad" stackId="3" startPc="268439343"/>
+<entry endPc="268440485" name="rez_cmp_local_text_TimeLabel" stackId="4" startPc="268439343"/>
+<entry endPc="268440485" name="rez_cmp_local_text_zTimeLabel" stackId="5" startPc="268439343"/>
+<entry endPc="268440485" name="rez_cmp_local_text_zuluLabel" stackId="6" startPc="268439343"/>
+<entry endPc="268440485" name="rez_cmp_local_text_dateLabel" stackId="7" startPc="268439343"/>
+<entry endPc="268440485" name="rez_cmp_local_text_batLabel" stackId="8" startPc="268439343"/>
+<entry endPc="268440485" name="rez_cmp_local_text_alarmLabel" stackId="9" startPc="268439343"/>
+<entry endPc="268440485" name="rez_cmp_local_text_noteLabel" stackId="10" startPc="268439343"/>
+<entry endPc="268440485" name="rez_cmp_local_text_stepLabel" stackId="11" startPc="268439343"/>
+</localVars>
+<annotations>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ClockColorTitle"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Yellow"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="BlackShad"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="BackgroundColorTitle"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DispBattPrompt"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ShadOpt"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="NoBat"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="SubColorPrompt"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="TimeStepTitle"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z13"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z12"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="LTGray"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z11"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z10"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZuluOffset"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="zuluLabel"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="YesBat"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="NoShad"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Red"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZuluOffsetTitle"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Orange"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ClockColorPrompt"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Purple"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z20"/>
+<annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z24"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z23"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DKRed"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="WhiteShad"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z22"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z21"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZTime"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DKGray"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Blue"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="SubColorTitle"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z17"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z16"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z15"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z14"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Black"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ShadOptPrompt"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="TimeStepPrompt"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z19"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z18"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z31"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z30"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZuluOffsetPrompt"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="GrayShad"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="batString"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="White"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Pink"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Green"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z6"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z5"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z8"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZSteps"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z7"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z9"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ZuluTitle"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DKBlue"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z28"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DispBattTitle"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z27"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z26"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ShadOptTitle"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z25"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z2"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z1"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DKGreen"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z4"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z29"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Z3"/>
+</annotations>
+<dataEntryOffsetMappings>
+<dataEntry label="globals" offset="87" parentId="" symbolId="globals" type="module"/>
+<dataEntry label="globals/AviationTimeApp" offset="222" parentId="globals" symbolId="AviationTimeApp" type="class"/>
+<dataEntry label="globals/Background" offset="325" parentId="globals" symbolId="Background" type="class"/>
+<dataEntry label="globals/Rez" offset="380" parentId="globals" symbolId="Rez" type="module"/>
+<dataEntry label="globals/AviationTimeView" offset="459" parentId="globals" symbolId="AviationTimeView" type="class"/>
+<dataEntry label="globals/Rez/Drawables" offset="618" parentId="Rez" symbolId="Drawables" type="module"/>
+<dataEntry label="globals/Rez/Layouts" offset="657" parentId="Rez" symbolId="Layouts" type="module"/>
+<dataEntry label="globals/Rez/Menus" offset="696" parentId="Rez" symbolId="Menus" type="module"/>
+<dataEntry label="globals/Rez/Fonts" offset="727" parentId="Rez" symbolId="Fonts" type="module"/>
+<dataEntry label="globals/Rez/Strings" offset="758" parentId="Rez" symbolId="Strings" type="module"/>
+<dataEntry label="globals/Rez/JsonData" offset="1365" parentId="Rez" symbolId="JsonData" type="module"/>
+</dataEntryOffsetMappings>
+<functions>
+<functionEntry accessMode="public" endPc="268435478" name="&lt;init&gt;" parent="AviationTimeApp" startPc="268435460">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435493" name="onStart" parent="AviationTimeApp" startPc="268435479">
+<param id="state"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435728" name="onSettingsChanged" parent="AviationTimeApp" startPc="268435494">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435771" name="getInitialView" parent="AviationTimeApp" startPc="268435729">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436660" name="colorUpdate" parent="AviationTimeApp" startPc="268435772">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436693" name="initialize" parent="AviationTimeApp" startPc="268436661">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436719" name="getApp" startPc="268436694">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436738" name="&lt;init&gt;" parent="Background" startPc="268436720">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436784" name="initialize" parent="Background" startPc="268436739">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436824" name="draw" parent="Background" startPc="268436785">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436848" name="&lt;init&gt;" parent="Rez" startPc="268436825">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436867" name="&lt;init&gt;" parent="AviationTimeView" startPc="268436849">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268437149" name="onLayout" parent="AviationTimeView" startPc="268436868">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268437541" name="drawTime" parent="AviationTimeView" startPc="268437150">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268438637" name="drawZTime" parent="AviationTimeView" startPc="268437542">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268438892" name="drawBatt" parent="AviationTimeView" startPc="268438638">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268439036" name="notesAndAlarms" parent="AviationTimeView" startPc="268438893">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268439057" name="initialize" parent="AviationTimeView" startPc="268439037">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268439144" name="onUpdate" parent="AviationTimeView" startPc="268439058">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268439330" name="drawDate" parent="AviationTimeView" startPc="268439145">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Layouts">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Menus">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Fonts">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="JsonData">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268440485" name="WatchFace" parent="Layouts" startPc="268439331">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+</functions>
 </debugInfo>
