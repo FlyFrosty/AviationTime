@@ -5,6 +5,10 @@ import Toybox.WatchUi;
 import Toybox.Time.Gregorian;
 import Toybox.Time;
 import Toybox.ActivityMonitor;
+import Toybox.Complications;
+
+
+var colorsUpdated = true;   //A Check to see if we need to run the updateColors
 
 class AviationTimeView extends WatchUi.WatchFace {
 
@@ -16,9 +20,72 @@ class AviationTimeView extends WatchUi.WatchFace {
     var stepDisplay;
     var noteDisplay;
     var alarmDisplay;
+    var batteryDisplay;
+
+    var hasComps;
+
+    var wxId;
+    var wxComp;
+    var wxNow;
+
+    var stepId, batId, noteId;
+    var stepComp, batComp, noteComp;
+    var batLoad;
+    var mSteps;
+    var noteSets;
+
+    var batY = 0.33;        //Divide up the screen for press to complications
+    var stepY = 0.66;
+    var wHeight;
+
+    var calId;          //Calendar info for new watches only
+    var calComp;
+
 
     function initialize() {
         WatchFace.initialize();
+            hasComps = (Toybox has :Complications); 
+
+        if (hasComps) {
+            stepId = new Id(Complications.COMPLICATION_TYPE_STEPS);
+            batId = new Id(Complications.COMPLICATION_TYPE_BATTERY);
+            noteId = new Id(Complications.COMPLICATION_TYPE_NOTIFICATION_COUNT);
+            calId = new Id(Complications.COMPLICATION_TYPE_CALENDAR_EVENTS);
+
+            stepComp = Complications.getComplication(stepId);
+            if (stepComp != null) {
+                Complications.subscribeToUpdates(stepId);
+            }
+
+            batComp = Complications.getComplication(batId);
+            if (batComp != null) {
+                Complications.subscribeToUpdates(batId);  
+            }
+
+            noteComp = Complications.getComplication(noteId);
+            if (noteComp != null) {
+                Complications.subscribeToUpdates(noteId);
+            }  
+
+            Complications.registerComplicationChangeCallback(self.method(:onComplicationChanged));         
+        }    
+    
+    }
+
+    function onComplicationChanged(compId as Complications.Id) as Void {
+
+        if (compId == batId) {
+            batLoad = (Complications.getComplication(batId)).value;
+        } else if (compId == stepId) {
+            mSteps = (Complications.getComplication(stepId)).value;
+            if (mSteps instanceof Toybox.Lang.Float) {
+                mSteps = (mSteps * 1000).toNumber(); //System converts to float at 10k. Reported system error
+            }
+        } else if (compId == noteId) {
+            noteSets = (Complications.getComplication(noteId)).value;
+        } else {
+            System.println("no valid comps");
+        }
     }
 
     // Load your resources here
@@ -33,12 +100,24 @@ class AviationTimeView extends WatchUi.WatchFace {
         stepDisplay = View.findDrawableById("stepLabel") as Text;
         noteDisplay = View.findDrawableById("noteLabel") as Text;
         alarmDisplay = View.findDrawableById("alarmLabel") as Text;
+        batteryDisplay = View.findDrawableById("batLabel") as Text;
 
+        wHeight = dc.getHeight();           //used for touch scren areas
     }
 
     // Update the view
     function onUpdate(dc as Dc) as Void {
 
+
+        if (showNotes) {
+            notesDisp();
+        } else {
+            noteDisplay.setText(" ");
+        }
+
+        //Draw Alarm
+        alarmDisp();
+    
         //Draw Time
         drawTime();
 
@@ -49,13 +128,16 @@ class AviationTimeView extends WatchUi.WatchFace {
         drawDate();
 
         //Draw Battery
-        drawBatt();
-
-        //Display Alarms and Notifications
-        notesAndAlarms();     
+        drawBatt();    
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
+
+        if (dispSecs && 
+            System.getDeviceSettings().screenShape == System.SCREEN_SHAPE_ROUND) {
+                secondsDisplay(dc);
+        }
+        
     }
 
 
@@ -208,46 +290,140 @@ class AviationTimeView extends WatchUi.WatchFace {
             //Get battery info
 
             var batString;
-            var batteryDisplay = View.findDrawableById("batLabel") as Text;
 
             if (showBat == 0) {
-                var batLoad = ((System.getSystemStats().battery) + 0.5).toNumber();
+            
+                if (!hasComps) {
+                    batLoad = ((System.getSystemStats().battery) + 0.5).toNumber();
+                }
                 batString = Lang.format("$1$", [batLoad])+"%";
 
-                if (batLoad < 5.0) {
-                    batteryDisplay.setColor(Graphics.COLOR_RED);
-                } else if (batLoad < 25.0) {
-                batteryDisplay.setColor(Graphics.COLOR_YELLOW);
+                if (System has :SCREEN_SHAPE_SEMI_OCTAGON &&
+                    System.getDeviceSettings().screenShape != System.SCREEN_SHAPE_SEMI_OCTAGON){     //Monocrhrome correction
+
+                    if (batLoad < 5.0) {
+                        batteryDisplay.setColor(Graphics.COLOR_RED);
+                    } else if (batLoad < 25.0) {
+                        batteryDisplay.setColor(Graphics.COLOR_YELLOW);
+                    } else {
+                        batteryDisplay.setColor(Graphics.COLOR_DK_GREEN);
+                    }
                 } else {
-                    batteryDisplay.setColor(subColorSet);
+                    if (myBackgroundColor == 0xFFFFFF) {
+                        batteryDisplay.setColor(Graphics.COLOR_BLACK);
+                    } else {
+                        batteryDisplay.setColor(Graphics.COLOR_WHITE);
+                    }
                 }
-            } else {
+            } else { 
                 batString = " ";
                 batteryDisplay.setColor(Graphics.COLOR_TRANSPARENT);
             }
-            batteryDisplay.setText(batString);
-            
+            batteryDisplay.setText(batString);    
         }
 
-        function notesAndAlarms(){
-            var noteString=" ";
-            var alarmString=" ";
-            var avSets = System.getDeviceSettings();
+        
+            //Notifications Display Area
+    function notesDisp() {
 
-            if (avSets.notificationCount !=0) {
-                noteString = "N";
+        var anyNotes;
+        var noteString=" ";
+
+        if (hasComps == false) {
+            noteSets = System.getDeviceSettings();
+
+            if (noteSets.notificationCount !=0) {
+                anyNotes = true;
             } else {
-                noteString = " ";
+                anyNotes = false;
             }
-            noteDisplay.setText(noteString);
-
-            if (avSets.alarmCount != 0) {
-                alarmString = "A";
+        } else {
+            if (noteSets != 0) {
+                anyNotes = true;
             } else {
-                alarmString = " ";
+                anyNotes = false;
             }
-            alarmDisplay.setText(alarmString);
-
         }
 
+        if (anyNotes) {
+            noteString = "N";
+        } else {
+            noteString = " ";
+        }
+        noteDisplay.setText(noteString);
+    }
+
+   function alarmDisp() {
+
+        var alarmString=" ";
+
+        var alSets = System.getDeviceSettings().alarmCount;
+
+        if (alSets != 0) {
+            alarmString = "A";
+        } else {
+            alarmString = " ";
+        }
+        alarmDisplay.setText(alarmString);
+    } 
+
+    function secondsDisplay(dc) {
+
+        var screenWidth = dc.getWidth();
+        var screenHeight = dc.getHeight();
+        var centerX = screenWidth / 2;
+        var centerY = screenHeight / 2;
+        var mRadius = centerX < centerY ? centerX - 4: centerY - 4;
+        var clockTime = System.getClockTime();
+        var mSeconds = clockTime.sec;
+
+        var mPen = 4;
+
+        var mArc = 90 - (mSeconds * 6);
+
+        dc.setPenWidth(mPen);
+        dc.setColor(clockColorSet, Graphics.COLOR_TRANSPARENT);
+        dc.drawArc(centerX, centerY, mRadius, Graphics.ARC_CLOCKWISE, 90, mArc);
+
+    }
+     
+}
+
+class AviationTimeDelegate extends WatchUi.WatchFaceDelegate
+{
+	var view;
+	
+	function initialize(v) {
+		WatchFaceDelegate.initialize();
+		view=v;	
+	}
+
+    function onPress(evt) {
+        var c=evt.getCoordinates();
+        var batY = 0.33 * view.wHeight;
+        var stepY = 0.66 * view.wHeight;
+
+        if (c[1] <= batY) {
+
+            if (showBat == 0 && view.batId != null) {
+                Complications.exitTo(view.batId);
+                return true;
+            } else if (showBat == 2 && view.wxId != null) {
+                Complications.exitTo(view.wxId);
+                return true;
+            } else {
+                return false;
+            }
+
+        } else if (c[1] > batY && c[1] <= stepY && view.calId != null) {
+            Complications.exitTo(view.calId);
+            return true;
+        } else if (view.stepId != null) {
+            Complications.exitTo(view.stepId);
+            return true;
+        } else {
+            return false;
+        }
+    }
+	
 }

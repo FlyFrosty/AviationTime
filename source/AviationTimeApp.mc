@@ -11,9 +11,18 @@ import Toybox.Graphics;
     var myBackgroundColor = 0x000000;
     var offSetAmmt = 130;
     var timeOrStep;
+    var showNotes = true;
+    var dispSecs = false;
+
+    var oldClockColorNum = 2;
+    var oldClockShadNum = 0;
+    var oldMyBackgroundColor = 0x000000; 
+    var oldSubColorNum = 0;
+
 
 class AviationTimeApp extends Application.AppBase {
 
+    var view = null;
     var clockColorNum;
     var clockShadNum;
     var subColorNum;
@@ -25,17 +34,22 @@ class AviationTimeApp extends Application.AppBase {
 
     // onStart() is called on application start up
     function onStart(state as Dictionary?) as Void {
-        onSettingsChanged();
     }
 
     // Return the initial view of your application here
     function getInitialView() as Array<Views or InputDelegates>? {
-        return [ new AviationTimeView() ] as Array<Views or InputDelegates>;
+        view = new AviationTimeView();
+        return [view, new AviationTimeDelegate(view) ] as Array<Views or InputDelegates>;
     }
 
     // New app settings have been received so trigger a UI update
     function onSettingsChanged() {
         //Set Global Settings variables
+
+        if (clockColorNum != null) {oldClockColorNum = clockColorNum;}
+        if (clockShadNum != null) {oldClockShadNum = clockShadNum;}
+        if (myBackgroundColor != null) {oldMyBackgroundColor = myBackgroundColor;}
+        if (subColorNum != null) {oldMyBackgroundColor = subColorNum;}
 
         clockColorNum = Properties.getValue("ClockColor");
         clockShadNum = Properties.getValue("ShadOpt");
@@ -43,8 +57,22 @@ class AviationTimeApp extends Application.AppBase {
         showBat = Properties.getValue("DispBatt");
         myBackgroundColor = Properties.getValue("BackgroundColor");
         timeOrStep = Properties.getValue("TimeStep");
+        showNotes = Properties.getValue("ShowNotes");
+        dispSecs = Properties.getValue("SecOpt");
 
-        colorUpdate();  //Apply the changes
+        if (oldClockColorNum != clockColorNum || oldClockShadNum != clockShadNum
+            || oldMyBackgroundColor != myBackgroundColor 
+            || oldSubColorNum != subColorNum) {
+                colorsUpdated = true;
+        } else {
+                colorsUpdated = false;
+        }
+        
+
+        if (colorsUpdated) {
+            colorUpdate();  //Apply the changes
+        }
+
         WatchUi.requestUpdate();
     }
     
