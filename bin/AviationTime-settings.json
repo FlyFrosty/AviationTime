@@ -1,0 +1,421 @@
+{
+  "settings" : [ {
+    "key" : "ClockColor",
+    "valueType" : "number",
+    "defaultValue" : 2,
+    "configTitle" : "ClockColorTitle",
+    "configPrompt" : "ClockColorPrompt",
+    "configType" : "list",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : [ {
+      "display" : "White",
+      "value" : 0
+    }, {
+      "display" : "LTGray",
+      "value" : 1
+    }, {
+      "display" : "DKGray",
+      "value" : 2
+    }, {
+      "display" : "Black",
+      "value" : 3
+    }, {
+      "display" : "Red",
+      "value" : 4
+    }, {
+      "display" : "DKRed",
+      "value" : 5
+    }, {
+      "display" : "Orange",
+      "value" : 6
+    }, {
+      "display" : "Yellow",
+      "value" : 7
+    }, {
+      "display" : "Green",
+      "value" : 8
+    }, {
+      "display" : "DKGreen",
+      "value" : 9
+    }, {
+      "display" : "Blue",
+      "value" : 10
+    }, {
+      "display" : "DKBlue",
+      "value" : 11
+    }, {
+      "display" : "Purple",
+      "value" : 12
+    }, {
+      "display" : "Pink",
+      "value" : 13
+    } ],
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  }, {
+    "key" : "ShadOpt",
+    "valueType" : "number",
+    "defaultValue" : 0,
+    "configTitle" : "ShadOptTitle",
+    "configPrompt" : "ShadOptPrompt",
+    "configType" : "list",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : [ {
+      "display" : "NoShad",
+      "value" : 0
+    }, {
+      "display" : "BlackShad",
+      "value" : 1
+    }, {
+      "display" : "WhiteShad",
+      "value" : 2
+    }, {
+      "display" : "GrayShad",
+      "value" : 3
+    } ],
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  }, {
+    "key" : "BackgroundColor",
+    "valueType" : "number",
+    "defaultValue" : 0,
+    "configTitle" : "BackgroundColorTitle",
+    "configPrompt" : null,
+    "configType" : "list",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : [ {
+      "display" : "Black",
+      "value" : 0
+    }, {
+      "display" : "DKGray",
+      "value" : 1
+    }, {
+      "display" : "White",
+      "value" : 2
+    }, {
+      "display" : "DKRed",
+      "value" : 3
+    }, {
+      "display" : "DKGreen",
+      "value" : 4
+    }, {
+      "display" : "DKBlue",
+      "value" : 5
+    }, {
+      "display" : "Purple",
+      "value" : 6
+    } ],
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  }, {
+    "key" : "SubColor",
+    "valueType" : "number",
+    "defaultValue" : 0,
+    "configTitle" : "SubColorTitle",
+    "configPrompt" : "SubColorPrompt",
+    "configType" : "list",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : [ {
+      "display" : "LTGray",
+      "value" : 0
+    }, {
+      "display" : "DKGray",
+      "value" : 1
+    }, {
+      "display" : "Black",
+      "value" : 2
+    }, {
+      "display" : "White",
+      "value" : 3
+    }, {
+      "display" : "Red",
+      "value" : 4
+    }, {
+      "display" : "Green",
+      "value" : 5
+    }, {
+      "display" : "Blue",
+      "value" : 6
+    }, {
+      "display" : "Pink",
+      "value" : 7
+    } ],
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  }, {
+    "key" : "DispBatt",
+    "valueType" : "number",
+    "defaultValue" : 0,
+    "configTitle" : "DispBattTitle",
+    "configPrompt" : "$literal0$",
+    "configType" : "list",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : [ {
+      "display" : "YesBat",
+      "value" : 0
+    }, {
+      "display" : "NoBat",
+      "value" : 1
+    } ],
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  }, {
+    "key" : "ShowNotes",
+    "valueType" : "boolean",
+    "defaultValue" : true,
+    "configTitle" : "ShowNotesTitle",
+    "configPrompt" : "ShowNotesPrompt",
+    "configType" : "boolean",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : null,
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  }, {
+    "key" : "SecOpt",
+    "valueType" : "boolean",
+    "defaultValue" : false,
+    "configTitle" : "SecOptTitle",
+    "configPrompt" : "$literal1$",
+    "configType" : "boolean",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : null,
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  }, {
+    "key" : "TimeStep",
+    "valueType" : "boolean",
+    "defaultValue" : true,
+    "configTitle" : "TimeStepTitle",
+    "configPrompt" : "$literal2$",
+    "configType" : "boolean",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : null,
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  }, {
+    "key" : "ZuluOffset",
+    "valueType" : "number",
+    "defaultValue" : 130,
+    "configTitle" : "ZuluOffsetTitle",
+    "configPrompt" : "ZuluOffsetPrompt",
+    "configType" : "list",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : [ {
+      "display" : "Z1",
+      "value" : 10
+    }, {
+      "display" : "Z2",
+      "value" : 20
+    }, {
+      "display" : "Z3",
+      "value" : 25
+    }, {
+      "display" : "Z4",
+      "value" : 30
+    }, {
+      "display" : "Z5",
+      "value" : 40
+    }, {
+      "display" : "Z6",
+      "value" : 50
+    }, {
+      "display" : "Z7",
+      "value" : 60
+    }, {
+      "display" : "Z8",
+      "value" : 70
+    }, {
+      "display" : "Z9",
+      "value" : 80
+    }, {
+      "display" : "Z10",
+      "value" : 90
+    }, {
+      "display" : "Z11",
+      "value" : 100
+    }, {
+      "display" : "Z12",
+      "value" : 110
+    }, {
+      "display" : "Z13",
+      "value" : 120
+    }, {
+      "display" : "Z14",
+      "value" : 130
+    }, {
+      "display" : "Z15",
+      "value" : 140
+    }, {
+      "display" : "Z16",
+      "value" : 150
+    }, {
+      "display" : "Z17",
+      "value" : 160
+    }, {
+      "display" : "Z18",
+      "value" : 165
+    }, {
+      "display" : "Z19",
+      "value" : 170
+    }, {
+      "display" : "Z20",
+      "value" : 175
+    }, {
+      "display" : "Z21",
+      "value" : 180
+    }, {
+      "display" : "Z22",
+      "value" : 185
+    }, {
+      "display" : "Z23",
+      "value" : 190
+    }, {
+      "display" : "Z24",
+      "value" : 200
+    }, {
+      "display" : "Z25",
+      "value" : 210
+    }, {
+      "display" : "Z26",
+      "value" : 220
+    }, {
+      "display" : "Z27",
+      "value" : 225
+    }, {
+      "display" : "Z28",
+      "value" : 230
+    }, {
+      "display" : "Z29",
+      "value" : 240
+    }, {
+      "display" : "Z30",
+      "value" : 250
+    }, {
+      "display" : "Z31",
+      "value" : 260
+    } ],
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  } ],
+  "supportsLiveValidation" : false,
+  "languages" : {
+    "valyrian" : {
+      "Z18" : "+3+30 ",
+      "Z17" : "+3+00 ",
+      "Z19" : "+4+00 ",
+      "ZuluTitle" : "Zulu Adjustment",
+      "ZuluOffsetPrompt" : "Zulu Hours Offset",
+      "NoBat" : "Hide Battery",
+      "Black" : "Black",
+      "GrayShad" : "Gray Shadow",
+      "Orange" : "Orange",
+      "ShadOptPrompt" : "Clock Shadow Options",
+      "$literal0$" : "Strings.DispBattPrompt",
+      "ZuluOffsetTitle" : "Adjust Zulu Hours",
+      "batString" : "batString",
+      "Z1" : "-12+00 ",
+      "Z2" : "-11+00 ",
+      "Z21" : "+5+00 ",
+      "ShadOpt" : "Choose Shadow",
+      "Z3" : "-10+30 ",
+      "Z20" : "+4+30 ",
+      "Z4" : "-10+00 ",
+      "Z23" : "+6+00 ",
+      "Z5" : "-9+00 ",
+      "Z22" : "+5+30 ",
+      "DispBattPrompt" : "Show Battery",
+      "Z6" : "-8+00 ",
+      "Z25" : "+8+00 ",
+      "Z7" : "-7+00 ",
+      "Z24" : "+7+00 ",
+      "Z8" : "-6+00 ",
+      "Z27" : "+9+30 ",
+      "Z9" : "-5+00 ",
+      "Z26" : "+9+00 ",
+      "Z29" : "+11+00 ",
+      "Z28" : "+10+00 ",
+      "SecOptTitle" : "Dispaly Seconds Arc",
+      "ShowNotes" : "Display Notifications",
+      "ZSteps" : "Steps",
+      "Pink" : "Pink",
+      "WhiteShad" : "White Shaddow",
+      "Yellow" : "Yellow",
+      "Z30" : "+12+00 ",
+      "Z31" : "+13+00 ",
+      "ZuluOffset" : "Zulu Hours Offset",
+      "SubColorTitle" : "Sub-Items Color",
+      "BackgroundColorTitle" : "Background Color",
+      "ShowNotesPrompt" : "Display Notifications",
+      "DKGray" : "Dark Gray",
+      "DKBlue" : "Dark Blue",
+      "TimeStepTitle" : "Steps or Zulu Time",
+      "AppName" : "Aviation Time",
+      "$literal2$" : "Strings.TimeStepPrompt",
+      "ClockColorPrompt" : "Select clock color",
+      "ShadOptTitle" : "Shadow Options",
+      "ZTime" : "Zulu Time",
+      "TimeStepPrompt" : "Steps or Zulu Time",
+      "DispBattTitle" : "Battery",
+      "SubColorPrompt" : "Sub-Items Color",
+      "NoShad" : "No Shadow",
+      "Blue" : "Blue",
+      "ShowNotesTitle" : "Display Notifications",
+      "SecOptPrompt" : "Dispaly Seconds Arc",
+      "DKRed" : "Dark Red",
+      "ClockColorTitle" : "Main Time Color",
+      "YesBat" : "Show Battery",
+      "BlackShad" : "Black Shadow",
+      "Red" : "Red",
+      "$literal1$" : "Strings.SecOptPrompt",
+      "White" : "White",
+      "Purple" : "Purple",
+      "Z10" : "-4+00 ",
+      "LTGray" : "Light Gray",
+      "zuluLabel" : "zuluLabel",
+      "Z12" : "-2+00 ",
+      "Z11" : "-3+00 ",
+      "Z14" : "Zulu ",
+      "DKGreen" : "Dark Green",
+      "Z13" : "-1+00 ",
+      "Green" : "Green",
+      "Z16" : "+2+00 ",
+      "Z15" : "+1+00 "
+    }
+  }
+}

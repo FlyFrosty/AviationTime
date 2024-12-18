@@ -1,0 +1,812 @@
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 1; ]
+import Toybox.Application;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 2; ]
+import Toybox.Lang;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 3; ]
+import Toybox.WatchUi;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 4; ]
+import Toybox.Graphics;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 7; @position = 8; ]
+var showBat;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 8; @position = 8; ]
+var clockColorSet;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 9; @position = 8; ]
+var clockShadSet;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 10; @position = 8; ]
+var subColorSet;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 11; @position = 8; ]
+var myBackgroundColor = 0x000000;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 12; @position = 8; ]
+var offSetAmmt = 130;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 13; @position = 8; ]
+var timeOrStep;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 14; @position = 8; ]
+var showNotes = true;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 15; @position = 8; ]
+var dispSecs = false;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 17; @position = 8; ]
+var oldClockColorNum = 2;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 18; @position = 8; ]
+var oldClockShadNum = 0;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 19; @position = 8; ]
+var oldMyBackgroundColor = 0x000000;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 20; @position = 8; ]
+var oldSubColorNum = 0;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 22; @position = 8; ]
+var myBG = 0x000000;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 25; ]
+class AviationTimeApp extends Application.AppBase{
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 25; ]
+    <init> {
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 25; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 27; @position = 8; ]
+    var view = null;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 28; @position = 8; ]
+    var clockColorNum;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 29; @position = 8; ]
+    var clockShadNum;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 30; @position = 8; ]
+    var subColorNum;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 32; ]
+    function initialize() as Void {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_32_26_35_4_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 33 8 ]
+        %tmp.2 = getv ? :AppBase;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 34 8 ]
+        %tmp.4 = self;
+        %tmp.5 = getv function %tmp.4 :onSettingsChanged;
+        invoke %tmp.4 %tmp.5();
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_32_26_35_4_stop:
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 38; ]
+    function onStart(state as Dictionary or Null) as Void {
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 42; ]
+    function getInitialView() as [Views] or [Views, InputDelegates] {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_42_68_45_4_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 43 8 ]
+        %tmp.4 = getv ? :AviationTimeView;
+        %tmp.1 = newc %tmp.4 ();
+        putv self :view %tmp.1;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 44 8 ]
+        %tmp.5 = newa 2;
+        %tmp.7 = getv ? :view;
+        %tmp.8 = dup %tmp.5;
+        %tmp.9 = aputv %tmp.8 0 %tmp.7;
+        %tmp.13 = getv ? :AviationTimeDelegate;
+        %tmp.15 = getv ? :view;
+        %tmp.10 = newc %tmp.13 (%tmp.15);
+        %tmp.16 = dup %tmp.9;
+        %tmp.17 = aputv %tmp.16 1 %tmp.10;
+        ret %tmp.17;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_42_68_45_4_stop:
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 48; ]
+    function onSettingsChanged() {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_48_33_79_4_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 51 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_51_8_51_69_if_stmt:
+        %tmp.2 = getv ? :clockColorNum;
+        %tmp.3 = null;
+        %tmp.4 = ne %tmp.2 %tmp.3;
+        bf %tmp.4 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_51_8_51_69_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_51_8_51_69_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_51_35_51_69_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 51 36 ]
+        %tmp.6 = getv ? :clockColorNum;
+        %tmp.7 = as %tmp.6 { (!Null) };
+        putv self :oldClockColorNum %tmp.7;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_51_35_51_69_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_51_8_51_69_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_51_8_51_69_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 52 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_52_8_52_66_if_stmt:
+        %tmp.9 = getv ? :clockShadNum;
+        %tmp.10 = null;
+        %tmp.11 = ne %tmp.9 %tmp.10;
+        bf %tmp.11 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_52_8_52_66_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_52_8_52_66_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_52_34_52_66_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 52 35 ]
+        %tmp.13 = getv ? :clockShadNum;
+        %tmp.14 = as %tmp.13 { (!Null) };
+        putv self :oldClockShadNum %tmp.14;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_52_34_52_66_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_52_8_52_66_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_52_8_52_66_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 53 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_53_8_53_81_if_stmt:
+        %tmp.16 = getv ? :myBackgroundColor;
+        %tmp.17 = null;
+        %tmp.18 = ne %tmp.16 %tmp.17;
+        bf %tmp.18 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_53_8_53_81_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_53_8_53_81_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_53_39_53_81_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 53 40 ]
+        %tmp.20 = getv ? :myBackgroundColor;
+        %tmp.21 = as %tmp.20 { (!Null) };
+        putv self :oldMyBackgroundColor %tmp.21;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_53_39_53_81_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_53_8_53_81_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_53_8_53_81_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 54 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_54_8_54_63_if_stmt:
+        %tmp.23 = getv ? :subColorNum;
+        %tmp.24 = null;
+        %tmp.25 = ne %tmp.23 %tmp.24;
+        bf %tmp.25 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_54_8_54_63_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_54_8_54_63_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_54_33_54_63_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 54 34 ]
+        %tmp.27 = getv ? :subColorNum;
+        %tmp.28 = as %tmp.27 { (!Null) };
+        putv self :oldSubColorNum %tmp.28;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_54_33_54_63_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_54_8_54_63_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_54_8_54_63_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 56 8 ]
+        %tmp.30 = getv ? :Properties;
+        %tmp.31 = getv function %tmp.30 :getValue;
+        %tmp.32 = "ClockColor";
+        %tmp.33 = invoke %tmp.30 %tmp.31(%tmp.32);
+        putv self :clockColorNum %tmp.33;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 57 8 ]
+        %tmp.35 = getv ? :Properties;
+        %tmp.36 = getv function %tmp.35 :getValue;
+        %tmp.37 = "ShadOpt";
+        %tmp.38 = invoke %tmp.35 %tmp.36(%tmp.37);
+        putv self :clockShadNum %tmp.38;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 58 8 ]
+        %tmp.40 = getv ? :Properties;
+        %tmp.41 = getv function %tmp.40 :getValue;
+        %tmp.42 = "SubColor";
+        %tmp.43 = invoke %tmp.40 %tmp.41(%tmp.42);
+        putv self :subColorNum %tmp.43;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 59 8 ]
+        %tmp.45 = getv ? :Properties;
+        %tmp.46 = getv function %tmp.45 :getValue;
+        %tmp.47 = "DispBatt";
+        %tmp.48 = invoke %tmp.45 %tmp.46(%tmp.47);
+        putv self :showBat %tmp.48;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 60 8 ]
+        %tmp.50 = getv ? :Properties;
+        %tmp.51 = getv function %tmp.50 :getValue;
+        %tmp.52 = "BackgroundColor";
+        %tmp.53 = invoke %tmp.50 %tmp.51(%tmp.52);
+        putv self :myBackgroundColor %tmp.53;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 61 8 ]
+        %tmp.55 = getv ? :Properties;
+        %tmp.56 = getv function %tmp.55 :getValue;
+        %tmp.57 = "TimeStep";
+        %tmp.58 = invoke %tmp.55 %tmp.56(%tmp.57);
+        putv self :timeOrStep %tmp.58;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 62 8 ]
+        %tmp.60 = getv ? :Properties;
+        %tmp.61 = getv function %tmp.60 :getValue;
+        %tmp.62 = "ShowNotes";
+        %tmp.63 = invoke %tmp.60 %tmp.61(%tmp.62);
+        putv self :showNotes %tmp.63;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 63 8 ]
+        %tmp.65 = getv ? :Properties;
+        %tmp.66 = getv function %tmp.65 :getValue;
+        %tmp.67 = "SecOpt";
+        %tmp.68 = invoke %tmp.65 %tmp.66(%tmp.67);
+        putv self :dispSecs %tmp.68;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 65 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_8_71_8_if_stmt:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_12_67_33_begin:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_12_66_39_begin:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_12_65_68_begin:
+        %tmp.70 = getv ? :oldClockColorNum;
+        %tmp.72 = getv ? :clockColorNum;
+        %tmp.73 = ne %tmp.70 %tmp.72;
+        bt %tmp.73 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_8_71_8_if_true;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_49_65_68_false:
+        %tmp.75 = getv ? :oldClockShadNum;
+        %tmp.77 = getv ? :clockShadNum;
+        %tmp.78 = ne %tmp.75 %tmp.77;
+        push %tmp.78;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_49_65_68_end:
+        %tmp.79 = phi [%tmp.73 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_12_65_68_begin] [%tmp.78 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_49_65_68_false] [%tmp.79 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_49_65_68_end];
+        bt %tmp.79 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_8_71_8_if_true;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_66_15_66_39_false:
+        %tmp.81 = getv ? :oldMyBackgroundColor;
+        %tmp.83 = getv ? :myBackgroundColor;
+        %tmp.84 = ne %tmp.81 %tmp.83;
+        push %tmp.84;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_66_15_66_39_end:
+        %tmp.85 = phi [%tmp.79 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_12_66_39_begin] [%tmp.84 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_66_15_66_39_false] [%tmp.85 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_66_15_66_39_end];
+        bt %tmp.85 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_8_71_8_if_true;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_67_15_67_33_false:
+        %tmp.87 = getv ? :oldSubColorNum;
+        %tmp.89 = getv ? :subColorNum;
+        %tmp.90 = ne %tmp.87 %tmp.89;
+        push %tmp.90;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_67_15_67_33_end:
+        %tmp.91 = phi [%tmp.85 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_12_67_33_begin] [%tmp.90 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_67_15_67_33_false] [%tmp.91 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_67_15_67_33_end];
+        bf %tmp.91 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_8_71_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_8_71_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_67_46_69_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 68 16 ]
+        %tmp.92 = true;
+        putv self :colorsUpdated %tmp.92;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_67_46_69_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_8_71_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_8_71_8_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_69_15_71_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 70 16 ]
+        %tmp.93 = false;
+        putv self :colorsUpdated %tmp.93;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_69_15_71_8_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_65_8_71_8_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 74 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_74_8_76_8_if_stmt:
+        %tmp.95 = getv ? :colorsUpdated;
+        bf %tmp.95 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_74_8_76_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_74_8_76_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_74_27_76_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 75 12 ]
+        %tmp.96 = self;
+        %tmp.97 = getv function %tmp.96 :colorUpdate;
+        invoke %tmp.96 %tmp.97();
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_74_27_76_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_74_8_76_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_74_8_76_8_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 78 8 ]
+        %tmp.98 = getm $.Toybox.WatchUi;
+        %tmp.99 = getv function %tmp.98 :requestUpdate;
+        invoke %tmp.98 %tmp.99();
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_48_33_79_4_stop:
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 82; ]
+    function colorUpdate() {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_82_30_165_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 85 12 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_85_12_99_12_if_stmt:
+        %tmp.2 = getv ? :myBackgroundColor;
+        %tmp.3 = 0;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_85_12_99_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_85_12_99_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_85_38_87_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 86 16 ]
+        %tmp.5 = 0x000000;
+        putv self :myBG %tmp.5;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_85_38_87_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_85_12_99_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_85_12_99_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 87 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_87_19_99_12_if_stmt:
+        %tmp.7 = getv ? :myBackgroundColor;
+        %tmp.8 = 1;
+        %tmp.9 = eq %tmp.7 %tmp.8;
+        bf %tmp.9 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_87_19_99_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_87_19_99_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_87_47_89_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 88 16 ]
+        %tmp.10 = 0x555555;
+        putv self :myBG %tmp.10;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_87_47_89_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_87_19_99_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_87_19_99_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 89 18 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_89_18_99_12_if_stmt:
+        %tmp.12 = getv ? :myBackgroundColor;
+        %tmp.13 = 2;
+        %tmp.14 = eq %tmp.12 %tmp.13;
+        bf %tmp.14 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_89_18_99_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_89_18_99_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_89_46_91_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 90 16 ]
+        %tmp.15 = 0xFFFFFF;
+        putv self :myBG %tmp.15;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_89_46_91_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_89_18_99_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_89_18_99_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 91 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_91_19_99_12_if_stmt:
+        %tmp.17 = getv ? :myBackgroundColor;
+        %tmp.18 = 3;
+        %tmp.19 = eq %tmp.17 %tmp.18;
+        bf %tmp.19 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_91_19_99_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_91_19_99_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_91_47_93_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 92 16 ]
+        %tmp.20 = 0xAA0000;
+        putv self :myBG %tmp.20;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_91_47_93_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_91_19_99_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_91_19_99_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 93 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_93_19_99_12_if_stmt:
+        %tmp.22 = getv ? :myBackgroundColor;
+        %tmp.23 = 4;
+        %tmp.24 = eq %tmp.22 %tmp.23;
+        bf %tmp.24 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_93_19_99_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_93_19_99_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_93_47_95_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 94 16 ]
+        %tmp.25 = 0x00AA00;
+        putv self :myBG %tmp.25;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_93_47_95_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_93_19_99_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_93_19_99_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 95 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_95_19_99_12_if_stmt:
+        %tmp.27 = getv ? :myBackgroundColor;
+        %tmp.28 = 5;
+        %tmp.29 = eq %tmp.27 %tmp.28;
+        bf %tmp.29 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_95_19_99_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_95_19_99_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_95_47_97_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 96 16 ]
+        %tmp.30 = 0x0000FF;
+        putv self :myBG %tmp.30;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_95_47_97_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_95_19_99_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_95_19_99_12_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_97_19_99_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 98 16 ]
+        %tmp.31 = 0xAA00FF;
+        putv self :myBG %tmp.31;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_97_19_99_12_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_95_19_99_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_93_19_99_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_91_19_99_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_89_18_99_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_87_19_99_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_85_12_99_12_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 101 6 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_101_6_129_12_if_stmt:
+        %tmp.33 = getv ? :clockColorNum;
+        %tmp.34 = 0;
+        %tmp.35 = eq %tmp.33 %tmp.34;
+        bf %tmp.35 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_101_6_129_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_101_6_129_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_101_30_103_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 102 7 ]
+        %tmp.36 = getm $.Toybox.Graphics;
+        %tmp.37 = getv %tmp.36 :COLOR_WHITE;
+        putv self :clockColorSet %tmp.37;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_101_30_103_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_101_6_129_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_101_6_129_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 103 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_103_19_129_12_if_stmt:
+        %tmp.39 = getv ? :clockColorNum;
+        %tmp.40 = 1;
+        %tmp.41 = eq %tmp.39 %tmp.40;
+        bf %tmp.41 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_103_19_129_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_103_19_129_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_103_43_105_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 104 7 ]
+        %tmp.42 = getm $.Toybox.Graphics;
+        %tmp.43 = getv %tmp.42 :COLOR_LT_GRAY;
+        putv self :clockColorSet %tmp.43;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_103_43_105_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_103_19_129_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_103_19_129_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 105 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_105_19_129_12_if_stmt:
+        %tmp.45 = getv ? :clockColorNum;
+        %tmp.46 = 2;
+        %tmp.47 = eq %tmp.45 %tmp.46;
+        bf %tmp.47 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_105_19_129_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_105_19_129_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_105_43_107_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 106 4 ]
+        %tmp.48 = getm $.Toybox.Graphics;
+        %tmp.49 = getv %tmp.48 :COLOR_DK_GRAY;
+        putv self :clockColorSet %tmp.49;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_105_43_107_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_105_19_129_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_105_19_129_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 107 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_107_19_129_12_if_stmt:
+        %tmp.51 = getv ? :clockColorNum;
+        %tmp.52 = 3;
+        %tmp.53 = eq %tmp.51 %tmp.52;
+        bf %tmp.53 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_107_19_129_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_107_19_129_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_107_43_109_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 108 4 ]
+        %tmp.54 = getm $.Toybox.Graphics;
+        %tmp.55 = getv %tmp.54 :COLOR_BLACK;
+        putv self :clockColorSet %tmp.55;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_107_43_109_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_107_19_129_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_107_19_129_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 109 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_109_19_129_12_if_stmt:
+        %tmp.57 = getv ? :clockColorNum;
+        %tmp.58 = 4;
+        %tmp.59 = eq %tmp.57 %tmp.58;
+        bf %tmp.59 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_109_19_129_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_109_19_129_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_109_43_111_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 110 4 ]
+        %tmp.60 = getm $.Toybox.Graphics;
+        %tmp.61 = getv %tmp.60 :COLOR_RED;
+        putv self :clockColorSet %tmp.61;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_109_43_111_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_109_19_129_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_109_19_129_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 111 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_111_19_129_12_if_stmt:
+        %tmp.63 = getv ? :clockColorNum;
+        %tmp.64 = 5;
+        %tmp.65 = eq %tmp.63 %tmp.64;
+        bf %tmp.65 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_111_19_129_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_111_19_129_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_111_43_113_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 112 7 ]
+        %tmp.66 = getm $.Toybox.Graphics;
+        %tmp.67 = getv %tmp.66 :COLOR_DK_RED;
+        putv self :clockColorSet %tmp.67;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_111_43_113_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_111_19_129_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_111_19_129_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 113 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_113_19_129_12_if_stmt:
+        %tmp.69 = getv ? :clockColorNum;
+        %tmp.70 = 6;
+        %tmp.71 = eq %tmp.69 %tmp.70;
+        bf %tmp.71 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_113_19_129_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_113_19_129_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_113_43_115_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 114 4 ]
+        %tmp.72 = getm $.Toybox.Graphics;
+        %tmp.73 = getv %tmp.72 :COLOR_ORANGE;
+        putv self :clockColorSet %tmp.73;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_113_43_115_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_113_19_129_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_113_19_129_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 115 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_115_19_129_12_if_stmt:
+        %tmp.75 = getv ? :clockColorNum;
+        %tmp.76 = 7;
+        %tmp.77 = eq %tmp.75 %tmp.76;
+        bf %tmp.77 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_115_19_129_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_115_19_129_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_115_43_117_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 116 4 ]
+        %tmp.78 = getm $.Toybox.Graphics;
+        %tmp.79 = getv %tmp.78 :COLOR_YELLOW;
+        putv self :clockColorSet %tmp.79;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_115_43_117_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_115_19_129_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_115_19_129_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 117 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_117_19_129_12_if_stmt:
+        %tmp.81 = getv ? :clockColorNum;
+        %tmp.82 = 8;
+        %tmp.83 = eq %tmp.81 %tmp.82;
+        bf %tmp.83 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_117_19_129_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_117_19_129_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_117_43_119_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 118 4 ]
+        %tmp.84 = getm $.Toybox.Graphics;
+        %tmp.85 = getv %tmp.84 :COLOR_GREEN;
+        putv self :clockColorSet %tmp.85;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_117_43_119_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_117_19_129_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_117_19_129_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 119 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_119_19_129_12_if_stmt:
+        %tmp.87 = getv ? :clockColorNum;
+        %tmp.88 = 9;
+        %tmp.89 = eq %tmp.87 %tmp.88;
+        bf %tmp.89 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_119_19_129_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_119_19_129_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_119_43_121_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 120 7 ]
+        %tmp.90 = getm $.Toybox.Graphics;
+        %tmp.91 = getv %tmp.90 :COLOR_DK_GREEN;
+        putv self :clockColorSet %tmp.91;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_119_43_121_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_119_19_129_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_119_19_129_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 121 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_121_19_129_12_if_stmt:
+        %tmp.93 = getv ? :clockColorNum;
+        %tmp.94 = 10;
+        %tmp.95 = eq %tmp.93 %tmp.94;
+        bf %tmp.95 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_121_19_129_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_121_19_129_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_121_44_123_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 122 4 ]
+        %tmp.96 = getm $.Toybox.Graphics;
+        %tmp.97 = getv %tmp.96 :COLOR_BLUE;
+        putv self :clockColorSet %tmp.97;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_121_44_123_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_121_19_129_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_121_19_129_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 123 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_123_19_129_12_if_stmt:
+        %tmp.99 = getv ? :clockColorNum;
+        %tmp.100 = 11;
+        %tmp.101 = eq %tmp.99 %tmp.100;
+        bf %tmp.101 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_123_19_129_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_123_19_129_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_123_44_125_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 124 4 ]
+        %tmp.102 = getm $.Toybox.Graphics;
+        %tmp.103 = getv %tmp.102 :COLOR_DK_BLUE;
+        putv self :clockColorSet %tmp.103;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_123_44_125_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_123_19_129_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_123_19_129_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 125 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_125_19_129_12_if_stmt:
+        %tmp.105 = getv ? :clockColorNum;
+        %tmp.106 = 12;
+        %tmp.107 = eq %tmp.105 %tmp.106;
+        bf %tmp.107 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_125_19_129_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_125_19_129_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_125_44_127_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 126 4 ]
+        %tmp.108 = getm $.Toybox.Graphics;
+        %tmp.109 = getv %tmp.108 :COLOR_PURPLE;
+        putv self :clockColorSet %tmp.109;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_125_44_127_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_125_19_129_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_125_19_129_12_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_127_19_129_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 128 4 ]
+        %tmp.110 = getm $.Toybox.Graphics;
+        %tmp.111 = getv %tmp.110 :COLOR_PINK;
+        putv self :clockColorSet %tmp.111;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_127_19_129_12_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_125_19_129_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_123_19_129_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_121_19_129_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_119_19_129_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_117_19_129_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_115_19_129_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_113_19_129_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_111_19_129_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_109_19_129_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_107_19_129_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_105_19_129_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_103_19_129_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_101_6_129_12_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 132 12 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_132_12_140_12_if_stmt:
+        %tmp.113 = getv ? :clockShadNum;
+        %tmp.114 = 0;
+        %tmp.115 = eq %tmp.113 %tmp.114;
+        bf %tmp.115 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_132_12_140_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_132_12_140_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_132_35_134_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 133 16 ]
+        %tmp.116 = getm $.Toybox.Graphics;
+        %tmp.117 = getv %tmp.116 :COLOR_TRANSPARENT;
+        putv self :clockShadSet %tmp.117;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_132_35_134_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_132_12_140_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_132_12_140_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 134 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_134_19_140_12_if_stmt:
+        %tmp.119 = getv ? :clockShadNum;
+        %tmp.120 = 1;
+        %tmp.121 = eq %tmp.119 %tmp.120;
+        bf %tmp.121 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_134_19_140_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_134_19_140_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_134_42_136_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 135 16 ]
+        %tmp.122 = getm $.Toybox.Graphics;
+        %tmp.123 = getv %tmp.122 :COLOR_BLACK;
+        putv self :clockShadSet %tmp.123;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_134_42_136_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_134_19_140_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_134_19_140_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 136 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_136_19_140_12_if_stmt:
+        %tmp.125 = getv ? :clockShadNum;
+        %tmp.126 = 2;
+        %tmp.127 = eq %tmp.125 %tmp.126;
+        bf %tmp.127 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_136_19_140_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_136_19_140_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_136_42_138_13_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 137 16 ]
+        %tmp.128 = getm $.Toybox.Graphics;
+        %tmp.129 = getv %tmp.128 :COLOR_WHITE;
+        putv self :clockShadSet %tmp.129;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_136_42_138_13_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_136_19_140_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_136_19_140_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 138 20 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_138_20_140_12_if_stmt:
+        %tmp.131 = getv ? :clockShadNum;
+        %tmp.132 = 3;
+        %tmp.133 = eq %tmp.131 %tmp.132;
+        bf %tmp.133 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_138_20_140_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_138_20_140_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_138_43_140_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 139 16 ]
+        %tmp.134 = getm $.Toybox.Graphics;
+        %tmp.135 = getv %tmp.134 :COLOR_LT_GRAY;
+        putv self :clockShadSet %tmp.135;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_138_43_140_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_138_20_140_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_138_20_140_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_136_19_140_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_134_19_140_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_132_12_140_12_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 143 12 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_143_12_159_12_if_stmt:
+        %tmp.137 = getv ? :subColorNum;
+        %tmp.138 = 0;
+        %tmp.139 = eq %tmp.137 %tmp.138;
+        bf %tmp.139 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_143_12_159_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_143_12_159_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_143_34_145_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 144 16 ]
+        %tmp.140 = getm $.Toybox.Graphics;
+        %tmp.141 = getv %tmp.140 :COLOR_LT_GRAY;
+        putv self :subColorSet %tmp.141;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_143_34_145_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_143_12_159_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_143_12_159_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 145 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_145_19_159_12_if_stmt:
+        %tmp.143 = getv ? :subColorNum;
+        %tmp.144 = 1;
+        %tmp.145 = eq %tmp.143 %tmp.144;
+        bf %tmp.145 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_145_19_159_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_145_19_159_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_145_41_147_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 146 16 ]
+        %tmp.146 = getm $.Toybox.Graphics;
+        %tmp.147 = getv %tmp.146 :COLOR_DK_GRAY;
+        putv self :subColorSet %tmp.147;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_145_41_147_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_145_19_159_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_145_19_159_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 147 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_147_19_159_12_if_stmt:
+        %tmp.149 = getv ? :subColorNum;
+        %tmp.150 = 2;
+        %tmp.151 = eq %tmp.149 %tmp.150;
+        bf %tmp.151 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_147_19_159_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_147_19_159_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_147_41_149_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 148 16 ]
+        %tmp.152 = getm $.Toybox.Graphics;
+        %tmp.153 = getv %tmp.152 :COLOR_BLACK;
+        putv self :subColorSet %tmp.153;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_147_41_149_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_147_19_159_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_147_19_159_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 149 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_149_19_159_12_if_stmt:
+        %tmp.155 = getv ? :subColorNum;
+        %tmp.156 = 3;
+        %tmp.157 = eq %tmp.155 %tmp.156;
+        bf %tmp.157 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_149_19_159_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_149_19_159_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_149_41_151_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 150 16 ]
+        %tmp.158 = getm $.Toybox.Graphics;
+        %tmp.159 = getv %tmp.158 :COLOR_WHITE;
+        putv self :subColorSet %tmp.159;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_149_41_151_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_149_19_159_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_149_19_159_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 151 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_151_19_159_12_if_stmt:
+        %tmp.161 = getv ? :subColorNum;
+        %tmp.162 = 4;
+        %tmp.163 = eq %tmp.161 %tmp.162;
+        bf %tmp.163 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_151_19_159_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_151_19_159_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_151_41_153_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 152 16 ]
+        %tmp.164 = getm $.Toybox.Graphics;
+        %tmp.165 = getv %tmp.164 :COLOR_RED;
+        putv self :subColorSet %tmp.165;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_151_41_153_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_151_19_159_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_151_19_159_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 153 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_153_19_159_12_if_stmt:
+        %tmp.167 = getv ? :subColorNum;
+        %tmp.168 = 5;
+        %tmp.169 = eq %tmp.167 %tmp.168;
+        bf %tmp.169 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_153_19_159_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_153_19_159_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_153_41_155_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 154 16 ]
+        %tmp.170 = getm $.Toybox.Graphics;
+        %tmp.171 = getv %tmp.170 :COLOR_GREEN;
+        putv self :subColorSet %tmp.171;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_153_41_155_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_153_19_159_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_153_19_159_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 155 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_155_19_159_12_if_stmt:
+        %tmp.173 = getv ? :subColorNum;
+        %tmp.174 = 6;
+        %tmp.175 = eq %tmp.173 %tmp.174;
+        bf %tmp.175 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_155_19_159_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_155_19_159_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_155_41_157_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 156 16 ]
+        %tmp.176 = getm $.Toybox.Graphics;
+        %tmp.177 = getv %tmp.176 :COLOR_BLUE;
+        putv self :subColorSet %tmp.177;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_155_41_157_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_155_19_159_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_155_19_159_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 157 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_157_19_159_12_if_stmt:
+        %tmp.179 = getv ? :subColorNum;
+        %tmp.180 = 7;
+        %tmp.181 = eq %tmp.179 %tmp.180;
+        bf %tmp.181 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_157_19_159_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_157_19_159_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_157_41_159_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 158 16 ]
+        %tmp.182 = getm $.Toybox.Graphics;
+        %tmp.183 = getv %tmp.182 :COLOR_PINK;
+        putv self :subColorSet %tmp.183;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_157_41_159_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_157_19_159_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_157_19_159_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_155_19_159_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_153_19_159_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_151_19_159_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_149_19_159_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_147_19_159_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_145_19_159_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_143_12_159_12_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 161 12 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_161_12_164_12_if_stmt:
+        %tmp.185 = getv ? :timeOrStep;
+        bf %tmp.185 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_161_12_164_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_161_12_164_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_161_28_164_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 163 16 ]
+        %tmp.187 = getv ? :Properties;
+        %tmp.188 = getv function %tmp.187 :getValue;
+        %tmp.189 = "ZuluOffset";
+        %tmp.190 = invoke %tmp.187 %tmp.188(%tmp.189);
+        putv self :offSetAmmt %tmp.190;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_161_28_164_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_161_12_164_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_161_12_164_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_82_30_165_8_stop:
+    }
+}
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 170; ]
+function getApp() as AviationTimeApp {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_170_37_172_0_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 171 4 ]
+    %tmp.1 = getm $.Toybox.Application;
+    %tmp.2 = getv function %tmp.1 :getApp;
+    %tmp.3 = invoke %tmp.1 %tmp.2();
+    %tmp.4 = as %tmp.3 AviationTimeApp;
+    ret %tmp.4;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeApp_mc_170_37_172_0_stop:
+}
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc"; @line = 1; ]
+<init> {
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 8 8 ]
+    %tmp.5 = getm $.Toybox.Graphics;
+    %tmp.6 = getv %tmp.5 :COLOR_DK_BLUE;
+    putv self :clockColorSet %tmp.6;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 9 8 ]
+    %tmp.7 = getm $.Toybox.Graphics;
+    %tmp.8 = getv %tmp.7 :COLOR_TRANSPARENT;
+    putv self :clockShadSet %tmp.8;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeApp.mc" 10 8 ]
+    %tmp.9 = getm $.Toybox.Graphics;
+    %tmp.10 = getv %tmp.9 :COLOR_LT_GRAY;
+    putv self :subColorSet %tmp.10;
+}

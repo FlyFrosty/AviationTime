@@ -1,0 +1,2168 @@
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 1; ]
+import Toybox.Graphics;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 2; ]
+import Toybox.Lang;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 3; ]
+import Toybox.System;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 4; ]
+import Toybox.WatchUi;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 5; ]
+import Toybox.Time.Gregorian;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 6; ]
+import Toybox.Time;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 7; ]
+import Toybox.ActivityMonitor;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 8; ]
+import Toybox.Complications;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 11; @position = 4; ]
+var colorsUpdated = true;
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 13; ]
+class AviationTimeView extends WatchUi.WatchFace{
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 13; ]
+    <init> {
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 13; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 15; @position = 8; ]
+    var alarmString = " ";
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 16; @position = 8; ]
+    var dateString;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 17; @position = 8; ]
+    var stepString = "0";
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 18; @position = 8; ]
+    var stepId;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 19; @position = 8; ]
+    var stepComp;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 20; @position = 8; ]
+    var mSteps;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 21; @position = 8; ]
+    var noteString;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 22; @position = 8; ]
+    var batString;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 24; @position = 8; ]
+    var hasComps;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 26; @position = 8; ]
+    var calcTime;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 28; @position = 8; ]
+    var zuluTime;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 29; @position = 8; ]
+    var myZuluLabel;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 32; @position = 8; ]
+    var wxId;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 34; @position = 8; ]
+    var batId;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 34; @position = 15; ]
+    var noteId;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 35; @position = 8; ]
+    var batComp;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 35; @position = 17; ]
+    var noteComp;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 36; @position = 8; ]
+    var batLoad;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 38; @position = 8; ]
+    var noteSets;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 40; @position = 8; ]
+    var batY = 0.33;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 41; @position = 8; ]
+    var stepY = 0.66;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 42; @position = 8; ]
+    var wHeight;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 43; @position = 8; ]
+    var wWidth;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 45; @position = 8; ]
+    var calId;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 48; ]
+    function initialize() as Void {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_48_26_76_4_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 49 8 ]
+        %tmp.2 = getv ? :WatchFace;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 50 12 ]
+        %tmp.5 = getv ? :Toybox;
+        %tmp.7 = const :Complications;
+        %tmp.8 = canhazplz %tmp.5 %tmp.7;
+        putv self :hasComps %tmp.8;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 52 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_52_8_74_8_if_stmt:
+        %tmp.10 = getv ? :hasComps;
+        bf %tmp.10 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_52_8_74_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_52_8_74_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_52_22_74_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 53 12 ]
+        %tmp.14 = getv ? :Id;
+        %tmp.15 = getm $.Toybox.Complications;
+        %tmp.16 = getv %tmp.15 :COMPLICATION_TYPE_STEPS;
+        %tmp.11 = newc %tmp.14 (%tmp.16);
+        putv self :stepId %tmp.11;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 54 12 ]
+        %tmp.20 = getv ? :Id;
+        %tmp.21 = getm $.Toybox.Complications;
+        %tmp.22 = getv %tmp.21 :COMPLICATION_TYPE_BATTERY;
+        %tmp.17 = newc %tmp.20 (%tmp.22);
+        putv self :batId %tmp.17;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 55 12 ]
+        %tmp.26 = getv ? :Id;
+        %tmp.27 = getm $.Toybox.Complications;
+        %tmp.28 = getv %tmp.27 :COMPLICATION_TYPE_NOTIFICATION_COUNT;
+        %tmp.23 = newc %tmp.26 (%tmp.28);
+        putv self :noteId %tmp.23;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 56 12 ]
+        %tmp.32 = getv ? :Id;
+        %tmp.33 = getm $.Toybox.Complications;
+        %tmp.34 = getv %tmp.33 :COMPLICATION_TYPE_CALENDAR_EVENTS;
+        %tmp.29 = newc %tmp.32 (%tmp.34);
+        putv self :calId %tmp.29;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 58 12 ]
+        %tmp.35 = getm $.Toybox.Complications;
+        %tmp.36 = getv function %tmp.35 :getComplication;
+        %tmp.38 = getv ? :stepId;
+        %tmp.39 = invoke %tmp.35 %tmp.36(%tmp.38);
+        putv self :stepComp %tmp.39;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 59 12 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_59_12_61_12_if_stmt:
+        %tmp.41 = getv ? :stepComp;
+        %tmp.42 = null;
+        %tmp.43 = ne %tmp.41 %tmp.42;
+        bf %tmp.43 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_59_12_61_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_59_12_61_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_59_34_61_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 60 16 ]
+        %tmp.44 = getm $.Toybox.Complications;
+        %tmp.45 = getv function %tmp.44 :subscribeToUpdates;
+        %tmp.47 = getv ? :stepId;
+        invoke %tmp.44 %tmp.45(%tmp.47);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_59_34_61_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_59_12_61_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_59_12_61_12_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 63 12 ]
+        %tmp.48 = getm $.Toybox.Complications;
+        %tmp.49 = getv function %tmp.48 :getComplication;
+        %tmp.51 = getv ? :batId;
+        %tmp.52 = invoke %tmp.48 %tmp.49(%tmp.51);
+        putv self :batComp %tmp.52;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 64 12 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_64_12_66_12_if_stmt:
+        %tmp.54 = getv ? :batComp;
+        %tmp.55 = null;
+        %tmp.56 = ne %tmp.54 %tmp.55;
+        bf %tmp.56 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_64_12_66_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_64_12_66_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_64_33_66_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 65 16 ]
+        %tmp.57 = getm $.Toybox.Complications;
+        %tmp.58 = getv function %tmp.57 :subscribeToUpdates;
+        %tmp.60 = getv ? :batId;
+        invoke %tmp.57 %tmp.58(%tmp.60);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_64_33_66_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_64_12_66_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_64_12_66_12_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 68 12 ]
+        %tmp.61 = getm $.Toybox.Complications;
+        %tmp.62 = getv function %tmp.61 :getComplication;
+        %tmp.64 = getv ? :noteId;
+        %tmp.65 = invoke %tmp.61 %tmp.62(%tmp.64);
+        putv self :noteComp %tmp.65;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 69 12 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_69_12_71_12_if_stmt:
+        %tmp.67 = getv ? :noteComp;
+        %tmp.68 = null;
+        %tmp.69 = ne %tmp.67 %tmp.68;
+        bf %tmp.69 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_69_12_71_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_69_12_71_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_69_34_71_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 70 16 ]
+        %tmp.70 = getm $.Toybox.Complications;
+        %tmp.71 = getv function %tmp.70 :subscribeToUpdates;
+        %tmp.73 = getv ? :noteId;
+        invoke %tmp.70 %tmp.71(%tmp.73);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_69_34_71_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_69_12_71_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_69_12_71_12_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 73 12 ]
+        %tmp.74 = getm $.Toybox.Complications;
+        %tmp.75 = getv function %tmp.74 :registerComplicationChangeCallback;
+        %tmp.76 = lgetv %self;
+        %tmp.77 = getv function %tmp.76 :method;
+        %tmp.79 = const :onComplicationChanged;
+        %tmp.80 = invoke %tmp.76 %tmp.77(%tmp.79);
+        invoke %tmp.74 %tmp.75(%tmp.80);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_52_22_74_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_52_8_74_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_52_8_74_8_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_48_26_76_4_stop:
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 78; ]
+    function onComplicationChanged(compId as Complications.Id) as Void {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_78_71_92_4_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 80 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_80_8_91_8_if_stmt:
+        %tmp.2 = lgetv %compId;
+        %tmp.4 = getv ? :batId;
+        %tmp.5 = eq %tmp.2 %tmp.4;
+        bf %tmp.5 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_80_8_91_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_80_8_91_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_80_29_82_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 81 12 ]
+        %tmp.6 = getm $.Toybox.Complications;
+        %tmp.7 = getv function %tmp.6 :getComplication;
+        %tmp.9 = getv ? :batId;
+        %tmp.10 = invoke %tmp.6 %tmp.7(%tmp.9);
+        %tmp.11 = getv %tmp.10 :value;
+        putv self :batLoad %tmp.11;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_80_29_82_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_80_8_91_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_80_8_91_8_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 82 15 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_82_15_91_8_if_stmt:
+        %tmp.13 = lgetv %compId;
+        %tmp.15 = getv ? :stepId;
+        %tmp.16 = eq %tmp.13 %tmp.15;
+        bf %tmp.16 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_82_15_91_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_82_15_91_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_82_37_87_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 83 12 ]
+        %tmp.17 = getm $.Toybox.Complications;
+        %tmp.18 = getv function %tmp.17 :getComplication;
+        %tmp.20 = getv ? :stepId;
+        %tmp.21 = invoke %tmp.17 %tmp.18(%tmp.20);
+        %tmp.22 = getv %tmp.21 :value;
+        putv self :mSteps %tmp.22;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 84 12 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_84_12_86_12_if_stmt:
+        %tmp.24 = getv ? :mSteps;
+        %tmp.25 = getm $.Toybox.Lang;
+        %tmp.26 = getv %tmp.25 :Float;
+        %tmp.27 = isa %tmp.24 %tmp.26;
+        bf %tmp.27 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_84_12_86_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_84_12_86_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_84_53_86_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 85 16 ]
+        %tmp.29 = getv ? :mSteps;
+        %tmp.30 = as %tmp.29 { (Toybox.Lang.Float) };
+        %tmp.31 = 1000;
+        %tmp.32 = mul %tmp.30 %tmp.31;
+        %tmp.33 = getv function %tmp.32 :toNumber;
+        %tmp.34 = invoke %tmp.32 %tmp.33();
+        putv self :mSteps %tmp.34;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_84_53_86_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_84_12_86_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_84_12_86_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_82_37_87_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_82_15_91_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_82_15_91_8_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 87 15 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_87_15_91_8_if_stmt:
+        %tmp.36 = lgetv %compId;
+        %tmp.38 = getv ? :noteId;
+        %tmp.39 = eq %tmp.36 %tmp.38;
+        bf %tmp.39 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_87_15_91_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_87_15_91_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_87_37_89_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 88 12 ]
+        %tmp.40 = getm $.Toybox.Complications;
+        %tmp.41 = getv function %tmp.40 :getComplication;
+        %tmp.43 = getv ? :noteId;
+        %tmp.44 = invoke %tmp.40 %tmp.41(%tmp.43);
+        %tmp.45 = getv %tmp.44 :value;
+        putv self :noteSets %tmp.45;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_87_37_89_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_87_15_91_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_87_15_91_8_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_89_15_91_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 90 12 ]
+        %tmp.46 = getm $.Toybox.System;
+        %tmp.47 = getv function %tmp.46 :println;
+        %tmp.48 = "no valid comps";
+        invoke %tmp.46 %tmp.47(%tmp.48);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_89_15_91_8_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_87_15_91_8_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_82_15_91_8_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_80_8_91_8_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_78_71_92_4_stop:
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 95; ]
+    function onLayout(dc as Dc) as Void {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_95_40_154_4_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 97 8 ]
+        %tmp.1 = lgetv %dc;
+        %tmp.2 = getv function %tmp.1 :getHeight;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        putv self :wHeight %tmp.3;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 98 8 ]
+        %tmp.4 = lgetv %dc;
+        %tmp.5 = getv function %tmp.4 :getWidth;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        putv self :wWidth %tmp.6;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 101 8 ]
+        %tmp.7 = lgetv %dc;
+        %tmp.8 = getv function %tmp.7 :setColor;
+        %tmp.10 = getv ? :myBG;
+        %tmp.12 = getv ? :myBG;
+        invoke %tmp.7 %tmp.8(%tmp.10, %tmp.12);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 102 8 ]
+        %tmp.13 = lgetv %dc;
+        %tmp.14 = getv function %tmp.13 :clear;
+        invoke %tmp.13 %tmp.14();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 104 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_104_8_152_8_if_stmt:
+        %tmp.15 = getm $.Toybox.System;
+        %tmp.16 = getv function %tmp.15 :getDeviceSettings;
+        %tmp.17 = invoke %tmp.15 %tmp.16();
+        %tmp.18 = getv %tmp.17 :screenShape;
+        %tmp.19 = getm $.Toybox.System;
+        %tmp.20 = getv %tmp.19 :SCREEN_SHAPE_SEMI_OCTAGON;
+        %tmp.21 = ne %tmp.18 %tmp.20;
+        bf %tmp.21 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_104_8_152_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_104_8_152_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_104_88_130_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 107 16 ]
+        %tmp.22 = self;
+        %tmp.23 = getv function %tmp.22 :battDisp;
+        %tmp.25 = lgetv %dc;
+        invoke %tmp.22 %tmp.23(%tmp.25);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 108 16 ]
+        %tmp.26 = lgetv %dc;
+        %tmp.27 = getv function %tmp.26 :drawText;
+        %tmp.29 = getv ? :wWidth;
+        %tmp.30 = 2;
+        %tmp.31 = div %tmp.29 %tmp.30;
+        %tmp.32 = 0.08;
+        %tmp.34 = getv ? :wHeight;
+        %tmp.35 = mul %tmp.32 %tmp.34;
+        %tmp.36 = getm $.Toybox.Graphics;
+        %tmp.37 = getv %tmp.36 :FONT_TINY;
+        %tmp.39 = getv ? :batString;
+        %tmp.40 = getm $.Toybox.Graphics;
+        %tmp.41 = getv %tmp.40 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.26 %tmp.27(%tmp.31, %tmp.35, %tmp.37, %tmp.39, %tmp.41);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 110 16 ]
+        %tmp.42 = lgetv %dc;
+        %tmp.43 = getv function %tmp.42 :setColor;
+        %tmp.44 = getm $.Toybox.Graphics;
+        %tmp.45 = getv %tmp.44 :COLOR_DK_GREEN;
+        %tmp.46 = getm $.Toybox.Graphics;
+        %tmp.47 = getv %tmp.46 :COLOR_TRANSPARENT;
+        invoke %tmp.42 %tmp.43(%tmp.45, %tmp.47);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 111 16 ]
+        %tmp.48 = self;
+        %tmp.49 = getv function %tmp.48 :alarmDisp;
+        invoke %tmp.48 %tmp.49();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 112 16 ]
+        %tmp.50 = lgetv %dc;
+        %tmp.51 = getv function %tmp.50 :drawText;
+        %tmp.53 = getv ? :wWidth;
+        %tmp.54 = 0.7;
+        %tmp.55 = mul %tmp.53 %tmp.54;
+        %tmp.57 = getv ? :wHeight;
+        %tmp.58 = 0.1;
+        %tmp.59 = mul %tmp.57 %tmp.58;
+        %tmp.60 = getm $.Toybox.Graphics;
+        %tmp.61 = getv %tmp.60 :FONT_TINY;
+        %tmp.63 = getv ? :alarmString;
+        %tmp.64 = getm $.Toybox.Graphics;
+        %tmp.65 = getv %tmp.64 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.50 %tmp.51(%tmp.55, %tmp.59, %tmp.61, %tmp.63, %tmp.65);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 114 16 ]
+        %tmp.66 = self;
+        %tmp.67 = getv function %tmp.66 :mainZone;
+        %tmp.69 = lgetv %dc;
+        invoke %tmp.66 %tmp.67(%tmp.69);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 116 16 ]
+        %tmp.70 = self;
+        %tmp.71 = getv function %tmp.70 :dateDisp;
+        invoke %tmp.70 %tmp.71();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 117 16 ]
+        %tmp.72 = lgetv %dc;
+        %tmp.73 = getv function %tmp.72 :setColor;
+        %tmp.75 = getv ? :subColorSet;
+        %tmp.76 = getm $.Toybox.Graphics;
+        %tmp.77 = getv %tmp.76 :COLOR_TRANSPARENT;
+        invoke %tmp.72 %tmp.73(%tmp.75, %tmp.77);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 118 16 ]
+        %tmp.78 = lgetv %dc;
+        %tmp.79 = getv function %tmp.78 :drawText;
+        %tmp.81 = getv ? :wWidth;
+        %tmp.82 = 2;
+        %tmp.83 = div %tmp.81 %tmp.82;
+        %tmp.85 = getv ? :wHeight;
+        %tmp.86 = 0.58;
+        %tmp.87 = mul %tmp.85 %tmp.86;
+        %tmp.88 = getm $.Toybox.Graphics;
+        %tmp.89 = getv %tmp.88 :FONT_MEDIUM;
+        %tmp.91 = getv ? :dateString;
+        %tmp.92 = getm $.Toybox.Graphics;
+        %tmp.93 = getv %tmp.92 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.78 %tmp.79(%tmp.83, %tmp.87, %tmp.89, %tmp.91, %tmp.93);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 120 16 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_120_16_124_16_if_stmt:
+        %tmp.95 = getv ? :showNotes;
+        bf %tmp.95 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_120_16_124_16_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_120_16_124_16_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_120_31_124_16_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 121 20 ]
+        %tmp.96 = self;
+        %tmp.97 = getv function %tmp.96 :notesDisp;
+        invoke %tmp.96 %tmp.97();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 122 24 ]
+        %tmp.98 = lgetv %dc;
+        %tmp.99 = getv function %tmp.98 :setColor;
+        %tmp.100 = getm $.Toybox.Graphics;
+        %tmp.101 = getv %tmp.100 :COLOR_DK_GREEN;
+        %tmp.102 = getm $.Toybox.Graphics;
+        %tmp.103 = getv %tmp.102 :COLOR_TRANSPARENT;
+        invoke %tmp.98 %tmp.99(%tmp.101, %tmp.103);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 123 24 ]
+        %tmp.104 = lgetv %dc;
+        %tmp.105 = getv function %tmp.104 :drawText;
+        %tmp.107 = getv ? :wWidth;
+        %tmp.108 = 4;
+        %tmp.109 = div %tmp.107 %tmp.108;
+        %tmp.111 = getv ? :wHeight;
+        %tmp.112 = 0.1;
+        %tmp.113 = mul %tmp.111 %tmp.112;
+        %tmp.114 = getm $.Toybox.Graphics;
+        %tmp.115 = getv %tmp.114 :FONT_TINY;
+        %tmp.117 = getv ? :noteString;
+        %tmp.118 = getm $.Toybox.Graphics;
+        %tmp.119 = getv %tmp.118 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.104 %tmp.105(%tmp.109, %tmp.113, %tmp.115, %tmp.117, %tmp.119);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_120_31_124_16_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_120_16_124_16_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_120_16_124_16_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 126 16 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_126_16_129_16_if_stmt:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_126_20_127_73_begin:
+        %tmp.121 = getv ? :dispSecs;
+        bf %tmp.121 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_126_16_129_16_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_127_24_127_73_true:
+        %tmp.122 = getm $.Toybox.System;
+        %tmp.123 = getv function %tmp.122 :getDeviceSettings;
+        %tmp.124 = invoke %tmp.122 %tmp.123();
+        %tmp.125 = getv %tmp.124 :screenShape;
+        %tmp.126 = getm $.Toybox.System;
+        %tmp.127 = getv %tmp.126 :SCREEN_SHAPE_ROUND;
+        %tmp.128 = eq %tmp.125 %tmp.127;
+        push %tmp.128;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_127_24_127_73_end:
+        %tmp.129 = phi [%tmp.121 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_126_20_127_73_begin] [%tmp.128 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_127_24_127_73_true] [%tmp.129 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_127_24_127_73_end];
+        bf %tmp.129 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_126_16_129_16_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_126_16_129_16_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_127_93_129_16_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 128 20 ]
+        %tmp.130 = self;
+        %tmp.131 = getv function %tmp.130 :secondsDisplay;
+        %tmp.133 = lgetv %dc;
+        invoke %tmp.130 %tmp.131(%tmp.133);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_127_93_129_16_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_126_16_129_16_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_126_16_129_16_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_104_88_130_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_104_8_152_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_104_8_152_8_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_130_15_152_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 132 16 ]
+        %tmp.134 = self;
+        %tmp.135 = getv function %tmp.134 :battDisp;
+        %tmp.137 = lgetv %dc;
+        invoke %tmp.134 %tmp.135(%tmp.137);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 133 16 ]
+        %tmp.138 = lgetv %dc;
+        %tmp.139 = getv function %tmp.138 :drawText;
+        %tmp.141 = getv ? :wWidth;
+        %tmp.142 = .85;
+        %tmp.143 = mul %tmp.141 %tmp.142;
+        %tmp.144 = 0.1;
+        %tmp.146 = getv ? :wHeight;
+        %tmp.147 = mul %tmp.144 %tmp.146;
+        %tmp.148 = getm $.Toybox.Graphics;
+        %tmp.149 = getv %tmp.148 :FONT_TINY;
+        %tmp.151 = getv ? :batString;
+        %tmp.152 = getm $.Toybox.Graphics;
+        %tmp.153 = getv %tmp.152 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.138 %tmp.139(%tmp.143, %tmp.147, %tmp.149, %tmp.151, %tmp.153);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 135 16 ]
+        %tmp.154 = lgetv %dc;
+        %tmp.155 = getv function %tmp.154 :setColor;
+        %tmp.156 = getm $.Toybox.Graphics;
+        %tmp.157 = getv %tmp.156 :COLOR_DK_GREEN;
+        %tmp.158 = getm $.Toybox.Graphics;
+        %tmp.159 = getv %tmp.158 :COLOR_TRANSPARENT;
+        invoke %tmp.154 %tmp.155(%tmp.157, %tmp.159);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 136 16 ]
+        %tmp.160 = self;
+        %tmp.161 = getv function %tmp.160 :alarmDisp;
+        invoke %tmp.160 %tmp.161();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 137 16 ]
+        %tmp.162 = lgetv %dc;
+        %tmp.163 = getv function %tmp.162 :drawText;
+        %tmp.165 = getv ? :wWidth;
+        %tmp.166 = 0.5;
+        %tmp.167 = mul %tmp.165 %tmp.166;
+        %tmp.169 = getv ? :wHeight;
+        %tmp.170 = 0.1;
+        %tmp.171 = mul %tmp.169 %tmp.170;
+        %tmp.172 = getm $.Toybox.Graphics;
+        %tmp.173 = getv %tmp.172 :FONT_TINY;
+        %tmp.175 = getv ? :alarmString;
+        %tmp.176 = getm $.Toybox.Graphics;
+        %tmp.177 = getv %tmp.176 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.162 %tmp.163(%tmp.167, %tmp.171, %tmp.173, %tmp.175, %tmp.177);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 139 16 ]
+        %tmp.178 = self;
+        %tmp.179 = getv function %tmp.178 :mainZone;
+        %tmp.181 = lgetv %dc;
+        invoke %tmp.178 %tmp.179(%tmp.181);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 141 16 ]
+        %tmp.182 = self;
+        %tmp.183 = getv function %tmp.182 :dateDisp;
+        invoke %tmp.182 %tmp.183();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 142 16 ]
+        %tmp.184 = lgetv %dc;
+        %tmp.185 = getv function %tmp.184 :setColor;
+        %tmp.187 = getv ? :subColorSet;
+        %tmp.188 = getm $.Toybox.Graphics;
+        %tmp.189 = getv %tmp.188 :COLOR_TRANSPARENT;
+        invoke %tmp.184 %tmp.185(%tmp.187, %tmp.189);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 143 16 ]
+        %tmp.190 = lgetv %dc;
+        %tmp.191 = getv function %tmp.190 :drawText;
+        %tmp.193 = getv ? :wWidth;
+        %tmp.194 = 2;
+        %tmp.195 = div %tmp.193 %tmp.194;
+        %tmp.197 = getv ? :wHeight;
+        %tmp.198 = 0.65;
+        %tmp.199 = mul %tmp.197 %tmp.198;
+        %tmp.200 = getm $.Toybox.Graphics;
+        %tmp.201 = getv %tmp.200 :FONT_MEDIUM;
+        %tmp.203 = getv ? :dateString;
+        %tmp.204 = getm $.Toybox.Graphics;
+        %tmp.205 = getv %tmp.204 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.190 %tmp.191(%tmp.195, %tmp.199, %tmp.201, %tmp.203, %tmp.205);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 145 16 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_145_16_150_16_if_stmt:
+        %tmp.207 = getv ? :showNotes;
+        bf %tmp.207 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_145_16_150_16_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_145_16_150_16_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_145_31_150_16_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 146 21 ]
+        %tmp.208 = self;
+        %tmp.209 = getv function %tmp.208 :notesDisp;
+        invoke %tmp.208 %tmp.209();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 147 24 ]
+        %tmp.210 = lgetv %dc;
+        %tmp.211 = getv function %tmp.210 :setColor;
+        %tmp.212 = getm $.Toybox.Graphics;
+        %tmp.213 = getv %tmp.212 :COLOR_DK_GREEN;
+        %tmp.214 = getm $.Toybox.Graphics;
+        %tmp.215 = getv %tmp.214 :COLOR_TRANSPARENT;
+        invoke %tmp.210 %tmp.211(%tmp.213, %tmp.215);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 148 24 ]
+        %tmp.216 = lgetv %dc;
+        %tmp.217 = getv function %tmp.216 :drawText;
+        %tmp.219 = getv ? :wWidth;
+        %tmp.220 = 4;
+        %tmp.221 = div %tmp.219 %tmp.220;
+        %tmp.223 = getv ? :wHeight;
+        %tmp.224 = 0.1;
+        %tmp.225 = mul %tmp.223 %tmp.224;
+        %tmp.226 = getm $.Toybox.Graphics;
+        %tmp.227 = getv %tmp.226 :FONT_TINY;
+        %tmp.229 = getv ? :noteString;
+        %tmp.230 = getm $.Toybox.Graphics;
+        %tmp.231 = getv %tmp.230 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.216 %tmp.217(%tmp.221, %tmp.225, %tmp.227, %tmp.229, %tmp.231);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_145_31_150_16_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_145_16_150_16_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_145_16_150_16_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_130_15_152_8_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_104_8_152_8_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_95_40_154_4_stop:
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 158; ]
+    function onUpdate(dc as Dc) as Void {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_158_40_210_4_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 161 8 ]
+        %tmp.1 = lgetv %dc;
+        %tmp.2 = getv function %tmp.1 :setColor;
+        %tmp.4 = getv ? :myBG;
+        %tmp.6 = getv ? :myBG;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 162 8 ]
+        %tmp.7 = lgetv %dc;
+        %tmp.8 = getv function %tmp.7 :clear;
+        invoke %tmp.7 %tmp.8();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 164 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_164_8_209_12_if_stmt:
+        %tmp.9 = getm $.Toybox.System;
+        %tmp.10 = getv function %tmp.9 :getDeviceSettings;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        %tmp.12 = getv %tmp.11 :screenShape;
+        %tmp.13 = getm $.Toybox.System;
+        %tmp.14 = getv %tmp.13 :SCREEN_SHAPE_SEMI_OCTAGON;
+        %tmp.15 = ne %tmp.12 %tmp.14;
+        bf %tmp.15 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_164_8_209_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_164_8_209_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_164_88_189_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 166 16 ]
+        %tmp.16 = self;
+        %tmp.17 = getv function %tmp.16 :battDisp;
+        %tmp.19 = lgetv %dc;
+        invoke %tmp.16 %tmp.17(%tmp.19);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 167 16 ]
+        %tmp.20 = lgetv %dc;
+        %tmp.21 = getv function %tmp.20 :drawText;
+        %tmp.23 = getv ? :wWidth;
+        %tmp.24 = 2;
+        %tmp.25 = div %tmp.23 %tmp.24;
+        %tmp.26 = 0.08;
+        %tmp.28 = getv ? :wHeight;
+        %tmp.29 = mul %tmp.26 %tmp.28;
+        %tmp.30 = getm $.Toybox.Graphics;
+        %tmp.31 = getv %tmp.30 :FONT_TINY;
+        %tmp.33 = getv ? :batString;
+        %tmp.34 = getm $.Toybox.Graphics;
+        %tmp.35 = getv %tmp.34 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.20 %tmp.21(%tmp.25, %tmp.29, %tmp.31, %tmp.33, %tmp.35);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 169 16 ]
+        %tmp.36 = lgetv %dc;
+        %tmp.37 = getv function %tmp.36 :setColor;
+        %tmp.38 = getm $.Toybox.Graphics;
+        %tmp.39 = getv %tmp.38 :COLOR_DK_GREEN;
+        %tmp.40 = getm $.Toybox.Graphics;
+        %tmp.41 = getv %tmp.40 :COLOR_TRANSPARENT;
+        invoke %tmp.36 %tmp.37(%tmp.39, %tmp.41);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 170 16 ]
+        %tmp.42 = self;
+        %tmp.43 = getv function %tmp.42 :alarmDisp;
+        invoke %tmp.42 %tmp.43();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 171 16 ]
+        %tmp.44 = lgetv %dc;
+        %tmp.45 = getv function %tmp.44 :drawText;
+        %tmp.47 = getv ? :wWidth;
+        %tmp.48 = 0.7;
+        %tmp.49 = mul %tmp.47 %tmp.48;
+        %tmp.51 = getv ? :wHeight;
+        %tmp.52 = 0.1;
+        %tmp.53 = mul %tmp.51 %tmp.52;
+        %tmp.54 = getm $.Toybox.Graphics;
+        %tmp.55 = getv %tmp.54 :FONT_TINY;
+        %tmp.57 = getv ? :alarmString;
+        %tmp.58 = getm $.Toybox.Graphics;
+        %tmp.59 = getv %tmp.58 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.44 %tmp.45(%tmp.49, %tmp.53, %tmp.55, %tmp.57, %tmp.59);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 173 16 ]
+        %tmp.60 = self;
+        %tmp.61 = getv function %tmp.60 :mainZone;
+        %tmp.63 = lgetv %dc;
+        invoke %tmp.60 %tmp.61(%tmp.63);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 175 16 ]
+        %tmp.64 = self;
+        %tmp.65 = getv function %tmp.64 :dateDisp;
+        invoke %tmp.64 %tmp.65();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 176 16 ]
+        %tmp.66 = lgetv %dc;
+        %tmp.67 = getv function %tmp.66 :setColor;
+        %tmp.69 = getv ? :subColorSet;
+        %tmp.70 = getm $.Toybox.Graphics;
+        %tmp.71 = getv %tmp.70 :COLOR_TRANSPARENT;
+        invoke %tmp.66 %tmp.67(%tmp.69, %tmp.71);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 177 16 ]
+        %tmp.72 = lgetv %dc;
+        %tmp.73 = getv function %tmp.72 :drawText;
+        %tmp.75 = getv ? :wWidth;
+        %tmp.76 = 2;
+        %tmp.77 = div %tmp.75 %tmp.76;
+        %tmp.79 = getv ? :wHeight;
+        %tmp.80 = 0.58;
+        %tmp.81 = mul %tmp.79 %tmp.80;
+        %tmp.82 = getm $.Toybox.Graphics;
+        %tmp.83 = getv %tmp.82 :FONT_MEDIUM;
+        %tmp.85 = getv ? :dateString;
+        %tmp.86 = getm $.Toybox.Graphics;
+        %tmp.87 = getv %tmp.86 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.72 %tmp.73(%tmp.77, %tmp.81, %tmp.83, %tmp.85, %tmp.87);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 179 16 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_179_16_183_17_if_stmt:
+        %tmp.89 = getv ? :showNotes;
+        bf %tmp.89 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_179_16_183_17_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_179_16_183_17_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_179_31_183_17_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 180 20 ]
+        %tmp.90 = self;
+        %tmp.91 = getv function %tmp.90 :notesDisp;
+        invoke %tmp.90 %tmp.91();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 181 20 ]
+        %tmp.92 = lgetv %dc;
+        %tmp.93 = getv function %tmp.92 :setColor;
+        %tmp.94 = getm $.Toybox.Graphics;
+        %tmp.95 = getv %tmp.94 :COLOR_DK_GREEN;
+        %tmp.96 = getm $.Toybox.Graphics;
+        %tmp.97 = getv %tmp.96 :COLOR_TRANSPARENT;
+        invoke %tmp.92 %tmp.93(%tmp.95, %tmp.97);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 182 20 ]
+        %tmp.98 = lgetv %dc;
+        %tmp.99 = getv function %tmp.98 :drawText;
+        %tmp.101 = getv ? :wWidth;
+        %tmp.102 = 4;
+        %tmp.103 = div %tmp.101 %tmp.102;
+        %tmp.105 = getv ? :wHeight;
+        %tmp.106 = 0.1;
+        %tmp.107 = mul %tmp.105 %tmp.106;
+        %tmp.108 = getm $.Toybox.Graphics;
+        %tmp.109 = getv %tmp.108 :FONT_TINY;
+        %tmp.111 = getv ? :noteString;
+        %tmp.112 = getm $.Toybox.Graphics;
+        %tmp.113 = getv %tmp.112 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.98 %tmp.99(%tmp.103, %tmp.107, %tmp.109, %tmp.111, %tmp.113);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_179_31_183_17_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_179_16_183_17_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_179_16_183_17_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 185 16 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_185_16_188_16_if_stmt:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_185_20_186_69_begin:
+        %tmp.115 = getv ? :dispSecs;
+        bf %tmp.115 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_185_16_188_16_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_186_20_186_69_true:
+        %tmp.116 = getm $.Toybox.System;
+        %tmp.117 = getv function %tmp.116 :getDeviceSettings;
+        %tmp.118 = invoke %tmp.116 %tmp.117();
+        %tmp.119 = getv %tmp.118 :screenShape;
+        %tmp.120 = getm $.Toybox.System;
+        %tmp.121 = getv %tmp.120 :SCREEN_SHAPE_ROUND;
+        %tmp.122 = eq %tmp.119 %tmp.121;
+        push %tmp.122;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_186_20_186_69_end:
+        %tmp.123 = phi [%tmp.115 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_185_20_186_69_begin] [%tmp.122 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_186_20_186_69_true] [%tmp.123 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_186_20_186_69_end];
+        bf %tmp.123 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_185_16_188_16_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_185_16_188_16_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_186_89_188_16_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 187 20 ]
+        %tmp.124 = self;
+        %tmp.125 = getv function %tmp.124 :secondsDisplay;
+        %tmp.127 = lgetv %dc;
+        invoke %tmp.124 %tmp.125(%tmp.127);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_186_89_188_16_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_185_16_188_16_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_185_16_188_16_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_164_88_189_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_164_8_209_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_164_8_209_12_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_189_15_209_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 191 16 ]
+        %tmp.128 = self;
+        %tmp.129 = getv function %tmp.128 :battDisp;
+        %tmp.131 = lgetv %dc;
+        invoke %tmp.128 %tmp.129(%tmp.131);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 192 16 ]
+        %tmp.132 = lgetv %dc;
+        %tmp.133 = getv function %tmp.132 :drawText;
+        %tmp.135 = getv ? :wWidth;
+        %tmp.136 = .85;
+        %tmp.137 = mul %tmp.135 %tmp.136;
+        %tmp.138 = 0.1;
+        %tmp.140 = getv ? :wHeight;
+        %tmp.141 = mul %tmp.138 %tmp.140;
+        %tmp.142 = getm $.Toybox.Graphics;
+        %tmp.143 = getv %tmp.142 :FONT_TINY;
+        %tmp.145 = getv ? :batString;
+        %tmp.146 = getm $.Toybox.Graphics;
+        %tmp.147 = getv %tmp.146 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.132 %tmp.133(%tmp.137, %tmp.141, %tmp.143, %tmp.145, %tmp.147);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 194 16 ]
+        %tmp.148 = lgetv %dc;
+        %tmp.149 = getv function %tmp.148 :setColor;
+        %tmp.150 = getm $.Toybox.Graphics;
+        %tmp.151 = getv %tmp.150 :COLOR_DK_GREEN;
+        %tmp.152 = getm $.Toybox.Graphics;
+        %tmp.153 = getv %tmp.152 :COLOR_TRANSPARENT;
+        invoke %tmp.148 %tmp.149(%tmp.151, %tmp.153);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 195 16 ]
+        %tmp.154 = self;
+        %tmp.155 = getv function %tmp.154 :alarmDisp;
+        invoke %tmp.154 %tmp.155();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 196 16 ]
+        %tmp.156 = lgetv %dc;
+        %tmp.157 = getv function %tmp.156 :drawText;
+        %tmp.159 = getv ? :wWidth;
+        %tmp.160 = 0.7;
+        %tmp.161 = mul %tmp.159 %tmp.160;
+        %tmp.163 = getv ? :wHeight;
+        %tmp.164 = 0.1;
+        %tmp.165 = mul %tmp.163 %tmp.164;
+        %tmp.166 = getm $.Toybox.Graphics;
+        %tmp.167 = getv %tmp.166 :FONT_TINY;
+        %tmp.169 = getv ? :alarmString;
+        %tmp.170 = getm $.Toybox.Graphics;
+        %tmp.171 = getv %tmp.170 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.156 %tmp.157(%tmp.161, %tmp.165, %tmp.167, %tmp.169, %tmp.171);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 198 16 ]
+        %tmp.172 = self;
+        %tmp.173 = getv function %tmp.172 :mainZone;
+        %tmp.175 = lgetv %dc;
+        invoke %tmp.172 %tmp.173(%tmp.175);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 200 16 ]
+        %tmp.176 = self;
+        %tmp.177 = getv function %tmp.176 :dateDisp;
+        invoke %tmp.176 %tmp.177();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 201 16 ]
+        %tmp.178 = lgetv %dc;
+        %tmp.179 = getv function %tmp.178 :setColor;
+        %tmp.181 = getv ? :subColorSet;
+        %tmp.182 = getm $.Toybox.Graphics;
+        %tmp.183 = getv %tmp.182 :COLOR_TRANSPARENT;
+        invoke %tmp.178 %tmp.179(%tmp.181, %tmp.183);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 202 16 ]
+        %tmp.184 = lgetv %dc;
+        %tmp.185 = getv function %tmp.184 :drawText;
+        %tmp.187 = getv ? :wWidth;
+        %tmp.188 = 2;
+        %tmp.189 = div %tmp.187 %tmp.188;
+        %tmp.191 = getv ? :wHeight;
+        %tmp.192 = 0.65;
+        %tmp.193 = mul %tmp.191 %tmp.192;
+        %tmp.194 = getm $.Toybox.Graphics;
+        %tmp.195 = getv %tmp.194 :FONT_MEDIUM;
+        %tmp.197 = getv ? :dateString;
+        %tmp.198 = getm $.Toybox.Graphics;
+        %tmp.199 = getv %tmp.198 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.184 %tmp.185(%tmp.189, %tmp.193, %tmp.195, %tmp.197, %tmp.199);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 204 16 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_204_16_208_16_if_stmt:
+        %tmp.201 = getv ? :showNotes;
+        bf %tmp.201 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_204_16_208_16_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_204_16_208_16_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_204_31_208_16_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 205 20 ]
+        %tmp.202 = self;
+        %tmp.203 = getv function %tmp.202 :notesDisp;
+        invoke %tmp.202 %tmp.203();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 206 20 ]
+        %tmp.204 = lgetv %dc;
+        %tmp.205 = getv function %tmp.204 :setColor;
+        %tmp.206 = getm $.Toybox.Graphics;
+        %tmp.207 = getv %tmp.206 :COLOR_DK_GREEN;
+        %tmp.208 = getm $.Toybox.Graphics;
+        %tmp.209 = getv %tmp.208 :COLOR_TRANSPARENT;
+        invoke %tmp.204 %tmp.205(%tmp.207, %tmp.209);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 207 20 ]
+        %tmp.210 = lgetv %dc;
+        %tmp.211 = getv function %tmp.210 :drawText;
+        %tmp.213 = getv ? :wWidth;
+        %tmp.214 = 4;
+        %tmp.215 = div %tmp.213 %tmp.214;
+        %tmp.217 = getv ? :wHeight;
+        %tmp.218 = 0.1;
+        %tmp.219 = mul %tmp.217 %tmp.218;
+        %tmp.220 = getm $.Toybox.Graphics;
+        %tmp.221 = getv %tmp.220 :FONT_TINY;
+        %tmp.223 = getv ? :noteString;
+        %tmp.224 = getm $.Toybox.Graphics;
+        %tmp.225 = getv %tmp.224 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.210 %tmp.211(%tmp.215, %tmp.219, %tmp.221, %tmp.223, %tmp.225);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_204_31_208_16_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_204_16_208_16_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_204_16_208_16_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_189_15_209_12_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_164_8_209_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_158_40_210_4_stop:
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 213; ]
+    function normalTime() {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_213_26_228_4_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 216 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_213_26_228_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_213_26_228_4_stop" ]
+        %clockTime.1 = local;
+        %tmp.1 = getm $.Toybox.System;
+        %tmp.2 = getv function %tmp.1 :getClockTime;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %clockTime.1 %tmp.3;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 217 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_213_26_228_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_213_26_228_4_stop" ]
+        %hours.2 = local;
+        %tmp.4 = lgetv %clockTime.1;
+        %tmp.5 = getv %tmp.4 :hour;
+        lputv %hours.2 %tmp.5;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 220 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_220_8_227_8_if_stmt:
+        %tmp.6 = getm $.Toybox.System;
+        %tmp.7 = getv function %tmp.6 :getDeviceSettings;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        %tmp.9 = getv %tmp.8 :is24Hour;
+        %tmp.10 = true;
+        %tmp.11 = eq %tmp.9 %tmp.10;
+        bf %tmp.11 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_220_8_227_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_220_8_227_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_220_56_222_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 221 12 ]
+        %tmp.12 = getm $.Toybox.Lang;
+        %tmp.13 = getv function %tmp.12 :format;
+        %tmp.14 = "$1$:$2$";
+        %tmp.15 = newa 2;
+        %tmp.16 = lgetv %clockTime.1;
+        %tmp.17 = getv %tmp.16 :hour;
+        %tmp.18 = getv function %tmp.17 :format;
+        %tmp.19 = "%02d";
+        %tmp.20 = invoke %tmp.17 %tmp.18(%tmp.19);
+        %tmp.21 = dup %tmp.15;
+        %tmp.22 = aputv %tmp.21 0 %tmp.20;
+        %tmp.23 = lgetv %clockTime.1;
+        %tmp.24 = getv %tmp.23 :min;
+        %tmp.25 = getv function %tmp.24 :format;
+        %tmp.26 = "%02d";
+        %tmp.27 = invoke %tmp.24 %tmp.25(%tmp.26);
+        %tmp.28 = dup %tmp.22;
+        %tmp.29 = aputv %tmp.28 1 %tmp.27;
+        %tmp.30 = invoke %tmp.12 %tmp.13(%tmp.14, %tmp.29);
+        putv self :calcTime %tmp.30;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_220_56_222_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_220_8_227_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_220_8_227_8_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_222_15_227_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 223 12 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_223_12_225_12_if_stmt:
+        %tmp.32 = lgetv %hours.2;
+        %tmp.33 = 12;
+        %tmp.34 = gt %tmp.32 %tmp.33;
+        bf %tmp.34 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_223_12_225_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_223_12_225_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_223_28_225_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 224 16 ]
+        %tmp.36 = lgetv %hours.2;
+        %tmp.37 = 12;
+        %tmp.38 = sub %tmp.36 %tmp.37;
+        lputv %hours.2 %tmp.38;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_223_28_225_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_223_12_225_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_223_12_225_12_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 226 12 ]
+        %tmp.39 = getm $.Toybox.Lang;
+        %tmp.40 = getv function %tmp.39 :format;
+        %tmp.41 = "$1$:$2$";
+        %tmp.42 = newa 2;
+        %tmp.44 = lgetv %hours.2;
+        %tmp.45 = dup %tmp.42;
+        %tmp.46 = aputv %tmp.45 0 %tmp.44;
+        %tmp.47 = lgetv %clockTime.1;
+        %tmp.48 = getv %tmp.47 :min;
+        %tmp.49 = getv function %tmp.48 :format;
+        %tmp.50 = "%02d";
+        %tmp.51 = invoke %tmp.48 %tmp.49(%tmp.50);
+        %tmp.52 = dup %tmp.46;
+        %tmp.53 = aputv %tmp.52 1 %tmp.51;
+        %tmp.54 = invoke %tmp.39 %tmp.40(%tmp.41, %tmp.53);
+        putv self :calcTime %tmp.54;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_222_15_227_8_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_220_8_227_8_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_213_26_228_4_stop:
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 230; ]
+    function calcZuluTime() {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_230_28_273_4_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 233 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_230_28_273_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_230_28_273_4_stop" ]
+        %zTime.1 = local;
+        %tmp.1 = getm $.Toybox.Time;
+        %tmp.2 = getv %tmp.1 :Gregorian;
+        %tmp.3 = getv function %tmp.2 :utcInfo;
+        %tmp.4 = getm $.Toybox.Time;
+        %tmp.5 = getv function %tmp.4 :now;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        %tmp.7 = getm $.Toybox.Time;
+        %tmp.8 = getv %tmp.7 :FORMAT_MEDIUM;
+        %tmp.9 = invoke %tmp.2 %tmp.3(%tmp.6, %tmp.8);
+        lputv %zTime.1 %tmp.9;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 234 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_230_28_273_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_230_28_273_4_stop" ]
+        %myOffset.2 = local;
+        %tmp.10 = lgetv %zTime.1;
+        %tmp.11 = getv %tmp.10 :hour;
+        lputv %myOffset.2 %tmp.11;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 235 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_230_28_273_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_230_28_273_4_stop" ]
+        %minOffset.3 = local;
+        %tmp.12 = lgetv %zTime.1;
+        %tmp.13 = getv %tmp.12 :min;
+        lputv %minOffset.3 %tmp.13;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 238 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_230_28_273_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_230_28_273_4_stop" ]
+        %convLeftoverOffset.4 = local;
+        %tmp.15 = getv ? :offSetAmmt;
+        %tmp.16 = 10;
+        %tmp.17 = mod %tmp.15 %tmp.16;
+        %tmp.18 = 360;
+        %tmp.19 = mul %tmp.17 %tmp.18;
+        lputv %convLeftoverOffset.4 %tmp.19;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 239 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_230_28_273_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_230_28_273_4_stop" ]
+        %convToOffset.5 = local;
+        %tmp.21 = getv ? :offSetAmmt;
+        %tmp.22 = 10;
+        %tmp.23 = div %tmp.21 %tmp.22;
+        %tmp.24 = 13;
+        %tmp.25 = sub %tmp.23 %tmp.24;
+        %tmp.26 = 3600;
+        %tmp.27 = mul %tmp.25 %tmp.26;
+        lputv %convToOffset.5 %tmp.27;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 241 8 ]
+        %tmp.29 = lgetv %convToOffset.5;
+        %tmp.31 = lgetv %convLeftoverOffset.4;
+        %tmp.32 = add %tmp.29 %tmp.31;
+        lputv %convToOffset.5 %tmp.32;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 244 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_230_28_273_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_230_28_273_4_stop" ]
+        %zuluToSecs.6 = local;
+        %tmp.34 = lgetv %minOffset.3;
+        %tmp.35 = 60;
+        %tmp.36 = mul %tmp.34 %tmp.35;
+        %tmp.38 = lgetv %myOffset.2;
+        %tmp.39 = 3600;
+        %tmp.40 = mul %tmp.38 %tmp.39;
+        %tmp.41 = add %tmp.36 %tmp.40;
+        lputv %zuluToSecs.6 %tmp.41;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 247 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_230_28_273_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_230_28_273_4_stop" ]
+        %convToSecs.7 = local;
+        %tmp.43 = lgetv %convToOffset.5;
+        %tmp.45 = lgetv %zuluToSecs.6;
+        %tmp.46 = add %tmp.43 %tmp.45;
+        lputv %convToSecs.7 %tmp.46;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 250 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_250_8_254_8_if_stmt:
+        %tmp.48 = lgetv %convToSecs.7;
+        %tmp.49 = 86400;
+        %tmp.50 = lte %tmp.48 %tmp.49;
+        bf %tmp.50 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_250_8_254_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_250_8_254_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_250_33_252_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 251 12 ]
+        %tmp.51 = 86400;
+        %tmp.53 = lgetv %convToSecs.7;
+        %tmp.54 = add %tmp.51 %tmp.53;
+        %tmp.55 = 86400;
+        %tmp.57 = lgetv %convToSecs.7;
+        %tmp.58 = add %tmp.55 %tmp.57;
+        %tmp.59 = 3600;
+        %tmp.60 = mod %tmp.58 %tmp.59;
+        %tmp.61 = sub %tmp.54 %tmp.60;
+        %tmp.62 = 3600;
+        %tmp.63 = div %tmp.61 %tmp.62;
+        lputv %myOffset.2 %tmp.63;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_250_33_252_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_250_8_254_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_250_8_254_8_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_252_15_254_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 253 12 ]
+        %tmp.65 = lgetv %convToSecs.7;
+        %tmp.66 = 86400;
+        %tmp.68 = lgetv %convToSecs.7;
+        %tmp.69 = add %tmp.66 %tmp.68;
+        %tmp.70 = 3600;
+        %tmp.71 = mod %tmp.69 %tmp.70;
+        %tmp.72 = sub %tmp.65 %tmp.71;
+        %tmp.73 = 3600;
+        %tmp.74 = div %tmp.72 %tmp.73;
+        lputv %myOffset.2 %tmp.74;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_252_15_254_8_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_250_8_254_8_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 257 8 ]
+        %tmp.76 = lgetv %convToSecs.7;
+        %tmp.77 = 3600;
+        %tmp.78 = mod %tmp.76 %tmp.77;
+        %tmp.79 = 60;
+        %tmp.80 = div %tmp.78 %tmp.79;
+        lputv %minOffset.3 %tmp.80;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 259 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_259_8_261_8_if_stmt:
+        %tmp.82 = lgetv %minOffset.3;
+        %tmp.83 = 0;
+        %tmp.84 = lt %tmp.82 %tmp.83;
+        bf %tmp.84 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_259_8_261_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_259_8_261_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_259_27_261_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 260 12 ]
+        %tmp.86 = lgetv %minOffset.3;
+        %tmp.87 = 60;
+        %tmp.88 = add %tmp.86 %tmp.87;
+        lputv %minOffset.3 %tmp.88;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_259_27_261_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_259_8_261_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_259_8_261_8_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 264 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_264_8_270_8_if_stmt:
+        %tmp.90 = lgetv %myOffset.2;
+        %tmp.91 = 24;
+        %tmp.92 = eq %tmp.90 %tmp.91;
+        bf %tmp.92 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_264_8_270_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_264_8_270_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_264_28_266_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 265 12 ]
+        %tmp.93 = 0;
+        lputv %myOffset.2 %tmp.93;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_264_28_266_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_264_8_270_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_264_8_270_8_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 266 15 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_266_15_270_8_if_stmt:
+        %tmp.95 = lgetv %myOffset.2;
+        %tmp.96 = 0;
+        %tmp.97 = lt %tmp.95 %tmp.96;
+        bf %tmp.97 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_266_15_270_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_266_15_270_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_266_33_268_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 267 12 ]
+        %tmp.99 = lgetv %myOffset.2;
+        %tmp.100 = 24;
+        %tmp.101 = add %tmp.99 %tmp.100;
+        lputv %myOffset.2 %tmp.101;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_266_33_268_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_266_15_270_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_266_15_270_8_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 268 15 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_268_15_270_8_if_stmt:
+        %tmp.103 = lgetv %myOffset.2;
+        %tmp.104 = 24;
+        %tmp.105 = gte %tmp.103 %tmp.104;
+        bf %tmp.105 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_268_15_270_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_268_15_270_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_268_35_270_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 269 12 ]
+        %tmp.107 = lgetv %myOffset.2;
+        %tmp.108 = 24;
+        %tmp.109 = sub %tmp.107 %tmp.108;
+        lputv %myOffset.2 %tmp.109;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_268_35_270_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_268_15_270_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_268_15_270_8_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_266_15_270_8_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_264_8_270_8_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 272 8 ]
+        %tmp.110 = getm $.Toybox.Lang;
+        %tmp.111 = getv function %tmp.110 :format;
+        %tmp.112 = "$1$:$2$";
+        %tmp.113 = newa 2;
+        %tmp.114 = lgetv %myOffset.2;
+        %tmp.115 = getv function %tmp.114 :format;
+        %tmp.116 = "%02d";
+        %tmp.117 = invoke %tmp.114 %tmp.115(%tmp.116);
+        %tmp.118 = dup %tmp.113;
+        %tmp.119 = aputv %tmp.118 0 %tmp.117;
+        %tmp.120 = lgetv %minOffset.3;
+        %tmp.121 = getv function %tmp.120 :format;
+        %tmp.122 = "%02d";
+        %tmp.123 = invoke %tmp.120 %tmp.121(%tmp.122);
+        %tmp.124 = dup %tmp.119;
+        %tmp.125 = aputv %tmp.124 1 %tmp.123;
+        %tmp.126 = invoke %tmp.110 %tmp.111(%tmp.112, %tmp.125);
+        putv self :zuluTime %tmp.126;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_230_28_273_4_stop:
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 276; ]
+    function makeZuluLabel() {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_276_29_299_4_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 279 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_279_8_298_8_if_stmt:
+        %tmp.2 = getv ? :offSetAmmt;
+        %tmp.3 = 130;
+        %tmp.4 = ne %tmp.2 %tmp.3;
+        bf %tmp.4 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_279_8_298_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_279_8_298_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_279_31_296_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 281 12 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_279_31_296_8_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_279_31_296_8_stop" ]
+        %myParams.1 = local;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 282 12 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_279_31_296_8_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_279_31_296_8_stop" ]
+        %myFormat.2 = local;
+        %tmp.5 = "Set $1$+$2$";
+        lputv %myFormat.2 %tmp.5;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 284 12 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_284_12_292_12_if_stmt:
+        %tmp.7 = getv ? :offSetAmmt;
+        %tmp.8 = 10;
+        %tmp.9 = mod %tmp.7 %tmp.8;
+        %tmp.10 = 0;
+        %tmp.11 = ne %tmp.9 %tmp.10;
+        bf %tmp.11 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_284_12_292_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_284_12_292_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_284_38_290_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 285 16 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_285_16_289_16_if_stmt:
+        %tmp.13 = getv ? :offSetAmmt;
+        %tmp.14 = 130;
+        %tmp.15 = sub %tmp.13 %tmp.14;
+        %tmp.16 = 0;
+        %tmp.17 = lt %tmp.15 %tmp.16;
+        bf %tmp.17 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_285_16_289_16_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_285_16_289_16_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_285_44_287_16_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 286 20 ]
+        %tmp.18 = newa 2;
+        %tmp.20 = getv ? :offSetAmmt;
+        %tmp.21 = 10;
+        %tmp.22 = div %tmp.20 %tmp.21;
+        %tmp.23 = 12;
+        %tmp.24 = sub %tmp.22 %tmp.23;
+        %tmp.25 = dup %tmp.18;
+        %tmp.26 = aputv %tmp.25 0 %tmp.24;
+        %tmp.28 = getv ? :offSetAmmt;
+        %tmp.29 = 10;
+        %tmp.30 = mod %tmp.28 %tmp.29;
+        %tmp.31 = 6;
+        %tmp.32 = mul %tmp.30 %tmp.31;
+        %tmp.33 = dup %tmp.26;
+        %tmp.34 = aputv %tmp.33 1 %tmp.32;
+        lputv %myParams.1 %tmp.34;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_285_44_287_16_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_285_16_289_16_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_285_16_289_16_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_287_23_289_16_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 288 20 ]
+        %tmp.35 = newa 2;
+        %tmp.37 = getv ? :offSetAmmt;
+        %tmp.38 = 10;
+        %tmp.39 = div %tmp.37 %tmp.38;
+        %tmp.40 = 13;
+        %tmp.41 = sub %tmp.39 %tmp.40;
+        %tmp.42 = dup %tmp.35;
+        %tmp.43 = aputv %tmp.42 0 %tmp.41;
+        %tmp.45 = getv ? :offSetAmmt;
+        %tmp.46 = 10;
+        %tmp.47 = mod %tmp.45 %tmp.46;
+        %tmp.48 = 6;
+        %tmp.49 = mul %tmp.47 %tmp.48;
+        %tmp.50 = dup %tmp.43;
+        %tmp.51 = aputv %tmp.50 1 %tmp.49;
+        lputv %myParams.1 %tmp.51;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_287_23_289_16_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_285_16_289_16_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_284_38_290_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_284_12_292_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_284_12_292_12_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_290_19_292_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 291 16 ]
+        %tmp.52 = newa 2;
+        %tmp.54 = getv ? :offSetAmmt;
+        %tmp.55 = 10;
+        %tmp.56 = div %tmp.54 %tmp.55;
+        %tmp.57 = 13;
+        %tmp.58 = sub %tmp.56 %tmp.57;
+        %tmp.59 = dup %tmp.52;
+        %tmp.60 = aputv %tmp.59 0 %tmp.58;
+        %tmp.61 = "00";
+        %tmp.62 = dup %tmp.60;
+        %tmp.63 = aputv %tmp.62 1 %tmp.61;
+        lputv %myParams.1 %tmp.63;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_290_19_292_12_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_284_12_292_12_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 294 12 ]
+        %tmp.64 = getm $.Toybox.Lang;
+        %tmp.65 = getv function %tmp.64 :format;
+        %tmp.67 = lgetv %myFormat.2;
+        %tmp.69 = lgetv %myParams.1;
+        %tmp.70 = invoke %tmp.64 %tmp.65(%tmp.67, %tmp.69);
+        putv self :myZuluLabel %tmp.70;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_279_31_296_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_279_8_298_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_279_8_298_8_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_296_15_298_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 297 12 ]
+        %tmp.71 = "Zulu";
+        putv self :myZuluLabel %tmp.71;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_296_15_298_8_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_279_8_298_8_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_276_29_299_4_stop:
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 303; ]
+    function mainZone(dc) {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_303_26_338_4_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 307 8 ]
+        %tmp.1 = self;
+        %tmp.2 = getv function %tmp.1 :normalTime;
+        invoke %tmp.1 %tmp.2();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 308 8 ]
+        %tmp.3 = lgetv %dc;
+        %tmp.4 = getv function %tmp.3 :setColor;
+        %tmp.6 = getv ? :clockShadSet;
+        %tmp.7 = getm $.Toybox.Graphics;
+        %tmp.8 = getv %tmp.7 :COLOR_TRANSPARENT;
+        invoke %tmp.3 %tmp.4(%tmp.6, %tmp.8);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 310 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_310_8_318_8_if_stmt:
+        %tmp.9 = getm $.Toybox.System;
+        %tmp.10 = getv function %tmp.9 :getDeviceSettings;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        %tmp.12 = getv %tmp.11 :screenShape;
+        %tmp.13 = getm $.Toybox.System;
+        %tmp.14 = getv %tmp.13 :SCREEN_SHAPE_SEMI_OCTAGON;
+        %tmp.15 = ne %tmp.12 %tmp.14;
+        bf %tmp.15 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_310_8_318_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_310_8_318_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_310_88_314_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 311 12 ]
+        %tmp.16 = lgetv %dc;
+        %tmp.17 = getv function %tmp.16 :drawText;
+        %tmp.19 = getv ? :wWidth;
+        %tmp.20 = 2;
+        %tmp.21 = div %tmp.19 %tmp.20;
+        %tmp.22 = 1;
+        %tmp.23 = add %tmp.21 %tmp.22;
+        %tmp.25 = getv ? :wHeight;
+        %tmp.26 = 0.22;
+        %tmp.27 = mul %tmp.25 %tmp.26;
+        %tmp.28 = 1;
+        %tmp.29 = add %tmp.27 %tmp.28;
+        %tmp.30 = getm $.Toybox.Graphics;
+        %tmp.31 = getv %tmp.30 :FONT_NUMBER_THAI_HOT;
+        %tmp.33 = getv ? :calcTime;
+        %tmp.34 = getm $.Toybox.Graphics;
+        %tmp.35 = getv %tmp.34 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.16 %tmp.17(%tmp.23, %tmp.29, %tmp.31, %tmp.33, %tmp.35);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 312 12 ]
+        %tmp.36 = lgetv %dc;
+        %tmp.37 = getv function %tmp.36 :setColor;
+        %tmp.39 = getv ? :clockColorSet;
+        %tmp.40 = getm $.Toybox.Graphics;
+        %tmp.41 = getv %tmp.40 :COLOR_TRANSPARENT;
+        invoke %tmp.36 %tmp.37(%tmp.39, %tmp.41);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 313 12 ]
+        %tmp.42 = lgetv %dc;
+        %tmp.43 = getv function %tmp.42 :drawText;
+        %tmp.45 = getv ? :wWidth;
+        %tmp.46 = 2;
+        %tmp.47 = div %tmp.45 %tmp.46;
+        %tmp.49 = getv ? :wHeight;
+        %tmp.50 = 0.22;
+        %tmp.51 = mul %tmp.49 %tmp.50;
+        %tmp.52 = getm $.Toybox.Graphics;
+        %tmp.53 = getv %tmp.52 :FONT_NUMBER_THAI_HOT;
+        %tmp.55 = getv ? :calcTime;
+        %tmp.56 = getm $.Toybox.Graphics;
+        %tmp.57 = getv %tmp.56 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.42 %tmp.43(%tmp.47, %tmp.51, %tmp.53, %tmp.55, %tmp.57);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_310_88_314_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_310_8_318_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_310_8_318_8_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_314_15_318_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 315 12 ]
+        %tmp.58 = lgetv %dc;
+        %tmp.59 = getv function %tmp.58 :drawText;
+        %tmp.61 = getv ? :wWidth;
+        %tmp.62 = 2;
+        %tmp.63 = div %tmp.61 %tmp.62;
+        %tmp.64 = 30;
+        %tmp.65 = sub %tmp.63 %tmp.64;
+        %tmp.67 = getv ? :wHeight;
+        %tmp.68 = 0.22;
+        %tmp.69 = mul %tmp.67 %tmp.68;
+        %tmp.70 = 1;
+        %tmp.71 = add %tmp.69 %tmp.70;
+        %tmp.72 = getm $.Toybox.Graphics;
+        %tmp.73 = getv %tmp.72 :FONT_NUMBER_THAI_HOT;
+        %tmp.75 = getv ? :calcTime;
+        %tmp.76 = getm $.Toybox.Graphics;
+        %tmp.77 = getv %tmp.76 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.58 %tmp.59(%tmp.65, %tmp.71, %tmp.73, %tmp.75, %tmp.77);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 316 12 ]
+        %tmp.78 = lgetv %dc;
+        %tmp.79 = getv function %tmp.78 :setColor;
+        %tmp.81 = getv ? :clockColorSet;
+        %tmp.82 = getm $.Toybox.Graphics;
+        %tmp.83 = getv %tmp.82 :COLOR_TRANSPARENT;
+        invoke %tmp.78 %tmp.79(%tmp.81, %tmp.83);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 317 12 ]
+        %tmp.84 = lgetv %dc;
+        %tmp.85 = getv function %tmp.84 :drawText;
+        %tmp.87 = getv ? :wWidth;
+        %tmp.88 = 2;
+        %tmp.89 = div %tmp.87 %tmp.88;
+        %tmp.90 = 29;
+        %tmp.91 = sub %tmp.89 %tmp.90;
+        %tmp.93 = getv ? :wHeight;
+        %tmp.94 = 0.22;
+        %tmp.95 = mul %tmp.93 %tmp.94;
+        %tmp.96 = getm $.Toybox.Graphics;
+        %tmp.97 = getv %tmp.96 :FONT_NUMBER_THAI_HOT;
+        %tmp.99 = getv ? :calcTime;
+        %tmp.100 = getm $.Toybox.Graphics;
+        %tmp.101 = getv %tmp.100 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.84 %tmp.85(%tmp.91, %tmp.95, %tmp.97, %tmp.99, %tmp.101);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_314_15_318_8_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_310_8_318_8_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 320 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_320_8_336_8_if_stmt:
+        %tmp.103 = getv ? :timeOrStep;
+        bf %tmp.103 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_320_8_336_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_320_8_336_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_320_24_329_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 322 12 ]
+        %tmp.104 = self;
+        %tmp.105 = getv function %tmp.104 :calcZuluTime;
+        invoke %tmp.104 %tmp.105();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 323 12 ]
+        %tmp.106 = self;
+        %tmp.107 = getv function %tmp.106 :makeZuluLabel;
+        invoke %tmp.106 %tmp.107();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 325 12 ]
+        %tmp.108 = lgetv %dc;
+        %tmp.109 = getv function %tmp.108 :setColor;
+        %tmp.111 = getv ? :subColorSet;
+        %tmp.112 = getm $.Toybox.Graphics;
+        %tmp.113 = getv %tmp.112 :COLOR_TRANSPARENT;
+        invoke %tmp.108 %tmp.109(%tmp.111, %tmp.113);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 326 12 ]
+        %tmp.114 = lgetv %dc;
+        %tmp.115 = getv function %tmp.114 :drawText;
+        %tmp.117 = getv ? :wWidth;
+        %tmp.118 = 2;
+        %tmp.119 = div %tmp.117 %tmp.118;
+        %tmp.121 = getv ? :wHeight;
+        %tmp.122 = 0.75;
+        %tmp.123 = mul %tmp.121 %tmp.122;
+        %tmp.124 = getm $.Toybox.Graphics;
+        %tmp.125 = getv %tmp.124 :FONT_LARGE;
+        %tmp.127 = getv ? :zuluTime;
+        %tmp.128 = getm $.Toybox.Graphics;
+        %tmp.129 = getv %tmp.128 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.114 %tmp.115(%tmp.119, %tmp.123, %tmp.125, %tmp.127, %tmp.129);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 327 12 ]
+        %tmp.130 = lgetv %dc;
+        %tmp.131 = getv function %tmp.130 :drawText;
+        %tmp.133 = getv ? :wWidth;
+        %tmp.134 = 2;
+        %tmp.135 = div %tmp.133 %tmp.134;
+        %tmp.137 = getv ? :wHeight;
+        %tmp.138 = 0.88;
+        %tmp.139 = mul %tmp.137 %tmp.138;
+        %tmp.140 = getm $.Toybox.Graphics;
+        %tmp.141 = getv %tmp.140 :FONT_SYSTEM_XTINY;
+        %tmp.143 = getv ? :myZuluLabel;
+        %tmp.144 = getm $.Toybox.Graphics;
+        %tmp.145 = getv %tmp.144 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.130 %tmp.131(%tmp.135, %tmp.139, %tmp.141, %tmp.143, %tmp.145);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_320_24_329_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_320_8_336_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_320_8_336_8_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_329_15_336_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 331 12 ]
+        %tmp.146 = self;
+        %tmp.147 = getv function %tmp.146 :stepsDisp;
+        invoke %tmp.146 %tmp.147();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 333 12 ]
+        %tmp.148 = lgetv %dc;
+        %tmp.149 = getv function %tmp.148 :setColor;
+        %tmp.151 = getv ? :subColorSet;
+        %tmp.152 = getm $.Toybox.Graphics;
+        %tmp.153 = getv %tmp.152 :COLOR_TRANSPARENT;
+        invoke %tmp.148 %tmp.149(%tmp.151, %tmp.153);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 334 12 ]
+        %tmp.154 = lgetv %dc;
+        %tmp.155 = getv function %tmp.154 :drawText;
+        %tmp.157 = getv ? :wWidth;
+        %tmp.158 = 2;
+        %tmp.159 = div %tmp.157 %tmp.158;
+        %tmp.161 = getv ? :wHeight;
+        %tmp.162 = 0.75;
+        %tmp.163 = mul %tmp.161 %tmp.162;
+        %tmp.164 = getm $.Toybox.Graphics;
+        %tmp.165 = getv %tmp.164 :FONT_LARGE;
+        %tmp.167 = getv ? :stepString;
+        %tmp.168 = getm $.Toybox.Graphics;
+        %tmp.169 = getv %tmp.168 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.154 %tmp.155(%tmp.159, %tmp.163, %tmp.165, %tmp.167, %tmp.169);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 335 12 ]
+        %tmp.170 = lgetv %dc;
+        %tmp.171 = getv function %tmp.170 :drawText;
+        %tmp.173 = getv ? :wWidth;
+        %tmp.174 = 2;
+        %tmp.175 = div %tmp.173 %tmp.174;
+        %tmp.177 = getv ? :wHeight;
+        %tmp.178 = 0.88;
+        %tmp.179 = mul %tmp.177 %tmp.178;
+        %tmp.180 = getm $.Toybox.Graphics;
+        %tmp.181 = getv %tmp.180 :FONT_SYSTEM_XTINY;
+        %tmp.182 = "steps";
+        %tmp.183 = getm $.Toybox.Graphics;
+        %tmp.184 = getv %tmp.183 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.170 %tmp.171(%tmp.175, %tmp.179, %tmp.181, %tmp.182, %tmp.184);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_329_15_336_8_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_320_8_336_8_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_303_26_338_4_stop:
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 342; ]
+    function dateDisp() {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_342_24_349_4_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 344 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_342_24_349_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_342_24_349_4_stop" ]
+        %dateLoad.1 = local;
+        %tmp.1 = getm $.Toybox.Time;
+        %tmp.2 = getv %tmp.1 :Gregorian;
+        %tmp.3 = getv function %tmp.2 :info;
+        %tmp.4 = getm $.Toybox.Time;
+        %tmp.5 = getv function %tmp.4 :now;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        %tmp.7 = getm $.Toybox.Time;
+        %tmp.8 = getv %tmp.7 :FORMAT_MEDIUM;
+        %tmp.9 = invoke %tmp.2 %tmp.3(%tmp.6, %tmp.8);
+        lputv %dateLoad.1 %tmp.9;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 345 8 ]
+        %tmp.10 = getm $.Toybox.Lang;
+        %tmp.11 = getv function %tmp.10 :format;
+        %tmp.12 = "$1$, $2$ $3$";
+        %tmp.13 = newa 3;
+        %tmp.14 = lgetv %dateLoad.1;
+        %tmp.15 = getv %tmp.14 :day_of_week;
+        %tmp.16 = dup %tmp.13;
+        %tmp.17 = aputv %tmp.16 0 %tmp.15;
+        %tmp.18 = lgetv %dateLoad.1;
+        %tmp.19 = getv %tmp.18 :day;
+        %tmp.20 = dup %tmp.17;
+        %tmp.21 = aputv %tmp.20 1 %tmp.19;
+        %tmp.22 = lgetv %dateLoad.1;
+        %tmp.23 = getv %tmp.22 :month;
+        %tmp.24 = dup %tmp.21;
+        %tmp.25 = aputv %tmp.24 2 %tmp.23;
+        %tmp.26 = invoke %tmp.10 %tmp.11(%tmp.12, %tmp.25);
+        putv self :dateString %tmp.26;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_342_24_349_4_stop:
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 353; ]
+    function battDisp(dc) {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_353_26_385_4_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 356 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_356_8_384_8_if_stmt:
+        %tmp.2 = getv ? :showBat;
+        %tmp.3 = 0;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_356_8_384_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_356_8_384_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_356_26_381_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 358 12 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_358_12_360_12_if_stmt:
+        %tmp.6 = getv ? :hasComps;
+        %tmp.7 = not %tmp.6;
+        bf %tmp.7 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_358_12_360_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_358_12_360_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_358_27_360_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 359 16 ]
+        %tmp.8 = getm $.Toybox.System;
+        %tmp.9 = getv function %tmp.8 :getSystemStats;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        %tmp.11 = getv %tmp.10 :battery;
+        %tmp.12 = 0.5;
+        %tmp.13 = add %tmp.11 %tmp.12;
+        %tmp.14 = getv function %tmp.13 :toNumber;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        putv self :batLoad %tmp.15;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_358_27_360_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_358_12_360_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_358_12_360_12_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 361 12 ]
+        %tmp.16 = getm $.Toybox.Lang;
+        %tmp.17 = getv function %tmp.16 :format;
+        %tmp.18 = "$1$";
+        %tmp.19 = newa 1;
+        %tmp.21 = getv ? :batLoad;
+        %tmp.22 = dup %tmp.19;
+        %tmp.23 = aputv %tmp.22 0 %tmp.21;
+        %tmp.24 = invoke %tmp.16 %tmp.17(%tmp.18, %tmp.23);
+        %tmp.25 = "%";
+        %tmp.26 = add %tmp.24 %tmp.25;
+        putv self :batString %tmp.26;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 363 12 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_363_12_380_12_if_stmt:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_363_16_364_65_begin:
+        %tmp.28 = getm $.Toybox.System;
+        %tmp.30 = const :SCREEN_SHAPE_SEMI_OCTAGON;
+        %tmp.31 = canhazplz %tmp.28 %tmp.30;
+        bf %tmp.31 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_363_12_380_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_364_16_364_65_true:
+        %tmp.32 = getm $.Toybox.System;
+        %tmp.33 = getv function %tmp.32 :getDeviceSettings;
+        %tmp.34 = invoke %tmp.32 %tmp.33();
+        %tmp.35 = getv %tmp.34 :screenShape;
+        %tmp.36 = getm $.Toybox.System;
+        %tmp.37 = getv %tmp.36 :SCREEN_SHAPE_SEMI_OCTAGON;
+        %tmp.38 = ne %tmp.35 %tmp.37;
+        push %tmp.38;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_364_16_364_65_end:
+        %tmp.39 = phi [%tmp.31 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_363_16_364_65_begin] [%tmp.38 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_364_16_364_65_true] [%tmp.39 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_364_16_364_65_end];
+        bf %tmp.39 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_363_12_380_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_363_12_380_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_364_91_373_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 366 16 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_366_16_372_16_if_stmt:
+        %tmp.41 = getv ? :batLoad;
+        %tmp.42 = 5.0;
+        %tmp.43 = lt %tmp.41 %tmp.42;
+        bf %tmp.43 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_366_16_372_16_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_366_16_372_16_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_366_35_368_16_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 367 20 ]
+        %tmp.44 = lgetv %dc;
+        %tmp.45 = getv function %tmp.44 :setColor;
+        %tmp.46 = getm $.Toybox.Graphics;
+        %tmp.47 = getv %tmp.46 :COLOR_RED;
+        %tmp.48 = getm $.Toybox.Graphics;
+        %tmp.49 = getv %tmp.48 :COLOR_TRANSPARENT;
+        invoke %tmp.44 %tmp.45(%tmp.47, %tmp.49);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_366_35_368_16_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_366_16_372_16_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_366_16_372_16_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 368 23 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_368_23_372_16_if_stmt:
+        %tmp.51 = getv ? :batLoad;
+        %tmp.52 = 25.0;
+        %tmp.53 = lt %tmp.51 %tmp.52;
+        bf %tmp.53 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_368_23_372_16_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_368_23_372_16_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_368_43_370_16_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 369 20 ]
+        %tmp.54 = lgetv %dc;
+        %tmp.55 = getv function %tmp.54 :setColor;
+        %tmp.56 = getm $.Toybox.Graphics;
+        %tmp.57 = getv %tmp.56 :COLOR_YELLOW;
+        %tmp.58 = getm $.Toybox.Graphics;
+        %tmp.59 = getv %tmp.58 :COLOR_TRANSPARENT;
+        invoke %tmp.54 %tmp.55(%tmp.57, %tmp.59);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_368_43_370_16_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_368_23_372_16_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_368_23_372_16_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_370_23_372_16_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 371 20 ]
+        %tmp.60 = lgetv %dc;
+        %tmp.61 = getv function %tmp.60 :setColor;
+        %tmp.62 = getm $.Toybox.Graphics;
+        %tmp.63 = getv %tmp.62 :COLOR_DK_GREEN;
+        %tmp.64 = getm $.Toybox.Graphics;
+        %tmp.65 = getv %tmp.64 :COLOR_TRANSPARENT;
+        invoke %tmp.60 %tmp.61(%tmp.63, %tmp.65);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_370_23_372_16_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_368_23_372_16_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_366_16_372_16_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_364_91_373_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_363_12_380_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_363_12_380_12_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_373_19_380_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 375 16 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_375_16_379_16_if_stmt:
+        %tmp.67 = getv ? :myBackgroundColor;
+        %tmp.68 = 0xFFFFFF;
+        %tmp.69 = eq %tmp.67 %tmp.68;
+        bf %tmp.69 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_375_16_379_16_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_375_16_379_16_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_375_51_377_16_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 376 20 ]
+        %tmp.70 = lgetv %dc;
+        %tmp.71 = getv function %tmp.70 :setColor;
+        %tmp.72 = getm $.Toybox.Graphics;
+        %tmp.73 = getv %tmp.72 :COLOR_BLACK;
+        %tmp.74 = getm $.Toybox.Graphics;
+        %tmp.75 = getv %tmp.74 :COLOR_TRANSPARENT;
+        invoke %tmp.70 %tmp.71(%tmp.73, %tmp.75);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_375_51_377_16_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_375_16_379_16_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_375_16_379_16_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_377_23_379_16_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 378 20 ]
+        %tmp.76 = lgetv %dc;
+        %tmp.77 = getv function %tmp.76 :setColor;
+        %tmp.78 = getm $.Toybox.Graphics;
+        %tmp.79 = getv %tmp.78 :COLOR_WHITE;
+        %tmp.80 = getm $.Toybox.Graphics;
+        %tmp.81 = getv %tmp.80 :COLOR_TRANSPARENT;
+        invoke %tmp.76 %tmp.77(%tmp.79, %tmp.81);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_377_23_379_16_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_375_16_379_16_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_373_19_380_12_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_363_12_380_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_356_26_381_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_356_8_384_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_356_8_384_8_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_381_15_384_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 382 12 ]
+        %tmp.82 = lgetv %dc;
+        %tmp.83 = getv function %tmp.82 :setColor;
+        %tmp.84 = getm $.Toybox.Graphics;
+        %tmp.85 = getv %tmp.84 :COLOR_TRANSPARENT;
+        %tmp.86 = getm $.Toybox.Graphics;
+        %tmp.87 = getv %tmp.86 :COLOR_TRANSPARENT;
+        invoke %tmp.82 %tmp.83(%tmp.85, %tmp.87);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 383 12 ]
+        %tmp.88 = " ";
+        putv self :batString %tmp.88;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_381_15_384_8_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_356_8_384_8_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_353_26_385_4_stop:
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 388; ]
+    function notesDisp() {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_388_25_413_4_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 390 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_388_25_413_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_388_25_413_4_stop" ]
+        %anyNotes.1 = local;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 392 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_392_8_406_8_if_stmt:
+        %tmp.2 = getv ? :hasComps;
+        %tmp.3 = false;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_392_8_406_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_392_8_406_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_392_31_400_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 393 12 ]
+        %tmp.5 = getm $.Toybox.System;
+        %tmp.6 = getv function %tmp.5 :getDeviceSettings;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        putv self :noteSets %tmp.7;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 395 12 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_395_12_399_12_if_stmt:
+        %tmp.9 = getv ? :noteSets;
+        %tmp.10 = getv %tmp.9 :notificationCount;
+        %tmp.11 = 0;
+        %tmp.12 = ne %tmp.10 %tmp.11;
+        bf %tmp.12 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_395_12_399_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_395_12_399_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_395_48_397_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 396 16 ]
+        %tmp.13 = true;
+        lputv %anyNotes.1 %tmp.13;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_395_48_397_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_395_12_399_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_395_12_399_12_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_397_19_399_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 398 16 ]
+        %tmp.14 = false;
+        lputv %anyNotes.1 %tmp.14;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_397_19_399_12_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_395_12_399_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_392_31_400_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_392_8_406_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_392_8_406_8_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_400_15_406_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 401 12 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_401_12_405_12_if_stmt:
+        %tmp.16 = getv ? :noteSets;
+        %tmp.17 = 0;
+        %tmp.18 = ne %tmp.16 %tmp.17;
+        bf %tmp.18 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_401_12_405_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_401_12_405_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_401_31_403_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 402 16 ]
+        %tmp.19 = true;
+        lputv %anyNotes.1 %tmp.19;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_401_31_403_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_401_12_405_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_401_12_405_12_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_403_19_405_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 404 16 ]
+        %tmp.20 = false;
+        lputv %anyNotes.1 %tmp.20;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_403_19_405_12_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_401_12_405_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_400_15_406_8_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_392_8_406_8_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 408 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_408_8_412_8_if_stmt:
+        %tmp.22 = lgetv %anyNotes.1;
+        bf %tmp.22 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_408_8_412_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_408_8_412_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_408_22_410_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 409 12 ]
+        %tmp.23 = "N";
+        putv self :noteString %tmp.23;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_408_22_410_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_408_8_412_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_408_8_412_8_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_410_15_412_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 411 12 ]
+        %tmp.24 = " ";
+        putv self :noteString %tmp.24;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_410_15_412_8_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_408_8_412_8_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_388_25_413_4_stop:
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 416; ]
+    function alarmDisp() {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_416_25_425_4_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 418 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_416_25_425_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_416_25_425_4_stop" ]
+        %alSets.1 = local;
+        %tmp.1 = getm $.Toybox.System;
+        %tmp.2 = getv function %tmp.1 :getDeviceSettings;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = getv %tmp.3 :alarmCount;
+        lputv %alSets.1 %tmp.4;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 420 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_420_8_424_8_if_stmt:
+        %tmp.6 = lgetv %alSets.1;
+        %tmp.7 = 0;
+        %tmp.8 = ne %tmp.6 %tmp.7;
+        bf %tmp.8 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_420_8_424_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_420_8_424_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_420_25_422_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 421 12 ]
+        %tmp.9 = "A";
+        putv self :alarmString %tmp.9;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_420_25_422_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_420_8_424_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_420_8_424_8_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_422_15_424_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 423 12 ]
+        %tmp.10 = " ";
+        putv self :alarmString %tmp.10;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_422_15_424_8_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_420_8_424_8_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_416_25_425_4_stop:
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 427; ]
+    function secondsDisplay(dc) {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 429 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_stop" ]
+        %screenWidth.1 = local;
+        %tmp.1 = lgetv %dc;
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %screenWidth.1 %tmp.3;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 430 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_stop" ]
+        %screenHeight.2 = local;
+        %tmp.4 = lgetv %dc;
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %screenHeight.2 %tmp.6;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 431 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_stop" ]
+        %centerX.3 = local;
+        %tmp.8 = lgetv %screenWidth.1;
+        %tmp.9 = 2;
+        %tmp.10 = div %tmp.8 %tmp.9;
+        lputv %centerX.3 %tmp.10;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 432 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_stop" ]
+        %centerY.4 = local;
+        %tmp.12 = lgetv %screenHeight.2;
+        %tmp.13 = 2;
+        %tmp.14 = div %tmp.12 %tmp.13;
+        lputv %centerY.4 %tmp.14;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 433 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_stop" ]
+        %mRadius.5 = local;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_433_22_433_65_begin:
+        %tmp.16 = lgetv %centerX.3;
+        %tmp.18 = lgetv %centerY.4;
+        %tmp.19 = lt %tmp.16 %tmp.18;
+        bf %tmp.19 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_433_22_433_65_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_433_22_433_65_true:
+        %tmp.21 = lgetv %centerX.3;
+        %tmp.22 = 4;
+        %tmp.23 = sub %tmp.21 %tmp.22;
+        push %tmp.23;
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_433_22_433_65_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_433_22_433_65_false:
+        %tmp.25 = lgetv %centerY.4;
+        %tmp.26 = 4;
+        %tmp.27 = sub %tmp.25 %tmp.26;
+        push %tmp.27;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_433_22_433_65_end:
+        %tmp.28 = phi [%tmp.19 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_433_22_433_65_begin] [%tmp.23 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_433_22_433_65_true] [%tmp.27 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_433_22_433_65_false] [%tmp.28 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_433_22_433_65_end];
+        lputv %mRadius.5 %tmp.28;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 434 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_stop" ]
+        %clockTime.6 = local;
+        %tmp.29 = getm $.Toybox.System;
+        %tmp.30 = getv function %tmp.29 :getClockTime;
+        %tmp.31 = invoke %tmp.29 %tmp.30();
+        lputv %clockTime.6 %tmp.31;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 435 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_stop" ]
+        %mSeconds.7 = local;
+        %tmp.32 = lgetv %clockTime.6;
+        %tmp.33 = getv %tmp.32 :sec;
+        lputv %mSeconds.7 %tmp.33;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 437 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_stop" ]
+        %mPen.8 = local;
+        %tmp.34 = 4;
+        lputv %mPen.8 %tmp.34;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 439 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_stop" ]
+        %mArc.9 = local;
+        %tmp.35 = 90;
+        %tmp.37 = lgetv %mSeconds.7;
+        %tmp.38 = 6;
+        %tmp.39 = mul %tmp.37 %tmp.38;
+        %tmp.40 = sub %tmp.35 %tmp.39;
+        lputv %mArc.9 %tmp.40;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 441 8 ]
+        %tmp.41 = lgetv %dc;
+        %tmp.42 = getv function %tmp.41 :setPenWidth;
+        %tmp.44 = lgetv %mPen.8;
+        invoke %tmp.41 %tmp.42(%tmp.44);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 442 8 ]
+        %tmp.45 = lgetv %dc;
+        %tmp.46 = getv function %tmp.45 :setColor;
+        %tmp.48 = getv ? :clockColorSet;
+        %tmp.49 = getm $.Toybox.Graphics;
+        %tmp.50 = getv %tmp.49 :COLOR_TRANSPARENT;
+        invoke %tmp.45 %tmp.46(%tmp.48, %tmp.50);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 443 8 ]
+        %tmp.51 = lgetv %dc;
+        %tmp.52 = getv function %tmp.51 :drawArc;
+        %tmp.54 = lgetv %centerX.3;
+        %tmp.56 = lgetv %centerY.4;
+        %tmp.58 = lgetv %mRadius.5;
+        %tmp.59 = getm $.Toybox.Graphics;
+        %tmp.60 = getv %tmp.59 :ARC_CLOCKWISE;
+        %tmp.61 = 90;
+        %tmp.63 = lgetv %mArc.9;
+        invoke %tmp.51 %tmp.52(%tmp.54, %tmp.56, %tmp.58, %tmp.60, %tmp.61, %tmp.63);
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_427_32_445_4_stop:
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 447; ]
+    function stepsDisp() {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_447_25_458_4_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 449 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_447_25_458_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_447_25_458_4_stop" ]
+        %stepLoad.1 = local;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 451 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_451_8_454_8_if_stmt:
+        %tmp.2 = getv ? :hasComps;
+        %tmp.3 = not %tmp.2;
+        bf %tmp.3 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_451_8_454_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_451_8_454_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_451_23_454_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 452 12 ]
+        %tmp.4 = getm $.Toybox.ActivityMonitor;
+        %tmp.5 = getv function %tmp.4 :getInfo;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %stepLoad.1 %tmp.6;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 453 12 ]
+        %tmp.7 = lgetv %stepLoad.1;
+        %tmp.8 = getv %tmp.7 :steps;
+        putv self :mSteps %tmp.8;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_451_23_454_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_451_8_454_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_451_8_454_8_if_end:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 456 8 ]
+        %tmp.9 = getm $.Toybox.Lang;
+        %tmp.10 = getv function %tmp.9 :format;
+        %tmp.11 = "$1$";
+        %tmp.12 = newa 1;
+        %tmp.14 = getv ? :mSteps;
+        %tmp.15 = dup %tmp.12;
+        %tmp.16 = aputv %tmp.15 0 %tmp.14;
+        %tmp.17 = invoke %tmp.9 %tmp.10(%tmp.11, %tmp.16);
+        putv self :stepString %tmp.17;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_447_25_458_4_stop:
+    }
+}
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 462; ]
+class AviationTimeDelegate extends WatchUi.WatchFaceDelegate{
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 462; ]
+    <init> {
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 462; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 464; @position = 5; ]
+    var view;
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 466; ]
+    function initialize(v) as Void {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_466_24_469_1_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 467 2 ]
+        %tmp.2 = getv ? :WatchFaceDelegate;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 468 2 ]
+        %tmp.5 = lgetv %v;
+        putv self :view %tmp.5;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_466_24_469_1_stop:
+    }
+    [ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 471; ]
+    function onPress(evt) {
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_471_26_497_4_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 472 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_471_26_497_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_471_26_497_4_stop" ]
+        %c.1 = local;
+        %tmp.1 = lgetv %evt;
+        %tmp.2 = getv function %tmp.1 :getCoordinates;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %c.1 %tmp.3;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 473 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_471_26_497_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_471_26_497_4_stop" ]
+        %batY.2 = local;
+        %tmp.4 = 0.33;
+        %tmp.6 = getv ? :view;
+        %tmp.7 = getv %tmp.6 :wHeight;
+        %tmp.8 = mul %tmp.4 %tmp.7;
+        lputv %batY.2 %tmp.8;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 474 8 ]
+        [ "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_471_26_497_4_start" "_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_471_26_497_4_stop" ]
+        %stepY.3 = local;
+        %tmp.9 = 0.66;
+        %tmp.11 = getv ? :view;
+        %tmp.12 = getv %tmp.11 :wHeight;
+        %tmp.13 = mul %tmp.9 %tmp.12;
+        lputv %stepY.3 %tmp.13;
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 476 8 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_476_8_496_8_if_stmt:
+        %tmp.15 = lgetv %c.1;
+        %tmp.16 = 1;
+        %tmp.17 = agetv %tmp.15 %tmp.16;
+        %tmp.19 = lgetv %batY.2;
+        %tmp.20 = lte %tmp.17 %tmp.19;
+        bf %tmp.20 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_476_8_496_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_476_8_496_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_476_26_488_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 478 12 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_478_12_486_12_if_stmt:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_478_16_478_46_begin:
+        %tmp.22 = getv ? :showBat;
+        %tmp.23 = 0;
+        %tmp.24 = eq %tmp.22 %tmp.23;
+        bf %tmp.24 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_478_12_486_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_478_32_478_46_true:
+        %tmp.26 = getv ? :view;
+        %tmp.27 = getv %tmp.26 :batId;
+        %tmp.28 = null;
+        %tmp.29 = ne %tmp.27 %tmp.28;
+        push %tmp.29;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_478_32_478_46_end:
+        %tmp.30 = phi [%tmp.24 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_478_16_478_46_begin] [%tmp.29 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_478_32_478_46_true] [%tmp.30 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_478_32_478_46_end];
+        bf %tmp.30 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_478_12_486_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_478_12_486_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_478_52_481_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 479 16 ]
+        %tmp.31 = getm $.Toybox.Complications;
+        %tmp.32 = getv function %tmp.31 :exitTo;
+        %tmp.34 = getv ? :view;
+        %tmp.35 = getv %tmp.34 :batId;
+        invoke %tmp.31 %tmp.32(%tmp.35);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 480 16 ]
+        %tmp.36 = true;
+        ret %tmp.36;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_478_52_481_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_478_12_486_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_478_12_486_12_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 481 19 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_481_19_486_12_if_stmt:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_481_23_481_52_begin:
+        %tmp.38 = getv ? :showBat;
+        %tmp.39 = 2;
+        %tmp.40 = eq %tmp.38 %tmp.39;
+        bf %tmp.40 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_481_19_486_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_481_39_481_52_true:
+        %tmp.42 = getv ? :view;
+        %tmp.43 = getv %tmp.42 :wxId;
+        %tmp.44 = null;
+        %tmp.45 = ne %tmp.43 %tmp.44;
+        push %tmp.45;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_481_39_481_52_end:
+        %tmp.46 = phi [%tmp.40 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_481_23_481_52_begin] [%tmp.45 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_481_39_481_52_true] [%tmp.46 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_481_39_481_52_end];
+        bf %tmp.46 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_481_19_486_12_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_481_19_486_12_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_481_58_484_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 482 16 ]
+        %tmp.47 = getm $.Toybox.Complications;
+        %tmp.48 = getv function %tmp.47 :exitTo;
+        %tmp.50 = getv ? :view;
+        %tmp.51 = getv %tmp.50 :wxId;
+        invoke %tmp.47 %tmp.48(%tmp.51);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 483 16 ]
+        %tmp.52 = true;
+        ret %tmp.52;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_481_58_484_12_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_481_19_486_12_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_481_19_486_12_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_484_19_486_12_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 485 16 ]
+        %tmp.53 = false;
+        ret %tmp.53;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_484_19_486_12_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_481_19_486_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_478_12_486_12_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_476_26_488_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_476_8_496_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_476_8_496_8_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 488 15 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_15_496_8_if_stmt:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_19_488_65_begin:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_19_488_42_begin:
+        %tmp.55 = lgetv %c.1;
+        %tmp.56 = 1;
+        %tmp.57 = agetv %tmp.55 %tmp.56;
+        %tmp.59 = lgetv %batY.2;
+        %tmp.60 = gt %tmp.57 %tmp.59;
+        bf %tmp.60 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_15_496_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_34_488_42_true:
+        %tmp.62 = lgetv %c.1;
+        %tmp.63 = 1;
+        %tmp.64 = agetv %tmp.62 %tmp.63;
+        %tmp.66 = lgetv %stepY.3;
+        %tmp.67 = lte %tmp.64 %tmp.66;
+        push %tmp.67;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_34_488_42_end:
+        %tmp.68 = phi [%tmp.60 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_19_488_42_begin] [%tmp.67 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_34_488_42_true] [%tmp.68 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_34_488_42_end];
+        bf %tmp.68 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_15_496_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_51_488_65_true:
+        %tmp.70 = getv ? :view;
+        %tmp.71 = getv %tmp.70 :calId;
+        %tmp.72 = null;
+        %tmp.73 = ne %tmp.71 %tmp.72;
+        push %tmp.73;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_51_488_65_end:
+        %tmp.74 = phi [%tmp.68 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_19_488_65_begin] [%tmp.73 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_51_488_65_true] [%tmp.74 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_51_488_65_end];
+        bf %tmp.74 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_15_496_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_15_496_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_71_491_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 489 12 ]
+        %tmp.75 = getm $.Toybox.Complications;
+        %tmp.76 = getv function %tmp.75 :exitTo;
+        %tmp.78 = getv ? :view;
+        %tmp.79 = getv %tmp.78 :calId;
+        invoke %tmp.75 %tmp.76(%tmp.79);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 490 12 ]
+        %tmp.80 = true;
+        ret %tmp.80;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_71_491_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_15_496_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_15_496_8_if_false:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 491 15 ]
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_491_15_496_8_if_stmt:
+        %tmp.82 = getv ? :view;
+        %tmp.83 = getv %tmp.82 :stepId;
+        %tmp.84 = null;
+        %tmp.85 = ne %tmp.83 %tmp.84;
+        bf %tmp.85 @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_491_15_496_8_if_false;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_491_15_496_8_if_true:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_491_40_494_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 492 12 ]
+        %tmp.86 = getm $.Toybox.Complications;
+        %tmp.87 = getv function %tmp.86 :exitTo;
+        %tmp.89 = getv ? :view;
+        %tmp.90 = getv %tmp.89 :stepId;
+        invoke %tmp.86 %tmp.87(%tmp.90);
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 493 12 ]
+        %tmp.91 = true;
+        ret %tmp.91;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_491_40_494_8_stop:
+        goto @_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_491_15_496_8_if_end;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_491_15_496_8_if_false:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_494_15_496_8_start:
+[ "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc" 495 12 ]
+        %tmp.92 = false;
+        ret %tmp.92;
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_494_15_496_8_stop:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_491_15_496_8_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_488_15_496_8_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_476_8_496_8_if_end:
+_Users_jeffreyforste_Garmin_Projects_AviationTime_source_AviationTimeView_mc_471_26_497_4_stop:
+    }
+}
+[ @file = "/Users/jeffreyforste/Garmin Projects/AviationTime/source/AviationTimeView.mc"; @line = 1; ]
+<init> {
+}

@@ -1,0 +1,111 @@
+<settings>
+
+   <setting propertyKey="@Properties.ClockColor" title="@Strings.ClockColorTitle" prompt="@Strings.ClockColorPrompt">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.White</listEntry>
+            <listEntry value="1">@Strings.LTGray</listEntry>
+            <listEntry value="2">@Strings.DKGray</listEntry> 
+            <listEntry value="3">@Strings.Black</listEntry>
+            <listEntry value="4">@Strings.Red</listEntry>
+            <listEntry value="5">@Strings.DKRed</listEntry>
+            <listEntry value="6">@Strings.Orange</listEntry>
+            <listEntry value="7">@Strings.Yellow</listEntry>
+            <listEntry value="8">@Strings.Green</listEntry>
+            <listEntry value="9">@Strings.DKGreen</listEntry>
+            <listEntry value="10">@Strings.Blue</listEntry>
+            <listEntry value="11">@Strings.DKBlue</listEntry>                        
+            <listEntry value="12">@Strings.Purple</listEntry>  
+            <listEntry value="13">@Strings.Pink</listEntry>  
+        </settingConfig>
+    </setting> 
+
+    <setting propertyKey="@Properties.ShadOpt" title="@Strings.ShadOptTitle" prompt="@Strings.ShadOptPrompt">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.NoShad</listEntry>
+            <listEntry value="1">@Strings.BlackShad</listEntry>
+            <listEntry value="2">@Strings.WhiteShad</listEntry>
+            <listEntry value="3">@Strings.GrayShad</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.BackgroundColor" title="@Strings.BackgroundColorTitle">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.Black</listEntry>
+            <listEntry value="1">@Strings.DKGray</listEntry>
+            <listEntry value="2">@Strings.White</listEntry>           
+            <listEntry value="3">@Strings.DKRed</listEntry>
+            <listEntry value="4">@Strings.DKGreen</listEntry>
+            <listEntry value="5">@Strings.DKBlue</listEntry>
+            <listEntry value="6">@Strings.Purple</listEntry>
+        </settingConfig>
+    </setting>
+    
+    <setting propertyKey="@Properties.SubColor" title="@Strings.SubColorTitle" prompt="@Strings.SubColorPrompt">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.LTGray</listEntry>
+            <listEntry value="1">@Strings.DKGray</listEntry>
+            <listEntry value="2">@Strings.Black</listEntry>
+            <listEntry value="3">@Strings.White</listEntry>
+            <listEntry value="4">@Strings.Red</listEntry>
+            <listEntry value="5">@Strings.Green</listEntry>
+            <listEntry value="6">@Strings.Blue</listEntry>
+            <listEntry value="7">@Strings.Pink</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.DispBatt" title="@Strings.DispBattTitle" prompt="Strings.DispBattPrompt">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.YesBat</listEntry>
+            <listEntry value="1">@Strings.NoBat</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.ShowNotes" title="@Strings.ShowNotesTitle" prompt="@Strings.ShowNotesPrompt" >
+        <settingConfig type="boolean" />
+    </setting> 
+    
+    <setting propertyKey="@Properties.SecOpt" title="@Strings.SecOptTitle" prompt="Strings.SecOptPrompt">
+        <settingConfig type="boolean" />
+    </setting>
+
+    <setting propertyKey="@Properties.TimeStep" title="@Strings.TimeStepTitle" prompt="Strings.TimeStepPrompt" >
+        <settingConfig type="boolean" />
+    </setting>
+
+    <setting propertyKey="@Properties.ZuluOffset" title="@Strings.ZuluOffsetTitle" prompt="@Strings.ZuluOffsetPrompt" >
+        <settingConfig type="list">
+            <listEntry value="10">@Strings.Z1</listEntry>
+            <listEntry value="20">@Strings.Z2</listEntry>                
+            <listEntry value="25">@Strings.Z3</listEntry>                
+            <listEntry value="30">@Strings.Z4</listEntry>                
+            <listEntry value="40">@Strings.Z5</listEntry>                
+            <listEntry value="50">@Strings.Z6</listEntry>                
+            <listEntry value="60">@Strings.Z7</listEntry>               
+            <listEntry value="70">@Strings.Z8</listEntry>                
+            <listEntry value="80">@Strings.Z9</listEntry>                
+            <listEntry value="90">@Strings.Z10</listEntry>                
+            <listEntry value="100">@Strings.Z11</listEntry>                
+            <listEntry value="110">@Strings.Z12</listEntry>                
+            <listEntry value="120">@Strings.Z13</listEntry>                
+            <listEntry value="130">@Strings.Z14</listEntry>                
+            <listEntry value="140">@Strings.Z15</listEntry>                
+            <listEntry value="150">@Strings.Z16</listEntry>                
+            <listEntry value="160">@Strings.Z17</listEntry>                
+            <listEntry value="165">@Strings.Z18</listEntry>                
+            <listEntry value="170">@Strings.Z19</listEntry>                
+            <listEntry value="175">@Strings.Z20</listEntry>
+            <listEntry value="180">@Strings.Z21</listEntry>                
+            <listEntry value="185">@Strings.Z22</listEntry>                
+            <listEntry value="190">@Strings.Z23</listEntry>                
+            <listEntry value="200">@Strings.Z24</listEntry>                
+            <listEntry value="210">@Strings.Z25</listEntry>                
+            <listEntry value="220">@Strings.Z26</listEntry>               
+            <listEntry value="225">@Strings.Z27</listEntry>                
+            <listEntry value="230">@Strings.Z28</listEntry>                
+            <listEntry value="240">@Strings.Z29</listEntry>                
+            <listEntry value="250">@Strings.Z30</listEntry>                
+            <listEntry value="260">@Strings.Z31</listEntry>
+        </settingConfig>
+    </setting>
+
+</settings>

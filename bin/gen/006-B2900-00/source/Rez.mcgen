@@ -1,0 +1,91 @@
+import Toybox.Lang;
+using Toybox.WatchUi;
+using Toybox.WatchUi as Ui;
+using Toybox.Graphics;
+using Toybox.Graphics as Gfx;
+
+module Rez {
+    module Drawables {
+        (:initialized) var LauncherIcon as ResourceId;
+    } // Drawables
+
+    module Strings {
+        (:initialized) var Z18 as ResourceId;
+        (:initialized) var Z17 as ResourceId;
+        (:initialized) var Z19 as ResourceId;
+        (:initialized) var ZuluTitle as ResourceId;
+        (:initialized) var ZuluOffsetPrompt as ResourceId;
+        (:initialized) var NoBat as ResourceId;
+        (:initialized) var Black as ResourceId;
+        (:initialized) var GrayShad as ResourceId;
+        (:initialized) var Orange as ResourceId;
+        (:initialized) var ShadOptPrompt as ResourceId;
+        (:initialized) var ZuluOffsetTitle as ResourceId;
+        (:initialized) var batString as ResourceId;
+        (:initialized) var Z1 as ResourceId;
+        (:initialized) var Z2 as ResourceId;
+        (:initialized) var Z21 as ResourceId;
+        (:initialized) var ShadOpt as ResourceId;
+        (:initialized) var Z3 as ResourceId;
+        (:initialized) var Z20 as ResourceId;
+        (:initialized) var Z4 as ResourceId;
+        (:initialized) var Z23 as ResourceId;
+        (:initialized) var Z5 as ResourceId;
+        (:initialized) var Z22 as ResourceId;
+        (:initialized) var DispBattPrompt as ResourceId;
+        (:initialized) var Z6 as ResourceId;
+        (:initialized) var Z25 as ResourceId;
+        (:initialized) var Z7 as ResourceId;
+        (:initialized) var Z24 as ResourceId;
+        (:initialized) var Z8 as ResourceId;
+        (:initialized) var Z27 as ResourceId;
+        (:initialized) var Z9 as ResourceId;
+        (:initialized) var Z26 as ResourceId;
+        (:initialized) var Z29 as ResourceId;
+        (:initialized) var Z28 as ResourceId;
+        (:initialized) var SecOptTitle as ResourceId;
+        (:initialized) var ShowNotes as ResourceId;
+        (:initialized) var ZSteps as ResourceId;
+        (:initialized) var Pink as ResourceId;
+        (:initialized) var WhiteShad as ResourceId;
+        (:initialized) var Yellow as ResourceId;
+        (:initialized) var Z30 as ResourceId;
+        (:initialized) var Z31 as ResourceId;
+        (:initialized) var ZuluOffset as ResourceId;
+        (:initialized) var SubColorTitle as ResourceId;
+        (:initialized) var BackgroundColorTitle as ResourceId;
+        (:initialized) var ShowNotesPrompt as ResourceId;
+        (:initialized) var DKGray as ResourceId;
+        (:initialized) var DKBlue as ResourceId;
+        (:initialized) var TimeStepTitle as ResourceId;
+        (:initialized) var AppName as ResourceId;
+        (:initialized) var ClockColorPrompt as ResourceId;
+        (:initialized) var ShadOptTitle as ResourceId;
+        (:initialized) var ZTime as ResourceId;
+        (:initialized) var TimeStepPrompt as ResourceId;
+        (:initialized) var DispBattTitle as ResourceId;
+        (:initialized) var SubColorPrompt as ResourceId;
+        (:initialized) var NoShad as ResourceId;
+        (:initialized) var Blue as ResourceId;
+        (:initialized) var ShowNotesTitle as ResourceId;
+        (:initialized) var SecOptPrompt as ResourceId;
+        (:initialized) var DKRed as ResourceId;
+        (:initialized) var ClockColorTitle as ResourceId;
+        (:initialized) var YesBat as ResourceId;
+        (:initialized) var BlackShad as ResourceId;
+        (:initialized) var Red as ResourceId;
+        (:initialized) var White as ResourceId;
+        (:initialized) var Purple as ResourceId;
+        (:initialized) var Z10 as ResourceId;
+        (:initialized) var LTGray as ResourceId;
+        (:initialized) var zuluLabel as ResourceId;
+        (:initialized) var Z12 as ResourceId;
+        (:initialized) var Z11 as ResourceId;
+        (:initialized) var Z14 as ResourceId;
+        (:initialized) var DKGreen as ResourceId;
+        (:initialized) var Z13 as ResourceId;
+        (:initialized) var Green as ResourceId;
+        (:initialized) var Z16 as ResourceId;
+        (:initialized) var Z15 as ResourceId;
+    } // Strings
+} // Rez
