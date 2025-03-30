@@ -502,6 +502,12 @@ class AviationTimeView extends WatchUi.WatchFace {
         lowPowerMode = true;
         WatchUi.requestUpdate();
     }
+
+        function getSettingsView() as [Views] or [Views, InputDelegates] or Null {
+        var menu = new aTSettingsMenu();
+        return [menu, new aTSettingsMenuDelegate()];
+    }
+
      
 }
 
