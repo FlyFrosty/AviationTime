@@ -44,6 +44,13 @@ class AviationTimeApp extends Application.AppBase {
         return [view, new AviationTimeDelegate(view) ];
     }
 
+    function getSettingsView() as [Views] or [Views, InputDelegates] or Null {
+        
+        var menu = new aTSettingsMenu();
+
+        return [menu, new aTSettingsMenuDelegate()];
+    }
+
     // New app settings have been received so trigger a UI update
     function onSettingsChanged() {
         //Set Global Settings variables

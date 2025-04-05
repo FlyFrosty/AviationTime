@@ -102,6 +102,8 @@ class AviationTimeView extends WatchUi.WatchFace {
         wHeight = dc.getHeight();           //used for touch scren areas
         wWidth = dc.getWidth();
 
+        System.println("onLayout");
+
         //Set Background Color
         dc.setColor(myBG, myBG);
         dc.clear();
@@ -161,7 +163,7 @@ class AviationTimeView extends WatchUi.WatchFace {
 
     // Update the view
     function onUpdate(dc as Dc) as Void {
-
+System.println("onUpdate");
         //Set Background Color
         dc.setColor(myBG, myBG);
         dc.clear();
@@ -502,6 +504,12 @@ class AviationTimeView extends WatchUi.WatchFace {
         lowPowerMode = true;
         WatchUi.requestUpdate();
     }
+
+        function getSettingsView() as [Views] or [Views, InputDelegates] or Null {
+        var menu = new aTSettingsMenu();
+        return [menu, new aTSettingsMenuDelegate()];
+    }
+
      
 }
 
