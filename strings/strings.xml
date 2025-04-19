@@ -1,0 +1,93 @@
+<strings>
+
+    <string id="AppName">Aviation Time</string>
+
+    <string id="BackgroundColorTitle">Background Color</string>
+    
+    <string id="White">White</string>
+    <string id="LTGray">Light Gray</string>
+    <string id="DKGray">Dark Gray</string>
+    <string id="Black">Black</string>
+    <string id="Red">Red</string>
+    <string id="DKRed">Dark Red</string>
+    <string id="Orange">Orange</string>
+    <string id="Yellow">Yellow</string>
+    <string id="Green">Green</string>
+    <string id="DKGreen">Dark Green</string>
+    <string id="Blue">Blue</string>
+    <string id="DKBlue">Dark Blue</string>
+    <string id="Purple">Purple</string>
+    <string id="Pink">Pink</string>
+                        
+
+    <string id="ClockColorTitle">Main Time Color</string>
+    <string id="ClockColorPrompt">Select clock color</string>
+
+    <string id="ShowNotesTitle">Display Notifications</string>
+    <string id="ShowNotesPrompt">Display Notifications</string>
+    <string id="ShowNotes">Display Notifications</string>
+
+    <string id="DispBattTitle">Battery</string>
+    <string id="DispBattPrompt">Show Battery</string>
+    <string id="batString">batString</string>
+    <string id="YesBat">Show Battery</string>
+    <string id="NoBat">Hide Battery</string>
+
+    <string id="ShadOptTitle">Shadow Options</string>
+    <string id="ShadOptPrompt">Clock Shadow Options</string>
+    <string id="NoShad">No Shadow</string>
+    <string id="WhiteShad">White Shaddow</string>
+    <string id="BlackShad">Black Shadow</string>
+    <string id="GrayShad">Gray Shadow</string>
+    <string id="ShadOpt">Choose Shadow</string>
+
+    <string id="SubColorTitle">Sub-Items Color</string>
+    <string id="SubColorPrompt">Sub-Items Color</string>
+
+    <string id="ZuluOffsetTitle">Adjust Zulu Hours</string>
+    <string id="ZuluOffsetPrompt">Zulu Hours Offset</string>
+    <string id="ZuluOffset">Zulu Hours Offset</string>
+    <string id="ZuluTitle">Zulu Adjustment</string>
+    <string id="zuluLabel">zuluLabel</string>
+
+    <string id="ZTime">Zulu Time</string>
+    <string id="ZSteps">Steps</string>
+
+    <string id="TimeStepTitle">Steps or Zulu Time</string>
+    <string id="TimeStepPrompt">Steps or Zulu Time</string>
+
+    <string id="SecOptTitle">Dispaly Seconds Arc</string>
+    <string id="SecOptPrompt">Dispaly Seconds Arc</string>
+
+    <string id="Z1">-12+00 </string>
+    <string id="Z2">-11+00 </string>
+    <string id="Z3">-10+30 </string>
+    <string id="Z4">-10+00 </string>
+    <string id="Z5">-9+00 </string>
+    <string id="Z6">-8+00 </string>
+    <string id="Z7">-7+00 </string>
+    <string id="Z8">-6+00 </string>
+    <string id="Z9">-5+00 </string>
+    <string id="Z10">-4+00 </string>
+    <string id="Z11">-3+00 </string>
+    <string id="Z12">-2+00 </string>
+    <string id="Z13">-1+00 </string>
+    <string id="Z14">Zulu </string>
+    <string id="Z15">+1+00 </string>
+    <string id="Z16">+2+00 </string>
+    <string id="Z17">+3+00 </string>
+    <string id="Z18">+3+30 </string>
+    <string id="Z19">+4+00 </string>
+    <string id="Z20">+4+30 </string>
+    <string id="Z21">+5+00 </string>
+    <string id="Z22">+5+30 </string>    
+    <string id="Z23">+6+00 </string>    
+    <string id="Z24">+7+00 </string>    
+    <string id="Z25">+8+00 </string>    
+    <string id="Z26">+9+00 </string>    
+    <string id="Z27">+9+30 </string>    
+    <string id="Z28">+10+00 </string>    
+    <string id="Z29">+11+00 </string>    
+    <string id="Z30">+12+00 </string>    
+    <string id="Z31">+13+00 </string>
+</strings>
