@@ -10,7 +10,7 @@ import Toybox.Graphics;
     var subColorSet = Graphics.COLOR_LT_GRAY;
     var myBackgroundColor = 0x000000;
     var offSetAmmt = 130;
-    var timeOrStep;
+    var timeOrStep = true;
 
     var showNotes = true;
     var dispSecs = false;
@@ -19,7 +19,6 @@ import Toybox.Graphics;
     var oldClockShadNum = 0;
     var oldMyBackgroundColor = 0x000000; 
     var oldSubColorNum = 0;
-    //var oldTimeStep = false;
 
     var myBG = 0x000000;
 
@@ -30,9 +29,6 @@ class AviationTimeApp extends Application.AppBase {
     var clockColorNum;
     var clockShadNum;
     var subColorNum;
-
-    var mainTimeOrStep;
-    var localTimeOrStep = false;
 
     function initialize() {
         AppBase.initialize();
@@ -63,7 +59,6 @@ class AviationTimeApp extends Application.AppBase {
         if (clockShadNum != null) {oldClockShadNum = clockShadNum;}
         if (myBackgroundColor != null) {oldMyBackgroundColor = myBackgroundColor;}
         if (subColorNum != null) {oldSubColorNum = subColorNum;}
-        //if (timeOrStep != null) {oldTimeStep = timeOrStep;}
 
         clockColorNum = Properties.getValue("ClockColor");
         clockShadNum = Properties.getValue("ShadOpt");
@@ -72,24 +67,8 @@ class AviationTimeApp extends Application.AppBase {
         myBackgroundColor = Properties.getValue("BackgroundColor");
         showNotes = Properties.getValue("ShowNotes");
         dispSecs = Properties.getValue("SecOpt");
-        mainTimeOrStep = Properties.getValue("TimeStep");
-        localTimeOrStep = Application.Storage.getValue("TimeStep");
+        timeOrStep = Properties.getValue("TimeStep");
 
-        if (localTimeOrStep != mainTimeOrStep) {
-            if (mainTimeOrStep == true || mainTimeOrStep == false) {
-                timeOrStep = mainTimeOrStep;
-                Application.Storage.setValue("TimeStep", timeOrStep);
-            } else if (localTimeOrStep == true || localTimeOrStep == false) {
-                timeOrStep = localTimeOrStep;
-                Properties.setValue("TimeStep", localTimeOrStep); 
-            } else {
-                timeOrStep = false;
-                Properties.setValue("TimeStep", localTimeOrStep); 
-                Application.Storage.setValue("TimeStep", timeOrStep);
-            }
-        } else {
-            timeOrStep = mainTimeOrStep;
-        }
 
         if (oldClockColorNum != clockColorNum || oldClockShadNum != clockShadNum
             || oldMyBackgroundColor != myBackgroundColor 

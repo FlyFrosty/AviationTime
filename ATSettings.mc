@@ -41,7 +41,6 @@ class ATSettingsMenuDelegate extends WatchUi.Menu2InputDelegate {
             timeOrStep = true;  //zulu time
         }
         Application.Properties.setValue("TimeStep", timeOrStep);
-        Application.Storage.setValue("TimeStep", timeOrStep);
         onBack();
     }
 
