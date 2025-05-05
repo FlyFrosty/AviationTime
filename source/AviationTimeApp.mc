@@ -12,6 +12,8 @@ import Toybox.Graphics;
     var offSetAmmt = 130;
     var timeOrStep = true;
 
+    var ForC;
+
     var showNotes = true;
     var dispSecs = false;
 

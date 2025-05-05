@@ -32,6 +32,7 @@
     <string id="batString">batString</string>
     <string id="YesBat">Show Battery</string>
     <string id="NoBat">Hide Battery</string>
+    <string id="YesWx">Show Temperature Instead</string>
 
     <string id="ShadOptTitle">Shadow Options</string>
     <string id="ShadOptPrompt">Clock Shadow Options</string>
