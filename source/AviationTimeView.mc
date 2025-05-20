@@ -68,6 +68,9 @@ class AviationTimeView extends WatchUi.WatchFace {
 
         ForC = System.getDeviceSettings().temperatureUnits;
 
+        myEnvelope = WatchUi.loadResource(Rez.Drawables.envelope);
+        myClock = WatchUi.loadResource(Rez.Drawables.clock); 
+
         if (hasComps) {
             stepId = new Id(Complications.COMPLICATION_TYPE_STEPS);
             batId = new Id(Complications.COMPLICATION_TYPE_BATTERY);
@@ -98,8 +101,6 @@ class AviationTimeView extends WatchUi.WatchFace {
             Complications.registerComplicationChangeCallback(self.method(:onComplicationChanged));         
 
         }   
-        myEnvelope = WatchUi.loadResource(Rez.Drawables.envelope);
-        myClock = WatchUi.loadResource(Rez.Drawables.clock); 
     
     }
 
@@ -107,29 +108,24 @@ class AviationTimeView extends WatchUi.WatchFace {
 
         if (compId == batId) {
             batLoad = (Complications.getComplication(batId)).value;
-        } else if (compId == stepId) {
-            mSteps = (Complications.getComplication(stepId)).value;
-            if (mSteps instanceof Toybox.Lang.Float) {
-                mSteps = (mSteps * 1000).toNumber(); //System converts to float at 10k. Reported system error
-            }
-        } else if (compId == noteId) {
-            noteSets = (Complications.getComplication(noteId)).value;
+        
         } else if (compId == wxId) {
             wxNow = (Complications.getComplication(wxId)).value;
-System.println("line 119 "+wxNow);
-            if (wxNow == null) {
-                try {               
-                    var tempTemp = Weather.getCurrentConditions();
-                    wxNow = tempTemp.temperature; 
-                } catch (e) {
-                    wxNow = -99;
-System.println("line 125");
-                }
+            if ((ForC != System.UNIT_METRIC) && (wxNow != null)) {
+                wxNow = (wxNow * 9.0 / 5.0 + 32.0).toFloat();
             }
+
+        } else if (compId == stepId) {
+            mSteps = (Complications.getComplication(stepId)).value;
+
+        } else if (compId == noteId) {
+            noteSets = (Complications.getComplication(noteId)).value;
+
         } else {
             System.println("no valid comps");
         }
     }
+
 
     // Load your resources here
     function onLayout(dc as Dc) as Void {
@@ -157,6 +153,8 @@ System.println("line 125");
 
             normalTime();
             calcZuluTime();
+
+            dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_BLACK);
 
             if (System.getDeviceSettings().screenShape != System.SCREEN_SHAPE_SEMI_OCTAGON) {
                 dc.setColor(clockColorSet, Graphics.COLOR_BLACK);
@@ -203,6 +201,7 @@ System.println("line 125");
                             dc.drawText(wWidth * 0.7, wHeight * 0.1, Graphics.FONT_TINY, alarmString, Graphics.TEXT_JUSTIFY_LEFT);
                         }
                     } else {
+                        dc.setColor(Graphics.COLOR_DK_GREEN, Graphics.COLOR_TRANSPARENT);
                         dc.drawText(wWidth * 0.7, wHeight * 0.1, Graphics.FONT_TINY, alarmString, Graphics.TEXT_JUSTIFY_LEFT);
                     } 
                 //Draw Time/Z Time/Steps
@@ -214,15 +213,17 @@ System.println("line 125");
                 //Draw Notes if on
                     if (showNotes) {
                         notesDisp();
-                        dc.setColor(Graphics.COLOR_DK_GREEN, Graphics.COLOR_TRANSPARENT);
-                        try {
-                            if (anyNotes) {
+                        if (anyNotes) {
+                            try {
                                 dc.drawBitmap(wWidth / 4, wHeight * 0.1,myEnvelope);
+                            } catch (e) {
+                                dc.setColor(Graphics.COLOR_DK_GREEN, Graphics.COLOR_TRANSPARENT);
+                                dc.drawText(wWidth / 4, wHeight * 0.1, Graphics.FONT_TINY, noteString, Graphics.TEXT_JUSTIFY_LEFT);
                             }
-                        } catch (e) {
-                            dc.drawText(wWidth / 4, wHeight * 0.1, Graphics.FONT_TINY, noteString, Graphics.TEXT_JUSTIFY_LEFT);
+                        } else {
+                            dc.drawText(wWidth / 4, wHeight * 0.1, Graphics.FONT_TINY, " ", Graphics.TEXT_JUSTIFY_LEFT);
                         }
-                     }
+                    }
                 //Draw Seconds Arc if on
                     if (dispSecs && 
                         System.getDeviceSettings().screenShape == System.SCREEN_SHAPE_ROUND) {
@@ -241,9 +242,7 @@ System.println("line 125");
                     dc.drawText((wWidth * .85), (0.1 * wHeight), Graphics.FONT_TINY, batString, Graphics.TEXT_JUSTIFY_CENTER);    
                 //Draw Alarm
                     alarmDisp();
-                    if (alSets != 0){
-                        dc.drawText(wWidth * 0.4, wHeight * 0.1, Graphics.FONT_TINY, alarmString, Graphics.TEXT_JUSTIFY_LEFT);
-                    }
+                    dc.drawText(wWidth * 0.4, wHeight * 0.1, Graphics.FONT_TINY, alarmString, Graphics.TEXT_JUSTIFY_LEFT);
                 //Draw Time/Z Time/Steps
                     mainZone(dc);
                 //Draw Date
@@ -351,7 +350,6 @@ System.println("line 125");
     //Main Time Area
     function mainZone(dc) {
     //Choose Main display, set colors and show
-
     if (timeOrStep == null) {timeOrStep = false;}
 
         //Normal display here  
@@ -369,10 +367,7 @@ System.println("line 125");
                 dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
             }
             dc.drawText(((wWidth / 2) - 30), ((wHeight * 0.22) + 1), Graphics.FONT_NUMBER_THAI_HOT, calcTime, Graphics.TEXT_JUSTIFY_CENTER);
-        //    dc.setColor(clockColorSet, Graphics.COLOR_TRANSPARENT);
-        //    dc.drawText(((wWidth / 2) - 29), (wHeight * 0.22), Graphics.FONT_NUMBER_THAI_HOT, calcTime, Graphics.TEXT_JUSTIFY_CENTER);
         }
-
         if (timeOrStep) {
             //Display Secondary time
             calcZuluTime();
@@ -409,21 +404,29 @@ System.println("line 125");
     function battDisp(dc) {
 
         if (showBat == 2 && hasWx) {
-            if ((hasComps && (wxNow == -99 || wxNow == null)) || (!hasComps)) {
-                try {
-                    var tempTemp = Weather.getCurrentConditions();
+
+            if ((hasComps && wxNow == null) || (!hasComps)) {
+                var tempTemp = Weather.getCurrentConditions();
+                if (tempTemp != null){    
                     wxNow = tempTemp.temperature; 
-                } catch (x) {
-                    wxNow = -99; 
-System.println("line 417");                 
-                }
+                    if ((ForC != System.UNIT_METRIC) && (wxNow != null)) {
+                    wxNow = (wxNow * 9.0 / 5.0 + 32.0).toFloat();
+                    }
+                } 
             }
-            if ((ForC != System.UNIT_METRIC) && (wxNow != -99)) {
-                wxNow = (wxNow * 9 / 5 + 32).toNumber();
-System.println("line 422");
-            }
+            
             dc.setColor(subColorSet, Graphics.COLOR_TRANSPARENT);
-            batString = Lang.format("$1$", [wxNow])+"°";
+            if (wxNow != null) {
+                if (ForC != System.UNIT_METRIC){
+                    wxNow = wxNow.toNumber();
+                    batString = Lang.format("$1$", [wxNow])+"°";
+                } else {
+                    batString = Lang.format("$1$", [wxNow.format("%.01f")])+"°";
+                }
+            } else {
+                batString = "err";
+            }
+
         } else if (showBat == 0) {
             if (!hasComps || batLoad == null) {
                 batLoad = ((System.getSystemStats().battery) + 0.5).toNumber();
@@ -437,9 +440,11 @@ System.println("line 422");
                 dc.setColor(Graphics.COLOR_DK_GREEN, Graphics.COLOR_TRANSPARENT);
             }
             batString = Lang.format("$1$", [batLoad])+"%";
+
         } else {
             batString = " ";
         }
+
         if (System has :SCREEN_SHAPE_SEMI_OCTAGON && System.getDeviceSettings().screenShape == System.SCREEN_SHAPE_SEMI_OCTAGON){     //Monocrhrome correction
             //Correct color for Black & White screens
             if (myBackgroundColor == 0xFFFFFF) {
@@ -453,30 +458,22 @@ System.println("line 422");
     //Notifications Display Area
     function notesDisp() {
 
-        //var anyNotes;
-
-        if (hasComps == false) {
-            noteSets = System.getDeviceSettings();
-
-            if (noteSets.notificationCount !=0) {
-                anyNotes = true;
+        if (hasComps == false || noteSets == null) {
+            var tempNotes = System.getDeviceSettings();
+            if (tempNotes != null) {
+                noteSets = tempNotes.notificationCount;
             } else {
-                anyNotes = false;
-            }
-        } else {
-            if (noteSets != 0) {
-                anyNotes = true;
-            } else {
-                anyNotes = false;
+                noteSets = 0;
             }
         }
 
-        if (anyNotes) {
+        if (noteSets != 0 && noteSets != null) {
+            anyNotes = true;
             noteString = "N";
         } else {
+            anyNotes = false;
             noteString = " ";
         }
-        
     }
 
 
@@ -484,13 +481,12 @@ System.println("line 422");
 
         alSets = System.getDeviceSettings().alarmCount;
 
-        if (alSets != 0) {
+        if (alSets != 0 && alSets != null) {
             alarmString = "A";
         } else {
             alarmString = " ";
         }
     } 
-
     function secondsDisplay(dc) {
 
         var screenWidth = dc.getWidth();
@@ -515,10 +511,14 @@ System.println("line 422");
     //Format Steps
         var stepLoad;  
 
-        if (!hasComps) {
+        if (!hasComps || mSteps == null) {
             stepLoad = ActivityMonitor.getInfo();
             mSteps = stepLoad.steps;
-        }
+        } 
+
+        if ((mSteps != null) && (mSteps instanceof Toybox.Lang.Float)) {
+            mSteps = (mSteps * 1000).toNumber(); //System converts to float at 10k. Reported system error
+        } 
 
         stepString = Lang.format("$1$", [mSteps]);
 

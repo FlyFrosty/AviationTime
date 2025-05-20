@@ -35,6 +35,7 @@ class ATSettingsMenuDelegate extends WatchUi.Menu2InputDelegate {
 
     function onSelect(item as MenuItem) as Void {
         var id = item.getId();
+        
         if (id.equals("steps")) {
             timeOrStep = false;
         } else {

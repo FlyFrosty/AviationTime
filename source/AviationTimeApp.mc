@@ -70,6 +70,7 @@ class AviationTimeApp extends Application.AppBase {
         showNotes = Properties.getValue("ShowNotes");
         dispSecs = Properties.getValue("SecOpt");
         timeOrStep = Properties.getValue("TimeStep");
+        offSetAmmt = Properties.getValue("ZuluOffset");
 
 
         if (oldClockColorNum != clockColorNum || oldClockShadNum != clockShadNum
@@ -168,10 +169,6 @@ class AviationTimeApp extends Application.AppBase {
                 subColorSet = Graphics.COLOR_PINK;
             }
 
-            if (timeOrStep) {
-                //Get the Zulu Hours offset ammount
-                offSetAmmt = Properties.getValue("ZuluOffset");
-            }
         }
 
 }
