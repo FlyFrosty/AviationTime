@@ -42,14 +42,20 @@
     
     <setting propertyKey="@Properties.SubColor" title="@Strings.SubColorTitle" prompt="@Strings.SubColorPrompt">
         <settingConfig type="list">
-            <listEntry value="0">@Strings.LTGray</listEntry>
-            <listEntry value="1">@Strings.DKGray</listEntry>
-            <listEntry value="2">@Strings.Black</listEntry>
-            <listEntry value="3">@Strings.White</listEntry>
+            <listEntry value="0">@Strings.White</listEntry>
+            <listEntry value="1">@Strings.LTGray</listEntry>
+            <listEntry value="2">@Strings.DKGray</listEntry> 
+            <listEntry value="3">@Strings.Black</listEntry>
             <listEntry value="4">@Strings.Red</listEntry>
-            <listEntry value="5">@Strings.Green</listEntry>
-            <listEntry value="6">@Strings.Blue</listEntry>
-            <listEntry value="7">@Strings.Pink</listEntry>
+            <listEntry value="5">@Strings.DKRed</listEntry>
+            <listEntry value="6">@Strings.Orange</listEntry>
+            <listEntry value="7">@Strings.Yellow</listEntry>
+            <listEntry value="8">@Strings.Green</listEntry>
+            <listEntry value="9">@Strings.DKGreen</listEntry>
+            <listEntry value="10">@Strings.Blue</listEntry>
+            <listEntry value="11">@Strings.DKBlue</listEntry>                        
+            <listEntry value="12">@Strings.Purple</listEntry>  
+            <listEntry value="13">@Strings.Pink</listEntry> 
         </settingConfig>
     </setting>
 

@@ -151,22 +151,34 @@ class AviationTimeApp extends Application.AppBase {
             }
 
             //Select Sub items color
-            if (subColorNum == 0) {
-                subColorSet = Graphics.COLOR_LT_GRAY;
+		    if (subColorNum == 0) {
+			    subColorSet = Graphics.COLOR_WHITE;
             } else if (subColorNum == 1) {
-                subColorSet = Graphics.COLOR_DK_GRAY;
+			    subColorSet = Graphics.COLOR_LT_GRAY;
             } else if (subColorNum == 2) {
-                subColorSet = Graphics.COLOR_BLACK;
+			    subColorSet = Graphics.COLOR_DK_GRAY;
             } else if (subColorNum == 3) {
-                subColorSet = Graphics.COLOR_WHITE;
+			    subColorSet = Graphics.COLOR_BLACK;
             } else if (subColorNum == 4) {
-                subColorSet = Graphics.COLOR_RED;
+			    subColorSet = Graphics.COLOR_RED;
             } else if (subColorNum == 5) {
-                subColorSet = Graphics.COLOR_GREEN;
+			    subColorSet = Graphics.COLOR_DK_RED;
             } else if (subColorNum == 6) {
-                subColorSet = Graphics.COLOR_BLUE;
+			    subColorSet = Graphics.COLOR_ORANGE;
             } else if (subColorNum == 7) {
-                subColorSet = Graphics.COLOR_PINK;
+			    subColorSet = Graphics.COLOR_YELLOW;
+            } else if (subColorNum == 8) {
+				subColorSet = Graphics.COLOR_GREEN;
+            } else if (subColorNum == 9) {
+			    subColorSet = Graphics.COLOR_DK_GREEN;
+            } else if (subColorNum == 10) {
+			    subColorSet = Graphics.COLOR_BLUE;
+            } else if (subColorNum == 11) {
+			    subColorSet = Graphics.COLOR_DK_BLUE;
+            } else if (subColorNum == 12) {
+			    subColorSet = Graphics.COLOR_PURPLE;
+            } else {
+				subColorSet = Graphics.COLOR_PINK;
             }
 
         }

@@ -18,9 +18,11 @@ class AviationTimeView extends WatchUi.WatchFace {
     var noteString = " ";
     var anyNotes = false;
 
+    var octi;
+
     var myEnvelope;
     var myClock;
-    var alSets = false;
+    var alSets = 0;
 
     var ForC = false;
 
@@ -29,6 +31,8 @@ class AviationTimeView extends WatchUi.WatchFace {
     var stepId;
     var stepComp;
     var mSteps;             //For the non-complications watches
+    var myFeet;
+    var feetW;
 
     var hasComps = false;
     var hasWx = false;
@@ -68,8 +72,19 @@ class AviationTimeView extends WatchUi.WatchFace {
 
         ForC = System.getDeviceSettings().temperatureUnits;
 
-        myEnvelope = WatchUi.loadResource(Rez.Drawables.envelope);
-        myClock = WatchUi.loadResource(Rez.Drawables.clock); 
+        octi = System has :SCREEN_SHAPE_SEMI_OCTAGON && System.getDeviceSettings().screenShape == System.SCREEN_SHAPE_SEMI_OCTAGON;
+
+        //Feet Bitmap define
+        myFeet = WatchUi.loadResource(Rez.Drawables.feetGray); 
+        feetW = myFeet.getWidth();
+
+        if (Graphics.Dc has :drawBitmap2) {
+            myEnvelope = WatchUi.loadResource(Rez.Drawables.envelope);
+            myClock = WatchUi.loadResource(Rez.Drawables.clock); 
+        } else {
+            myEnvelope = WatchUi.loadResource(Rez.Drawables.envelopeGreen);
+            myClock = WatchUi.loadResource(Rez.Drawables.clockGreen);
+        }
 
         if (hasComps) {
             stepId = new Id(Complications.COMPLICATION_TYPE_STEPS);
@@ -154,9 +169,9 @@ class AviationTimeView extends WatchUi.WatchFace {
             normalTime();
             calcZuluTime();
 
-            dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_BLACK);
+            dc.setColor(Graphics.COLOR_DK_RED, Graphics.COLOR_BLACK);
 
-            if (System.getDeviceSettings().screenShape != System.SCREEN_SHAPE_SEMI_OCTAGON) {
+            if (!octi) {
                 dc.setColor(clockColorSet, Graphics.COLOR_BLACK);
                 if (BIP) {
                     dc.drawText((wWidth / 2), (wHeight * 0.15), Graphics.FONT_LARGE, calcTime+"L", Graphics.TEXT_JUSTIFY_CENTER); 
@@ -186,24 +201,31 @@ class AviationTimeView extends WatchUi.WatchFace {
                 }
             }
  
-        } else {
-            if (System.getDeviceSettings().screenShape != System.SCREEN_SHAPE_SEMI_OCTAGON) {
+        } else {            //Full Display
+            if (!octi) {
                 //Draw battery
                     battDisp(dc);
                     dc.drawText((wWidth/2), (0.08 * wHeight), Graphics.FONT_TINY, batString, Graphics.TEXT_JUSTIFY_CENTER);    
                 //Draw Alarm
                     alarmDisp();
-                    if (alSets != 0){
+                    if (alSets != 0 && alSets != null){
                         try {
-                            dc.drawBitmap(wWidth * 0.64, wHeight * 0.11, myClock);
+                            if (Graphics.Dc has :drawBitmap2) {
+                                dc.drawBitmap2(wWidth * 0.64, wHeight * 0.11, myClock, {
+                                    :tintColor=>subColorSet
+                                });
+                            } else {
+                                dc.drawBitmap(wWidth * 0.64, wHeight * 0.11, myClock);
+                            }
                         } catch (e) {
                             dc.setColor(Graphics.COLOR_DK_GREEN, Graphics.COLOR_TRANSPARENT);
                             dc.drawText(wWidth * 0.7, wHeight * 0.1, Graphics.FONT_TINY, alarmString, Graphics.TEXT_JUSTIFY_LEFT);
                         }
+                        
                     } else {
-                        dc.setColor(Graphics.COLOR_DK_GREEN, Graphics.COLOR_TRANSPARENT);
+                        dc.setColor(Graphics.COLOR_TRANSPARENT, Graphics.COLOR_TRANSPARENT);
                         dc.drawText(wWidth * 0.7, wHeight * 0.1, Graphics.FONT_TINY, alarmString, Graphics.TEXT_JUSTIFY_LEFT);
-                    } 
+                    }
                 //Draw Time/Z Time/Steps
                     mainZone(dc);
                 //Draw Date
@@ -215,7 +237,13 @@ class AviationTimeView extends WatchUi.WatchFace {
                         notesDisp();
                         if (anyNotes) {
                             try {
-                                dc.drawBitmap(wWidth / 4, wHeight * 0.1,myEnvelope);
+                                if (Graphics.Dc has :drawBitmap2) {
+                                    dc.drawBitmap2(wWidth / 4, wHeight * 0.1,myEnvelope, {
+                                        :tintColor=>subColorSet
+                                    });
+                                } else {
+                                    dc.drawBitmap(wWidth / 4, wHeight * 0.1,myEnvelope);
+                                }
                             } catch (e) {
                                 dc.setColor(Graphics.COLOR_DK_GREEN, Graphics.COLOR_TRANSPARENT);
                                 dc.drawText(wWidth / 4, wHeight * 0.1, Graphics.FONT_TINY, noteString, Graphics.TEXT_JUSTIFY_LEFT);
@@ -247,7 +275,7 @@ class AviationTimeView extends WatchUi.WatchFace {
                     mainZone(dc);
                 //Draw Date
                     dateDisp();
-                    dc.drawText(wWidth / 2, wHeight * 0.65, Graphics.FONT_MEDIUM, dateString, Graphics.TEXT_JUSTIFY_CENTER);
+                    dc.drawText(wWidth / 2, wHeight * 0.55, Graphics.FONT_MEDIUM, dateString, Graphics.TEXT_JUSTIFY_CENTER);
                 //Draw Notes if on
                     if (showNotes) {
                         notesDisp();
@@ -342,7 +370,11 @@ class AviationTimeView extends WatchUi.WatchFace {
             myZuluLabel = Lang.format(myFormat,myParams);
 
         } else {
-            myZuluLabel = "Zulu";
+            if (!octi) {
+                myZuluLabel = "Zulu";
+            } else {
+                myZuluLabel = "Z";
+            }
         }      
     }
     
@@ -354,14 +386,14 @@ class AviationTimeView extends WatchUi.WatchFace {
 
         //Normal display here  
         normalTime();
-        dc.setColor(clockShadSet, Graphics.COLOR_TRANSPARENT);
             
-        if (System.getDeviceSettings().screenShape != System.SCREEN_SHAPE_SEMI_OCTAGON) {
+        if (!octi) {
+            dc.setColor(clockShadSet, Graphics.COLOR_TRANSPARENT);
             dc.drawText(((wWidth / 2) + 1), ((wHeight * 0.22) + 1), Graphics.FONT_NUMBER_THAI_HOT, calcTime, Graphics.TEXT_JUSTIFY_CENTER);
             dc.setColor(clockColorSet, Graphics.COLOR_TRANSPARENT);
             dc.drawText((wWidth / 2), (wHeight * 0.22), Graphics.FONT_NUMBER_THAI_HOT, calcTime, Graphics.TEXT_JUSTIFY_CENTER);
         } else {
-            if (myBackgroundColor == 0xFFFFFF) {
+            if (myBackgroundColor == 2) {
                 dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
             } else {
                 dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
@@ -373,17 +405,40 @@ class AviationTimeView extends WatchUi.WatchFace {
             calcZuluTime();
             makeZuluLabel();
 
-            dc.setColor(subColorSet, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(wWidth / 2, wHeight * 0.75, Graphics.FONT_LARGE, zuluTime, Graphics.TEXT_JUSTIFY_CENTER);
-            dc.drawText(wWidth / 2, wHeight * 0.88, Graphics.FONT_SYSTEM_XTINY, myZuluLabel, Graphics.TEXT_JUSTIFY_CENTER);
-
+            if (!octi) {
+                dc.setColor(subColorSet, Graphics.COLOR_TRANSPARENT);
+                dc.drawText(wWidth / 2, wHeight * 0.75, Graphics.FONT_LARGE, zuluTime, Graphics.TEXT_JUSTIFY_CENTER);
+                dc.drawText(wWidth / 2, wHeight * 0.88, Graphics.FONT_SYSTEM_XTINY, myZuluLabel, Graphics.TEXT_JUSTIFY_CENTER);
+            } else {
+                dc.drawText(wWidth / 2, wHeight * 0.75, Graphics.FONT_LARGE, zuluTime, Graphics.TEXT_JUSTIFY_CENTER);   
+            }
         } else {
             //Display Stpes
             stepsDisp();
+                if (feetW == null || feetW ==0) {
+                    feetW = myFeet.getWidth();
+                }
 
-            dc.setColor(subColorSet, Graphics.COLOR_TRANSPARENT);
+                if (Graphics.Dc has:drawBitmap2){
+                    try {
+                        dc.drawBitmap2((wWidth/2) - (feetW/2), wHeight*0.7, myFeet, {
+                            :tintColor=>clockColorSet
+                        });
+                    } catch (e) {
+                        dc.drawBitmap((wWidth/2) - (feetW/2), wHeight*0.7, myFeet);
+                    }
+            } else {
+                try {
+                    dc.drawBitmap((wWidth/2) - (feetW/2), wHeight*0.7, myFeet);
+                } catch (e) {
+                    dc.drawText(wWidth / 2, wHeight * 0.88, Graphics.FONT_SYSTEM_XTINY, "steps", Graphics.TEXT_JUSTIFY_CENTER);
+                }
+            }
+
+            if (!octi) {
+                dc.setColor(subColorSet, Graphics.COLOR_TRANSPARENT);
+            }
             dc.drawText(wWidth / 2, wHeight * 0.75, Graphics.FONT_LARGE, stepString, Graphics.TEXT_JUSTIFY_CENTER);
-            dc.drawText(wWidth / 2, wHeight * 0.88, Graphics.FONT_SYSTEM_XTINY, "steps", Graphics.TEXT_JUSTIFY_CENTER);
         }
 
     }
@@ -424,7 +479,7 @@ class AviationTimeView extends WatchUi.WatchFace {
                     batString = Lang.format("$1$", [wxNow.format("%.01f")])+"°";
                 }
             } else {
-                batString = "err";
+                batString = "N/A";
             }
 
         } else if (showBat == 0) {
@@ -445,9 +500,9 @@ class AviationTimeView extends WatchUi.WatchFace {
             batString = " ";
         }
 
-        if (System has :SCREEN_SHAPE_SEMI_OCTAGON && System.getDeviceSettings().screenShape == System.SCREEN_SHAPE_SEMI_OCTAGON){     //Monocrhrome correction
+        if (octi){     //Monocrhrome correction
             //Correct color for Black & White screens
-            if (myBackgroundColor == 0xFFFFFF) {
+            if (myBackgroundColor == 2) {
                 dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
             } else {
                 dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
