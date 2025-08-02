@@ -169,33 +169,31 @@ class AviationTimeView extends WatchUi.WatchFace {
             normalTime();
             calcZuluTime();
 
-            dc.setColor(Graphics.COLOR_DK_RED, Graphics.COLOR_BLACK);
-
             if (!octi) {
                 dc.setColor(clockColorSet, Graphics.COLOR_BLACK);
                 if (BIP) {
-                    dc.drawText((wWidth / 2), (wHeight * 0.15), Graphics.FONT_LARGE, calcTime+"L", Graphics.TEXT_JUSTIFY_CENTER); 
+                    dc.drawText((wWidth / 2), (wHeight * 0.15), Graphics.FONT_NUMBER_HOT, calcTime, Graphics.TEXT_JUSTIFY_CENTER); 
                     dc.drawText((wWidth / 2), (wHeight * 0.60), Graphics.FONT_MEDIUM, zuluTime, Graphics.TEXT_JUSTIFY_CENTER);
                     BIP = false; 
                 } else {
-                    dc.drawText((wWidth / 2), (wHeight * 0.30), Graphics.FONT_LARGE, calcTime+"L", Graphics.TEXT_JUSTIFY_CENTER); 
+                    dc.drawText((wWidth / 2), (wHeight * 0.30), Graphics.FONT_NUMBER_HOT, calcTime, Graphics.TEXT_JUSTIFY_CENTER); 
                     dc.drawText((wWidth / 2), (wHeight * 0.70), Graphics.FONT_MEDIUM, zuluTime, Graphics.TEXT_JUSTIFY_CENTER); 
                     BIP = true;
                 }
             } else {
                 //change to black and white
-                if (myBackgroundColor == 0xFFFFFF) {
-                    dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
+                if (myBackgroundColor == 2) {
+                    dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_WHITE);
                 } else {
-                    dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+                    dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
                 }
 
                 if (BIP) {
-                    dc.drawText(((wWidth / 2) - 30), (wHeight * 0.20), Graphics.FONT_LARGE, calcTime+"L", Graphics.TEXT_JUSTIFY_CENTER); 
+                    dc.drawText(((wWidth / 2) - 30), (wHeight * 0.20), Graphics.FONT_NUMBER_HOT, calcTime, Graphics.TEXT_JUSTIFY_CENTER); 
                     dc.drawText((wWidth / 2), (wHeight * 0.60), Graphics.FONT_MEDIUM, zuluTime, Graphics.TEXT_JUSTIFY_CENTER); 
                     BIP = false;
                 } else {
-                    dc.drawText((wWidth / 2), (wHeight * 0.40), Graphics.FONT_LARGE, calcTime+"L", Graphics.TEXT_JUSTIFY_CENTER); 
+                    dc.drawText((wWidth / 2), (wHeight * 0.40), Graphics.FONT_NUMBER_HOT, calcTime, Graphics.TEXT_JUSTIFY_CENTER); 
                     dc.drawText((wWidth / 2), (wHeight * 0.70), Graphics.FONT_MEDIUM, zuluTime, Graphics.TEXT_JUSTIFY_CENTER); 
                     BIP = true;
                 }
@@ -259,10 +257,10 @@ class AviationTimeView extends WatchUi.WatchFace {
                     }
             } else {
                 //Go monochrome
-                if (myBackgroundColor == 0xFFFFFF) {
-                    dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
+                if (myBackgroundColor != 2) {
+                    dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_WHITE);
                 } else {
-                    dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+                    dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
                 }
 
                 //Draw battery
