@@ -61,6 +61,7 @@ class AviationTimeView extends WatchUi.WatchFace {
          
     var BIP = true;         //Burn In Protection
     var lowPowerMode = false;
+    var bSettings = false;
 
 
     function initialize() {
@@ -71,6 +72,10 @@ class AviationTimeView extends WatchUi.WatchFace {
         hasWx = (Toybox has :Weather);
 
         ForC = System.getDeviceSettings().temperatureUnits;
+
+        var sSettings = System.getDeviceSettings();
+        // Is it a MIP display?
+        if (sSettings has :requiresBurnInProtection) {bSettings = !sSettings.requiresBurnInProtection;}
 
         octi = System has :SCREEN_SHAPE_SEMI_OCTAGON && System.getDeviceSettings().screenShape == System.SCREEN_SHAPE_SEMI_OCTAGON;
 
@@ -162,7 +167,7 @@ class AviationTimeView extends WatchUi.WatchFace {
         dc.setColor(myBG, myBG);
         dc.clear();
 
-        if (lowPowerMode){
+        if (lowPowerMode && !bSettings){
             dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
             dc.clear();
 
@@ -250,12 +255,15 @@ class AviationTimeView extends WatchUi.WatchFace {
                             dc.drawText(wWidth / 4, wHeight * 0.1, Graphics.FONT_TINY, " ", Graphics.TEXT_JUSTIFY_LEFT);
                         }
                     }
-                //Draw Seconds Arc if on
-                    if (dispSecs && 
-                        System.getDeviceSettings().screenShape == System.SCREEN_SHAPE_ROUND) {
-                        secondsDisplay(dc);
+
+                    if (!bSettings || !lowPowerMode) {
+                    //Draw Seconds Arc if on
+                        if (dispSecs && 
+                            System.getDeviceSettings().screenShape == System.SCREEN_SHAPE_ROUND) {
+                            secondsDisplay(dc);
+                        }
                     }
-            } else {
+            } else {    
                 //Go monochrome
                 if (myBackgroundColor != 2) {
                     dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_WHITE);
